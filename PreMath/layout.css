@@ -1,0 +1,156 @@
+body{
+	font-family: 'Open Sans', 'Roboto', san-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#bignum-explanation-wrap{
+	display: inline-block;
+	background-color: white;
+	padding: 10px;
+	border-radius: 10px;
+}
+	#bignum-explanation-toggle{
+		cursor: pointer;
+		font-weight: 900;
+	}
+	#bignum-explanation{
+	    display: none;
+	}
+	.bignum-mark{
+		color: red;
+		text-decoration: none;
+		font-weight: 900;
+	}
+
+.code{
+	background-color: #fbfbfb;
+}
+
+#track{
+	width: 950px;
+	background-color: #fbfbfb;
+	margin: auto;
+	padding: 20px;
+	min-height: 90vh;
+}
+
+.del-parameter:hover{
+    cursor: pointer;
+    color: gray;
+    background-color: #587179;
+}
+
+.input-wrap, .output-wrap, .code{
+	font-family: monospace;
+	font-size: 16px;
+}
+.input-wrap{
+	display: inline-block;
+}
+.parameter-wrap, .add-parameter, .boolean, .run-method{
+	display: inline-block;
+    min-width: 80px;
+    height: 20px;
+	position: relative;
+	border-radius: 5px;
+}
+
+.code{
+	display: inline-block;
+	padding: 0 5px;
+    min-height: 20px;
+	position: relative;
+	border-radius: 5px;
+}
+
+.code.block{
+    display: block;
+    text-align: left;
+}
+
+.comment{
+	color: #7f7f80;
+	font-style: italic;
+}
+
+.add-parameter, .parameter-wrap, .boolean{
+    vertical-align: bottom;
+}
+.add-parameter, .run-method, .boolean, .code{text-align: center;}
+.parameter-wrap, .boolean, .code{background-color: #e0ebef;}
+.add-parameter, .run-method{background-color: gray; color: white}
+.add-parameter:hover, .run-method:hover{cursor: pointer; color: #04bcff;}
+.boolean:hover{cursor: pointer; color: #04bcff;}
+
+	.parameter, .boolean, .add-parameter, .syntax {
+	   display: inline-block;
+	}
+	.parameter, .boolean {
+        color: black;
+        text-align: center;
+        min-width: 60px;
+        max-width: 200px;
+	}
+	.parameter-wrap, .add-parameter {
+        vertical-align: top;
+    }
+    .parameter-wrap {
+        height: auto;
+    }
+	.del-parameter{
+		width: 20px;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		right: 0;
+		border-radius: 5px;
+	}
+	
+.output-wrap{
+	background-color:gray;
+	color: white;
+}
+
+.output{
+	width: calc(100% - 50px);
+	min-height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+    position: relative;
+    left: 8px;
+}
+
+.io-arrow{
+    width: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.parameter.captioned {
+    color: gray;
+}
+
+.parameter-wrap:first-of-type .del-parameter,
+.parameter-wrap.limited-param .del-parameter
+{
+    display: none;
+}
+
+.fn-cont{
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.fn-cont:after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    border-bottom: 1px solid #b7b7b7;
+    margin: 50px 10%;
+}
+
+.fn-cont:last-of-type:after{
+    border: none;
+}

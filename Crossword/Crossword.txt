@@ -1,0 +1,30 @@
+Crossword puzzle algorithm
+1. Create word map such that inputting a letter returns a word that has that letter in it. 
+2. "Piece" object that has an array of letters that can be arranged onto the board. Object has list of all the words in it,  the orientation of the word, and the starting and everything position of each word
+3. functions that can: pad the sides, top and bottom, and shrink wrap
+4. word combiner: by making sure the two Pieces being combined has only one letter in a cell. After combining, place blocks on the four corners of the intersection so words don't get laid next to each other. For joints, only block the 90 degree corner
+5. transpose: will change vertical and horizontal directions
+6. a Piece becomes a puzzle when its word list length becomes same as the initial number of words
+7. find intersection of common letters between two words
+
+This algorithm can also be used to generate word search
+
+
+
+---
+***********
+[ ] 	Instead of transposing the puzzle, do the word
+[ ] 	Word crosser must return the index at which it's crossed 
+[ ] 	also the direction
+***********
+
+Get time when pushing into complete
+
+Put stoppers
+
+must for-loop over all the words. Otherwise, ['apple', 'carrot', 'banana'] won't make a puzzle because
+'apple' and 'carrot' will be crossed first, with no room for banana
+
+shift index by certain amount when adding paddings
+
+change width

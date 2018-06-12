@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Precision Math</title>
+<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto" rel="stylesheet">
+<link rel="stylesheet" href="layout.css">
+<!--<link rel="stylesheet" href="css/ui.css">-->
+<!--<link rel="stylesheet" href="css/remote.css">-->
+</head>
+
+<body>
+    
+    <div id="track">
+        <h1>Precision Math </h1>
+        <div class="lib-desc desc">
+            Why I made this thing:
+            -First started when I learned that <span class="code">0.1 + 0.2 === 0.3</span> evaluated to
+            <span class="code">false</span>. When I dug a little deeper, I saw that natively implemented
+            Math and arithmetic had some limitations. Also as someone teaching math using computer, I needed
+            a way to store rational number and calculate using them. 
+            -For Steps Math stuff (made in the past for things from past, but improved it after realizing its value)
+            -Just to see if I can 
+            -To use it for future projects, such as solving KenKen (link)
+            
+            You can use these in the console.
+            <br>
+            <div id="bignum-explanation-wrap">
+                <div id="bignum-explanation-toggle">
+                    What is <span class="bignum-mark">*</span>?
+                </div>
+                <div id="bignum-explanation">
+                    It means the user can pass numbers as strings as opposed to numbers. In other words, 
+                    instead of passing <span class="code">12345678901234567890123456789</span>, which gets 
+                    evaluated to <span class="code">1.2345678901234568e+28</span>, user can pass an 
+                    argument as <span class="code">'12345678901234567890123456789'</span>. 
+                </div>
+            </div>
+        </div>
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="isInt">
+            <h2 class="fn-heading">PreMath.isInt()<span class="bignum-mark">*</span></h2>
+            <div class="fn-desc desc">
+                <p>
+                    Given a set of arguments, the method will return either <span class="code">
+                    true</span> or <span class="code">false</span>. The method will return 
+                    <span class="code">true</span> if <strong>all</strong> of the arguments passed
+                    are prime. Integer arguments may pass as number or string.
+                </p>
+                <p>
+                    Valid inputs: any input.
+                </p>
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.isInt(
+                    <div class="parameter-wrap">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="add-parameter">+</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="isPrime">
+            <h2 class="fn-heading">PreMath.isPrime()</h2>
+            <div class="fn-desc desc">
+                <p>
+                    Given a set of integers, the method will return either <span class="code">
+                    true</span> or <span class="code">false</span>. The method will return 
+                    <span class="code">true</span> if <strong>all</strong> of the arguments passed
+                    are prime. Otherwise, it will return <span class="code">false</span>. 
+                </p>
+                <p>
+                    Valid inputs: integers less than 10<sup>20</sup>.
+                </p>
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.isPrime(
+                    <div class="parameter-wrap" data-caption="num">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="add-parameter">+</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="getPrimeFactors">
+            <h2 class="fn-heading">PreMath.getPrimeFactors()</h2>
+            <div class="fn-desc desc">
+                The method will return an array of prime factors, the product of which is the given number.
+                The first argument, the number for which the prime factors are returned, must be integer.
+                The second argument determines whether the given array contains duplicates. 
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.getPrimeFactors(
+                    <div class="parameter-wrap" data-caption="num">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="boolean parameter">false</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="getRandomPrimeBetween">
+        
+            <h2 class="fn-heading">PreMath.getRandomPrimeBetween()</h2>
+            <div class="fn-desc desc">
+                The method returns a random prime number between two given numbers
+                <div class="code">a</div> and <div class="code">b</div>, inclusive.
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.getRandomPrimeBetween(
+                    <div class="parameter-wrap limited-param" data-caption="a">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                    <div class="syntax">,</div>
+                    <div class="parameter-wrap limited-param" data-caption="b">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="gcf">
+            <h2 class="fn-heading">PreMath.gcf(), PreMath.gcd()</h2>
+            <div class="fn-desc desc">
+                Given a set of arguments, the method will return either <span class="code">
+                true</span> or <span class="code">false</span>. The method will return 
+                <span class="code">true</span> if <strong>all</strong> of the arguments passed
+                are prime. Arguments may pass as number or string.
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.gcf(
+                    <div class="parameter-wrap">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="add-parameter">+</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="lcm">
+            <h2 class="fn-heading">PreMath.lcm()</h2>
+            <div class="fn-desc desc">
+                Given a set of arguments, the method will return either <span class="code">
+                true</span> or <span class="code">false</span>. The method will return 
+                <span class="code">true</span> if <strong>all</strong> of the arguments passed
+                are prime. Arguments may pass as number or string.
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.lcm(
+                    <div class="parameter-wrap">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="add-parameter">+</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="powersOf">
+            <h2 class="fn-heading">PreMath.powersOf()</h2>
+            <div class="fn-desc desc">
+                Given a set of arguments, the method will return either <span class="code">
+                true</span> or <span class="code">false</span>. The method will return 
+                <span class="code">true</span> if <strong>all</strong> of the arguments passed
+                are prime. Arguments may pass as number or string.
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.powersOf(
+                    <div class="parameter-wrap limited-param" data-caption="a">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                    <div class="syntax">,</div>
+                    <div class="parameter-wrap limited-param" data-caption="b">
+                        <div class="parameter captioned" contenteditable data-caption="maxExp"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        <!----------------- D I V I D E R ------------------
+        
+        <div class="fn-cont" id="breakDown">
+            <h2 class="fn-heading">PreMath.breakDown()</h2>
+            <div class="fn-desc desc">
+                Given a set of arguments, the method will return either <span class="code">
+                true</span> or <span class="code">false</span>. The method will return 
+                <span class="code">true</span> if <strong>all</strong> of the arguments passed
+                are prime. Arguments may pass as number or string.
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.isInt(
+                    <div class="parameter-wrap">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="add-parameter">+</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="factorsOf">
+            <h2 class="fn-heading">PreMath.factorsOf()</h2>
+            <div class="fn-desc desc">
+                Given a set of arguments, the method will return either <span class="code">
+                true</span> or <span class="code">false</span>. The method will return 
+                <span class="code">true</span> if <strong>all</strong> of the arguments passed
+                are prime. Arguments may pass as number or string.
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.factorsOf(
+                    <div class="parameter-wrap limited-param" data-caption="a">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="convertBases">
+            <h2 class="fn-heading">PreMath.convertBases()</h2>
+            <div class="fn-desc desc">
+                This thing converts a number from one base to another.
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.convertBases(
+                    <div class="parameter-wrap limited-param" data-caption="num">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                    <div class="syntax">,</div>
+                    <div class="parameter-wrap limited-param" data-caption="base0">
+                        <div class="parameter captioned" contenteditable data-caption="base0"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                    <div class="syntax">,</div>
+                    <div class="parameter-wrap limited-param" data-caption="base1">
+                        <div class="parameter captioned" contenteditable data-caption="base1"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                    <div class="syntax">{</div>
+                    <div class="boolean parameter">false</div>
+                    <div class="syntax">,</div>
+                    <div class="boolean parameter">false</div>
+                    <div class="syntax">,</div>
+                    <div class="boolean parameter">false</div>
+                    <div class="syntax">}</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="factorial">
+            <h2 class="fn-heading">PreMath.factorial()</h2>
+            <div class="fn-desc desc">
+                Although native multiplication is fast, when attempting to obtain a factorial of
+                a large number, the user gets a number in scientific notation. <span class="code">
+                PreMath.factorial()</span> returns a value in string without truncation. The first
+                argument is the integer for which the factorial is obtained. The second argument
+                must be set to true if the first integer is larger than 10000. Passing the second
+                argument as <span class="code">true</span> means the user acknowledges that it 
+                might take a bit of time for things to be processed.
+                <div class="code comment">
+                    //<span class="todo">TODO</span>: Make it more efficient by separately handling <br>
+                    //&#9;multiplies of 2, 5, and 10.
+                </div>
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.factorial(
+                    <div class="parameter-wrap limited-param">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="boolean parameter">false</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="add">
+            <h2 class="fn-heading">PreMath.add()<span class="bignum-mark">*</span></h2>
+            <div class="fn-desc desc">
+                The method will add given arguments passed as integers. The purpose of the method is to provide
+                sum of large integers in web environment without the exponent notation (e) at the end when the
+                number gets too big. With <span class="code">PreMath.add()</span>, user can pass any 
+                number of integers any size to obtain the sum. 
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.add(
+                    <div class="parameter-wrap">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="add-parameter">+</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        
+        
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="multiply">
+            <h2 class="fn-heading">PreMath.multiply()<span class="bignum-mark">*</span></h2>
+            <div class="fn-desc desc">
+                The method will add given arguments passed as integers. The purpose of the method is to provide
+                sum of large integers in web environment without the exponent notation (e) at the end when the
+                number gets too big. With <span class="code">PreMath.factorial()</span>, user can pass any 
+                number of integers any size to obtain the sum. 
+                <div class="code comment">
+                    //<span class="todo">TODO</span>: Make it handle floats
+                </div>
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.multiply(
+                    <div class="parameter-wrap">
+                        <div class="parameter captioned" contenteditable data-caption="num"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="add-parameter">+</div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        
+        <!----------------- D I V I D E R ------------------
+        
+        <div class="fn-cont" id="divideTo">
+            <h2 class="fn-heading">PreMath.divideTo()</h2>
+            <div class="fn-desc desc">
+                The method will add given arguments passed as integers. The purpose of the method is to provide
+                sum of large integers in web environment without the exponent notation (e) at the end when the
+                number gets too big. With <span class="code">PreMath.factorial()</span>, user can pass any 
+                number of integers any size to obtain the sum. 
+                <div class="code comment">
+                    //<span class="todo">TODO</span>: Make it handle floats
+                </div>
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.divideTo(
+                    <div class="parameter-wrap limited-param">
+                        <div class="parameter captioned" contenteditable data-caption="dividend"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="parameter-wrap limited-param">
+                        <div class="parameter captioned" contenteditable data-caption="divisor"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="parameter-wrap limited-param">
+                        <div class="parameter captioned" contenteditable data-caption="precision"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="pow">
+            <h2 class="fn-heading">PreMath.pow()<span class="bignum-mark">*</span></h2>
+            <div class="fn-desc desc">
+                The method is similar to the native <span class="code">Math.pow()</span>, but this method
+                can handle much bigger numbers without losing precision. 
+                <div class="code comment">
+                    //<span class="todo">TODO</span>: Make it handle floats
+                </div>
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.pow(
+                    <div class="parameter-wrap limited-param">
+                        <div class="parameter captioned" contenteditable data-caption="int"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="parameter-wrap limited-param">
+                        <div class="parameter captioned" contenteditable data-caption="exp"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        
+        <!----------------- D I V I D E R ------------------>
+        
+        <div class="fn-cont" id="getNthRootOf">
+            <h2 class="fn-heading">PreMath.getNthRootOf()</h2>
+            <div class="fn-desc desc">
+                
+                <p>For a given <span class="code">base</span> and <span class="code">exp</span>,
+                the method will return $\sqrt[exp]{base}$ in decimal to given prcision.</p>
+                <p>Currently, it handles the numbers in number format as opposed to string,
+                so the maximum precision is as long as a number can be in JavaScript</p>
+                <div class="code block comment">
+                    //<span class="todo">TODO</span>: -Handle long numbers in string. <br>
+                    //&#9; -Handle rational number root (e.g. "x^(3/7)");
+                </div>
+            </div>
+            <div class="input-wrap">
+                <span class="io-arrow">&#187;</span>
+                PreMath.getNthRootOf(
+                    <div class="parameter-wrap limited-param">
+                        <div class="parameter captioned" contenteditable data-caption="base"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="parameter-wrap limited-param">
+                        <div class="parameter captioned" contenteditable data-caption="exp"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div><div class="syntax">,</div>
+                    <div class="parameter-wrap limited-param">
+                        <div class="parameter captioned" contenteditable data-caption="precision"> </div>
+                        <div class="del-parameter">&times;</div>
+                    </div>
+                )
+            </div>
+            <div class="run-method">&#9166;</div>
+            <div class="output-wrap">
+                <span class="io-arrow">&#171;</span><div class="output"></div>
+            </div>
+            <div class="error-msg"> </div>
+        </div>
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+<!---------------- JAVASCRIPT STUFF ----------------->
+<!-- JQUERY -->
+
+<!--
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+-->
+
+<!--<script src="https://code.jquery.com/jquery-3.1.1.js"></script>-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- JAVASCRIPT -->
+<script src="../util.js"></script>
+<script src="PreMath.0.2.js"></script>
+<script src="ui.js"></script>
+
+<!-- MATHJAX -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+/*global MathJax*/
+MathJax.Hub.Config({
+   tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        extensions: ["tex2jax.js","[Contrib]/forminput.js"]
+    }
+});
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
+
+</body>
+</html>

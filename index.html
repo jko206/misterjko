@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+    <title>J. Ko</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div id="menu-toggle" class="toggle">
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+    </div>
+    <div class="menu hidden">
+      <nav>
+        <a href="#about-me">
+          <span>About Me</span>
+        </a>
+        <a href="#about-my-work">
+          <span>About My Work</span>
+        </a>
+        <a href="#knights-tour">
+          <span>Knight's Tour</span>
+        </a>
+        <a href="#kenken-solver">
+          <span>KenKen Solver</span>
+        </a>
+        <!--
+        <a href="#">
+          <span>PreMath</span>
+        </a>
+        <a href="#">
+          <span>Stable Match Making</span>
+        </a>
+        <a href="#">
+          <span>Change Return</span>
+        </a>
+        <a href="#">
+          <span>Priority Queue</span>
+        </a>
+        <a href="#">
+          <span>OTRIO</span>
+          <!-- uses node IO -->
+        </a>
+        -->
+      </nav>
+    </div>
+    <div class="main">
+      <section id="welcome-section">
+        <div class="section-content">Welcome</div>
+      </section>
+      <section id="about-me">
+        <h1>About me</h1>
+        <div class="section-content">
+          <div class="profile-item-wrap" id="profile-pic-wrap">
+            <img src="images/profile.jpg" alt="Profile picture">
+          </div>
+          <div id="profile-details">
+            <div class="profile-item-wrap" id="profile-name">
+              Jai Ko <span>(a.k.a. "J")</span>
+            </div>
+            <div class="profile-item-wrap" id="profile-links-etc">
+              <a href="http://github.com/jaiko86">GitHub</a>
+              <a href="http://linkedin.com/in/Jai-Ko">LinkedIn</a>
+              <a href="https://www.hackerrank.com/MisterJK">HackerRank</a>
+              <div id="resume-ui-wrap">
+                <div id="resume-text">Résumé</div>
+                <div id="resume-btns">
+                  <a class="resume-btn" id="view" href="resume.pdf" target="new">view</a>
+                  <a class="resume-btn" id="dl-pdf" href="resume.pdf" download>PDF</a>
+                  <a class="resume-btn" id="dl-docx" href="resume.docx" download>WORD</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-item-cont">
+            <h3>Summary</h3>
+            <p>A former entrepreneur seeking to improve programming skills and launch a more stable career. A quick learner and clairvoyant problem solver, enthusiastic about implementing technology in businesses to improve efficiency and customer satisfaction.
+            Excellent communication and interpersonal skills. Native proficiency in Korean.</p>
+          </div>
+          <div class="profile-item-cont">
+            <h3>Learning Journey</h3>
+            
+              <p>I learned the foundation of my programming at the University of Washington, Seattle. There I learned
+                Object Oriented Programming, LAMP stack, various data structures, paradigms, and paradigms.
+              </p>
+              <p>I learned the rest of what I know, especially JavaScript, jQuery, and now Vue and React by
+              building small applications, which later became a platform, for teaching math.</p>
+            
+        
+          </div>
+          <div class="profile-item-cont">
+            <h3>Languages / Framework / Library</h3>
+            <div class="profile-item">
+              <ul>
+                <li>HTML 5</li>
+                <li>CSS 3</li>
+                <li>JavaScript (ES7)</li>
+                <li>jQuery</li>
+                <li class="unskilled">MySQL</li>
+                <li class="unskilled">PHP</li>
+                <li class="unskilled">Node</li>
+                <li class="unskilled">Java</li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile-item-cont" id="work-pref">
+            <h3>Work Preference</h3>
+            <ul>
+              <li>Part&#8209;time / full&#8209;time / contract</li>
+              <li>Front&#8209;end / back&#8209;end / full&#8209;stack</li>
+              <li>Entry / junior level</li>
+              <li>Greater Seattle area</li>
+              <li>Remote OK</li>
+              <li>US Citizen</li>
+              <li>Work eligible in Korea</li>
+            </ul>
+            <div class="profile-item" id="map"></div>
+          </div>
+        </div>
+      </section>
+      <section id="about-my-work">
+        <h2>About my work</h2>
+        <div class="section-content">
+          <p>This is a small selection of work that I feel best illustrates my ability and potential as a software developer.</p>
+          <p>I believe my work will portray me as a concise and succinct problem solver and a software devloper. The selection of work here doesn't employ the use of any outside library, framework, or sources, other than to make GUI possible. </p>
+          <p>While GUI is provided to demonstrate my understanding of MVC principle and also to make it easier to use and see end results of my work, they are not meant to be comprehensive nor perfect. The work for which I did not make GUI can be tested out
+          on console. </p>
+          <p>All the my work listed here can be found on GitHub</p>
+          <p>
+            <strong>More stuff will be posted, as their GUIs are properly made.</strong>
+          </p>
+        </div>
+      </section>
+      <section id="knights-tour">
+        <h2>Knight's Tour</h2>
+        <div class="section-content">
+          <p>
+            From <a href="https://en.wikipedia.org/wiki/Knight%27s_tour">Wikipedia</a>
+            :
+        
+          </p>
+          <blockquote>A knight's tour is a sequence of moves of a knight on a chessboard such that the knight visits every square only once.</blockquote>
+          <p>The algorithm for finding the knight's path technically uses recursion to exhaustively search for the solution. The "brute force" method has a search space of roughly 26.5 trillion moves, by employing Warnsdorff's rule and Arnd Roth's proposition
+          for tie breaking, a solution to a 8x8 board can be found in linear time.</p>
+          <h3>GUI Instruction</h3>
+          <p>Click anywhere on the board to find the solution starting from that cell. Click `next` or `prev` to make the knight move to next or previous move, respectively.</p>
+          <button class="popup-launcher" data-launch="#knight-gui-cont">LAUNCH GUI
+		  </button>
+          <div class="popup hidden" id="knight-gui-cont">
+            <div class="close close-popup">
+              <div class="stripe"></div>
+              <div class="stripe"></div>
+              <div class="stripe"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="kenken-solver">
+        <h2>KenKen Solver</h2>
+        <div class="section-content">
+          <p>KenKen is akin to sodoku, but with a mathematical twist. For an n x n puzzle, the rules are as follows:</p>
+          <ul>
+            <li>For any given column or row, numbers 1 through n, inclusive, must be used exactly once.</li>
+            <li>The numbers inside a set of cells bounded by thick outline, called cages, must evaluate to a given number, called target, when a given operation is performed.</li>
+          </ul>
+          <p>
+            More information can be found on <a href="https://en.wikipedia.org/wiki/KenKen">Wikipedia</a>
+            .
+        
+          </p>
+          <p>My puzzle solver finds a solution (there may be more than one for some puzzles) after a user inputs the constraints.</p>
+          <h3>GUI Instruction</h3>
+          <p>For puzzle size, input a number from 1 through 9 to set cages. Alternatively, you can simply click one of the sample puzzles to start.</p>
+          <p>After you set the size, click a cluster of contiguous cells, and click "SET CAGE". Then input the target number and operation.</p>
+          <p>For any of the input areas, user can press ESC button to delete the content. For operation input, you may press up/down arrow keys to select from one of four valid entries. Finally, user can press enter to submit input.</p>
+          <button class="popup-launcher" data-launch="#kenken-gui-cont">LAUNCH GUI</button>
+          <div class="popup hidden" id="kenken-gui-cont">
+            <div class="close close-popup">
+              <div class="stripe"></div>
+              <div class="stripe"></div>
+              <div class="stripe"></div>
+            </div>
+            <div id="kk-gui-cont"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="footer-main">
+        <!-- links, social media, etc-->
+        <a href="http://github.com/jaiko86">
+          <div class="logo-container" id="github-logo"></div>
+          GitHub
+      
+        </a>
+        <a href="http://linkedin.com/in/jai-ko">
+          <div class="logo-container" id="linkedin-logo"></div>
+          LinkedIn
+      
+        </a>
+        <a href="https://www.hackerrank.com/MisterJK">
+          <div class="logo-container" id="hackerrank-logo"></div>
+          HackerRank
+      
+        </a>
+      </div>
+    </footer>
+    <!--             JAVASCRIPT STUFF                -->
+    <!-- JQUERY -->
+    <script src="jquery/jquery-3.1.0.js"></script>
+    <script src="jquery/jquery-extensions.js"></script>
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    <!-- JAVASCRIPT -->
+    <!-- <script src="utility/util.js"></script> -->
+    <!-- <script src="utility/PriorityQueue.js"></script> -->
+    <!-- <script src="Algo_ADT/GSAlgo.js"></script> -->
+    <!-- <script src="Algo_ADT/MagicSquare.js"></script> -->
+    <!-- <script src="Algo_ADT/MakeChanges.js"></script> -->
+    <script src="KenKen/KenKen.js"></script>
+    <!--<script src="KnightHop/KnightsTour.js"></script>-->
+    <!-- <script src="PreMath/PreMath.js"></script> -->
+    <script src="init.js"></script>
+  </body>
+</html>

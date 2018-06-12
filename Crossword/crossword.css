@@ -1,0 +1,31 @@
+#input-label {
+    display: inline-block;
+}
+
+#puzzle-words-input {
+    border: 1px solid black;
+    padding: 5px;
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    display: inline-block;
+}
+
+.puzzle-table{
+	border-collapse: collapse;
+	margin: 20px auto;
+}
+
+.puzzle-cell {
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    line-height: 1.5;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    float: left;
+}
+
+.black-cell{
+	background-color: black;
+}

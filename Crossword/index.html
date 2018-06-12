@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Education Demo: Crosswords</title>
+<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto" rel="stylesheet">
+<link rel="stylesheet" href="../layout.css">
+<link rel="stylesheet" href="crossword.css">
+<!--<link rel="stylesheet" href="css/ui.css">-->
+<!--<link rel="stylesheet" href="css/remote.css">-->
+</head>
+
+<body>
+    
+    <div class="demo-wrapper">
+        <div class="demo-header">
+            <h1>Crossword Puzzle/Word Search Generator</h1>
+            <div class="demo-desc">
+                This thing will cross words to make a puzzle
+            </div>
+        </div>
+        <div class="demo" id="crossword-puzzle-demo">
+            <div class="puzzle-ui-wrapper">
+                <div id="input-label">Words:</div>
+                <div id="puzzle-words-input" contenteditable>
+                    Separate words with comma.
+                </div>
+                <div id="submit-words" class="button">Submit</div>
+                <div class="submission-msg" id="crossword-submission-msg"></div>
+            </div>
+                
+            <div id="puzzle-cont">
+        
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<!---------------- JAVASCRIPT STUFF ----------------->
+<!-- JQUERY -->
+<!--
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+-->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- JAVASCRIPT -->
+<script src="../PreMath/PreMath.js"></script>
+<script src="Crossword.1.0.js"></script>
+<script src="script.js"></script>
+
+<!-- MATHJAX -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+/*global MathJax*/
+MathJax.Hub.Config({
+   tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        extensions: ["tex2jax.js","[Contrib]/forminput.js"]
+    }
+});    
+</script>
+
+</body>
+</html>
