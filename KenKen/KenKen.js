@@ -1,8 +1,14 @@
 'use strict';
 
+var globglob;
 
 /*
 global $
+
+Basically, KenKen determines possible solutions for EACH cage,
+and tries to combine compatible ones into a super cage, until there are
+no more cages from which to draw a compatible solution.
+
 1. get the set of all possible solution for cages
 	A. get a set of numbers whose operation will yield the target
 	B. create permutation of the set from step A., and only save
@@ -828,6 +834,9 @@ let KenKenGUI = (function(){
 				
 				render.cage(cells());
 				render.cageDesc({op, target, cell: cells()[0]});
+				if(this.cagedCells.length == this.size ** 2){
+					render.toggleSolveBtn(true);
+				}
 			} else {
 				console.log(`This shouldn't happen`);
 			}
@@ -839,6 +848,46 @@ let KenKenGUI = (function(){
 			});
 			this.currCage = undefined;
 			removeFromArray(this.cages, this.currCage);
+			render.toggleSolveBtn(false);
+		},
+		solvePuzzle(){
+			function cloner(cages){
+				let clone = [];
+				cages.forEach(cage=>{
+					let {target, cells, op} = cage;
+					let arr = [];
+					cells.forEach(cell=>arr.push(cell));
+					clone.push({
+						target,
+						cells: arr,
+						op,
+					});
+				});
+				return clone;
+			}
+			let cagedCells = this.cagedCells.length;
+			const canSolve = cagedCells === this.size**2;
+			if(canSolve){
+				let {
+					cages,
+					size,
+				} = this;
+				cages = cages.filter(e=> e !== undefined);
+				let clone = cloner(cages);
+				//return {size, cages: clone};
+				let k = new KenKen({size, cages: clone});
+				let sols = k.solve();
+				if(!sols || sols.length === 0){
+					console.log('why is this happening to me.');
+				}
+				this.sols = sols;
+				render.printSol();
+				//globglob = cloner(cages);
+				render.toggleSolveBtn(false);
+				render.toggleResetBtn(true);
+			} else {
+				console.log(`can't be solved. Only ${cagedCells} cells are ready.`)
+			}
 		},
 		setOp(op){
 			if(this.currCage){
@@ -872,36 +921,35 @@ let KenKenGUI = (function(){
 				}
 			}
 		},
-		resetPuzzle(){},
-		solvePuzzle(){
-			function cloner(cages){
-				let clone = [];
-				cages.forEach(cage=>{
-					let {target, cells, op} = cage;
-					let arr = [];
-					cells.forEach(cell=>arr.push(cell));
-					clone.push({
-						target,
-						cells: arr,
-						op,
-					});
-				});
-				return clone;
+		resetPuzzle(){
+			this.size = 0;
+			this.selected = [];
+			this.cages = [];
+			this.cagedCells = [];
+			this.cageNum = []; 
+			this.currOp = '';
+			this.currTarget = '';
+			this.currCage = undefined;
+			this.isContiguous = false;
+			
+			render.resetPuzzle();
+		},
+		
+		loadSample(sample){
+			function triggerSetSize(s){
+				$$('#size-display').text(s)
+				$$('#set-size').click();
 			}
-			let cagedCells = this.cagedCells.length;
-			const canSolve = cagedCells === this.size**2;
-			if(canSolve){
-				let {
-					cages,
-					size,
-				} = this;
-				cages = cages.filter(e=> e !== undefined);
-				let clone = cloner(cages);
-				return {size: this.size, cages: clone};
-				// let k = new KenKen({size, cages});
-				// k.solve();
-			} else {
-				console.log(`can't be solved. Only ${cagedCells} cells are ready.`)
+			let {size, cages} = sample;
+			this.size = size;
+			triggerSetSize(size);
+			for(let cage of cages){
+				let {target, op, cells} = cage;
+				this.currTarget = target;
+				this.currOp = op;
+				this.selected = cells;
+				this.isContiguous = true;
+				this.setCage();
 			}
 		},
 		
@@ -1011,6 +1059,7 @@ let KenKenGUI = (function(){
 					thinBorder('w', elem);
 				}
 			});
+			
 		},
 		uncage(cells){
 			cells.forEach((e,i)=>{
@@ -1040,327 +1089,356 @@ let KenKenGUI = (function(){
 					</div>
 				`);
 			}
-		}
+		},
+		toggleSolveBtn(show){
+			if(show) $$('#solve-puzzle').show();
+			else $$('#solve-puzzle').hide();
+		},
+		toggleResetBtn(show){
+			if(show) $$('#reset-puzzle').show();
+			else $$('#reset-puzzle').hide();
+		},
+		printSol(){
+			let sols = stateMgr.sols[0];
+			for(let i in sols){
+				let sol = sols[i];
+				let cellElemID = `#cell-${i}`;
+				$$(cellElemID).append(`
+					<div class="kk-cell-val">
+						${sol}
+					</div>
+				`);
+				
+			}
+		},
+		resetPuzzle(){
+			$$('#puzzle').empty().hide();
+			$$('#initializer').show();
+			$$('#reset-puzzle').hide();
+		},
 	};
-	
-	function reset(){}
-	
-	return{
-		initGUI(cont){
-			cont.append(`
-				<div id="kk-gui">
-					<style>
-				#kk-gui{
-				  font-family: sans-serif;
+	let thisCont;
+	const initGUI = function(cont){
+		cont.append(`
+			<div id="kk-gui">
+				<style>
+			#kk-gui{
+			  font-family: sans-serif;
+			}
+
+			@media screen and (orientation: landscape) {
+			  #kk-initializer, #kk-puzzle {
+				width: calc(100vh - 100px);
+				height: calc(100vh - 100px);
+				min-width: 300px;
+				min-height: 300px;
+				max-width: 800px;
+				max-height: 800px;
+			  }
+			}
+
+			@media screen and (orientation: portrait) {
+			  #kk-initializer, #kk-puzzle {
+				width: calc(100vw - 100px);
+				max-width: 800px;
+				height: calc(100vw - 100px);
+				max-height: 800px;
+			  }
+			}
+
+			/**********INITIALIZER *********************/
+
+			#kk-initializer{
+			  border: 1px solid black;
+			  display: flex;
+			  flex-direction: column;
+			  justify-content: center;
+			  align-items: center;
+			}
+			  #kk-size-setter-wrap, #kk-sample-loaders{
+				display: flex;
+			  }
+				#kk-size-setter-wrap button,
+				#kk-size-setter-wrap span{
+				  width: 70px;
+				  text-align: center;
+				  font-size: 1rem;
+				  line-height: 1.5;
+				  vertical-align: bottom;
+				  border: 0;
+				}
+				#kk-decr-size{
+				  border-top-left-radius: 20px;
+				  border-bottom-left-radius: 20px;
+				}
+				#kk-incr-size{
+				  border-top-right-radius: 20px;
+				  border-bottom-right-radius: 20px;
+				}
+				#kk-size-setter-wrap #kk-set-size{
+				  width: 140px;
+				  margin-left: 5px;
+				  border-radius: 20px;
+				}
+			  #kk-sample-loaders{
+				margin-top: 50px;
+				flex-direction: column;
+				overflow: hidden;
+			  }
+				#kk-sample-loaders span,
+				#kk-sample-loaders button{
+				  width: 200px;
+				  text-align: center;
+				  height: 50px;
+				  font-size: 1rem;
 				}
 
-				@media screen and (orientation: landscape) {
-				  #kk-initializer, #kk-puzzle {
-					width: calc(100vh - 100px);
-					height: calc(100vh - 100px);
-					min-width: 300px;
-					min-height: 300px;
-					max-width: 800px;
-					max-height: 800px;
-				  }
-				}
-
-				@media screen and (orientation: portrait) {
-				  #kk-initializer, #kk-puzzle {
-					width: calc(100vw - 100px);
-					max-width: 800px;
-					height: calc(100vw - 100px);
-					max-height: 800px;
-				  }
-				}
-
-				/**********INITIALIZER *********************/
-
-				#kk-initializer{
-				  border: 1px solid black;
-				  display: flex;
-				  flex-direction: column;
-				  justify-content: center;
-				  align-items: center;
-				}
-				  #kk-size-setter-wrap, #kk-sample-loaders{
-					display: flex;
-				  }
-					#kk-size-setter-wrap button,
-					#kk-size-setter-wrap span{
-					  width: 70px;
-					  text-align: center;
-					  font-size: 1rem;
-					  line-height: 1.5;
-					  vertical-align: bottom;
-					  border: 0;
-					}
-					#kk-decr-size{
-					  border-top-left-radius: 20px;
-					  border-bottom-left-radius: 20px;
-					}
-					#kk-incr-size{
-					  border-top-right-radius: 20px;
-					  border-bottom-right-radius: 20px;
-					}
-					#kk-size-setter-wrap #kk-set-size{
-					  width: 140px;
-					  margin-left: 5px;
-					  border-radius: 20px;
-					}
-				  #kk-sample-loaders{
-					margin-top: 50px;
-					flex-direction: column;
-					overflow: hidden;
-				  }
-					#kk-sample-loaders span,
-					#kk-sample-loaders button{
-					  width: 200px;
-					  text-align: center;
-					  height: 50px;
-					  font-size: 1rem;
-					}
-
-					#kk-sample-loaders button{
-					  background-color: #dcddde;
-					  border: 0;
-					  margin: 5px;
-					  border-radius: 50px;
-					}
-				/********** PUZZLE *********************/
-				#kk-puzzle{
-				  --heavy-border: 2px solid black;
-				  --kk-light-border-color: gray;
-				  /*
-				  border-bottom: var(--heavy-border);
-				  border-right: var(--heavy-border);
-				  */
-				  display: grid;
-				  grid-template-columns: repeat(4, 1fr);
-				  grid-template-rows: repeat(4, 1fr);
-				  box-sizing: content-box;
-				}
-				  .kk-puzzle-cell{
-					box-sizing: border-box;
-					border-top: 2px solid black;
-					border-left: 2px solid black;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-				  	background-color: gray;
-				  }
-				  .kk-border-top{
-					border-top: 1px solid var(--kk-light-border-color);
-				  }
-				  .kk-border-left{
-					border-left: 1px solid var(--kk-light-border-color);
-				  }
-				  .kk-puzzle-cell.kk-caged{
-				  	background-color: white;
-				  }
-				  .kk-puzzle-cell.kk-selected{
-				  	background-color: #f3f3b3;
-				  }
-					.kk-cage-desc{
-					  position:absolute;
-					  top: 0;
-					  left: 0;
-					  width: 100%;
-					  font-size: 15px;
-					}
-					.kk-cell-val{font-size: 20px;}
-
-					@media (min-width:450px){
-					  .kk-cell-val{font-size: 40px;}
-					}
-					@media (min-width:600px){
-					  .kk-cell-val{font-size: 60px;}
-					  .kk-cage-desc{font-size: 25px;}
-					}
-
-
-				/********** CONTROL *********************/
-				#kk-controls{
-				  display: flex;
-				  justify-content: space-between;
-				  margin-top: 10px;
-				  flex-wrap: wrap;
-				}
-				#kk-controls.center{
-					justify-content: center;
-				}
-				#kk-controls button.toggled{
-				  background-color: gray;
-				  color: white;
-				}
-
-				#kk-controls button.disabled{
-				  background-color: #ffffff;
-				  color: #cccccc;
-				}
-
-				#kk-op-btns, #kk-inputs{
-				  display: flex;
-				}
-				#kk-op-btns button, 
-				#kk-cage-setter,
-				#kk-inputs input{
+				#kk-sample-loaders button{
 				  background-color: #dcddde;
 				  border: 0;
-				  font-size: 1rem;
-				  width: 50px;
-				  height: 50px;
-				  border: 1px solid black;
+				  margin: 5px;
+				  border-radius: 50px;
 				}
-				#kk-op-btns button:not(:last-child){
-				  border-right: 0;
+			/********** PUZZLE *********************/
+			#kk-puzzle{
+			  --heavy-border: 2px solid black;
+			  --kk-light-border-color: gray;
+			  /*
+			  border-bottom: var(--heavy-border);
+			  border-right: var(--heavy-border);
+			  */
+			  display: grid;
+			  grid-template-columns: repeat(4, 1fr);
+			  grid-template-rows: repeat(4, 1fr);
+			  box-sizing: content-box;
+			}
+			  .kk-puzzle-cell{
+				box-sizing: border-box;
+				border-top: 2px solid black;
+				border-left: 2px solid black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			  	background-color: gray;
+			  }
+			  .kk-border-top{
+				border-top: 1px solid var(--kk-light-border-color);
+			  }
+			  .kk-border-left{
+				border-left: 1px solid var(--kk-light-border-color);
+			  }
+			  .kk-puzzle-cell.kk-caged{
+			  	background-color: white;
+			  }
+			  .kk-puzzle-cell.kk-selected{
+			  	background-color: #f3f3b3;
+			  }
+				.kk-cage-desc{
+				  position:absolute;
+				  top: 0;
+				  left: 0;
+				  width: 100%;
+				  font-size: 15px;
 				}
-				#kk-inputs #kk-cage-target{
-				  width: 100px;
-				  background: white;
-				  margin-right: 20px;
-				  border-right: 1px solid black;
-				  text-align: center;
-				  -moz-appearance:textfield;
+				.kk-cell-val{font-size: 20px;}
+
+				@media (min-width:450px){
+				  .kk-cell-val{font-size: 40px;}
+				}
+				@media (min-width:600px){
+				  .kk-cage-desc{font-size: 25px;}
 				}
 
-				#kk-inputs #kk-cancel-btn{
-				  background-color: transparent;
-				  width: 50px;
-				  border: 0;
-				  font-size: 2rem;
-				  line-height: 0;
-				  color: red;
-				}
-				#kk-inputs #kk-cancel-btn.disabled{
-				  color: pink;
-				}
-				#kk-reset-puzzle{
-				  padding: 0 40px;
-				  border: 0;
-				  border-radius: 20px;
-				  font-size: 1rem;
-				}
-					</style>
-					<div id="kk-initializer">
-						<div id="kk-size-setter-wrap">
-							<button id="kk-decr-size">-</button>
-							<span id="kk-size-display">4</span>
-							<button id="kk-incr-size">+</button>
-							<button id="kk-set-size">SET</button>
-						</div>
-						<div id="kk-sample-loaders">
-							<span>Load Samples</span>
-							<button id="kk-sl1">Sample 1</button>
-							<button id="kk-sl2">Sample 2</button>
-							<button id="kk-sl3">Sample 3</button>
-						</div>
+
+			/********** CONTROL *********************/
+			#kk-controls{
+			  display: flex;
+			  justify-content: space-between;
+			  margin-top: 10px;
+			  flex-wrap: wrap;
+			}
+			#kk-controls.center{
+				justify-content: center;
+			}
+			#kk-controls button.toggled{
+			  background-color: gray;
+			  color: white;
+			}
+
+			#kk-controls button.disabled{
+			  background-color: #ffffff;
+			  color: #cccccc;
+			}
+
+			#kk-op-btns, #kk-inputs{
+			  display: flex;
+			}
+			#kk-op-btns button, 
+			#kk-cage-setter,
+			#kk-inputs input{
+			  background-color: #dcddde;
+			  border: 0;
+			  font-size: 1rem;
+			  width: 50px;
+			  height: 50px;
+			  border: 1px solid black;
+			}
+			#kk-op-btns button:not(:last-child){
+			  border-right: 0;
+			}
+			#kk-inputs #kk-cage-target{
+			  width: 100px;
+			  background: white;
+			  margin-right: 20px;
+			  border-right: 1px solid black;
+			  text-align: center;
+			  -moz-appearance:textfield;
+			}
+
+			#kk-inputs #kk-cancel-btn{
+			  background-color: transparent;
+			  width: 50px;
+			  border: 0;
+			  font-size: 2rem;
+			  line-height: 0;
+			  color: red;
+			}
+			#kk-inputs #kk-cancel-btn.disabled{
+			  color: pink;
+			}
+			#kk-reset-puzzle, #kk-solve-puzzle{
+			  padding: 0 40px;
+			  border: 0;
+			  border-radius: 20px;
+			  font-size: 1rem;
+			}
+				</style>
+				<div id="kk-initializer">
+					<div id="kk-size-setter-wrap">
+						<button id="kk-decr-size">-</button>
+						<span id="kk-size-display">4</span>
+						<button id="kk-incr-size">+</button>
+						<button id="kk-set-size">SET</button>
 					</div>
-					<div id="kk-puzzle" style="display: none;">
-						<!--
-						<div class="kk-puzzle-cell">
-							<div class="kk-cage-desc">× 1200</div>
-							<div class="kk-cell-val">3</div>
-						</div>
-						-->
-					</div>
-					<div id="kk-controls" style="display: none;">
-						<span id="kk-op-btns">
-							<button class="kk-op-btn" id="kk-plus-btn">+</button>
-							<button class="kk-op-btn" id="kk-minus-btn">-</button>
-							<button class="kk-op-btn" id="kk-times-btn">×</button>
-							<button class="kk-op-btn" id="kk-divide-btn">÷</button>
-						</span>
-						<span id="kk-inputs">
-							<input type="number" id="kk-cage-target">
-							<button id="kk-cage-setter" class="disabled">SET</button>
-							<button id="kk-cancel-btn" class="disabled">×</button>
-						</span>
-						<button id="kk-reset-puzzle" style="display: none;">RESET PUZZLE</button>
-						<button id="kk-solve-puzzle" style="display: none;">SOLVE PUZZLE</button>
+					<div id="kk-sample-loaders">
+						<span>Load Samples</span>
+						<button id="kk-sl1" class="kk-sample-loader">Sample 1</button>
+						<button id="kk-sl2" class="kk-sample-loader">Sample 2</button>
+						<button id="kk-sl3" class="kk-sample-loader">Sample 3</button>
 					</div>
 				</div>
-			`);
-				
-			$$('#incr-size').click(function(){
-				let currSize = $$('#size-display').text() >> 0;
-				currSize++;
-				currSize = Math.min(currSize, MAX_SIZE);
-				$$('#size-display').text(currSize);
+				<div id="kk-puzzle" style="display: none;">
+					<!--
+					<div class="kk-puzzle-cell">
+						<div class="kk-cage-desc">× 1200</div>
+						<div class="kk-cell-val">3</div>
+					</div>
+					-->
+				</div>
+				<div id="kk-controls" style="display: none;">
+					<span id="kk-op-btns">
+						<button class="kk-op-btn" id="kk-plus-btn">+</button>
+						<button class="kk-op-btn" id="kk-minus-btn">-</button>
+						<button class="kk-op-btn" id="kk-times-btn">×</button>
+						<button class="kk-op-btn" id="kk-divide-btn">÷</button>
+					</span>
+					<span id="kk-inputs">
+						<input type="number" id="kk-cage-target">
+						<button id="kk-cage-setter" class="disabled">SET</button>
+						<button id="kk-cancel-btn" class="disabled">×</button>
+					</span>
+					<button id="kk-reset-puzzle" style="display: none;">RESET PUZZLE</button>
+					<button id="kk-solve-puzzle" style="display: none;">SOLVE PUZZLE</button>
+				</div>
+			</div>
+		`);
+			
+		$$('#incr-size').click(function(){
+			let currSize = $$('#size-display').text() >> 0;
+			currSize++;
+			currSize = Math.min(currSize, MAX_SIZE);
+			$$('#size-display').text(currSize);
+		});
+		$$('#decr-size').click(function(){
+			let currSize = $$('#size-display').text() >> 0;
+			currSize--;
+			currSize = Math.max(currSize, MIN_SIZE);
+			$$('#size-display').text(currSize);
+		});
+		$$('#set-size').click(function(){
+			// Setup puzzle
+			let size = $$('#size-display').text() >> 0;
+			stateMgr.size = size;
+			$$('#puzzle').css({
+				'grid-template-rows' : `repeat(${size}, 1fr)`,
+				'grid-template-columns' : `repeat(${size}, 1fr)`
 			});
-			$$('#decr-size').click(function(){
-				let currSize = $$('#size-display').text() >> 0;
-				currSize--;
-				currSize = Math.max(currSize, MIN_SIZE);
-				$$('#size-display').text(currSize);
+			for(let i = 0; i < size**2; i++){
+				let $cellHTML = $(`
+					<div class="kk-puzzle-cell" id="kk-cell-${i}">
+						<div class="kk-cell-val"></div>
+					</div>
+				`);
+				let lastRowIndices = size ** 2 - size;
+				if(i >= lastRowIndices) $cellHTML.css('border-bottom', 'var(--heavy-border)');
+				if(i%size == size-1) $cellHTML.css('border-right', 'var(--heavy-border)');
+				$$('#puzzle').append($cellHTML);
+			}
+
+			// set the state
+
+			// Hide / show appropriate parts
+			$$('#initializer').hide();
+			$$('#puzzle').show();
+			$$('#controls').show();
+			
+			// Setup button events
+			$$('.puzzle-cell').click(function(){
+				let cellID = $(this).attr('id');
+				let cellNum = cellID.match(/\d+/)[0] >> 0;
+				stateMgr.select(cellNum);
 			});
-			$$('#set-size').click(function(){
-				// Setup puzzle
-				let size = $$('#size-display').text() >> 0;
-				$$('#puzzle').css({
-					'grid-template-rows' : `repeat(${size}, 1fr)`,
-					'grid-template-columns' : `repeat(${size}, 1fr)`
-				});
-				for(let i = 0; i < size**2; i++){
-					let $cellHTML = $(`
-						<div class="kk-puzzle-cell" id="kk-cell-${i}">
-							<div class="kk-cell-val"></div>
-						</div>
-					`);
-					let lastRowIndices = size ** 2 - size;
-					if(i >= lastRowIndices) $cellHTML.css('border-bottom', 'var(--heavy-border)');
-					if(i%size == size-1) $cellHTML.css('border-right', 'var(--heavy-border)');
-					$$('#puzzle').append($cellHTML);
+			$$('.op-btn').click(function(){
+				const isDisabled = $(this).hasClass('disabled');
+				if(!isDisabled){
+					const thisID = $(this).attr('id');
+					const op = thisID === 'kk-plus-btn' ? '+'
+						: thisID === 'kk-minus-btn' ? '-'
+						: thisID === 'kk-times-btn' ? '*'
+						: '/';
+					stateMgr.setOp(op);
 				}
-
-				// set the state
-				stateMgr.size = size;
-
-				// Hide / show appropriate parts
-				$$('#initializer').hide();
-				$$('#puzzle').show();
-				$$('#controls').show();
-				
-				// Setup button events
-				$$('.puzzle-cell').click(function(){
-					let cellID = $(this).attr('id');
-					let cellNum = cellID.match(/\d+/)[0] >> 0;
-					stateMgr.select(cellNum);
-				});
-				$$('.op-btn').click(function(){
-					const isDisabled = $(this).hasClass('disabled');
-					if(!isDisabled){
-						const thisID = $(this).attr('id');
-						const op = thisID === 'kk-plus-btn' ? '+'
-							: thisID === 'kk-minus-btn' ? '-'
-							: thisID === 'kk-times-btn' ? '*'
-							: '/';
-						stateMgr.setOp(op);
-					}
-				});
-				$$('#cancel-btn').click(function(){
-					stateMgr.unsetCage();
-				});
-				$$('#cage-setter').click(function(){
-					const isDisabled = $(this).hasClass('disabled');
-					if(!isDisabled) stateMgr.setCage();
-				});
-				$$('#cage-target').keyup(function(){
-					const val = $(this).val() >> 0;
-					stateMgr.setCageTarget(val);
-				}).change(function(){
-					$(this).trigger('keyup');
-				});
-				
-				$$('#reset-puzzle').click(function(){
-					stateMgr.resetPuzzle();
-				});
-				$$('#solve-puzzle').click(function(){
-					stateMgr.solvePuzzle();
-				});
 			});
-			$(this).closest('.close-popup').click(reset);
-		},
+			$$('#cancel-btn').click(function(){
+				stateMgr.unsetCage();
+			});
+			$$('#cage-setter').click(function(){
+				const isDisabled = $(this).hasClass('disabled');
+				if(!isDisabled) stateMgr.setCage();
+			});
+			$$('#cage-target').keyup(function(){
+				const val = $(this).val() >> 0;
+				stateMgr.setCageTarget(val);
+			}).change(function(){
+				$(this).trigger('keyup');
+			});
+			
+			$$('#solve-puzzle').click(function(){
+				stateMgr.solvePuzzle();
+			});
+			$$('#reset-puzzle').click(function(){
+				stateMgr.resetPuzzle();
+			});
+		});
+		$$('.sample-loader').click(function(){
+			let sampleNum = $(this).attr('id').match(/\d+/)[0] >> 0;
+			sampleNum--;
+			let sample = samples[sampleNum];
+			stateMgr.loadSample(sample);
+		});
+	};
+	return{
+		initGUI,
 		displaySolution(sol){
 			for(let i = 0; i < sol.length; i++){
 				let cell = $('.kk-cell-val')[i];
@@ -1371,25 +1449,8 @@ let KenKenGUI = (function(){
 		solve(){
 			return stateMgr.solvePuzzle();
 		},
-		printState(){
-			let {
-				size,
-				selected,
-				cages,
-				currOp,
-				currTarget,
-				currCage,
-				cagedCells,
-			} = stateMgr;
-			console.log({
-				size,
-				selected,
-				cages,
-				currOp,
-				currTarget,
-				currCage,
-				cagedCells,
-			});
+		getState(){
+			return stateMgr;	
 		},
 	};
 }());
