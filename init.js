@@ -6,7 +6,7 @@
 
 KenKenGUI.initGUI($('#kk-gui-cont'));
 
-// KnightsTourGUI('#knight-gui-cont');
+KnightsTourGUI('#knight-gui-cont');
 
 $(document).ready(function() {
   $('#menu-toggle').click(function() {
@@ -25,6 +25,10 @@ $(document).ready(function() {
     const toLaunch = $(this).data('launch');
     $(toLaunch).removeClass('hidden');
     $('body').addClass('no-scroll');
+    
+    if(!$('.menu').hasClass('hidden')){
+      $('#menu-toggle').click();
+    }
   });
   
   $('.close-popup').click(function() {
