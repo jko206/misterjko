@@ -336,6 +336,7 @@ const Arnum = (function(){
 		}
 	}
 	//API
+	// PRE: no 0 in the addends
 	function add(...addends){
 		for(let i = 0; i < addends.length; i++){
 			let a = addends[i];
@@ -465,6 +466,13 @@ min	    sub	    diff
 	};
 }());
 
+const tester = {
+	isZero(n){
+		//match all digits
+		//match all zeros
+		//if they have the same length, then it's zero
+	},
+}
 
 
 // I can use this in the terminal with: 
