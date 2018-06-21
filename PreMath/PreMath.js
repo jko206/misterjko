@@ -1,50 +1,5 @@
 'use strict';
-/*
-	requires util.js
-	
-	Reason for this library:
-	-let k = 123456789012345678901234567890;
-	 k == parseInt(k) --> false
-	-0.1 + 0.2 == 0.3 --> false
-	-1/3 == 0.3333333333333333 --> true
-	-lack of support for fractions
-	-lack of native support for big numbers or small numbers
-	-The native implementation is for speed, but for most of what I did, 
-	I needed precision more than speed. In fact, speed wasn't even an issue.
-	
 
-	GLOSSARY AND ACRONYMS
-	dec 		: Decimal number, or decimal point, depending on the context
-	splum		: Short for simple number; numbers that need not be represented
-					in string format. Opposite of strum
-	strum		: Short for string number; numbers that must be represented
-					as string in order to retain its precision.
-					e.g. 3.1234567890123456789012345678901234567890
-	arnum		: Short for array number;
-	Denotes		: a dash (-) followed by a letter indicating what type
-					of number strum or splum is:
-					-d: decimal				-n: natural
-					-w: whole				-i: integer
-					-Z:	non-zero integer	-p: prime
-					
-	Decimal debt: When a decimal number gets converted to an int via 
-					moving the decimal places (i.e. multiply by a power of 10), 
-					the number of places it must move back in order for the int
-					to become the original decimal number.
-					e.g. 3.14 -> 314, then decimal debt is -2, because
-					314 * 10^-2 == 3.14
-					
-	Scinot		: Scientific notation (e.g. 1e-14)
-	numer		: Numerator
-	Denom		: Denominator
-	
-	TODO: 
-	-Be able to find BIG prime values more efficiently 
-	-Implement different bases
-	-Implement composite bases
-		-time: 24h60m60s etc)
-		-Traditional measurements, like 1yd = 3ft = 36in etc.
-*/
 
 const PreMath = (function(){
 	// API
@@ -63,7 +18,7 @@ const PreMath = (function(){
 	function lcm(...nums){}
 	
 	//combinatorics
-	function factorial(n, quick){
+	function factorial(n, quick = true){
 		function quickFactorial(n){
 			return n >= 0 ? 1 : n * quickFactorial(n - 1);
 		}
@@ -216,17 +171,26 @@ const PreNum = function(n, base, precision){
 	}
 };
 
+
 /* 
 All numbers that are passed here have the form:
 	{
 		digits: [], // the significands
 		level: n,	// level: 0.001, 0.01, 0.1, 1, 10, 100, etc.
-		positivity: <1 | 0 | -1> //1 for +, 0, and -1 for -.
-		
+		positivity: <1 | 0 | -1> //1 for +, 0, and -1 for 
 	}
 */
 
 const Arnum = (function(){
+	function isZero(n){
+		//match all digits
+		//match all zeros
+		//if they have the same length, then it's zero
+		n += '';
+		let digitsMatch = n.match(/\d/g) || 0;
+		let zerosMatch = n.match(/0/g) || 0;
+		return digitsMatch.length === zerosMatch.length;
+	}
 	
 	//These methods deal strictly with the digits.
 	
@@ -276,7 +240,7 @@ const Arnum = (function(){
 		}
 		//*/
 	}
-	function compress(arnum, digitLimit = 10){
+	function compressor(arnum, digitLimit = 10){
 		for(let i = 0; i < arnum.length; i++){
 			let digit = arnum[i];
 			if(digit >= digitLimit){
@@ -289,20 +253,20 @@ const Arnum = (function(){
 		}
 		return arnum;
 	}
-	function decompress(arnum){}
+	function decompressor(arnum){}
 	function adder(A, B, options = {}){
 		let {compPoint, compTo, compress} = options
 		const COMPRESSION_POINT = compPoint || Math.floor(Number.MAX_SAFE_INTEGER / 10);
 		let isOverCP;
-		let longerNum = A.length > B.length ? A : B
-		for(let i = 0; i < longerNum.length; i++){
+		let runLength = Math.max(A.length, B.length);
+		for(let i = 0; i < runLength; i++){
 			let a = A[i] || 0;
 			let b = B[i] || 0;
 			let sum = a + b;
 			if(sum > COMPRESSION_POINT) isOverCP = true;
 			A[i] = sum;
 		}
-		if(isOverCP || compress) compress(A, compTo);
+		if(isOverCP || compress) compressor(A, compTo);
 		return A;
 	}
 	/* PRE: 
@@ -338,11 +302,20 @@ const Arnum = (function(){
 	//API
 	// PRE: no 0 in the addends
 	function add(...addends){
+		// filter out all the zeros
 		for(let i = 0; i < addends.length; i++){
 			let a = addends[i];
 			if(a.positivity === 0){
 				addends.splice(i, 1);
 				i--;
+			}
+		}
+		addends = addends.filter(e=> e.positivity !== 0);
+		if(addends.length === 0){
+			return {
+				level: 0,
+				digits: [],
+				positivity: 0,
 			}
 		}
 		while(addends.length > 1){
@@ -373,7 +346,7 @@ const Arnum = (function(){
 					newDigits = subtractor(b.digits, a.digits);
 					newPos = bPos;
 				} else {
-					// a + b = a + -a = 0
+					// a + b = a + -a = 0, so don't queue
 					continue;
 				}
 				
@@ -385,7 +358,7 @@ const Arnum = (function(){
 			});
 		}
 		let sum = addends.pop();
-		compress(sum.digits);
+		compressor(sum.digits);
 		groundZero(sum);
 		return sum;
 	}
@@ -452,33 +425,67 @@ min	    sub	    diff
 	function multiply(...nums){}
 	function divide(d, ...divs){}
 	
+	function getArnum(n){
+		n = (n + '').split('');
+		let level = 0;
+		let positivity = 0;
+		if(isZero(n)){
+			return {
+				level,
+				positivity,
+				digits: [],
+			}
+		}
+		if(n[0] === '-'){
+			n.shift();
+			positivity = -1;
+		} else {
+			positivity = 1
+		}
+		n.reverse();
+		if(n.includes('.')){
+			let i = n.indexOf('.');
+			level = -i;
+			n.splice(i, 1);
+		}
+		while(n[0] === '0'){
+			n.shift();
+			level++;
+		}
+		while(n[n.length - 1] === '0'){
+			n.pop();
+		}
+		n = n.map(e=>{
+			return e >> 0;
+		});
+		return {
+			level,
+			positivity,
+			digits: n,
+		}
+	}
+	
+	
 	return {
 		compare,
 		matchLevel,
-		compress, 
-		decompress,
+		compressor, 
+		decompressor,
 		adder,
 		subtractor,
 		divide, 
 		multiply, 
 		subtract, 
 		add, 
+		getArnum,
 	};
 }());
-
-const tester = {
-	isZero(n){
-		//match all digits
-		//match all zeros
-		//if they have the same length, then it's zero
-	},
-}
 
 
 // I can use this in the terminal with: 
 // node path/to/file/someJS.js methodName, 'arg1, arg2, ...'
 // if arg starts with #, its parsed as float.
-(function(){
+/*(function(){
 	try{
 			
 		let [a1, a2, method, args] = process.argv;
@@ -498,59 +505,334 @@ const tester = {
 	} catch(e){
 		// nothing
 	}
-}())
+}())*/
 
-function testNums(config = {}){
-	function randomLevel(){
-		let min = config.randomLevelMin !== undefined 
-			? config.randomLevelMin : DEFAULT.randomLevelRangeMin;
-		let max = config.randomLevelMax !== undefined 
-			? config.randomLevelMax : DEFAULT.randomLevelRangeMax;
-		let range = max - min + 1;
-		let random = Math.floor(Math.random() * range);
-		random += min;
-		return random;
-	}
-	function randomDigits(maxLength, maxDigit){
-		let digits = [];
-		while(maxLength--){
-			let r = Math.floor(Math.random() * maxDigit);
-			digits.push(r);
+function ArnumToString(arnum){
+	let {digits, level, positivity} = arnum;
+	digits = [...digits];
+	if(positivity === 0){
+		return 0;
+    }
+	if(level < 0){
+		let dp = -level;
+		digits.splice(dp, 0, '.');
+    }
+	while(level > 0){
+		digits.unshift(0);
+    }
+	digits = digits.reverse().join('');
+	const sign = positivity === -1 ? '-' : '';
+	return sign + digits;
+}
+
+let handBrake = function(breakAt = 1000){
+    let count = 0;
+    return function(){
+        count++;
+        return count < breakAt;
+    };
+};
+
+// let temp;
+
+const Precision = (function(){
+	const ArrayOps = {
+		wholeToArnum(n){
+			return n.split('').reverse().map(e=>e>>0);
+		},
+		decToArnum(n){
+			//return with level	
+			n = n.split('').reverse();
+			let decLength = n.indexOf('.');
+			n.splice(decLength, 1);
+			n = n.map(e=>e>>0);
+			while(n[n.length - 1] === 0) n.pop();
+			let denom = [1];
+			let brake = handBrake(20);
+			let loopCount = decLength;
+			while(loopCount-- && brake()){
+				denom.unshift(0);
+			}
+			return {numer: n, denom, decLength};
+		},
+		repDecToArnum(n, precedingDigits = 0){
+			let numer = this.wholeToArnum(n);
+			let denom = [];
+			let ninesCount = numer.length;
+			let brake = handBrake(20);
+			while(ninesCount-- && brake()){
+				denom.unshift(9);
+			}
+			brake = handBrake(200);
+			while(precedingDigits-- && brake()){
+				denom.unshift(0);
+			}
+			return {numer, denom};
+		},
+		
+		add(...nums){
+		    nums = nums.filter(e=>{
+		       e = e.join('');
+		       return !is.zero(e);
+		    });
+	        if(nums.length === 0) return [0];
+	        
+			function compressor(arnum){
+				compress = false;
+				for(let i = 0; i < arnum.length; i++){
+					let curr = arnum[i] || 0;
+					if(curr >= 10){
+						let next = arnum[i+1] || 0;
+						next += drop(curr/10);
+						curr %= 10;
+						arnum[i] = curr;
+						arnum[i+1] = next;
+					}
+					
+				}
+			}
+			let compress = false;
+			let drop = Math.floor;
+			let COMP_POINT = drop(Number.MAX_SAFE_INTEGER / 100);
+	        let sum = nums.shift();
+		    while(nums.length > 0){
+		        let N = nums.shift();
+		        N.forEach((e,i)=>{
+		        	let s = sum[i] || 0;
+		        	let temp = s + e;
+		        	if(temp > COMP_POINT) compress = true;
+		        	sum[i] = temp;
+		        });
+		        if(compress) compressor(sum);
+		    }
+		    compressor(sum);
+		    return sum;
+		},
+		subtract(minuend, ...subtrahends){
+			let sub = this.add(...subtrahends);
+			minuend.forEach((e,i,arr)=>{
+				let s = sub[i] || 0;
+				let diff = e - s;
+				if(diff < 0){
+					diff += 10;
+					arr[i+1]--;
+				}
+				arr[i] = diff;
+			});
+			let lastDigit = minuend[minuend.length - 1];
+			if(lastDigit < 0 || isNaN(lastDigit)) throw new Error('Minuend < subtrahend(s)');
+			while(lastDigit === 0){
+				minuend.pop();
+				lastDigit = minuend[minuend.length - 1];
+			}
+			return minuend;
+		},
+		multiply(...nums){
+			while(nums.length > 1){
+				let A = nums.shift();
+				let B = nums.shift();
+				let aNum = A.join('');
+				let bNum = B.join('');
+				if(is.zero(aNum) || is.zero(bNum)) return [0];
+				let toSum = [];
+				let multiplesOfB = [];
+				for(let i = 0; i < A.length; i++){
+					let a = A[i];
+					let prod = [];
+					for(let j = 0; j < i; j++) prod.push(0);
+					
+					let multB = multiplesOfB[a];
+					if(multB) prod.push(...multB);
+					else {
+						let temp = [];
+						for(let j = 0; j < B.length; j++){
+							let b = B[j];
+							temp.push(a * b);
+						}
+						multiplesOfB[a] = [...temp];
+						prod.push(...temp);
+					}
+					toSum.push(prod);
+				}
+				toSum = this.add(...toSum);
+				nums.push(toSum);
+			}
+			return nums.pop();
+		},
+		divide(precision = 100, dividend, ...divisors){
+			let divisor = this.multiply(...divisors);
+			dividend.reverse();
+			divisor.reverse();
+			
+			// do stuff here
 		}
-		return digits;
-	}
-	// digits, maxPerDigit, neg/pos/zero, levels, length
-	// let {numOfDigits, digitMax, positivity, level, randomLevel} = config;
-	let DEFAULT = {
-		numOfDigits : 4,
-		level: 0,
-		positivity: 1,
-		digitMax: 10,
-		randomLevelRangeMin: -3,
-		randomLevelRangeMax: 3,
-	}
-	let numOfDigits = config.numOfDigits || DEFAULT.numOfDigits;
-	let maxDigit = config.digitMax || DEFAULT.digitMax;
-	let level = config.randomLevel ? randomLevel() 
-		: config.level !== undefined ? config.level 
-		: DEFAULT.level;
-	let positivity = config.positivity 
-		|| (Math.floor(Math.random() * 2) == 1 ? 1 : -1);
-	let digits = randomDigits(numOfDigits, maxDigit);
-	return {
-		level,
-		digits, 
-		positivity,
-	}
+	};
 	
-}
-
-function conductTest(config1, config2, op){
-	let n1 = testNums(config1);
-	let n2 = testNums(config2);
-	console.log('n1: ' + JSON.stringify(n1));
-	console.log('n2: ' + JSON.stringify(n2));
+	// temp = ArrayOps;
 	
-	Arnum[op](n1, n2);
-	console.log('n1: ' + JSON.stringify(n1));
-}
+	const is = {
+		int(n){},
+		Arnum(n){},
+		Number(n){},
+		
+		// test strings
+		mixedFrac(n){
+			return /^\d+\s\d+\s?\/\s?\d+$/.test(n);
+		},
+		frac(n){
+			return /^\d+\s?\/\s?\d+$/.test(n);
+		},
+		repeatingDecimal(n){
+			return /^\d+\.\d+\.{3}\d+$/.test(n);
+		},
+		decimal(n){
+			return /^\d*\.\d+$/.test(n);
+		},
+		wholeNum(n){
+			return /^\d+$/.test(n);
+		},
+		zero(n){
+			if(n === '') return true;
+			let digits = n.match(/\d/g);
+			let zeros = n.match(/0/g);
+			return zeros && digits.length === zeros.length;
+		},
+		negative(n){
+			return n[0] === '-';
+		},
+	};
+	//////////////
+	let _P = {};
+	// Math
+	_P.evalulate = function(){};
+	_P.primeFactors = function(){};
+	_P.factors = function(){};
+	_P.gcd = function(){};
+	_P.gcf = function(){};
+	_P.lcm = function(){};
+	
+	_P.factorial = function(n, quick){
+		function quickFactorial(n){
+			return n <= 1 ? 1 : n * quickFactorial(n - 1);
+		}
+		let temp = quickFactorial(n);
+		if(quick || Number.isSafeInteger(temp)) return temp;
+	};
+	_P.combination = function(n){};
+	_P.permutation = function(n){};
+	
+	//////////////
+	const _Number = function(n, base){
+		/*
+			Acronyms: 
+				W = Whole
+				N = Numerator
+				D = Denominator
+			Valid formats (W: integer, N: Whole, D: Natural): 
+			- W N / D, 
+			- N / D
+			- W
+			- Decimal
+			- Repeating Decimal
+		*/
+		function processInput(n){
+			
+			let parts;
+			let numer, denom, positivity;
+			if(is.negative(n)){
+				positivity = -1;
+				n = n.substr(1);
+			} else {
+				positivity = 1;
+			}
+			
+			if(is.zero(n)){
+				numer = [0], denom = [1], positivity = 0;
+			} else if(is.mixedFrac(n)){
+				parts = n.match(/\d+/g).map(function(e){
+					return ArrayOps.wholeToArnum(n);
+				});
+				let w = parts[0], 
+					n = parts[1],
+					d = parts[2];
+				let n1 = ArrayOps.multiply(w, d);
+				numer = ArrayOps.add(n1, n);
+				denom = d;
+			} else if(is.frac(n)){
+				parts = n.match(/d+/g).map(function(e){
+					return ArrayOps.wholeToArnum(e);	
+				});
+				numer = parts[0];
+				denom = parts[1];
+			} else if(is.repeatingDecimal(n)){
+				let temp = n.split('...');
+				let dec = ArrayOps.decToArnum(temp[0]);
+				
+				let decLength = dec.decLength;
+				let repDec = ArrayOps.repDecToArnum(temp[1], decLength);
+				
+				let n1 = dec.numer;
+				let d1 = dec.denom;
+				let n2 = repDec.numer;
+				let d2 = repDec.denom;
+				n1 = ArrayOps.multiply(n1, d2);
+				n2 = ArrayOps.multiply(n2, d1);
+				numer = ArrayOps.add(n1, n2);
+				denom = ArrayOps.multiply(d1, d2);
+			} else if(is.decimal(n)){
+				n = ArrayOps.decToArnum(n);
+				numer = n.numer;
+				denom = n.denom;
+			} else if(is.wholeNum(n)){
+				numer = ArrayOps.wholeToArnum(n);
+				denom = [1];
+			} else {
+				throw new Error(`${n} is not a valid form of input.`);
+			}
+			return {numer, denom, positivity};
+		}
+		
+		const isInstance = this instanceof _Number;
+		if(!isInstance) throw new Error('Number must be called with `new` keyword.');
+		this.base = base || 10;
+		n += '';
+		n.trim();
+		let {numer, denom, positivity} = processInput(n);
+		this.numer = numer;
+		this.denom = denom;
+		this.positivity = positivity;
+	};
+	_P.Number = _Number;
+	_Number.prototype.toString = function(format){
+		return this.n + ', ' + this.base;
+	};
+	_Number.prototype.valueOf = function(){};
+	
+	/*
+		format:
+			- 0 -> reduce fraction (default)
+			- 1 -> mixed fraction
+			- 2 -> decimal fraction (denom is power of 10);
+		returns:
+			{numer, denom, positivity}
+	*/
+	_Number.prototype.getFrac = function(format){};
+	
+	
+	
+	_Number.prototype.isEqual = function(n){};
+	_Number.prototype.isGT = function(n){};
+	_Number.prototype.isGTE = function(n){};
+	_Number.prototype.isLT = function(n){};
+	_Number.prototype.isLTE = function(n){};
+	
+	_Number.prototype.isInt = function(){};
+	_Number.prototype.isDec = function(){};
+	
+	//Later...
+	_Number.prototype.changeBase = function(b){}
+	
+	//////////////
+	
+	return _P;
+}());
