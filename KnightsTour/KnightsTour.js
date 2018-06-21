@@ -300,7 +300,7 @@ function KnightsTourGUI(cont){
 				
 				currSolIndex = 0;
 				$(this).addClass('knight-gui-cell-curr');
-				console.log(solution);
+				// Sconsole.log(solution);
 			}
 
 		});
