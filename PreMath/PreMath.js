@@ -1,54 +1,5 @@
 'use strict';
 
-
-const PreMath = (function(){
-	// API
-	
-	// Evaluate an expression
-	function evaluate(expression){
-		
-	}
-	
-	// Prime Numbers / factors
-	function isPrime(n){}
-	function primeFactorsOf(n, getUnique){}
-	function factorsOf(n){}
-	function gcd(...nums){}
-	function gcf(...nums){}
-	function lcm(...nums){}
-	
-	//combinatorics
-	function factorial(n, quick = true){
-		function quickFactorial(n){
-			return n >= 0 ? 1 : n * quickFactorial(n - 1);
-		}
-		if(quick){
-			if(n < 0) return;
-			return quickFactorial(n);
-		} else {
-			
-		}
-	}
-	function combination(n, r){}
-	function permutation(n, r){}
-	
-	
-	// Numbers stuff
-	function getSignificand(n, getDecLevel){}
-	
-	
-	//
-	
-	// Help
-	function help(topic){}
-	
-	return {
-		eval: evaluate,
-		isPrime,
-		help,
-	};
-}());
-
 const PreNum = function(n, base, precision){
 	function getPreNum(n){
 		if(n instanceof PreNum) return n;
@@ -65,8 +16,6 @@ const PreNum = function(n, base, precision){
 		// both are arnum
 		this.numer; 
 		this.denom;
-		
-		
 	})();
 	
 	this.isEqualTo = function(n){
@@ -481,32 +430,6 @@ min	    sub	    diff
 	};
 }());
 
-
-// I can use this in the terminal with: 
-// node path/to/file/someJS.js methodName, 'arg1, arg2, ...'
-// if arg starts with #, its parsed as float.
-/*(function(){
-	try{
-			
-		let [a1, a2, method, args] = process.argv;
-		if(method){
-			args = args.split(' ');
-			args.forEach(function(e,i,arr){
-				const startsWithHash = e[0] === '#'; 
-				if(startsWithHash){
-					e = e.substr(1);
-					e = parseFloat(e);
-					arr[i] = e;
-				}
-			});
-			let result = PreMath[method](...args);
-			console.log(result);
-		}
-	} catch(e){
-		// nothing
-	}
-}())*/
-
 function ArnumToString(arnum){
 	let {digits, level, positivity} = arnum;
 	digits = [...digits];
@@ -533,10 +456,23 @@ let handBrake = function(breakAt = 1000){
     };
 };
 
-// let temp;
+let tester;
 
 const Precision = (function(){
+	// Internal functions and states
+	const MS_INT = Number.MAX_SAFE_INTEGER;
+	const config = {
+		COMPRESSION_POINT : 10,
+		MAX_COMPRESSION_POINT : 10,
+		
+		INITIAL_MAX_PRIME : Math.floor(MS_INT**0.3),
+		MAX_PRIME_SCALE_UP_BY: 10,
+	};
 	const ArrayOps = {
+		// compress / decompress related
+		compressor(num){},
+		decompressor(num){},
+		
 		wholeToArnum(n){
 			return n.split('').reverse().map(e=>e>>0);
 		},
@@ -593,7 +529,7 @@ const Precision = (function(){
 			}
 			let compress = false;
 			let drop = Math.floor;
-			let COMP_POINT = drop(Number.MAX_SAFE_INTEGER / 100);
+			let COMP_POINT = drop(MS_INT / 100);
 	        let sum = nums.shift();
 		    while(nums.length > 0){
 		        let N = nums.shift();
@@ -667,29 +603,164 @@ const Precision = (function(){
 			// do stuff here
 		}
 	};
+	const CommonFinderOps = {
+		euclidean(a, b){
+			if(a === 0) return b;
+			if(b === 0) return a;
+			
+			let min = a < b ? a : b;
+			let max = a > b ? a : b;
+			max %= min;
+			return this.euclidean(min, max);
+		},
+		filter(nums){
+			nums = nums.filter(e=>{
+				if(e !== parseInt(e)) throw new Error(`${e} is not an integer`);
+				return e !== 0 && e !== 1 && e !== -1;
+			}).map(e => e < 0 ? -e : e);
+			return nums;
+		}
+	};
+	const PasTriOps = {};
 	
-	// temp = ArrayOps;
 	
+	const FactorialOps = (function(){
+		function getQueue(from, to = 1){
+			let queue = [];
+			while(from > to){
+				queue.push(from--);
+			}
+			return queue;
+		}
+		function primeFactorize(nums){
+			// index-> prime factor 
+			// value-> number of that prime factor
+			let pfs = []; //prime factors
+			while(nums.length){
+				let n = nums.shift();
+				if(n === 1) continue;
+				let pf = _P.primeFactors(n);
+				pf.forEach(e=>{
+					let count = pfs[e] || 0;
+					count++;
+					pfs[e] = count;
+				});
+			}
+			return pfs;
+		}
+		function reduceToMainNums(main, subtractor){
+			let factors = []; // the product all its elem. is the solution
+			main.forEach((e,i,arr)=>{
+				let thisCount = e;
+				let reduceBy = subtractor[i] || 0;
+				thisCount -= reduceBy;
+				while(thisCount--) factors.push(i);
+			});
+			return factors;
+		}
+		function condense(nums){
+			let condensed = []; 
+			let curr = 1;
+			while(nums.length){
+				let num = nums.shift();
+				let product = curr * num;
+				if(Number.isSafeInteger(product)){
+					curr = product;
+				} else {
+					condensed.push(curr);
+					curr = num;
+				}
+			}
+			condensed.push(curr);
+			return condensed;
+		}
+		
+		return function(n, r, n_r, options){
+			/*						n!		<----- top num
+				combo(n, r) = --------------
+								n! * (n-r)! <----- bottom num
+				combo(n, r) === combo(n, n-r), hence the following:
+			*/
+			let topNums = getQueue(n, r);
+			let botNums = getQueue(n_r);
+			
+			let topNumsPF = primeFactorize(topNums);
+			let botNumsPF = primeFactorize(botNums);
+			let mainNums = reduceToMainNums(topNumsPF, botNumsPF);
+			mainNums.sort((a,b)=>a-b);
+			mainNums = condense(mainNums);
+			mainNums = mainNums.map(num=>{
+				return (num+'').split('').reverse().map(n=> (n>>>0));
+			});
+			while(mainNums.length > 1){
+				let a = mainNums.shift();
+				let b = mainNums.shift();
+				let product = ArrayOps.multiply(a, b);
+				mainNums.push(product);
+			}
+			let result = mainNums.shift();
+			if(options && options.getArray) return result;
+			return result.reverse().join('');
+		}
+	}());
+	const NumberOps = {
+		findRepDec(){
+			
+		}
+	};
+	const PrimeOps = {
+		primes : [],
+		max_prime : 2,
+		findPrimes(limit){
+			function processInput(num){
+				if(!Number.isSafeInteger(num)){
+					throw new Error('Prime number must be less than MS_INT');
+				}
+				if(num < 2){
+					throw new Error('Prime number must be an integer greater than 2.');
+				}
+				return num;
+			}
+			if(limit <= PrimeOps.max_prime) return;
+			limit = processInput(limit);
+			let primes = [];
+			let marker = [];
+			for(let i = 2; i <= limit; i++){
+				if(marker[i] === undefined){
+					primes.push(i);	
+					markComposites: for(let j = 2; ;j++){
+						let curr = i * j;
+						if(curr > limit) break markComposites;
+						else marker[curr] = false;
+					}
+				}
+			}
+			PrimeOps.primes = primes;
+			PrimeOps.max_prime = primes[primes.length - 1];
+			return primes;
+		},
+	};
 	const is = {
-		int(n){},
 		Arnum(n){},
-		Number(n){},
+		Number(n){
+			return n instanceof _Number;
+		},
 		
 		// test strings
 		mixedFrac(n){
-			return /^\d+\s\d+\s?\/\s?\d+$/.test(n);
+			return /^\d+\s\d+\s?\/\s?\d+$/.test(n+'');
 		},
 		frac(n){
-			return /^\d+\s?\/\s?\d+$/.test(n);
+			return /^\d+\s?\/\s?\d+$/.test(n+'');
 		},
 		repeatingDecimal(n){
-			return /^\d+\.\d+\.{3}\d+$/.test(n);
+			return /^\d+\.\d+\.{3}\d+$/.test(n+'');
 		},
 		decimal(n){
-			return /^\d*\.\d+$/.test(n);
+			return /^\d*\.\d+$/.test(n+'');
 		},
 		wholeNum(n){
-			return /^\d+$/.test(n);
+			return /^\d+$/.test(n+'');
 		},
 		zero(n){
 			if(n === '') return true;
@@ -700,26 +771,129 @@ const Precision = (function(){
 		negative(n){
 			return n[0] === '-';
 		},
+		integer(n){
+			n += '';
+			if(this.negative(n)) n = n.substr(1);
+			let isW = this.wholeNum(n);
+			let isZ = this.zero(n);
+			return isW || isZ;
+		},
+		safeInt(n){
+			return Number.isSafeInteger(n);
+		},
+		prime(n){
+			return PrimeOps.primes.includes(n);
+		}
 	};
+	
+	// tester = FactorialOps2;
+	
 	//////////////
 	let _P = {};
-	// Math
-	_P.evalulate = function(){};
-	_P.primeFactors = function(){};
-	_P.factors = function(){};
-	_P.gcd = function(){};
-	_P.gcf = function(){};
-	_P.lcm = function(){};
-	
-	_P.factorial = function(n, quick){
-		function quickFactorial(n){
-			return n <= 1 ? 1 : n * quickFactorial(n - 1);
+	/*********************** Math ***********************/
+	// Prime Number related
+	_P.primeFactors = function(num){
+		let origNum = num;
+		let pf = [];
+		let primes = PrimeOps.primes;
+		let primeIdx = 0;
+		let prime = primes[primeIdx];
+		while(!primes.includes(num)){
+			let quotient = num / prime;
+			if(is.integer(quotient)){
+				num = quotient;
+				pf.push(prime);
+			} else {
+				primeIdx++;
+				if(primeIdx > primes.length){
+					let scale = config.MAX_PRIME_SCALE_UP_BY;
+					let newMax = PrimeOps.max_prime * scale;
+					if(!is.safeInt(newMax)){
+						throw new Error(`${origNum} is too big to find the prime factors of precisely.`);
+					}
+					PrimeOps.findPrimes(newMax);
+					primes = PrimeOps.primes;
+				}
+				prime = primes[primeIdx];
+			}
 		}
-		let temp = quickFactorial(n);
-		if(quick || Number.isSafeInteger(temp)) return temp;
+		pf.push(num);
+		return pf;
 	};
-	_P.combination = function(n){};
-	_P.permutation = function(n){};
+	_P.getPrimeNumbers = function(a, b){
+		let {primes} = PrimeOps;
+		if(a !== undefined && b !== undefined ){
+			// a is min, b is max;
+			// if b > currMax, make more priems
+			primes = primes.filter(e=> (e >=a) && (e <=b));
+			return primes;
+		} else if(a !== undefined){
+			// a is max;
+			if(a > PrimeOps.max_prime) PrimeOps.findPrimes(a);
+			primes = primes.filter(e=> e <=a);
+			return primes;
+		} else {
+			return [...primes];
+		}
+	};
+	_P.factors = function(){};
+	_P.isPrime = function(num){
+		return is.prime(num);
+	};
+	
+	_P.gcd = function(...nums){
+		_P.gcf(...nums);
+	};
+	_P.gcf = function(...nums){
+		nums = CommonFinderOps.filter(nums);
+		while(nums.length > 1){
+			let a = nums.shift();
+			let b = nums.shift();
+			let g = CommonFinderOps.euclidean(a, b);
+			nums.push(g);
+		}
+		return nums[0];
+	};
+	_P.lcm = function(...nums){
+		nums = CommonFinderOps.filter(nums);
+		while(nums.length > 1){
+			let a = nums.shift();
+			let b = nums.shift();
+			let g = CommonFinderOps.euclidean(a,b);
+			let l = a / g * b;
+			nums.push(l);
+		}
+		return nums.shift();
+	};
+	
+	_P.factorial = function(num, options = {}){
+        num = parseInt(num);
+        num = num < 0 ? -num : num;
+        return FactorialOps(num, 1, 1, options);
+	};
+	_P.combination = function(n, r, options = {}){
+        n = parseInt(n);
+        r = parseInt(r);
+	    let temp = n - r;
+	    let n_r;
+	    if(temp > r){
+	    	n_r = r;
+	    	r = temp;
+	    } else {
+	    	n_r = temp;
+	    }
+	    
+		return FactorialOps(n, r, n_r, options);
+	};
+	_P.permutation = function(n, r, options = {}){
+        n = parseInt(n);
+        r = parseInt(r);
+	    return FactorialOps(n, n-r, 1, options);
+	};
+	
+	///////////////////////////////////
+	
+	// _P.evalulate = function(){};
 	
 	//////////////
 	const _Number = function(n, base){
@@ -735,22 +909,21 @@ const Precision = (function(){
 			- Decimal
 			- Repeating Decimal
 		*/
-		function processInput(n){
-			
+		function processInput(num){
 			let parts;
 			let numer, denom, positivity;
-			if(is.negative(n)){
+			if(is.negative(num)){
 				positivity = -1;
-				n = n.substr(1);
+				num = num.substr(1);
 			} else {
 				positivity = 1;
 			}
-			
-			if(is.zero(n)){
+			if(is.zero(num)){
 				numer = [0], denom = [1], positivity = 0;
-			} else if(is.mixedFrac(n)){
-				parts = n.match(/\d+/g).map(function(e){
-					return ArrayOps.wholeToArnum(n);
+			} else if(is.mixedFrac(num)){
+				parts = num.match(/\d+/g)
+				parts = parts.map(function(e){
+					return ArrayOps.wholeToArnum(e);
 				});
 				let w = parts[0], 
 					n = parts[1],
@@ -758,14 +931,14 @@ const Precision = (function(){
 				let n1 = ArrayOps.multiply(w, d);
 				numer = ArrayOps.add(n1, n);
 				denom = d;
-			} else if(is.frac(n)){
-				parts = n.match(/d+/g).map(function(e){
+			} else if(is.frac(num)){
+				parts = num.match(/\d+/g).map(function(e){
 					return ArrayOps.wholeToArnum(e);	
 				});
 				numer = parts[0];
 				denom = parts[1];
-			} else if(is.repeatingDecimal(n)){
-				let temp = n.split('...');
+			} else if(is.repeatingDecimal(num)){
+				let temp = num.split('...');
 				let dec = ArrayOps.decToArnum(temp[0]);
 				
 				let decLength = dec.decLength;
@@ -779,15 +952,15 @@ const Precision = (function(){
 				n2 = ArrayOps.multiply(n2, d1);
 				numer = ArrayOps.add(n1, n2);
 				denom = ArrayOps.multiply(d1, d2);
-			} else if(is.decimal(n)){
-				n = ArrayOps.decToArnum(n);
-				numer = n.numer;
-				denom = n.denom;
-			} else if(is.wholeNum(n)){
-				numer = ArrayOps.wholeToArnum(n);
+			} else if(is.decimal(num)){
+				num = ArrayOps.decToArnum(num);
+				numer = num.numer;
+				denom = num.denom;
+			} else if(is.wholeNum(num)){
+				numer = ArrayOps.wholeToArnum(num);
 				denom = [1];
 			} else {
-				throw new Error(`${n} is not a valid form of input.`);
+				throw new Error(`${num} is not a valid form of input.`);
 			}
 			return {numer, denom, positivity};
 		}
@@ -802,9 +975,13 @@ const Precision = (function(){
 		this.denom = denom;
 		this.positivity = positivity;
 	};
-	_P.Number = _Number;
-	_Number.prototype.toString = function(format){
-		return this.n + ', ' + this.base;
+	/*
+		options:
+		-precision: how many decimals digits to display
+		-showRepDec: show repeating decimals following ...
+	*/
+	_Number.prototype.toString = function(options){
+		if(!options) return this.valueOf() + '';
 	};
 	_Number.prototype.valueOf = function(){};
 	
@@ -817,22 +994,57 @@ const Precision = (function(){
 			{numer, denom, positivity}
 	*/
 	_Number.prototype.getFrac = function(format){};
+	_Number.prototype.isEqual = function(num){};
+	_Number.prototype.isGT = function(num){
+		if(is.Number(num)) num = new _Number(num);
+	};
+	_Number.prototype.isGTE = function(num){};
+	_Number.prototype.isLT = function(num){};
+	_Number.prototype.isLTE = function(num){};
 	
+	_Number.prototype.isInt = function(){
+		let d = this.denom;
+		return d.length === 1 && d[0] === 1;
+	};
+	_Number.prototype.isDec = function(){
+		return !this.isInt();
+	};
+	_Number.prototype.isRepDec = function(){
+	    return !this.isTermDec();
+	};
+	_Number.prototype.isTermDec = function(){
+	    if(this.isInt()) return true;
+	    
+	    // prime factors of denom consists only of 2 or 5
+	    
+	};
 	
+	_Number.prototype.plus = function(){};
+	_Number.prototype.minus = function(){};
+	_Number.prototype.times = function(){};
+	_Number.prototype.divBy = function(){};
 	
-	_Number.prototype.isEqual = function(n){};
-	_Number.prototype.isGT = function(n){};
-	_Number.prototype.isGTE = function(n){};
-	_Number.prototype.isLT = function(n){};
-	_Number.prototype.isLTE = function(n){};
+	_Number.prototype.getNumerator = function(){};
+	_Number.prototype.getDenominator = function(){};
 	
-	_Number.prototype.isInt = function(){};
-	_Number.prototype.isDec = function(){};
+	_Number.prototype.powerOf = function(){};
+	_Number.prototype.inverse = function(){
+		this.powerOf(-1);
+	};
+	_Number.prototype.nthRoot = function(n){
+		this.powerOf(`1 / ${n}`);
+	};
 	
 	//Later...
-	_Number.prototype.changeBase = function(b){}
+	//_Number.prototype.changeBase = function(b){}
 	
-	//////////////
+	//_P.pascalsTriangle = function(){/*Return pascal's triangle to a certain row*/};
+	_P.Number = _Number;
+	
+	////////////// Initialize
+	
+	PrimeOps.findPrimes(config.INITIAL_MAX_PRIME);
+	
 	
 	return _P;
 }());
