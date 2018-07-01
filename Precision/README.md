@@ -42,7 +42,7 @@ As of version 1, math operation only work on non scinot splums.
 
 |    Use                        | Arguments         |       Returns     |
 |-------------------------------|-------------------|-------------------|
-| ```P__.primeFactorize(n)```   | ```n```: splun-n  | Array of splum-n  |
+| ```P__.primeFactorize(n)```   | ```n```: splum-n  | Array of splum-n  |
 
 Given an integer, the method returns an array of its prime factors.
 
@@ -230,10 +230,10 @@ Returns the decimal value of the number. It is the default value used when doing
 native JavaScript math.
 ``` JavaScript
 let n = new Precision.Number('2 1/2');
-n + 0.5 == 3 // true
+n + 0.5 === 3   // true
+n * 2 === 5     // true
 ```
 
-```valueOf()``` 
 
 #### Precision.Number.toString()
 
@@ -300,6 +300,7 @@ capture certain ideas and concepts that are used repeatedly.
 A denote is a letter indicating what kind of strum, splum, or arnum is accepted by a method. 
 
 Format: ```[strum|splum|arnum][(-letter)]```
+
 | Letter	| Definition        |
 |-----------|-------------------|
 | d			| Decimal number    |		

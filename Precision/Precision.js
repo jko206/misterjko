@@ -937,7 +937,7 @@ const Precision = (function(){
 		// 	// need to work on this...
 		// } else 
 		if(getFrac){
-			let {w, n, d} = this.getFrac({getMixedNumber: true});
+			let {w, n, d} = this.getFrac({getMixedNumber});
 			w = w === '0' ? '' : w + ' ';
 			let fracStr = `${w}${n} / ${d}`;
 			return sign + fracStr;
@@ -949,11 +949,8 @@ const Precision = (function(){
 		}
 		return this.valueOf() + '';
 	};
-	_Number.prototype.valueOf = function(options = {}){
-		let {
-			precision,
-		} = options;
-		precision = precision || 50;
+	_Number.prototype.valueOf = function(){
+		let precision = 50;
 		let numer = [...this.numer];
 		let denom = [...this.denom];
 		let q = ArrayOps.divide(numer, denom, {precision});
