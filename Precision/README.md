@@ -232,7 +232,8 @@ native JavaScript math.
 let n = new Precision.Number('2 1/2');
 n + 0.5 == 3 // true
 ```
-```valueOf
+
+```valueOf()``` 
 
 #### Precision.Number.toString()
 
