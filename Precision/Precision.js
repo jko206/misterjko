@@ -1,3 +1,5 @@
+// v.0.9
+
 'use strict';
 
 let handBrake = function(breakAt = 1000){
@@ -626,7 +628,7 @@ const Precision = (function(){
 			return pf;	
 		},
 	};
-	tester = {PrimeOps, config};
+	
 	const is = {
 		Arnum(n){},
 		Number(n){
@@ -679,10 +681,10 @@ const Precision = (function(){
 			return PrimeOps.primes.includes(n);
 		},
 		scinot(n){
-			return /^\d+(\.\d+)?(\.{3}\d+)?(E|e)(\+|\-)\d+$/.test('' + n);
+			return /^\d+(\.\d+)?(\.{3}\d+)?(E|e)(\+|\-)?\d+$/.test('' + n);
 		},
 	};
-	
+	tester = is;
 	let P__ = {};
 	/*********************** Math ***********************/
 	// Prime Number related
@@ -690,7 +692,7 @@ const Precision = (function(){
 		return PrimeOps.primeFactorize(num);
 	};
 	P__.getPrimeNumbers = function(a, b){
-		PrimeOps.getPrimeNumbers(a,b);
+		return PrimeOps.getPrimeNumbers(a,b);
 	};
 	P__.factors = function(num){
 		let factors = [1];
@@ -909,16 +911,17 @@ const Precision = (function(){
 			this.denom = [...num.denom];
 			this.positivity = num.positivity;
 			this.base = num.base;
+		} else {
+			this.base = base || 10;
+			num += '';
+			num.trim();
+			let {numer, denom, positivity} = processInput(num);
+			let {n, d} = ArrayOps.reduce(numer, denom);
+			
+			this.numer = n;
+			this.denom = d;
+			this.positivity = positivity;
 		}
-		this.base = base || 10;
-		num += '';
-		num.trim();
-		let {numer, denom, positivity} = processInput(num);
-		let {n, d} = ArrayOps.reduce(numer, denom);
-		
-		this.numer = n;
-		this.denom = d;
-		this.positivity = positivity;
 	};
 	/*
 		options:
@@ -930,8 +933,10 @@ const Precision = (function(){
 			//getRepDec,
 			getFrac,
 			getMixedNumber,
+			getScinot,
 			precision,
 		} = options;
+		let isInt = this.isInt() && !getScinot;
 		let sign = this.positivity === -1 ? '-' : '';
 		// if(getRepDec){
 		// 	// need to work on this...
@@ -939,13 +944,15 @@ const Precision = (function(){
 		if(getFrac){
 			let {w, n, d} = this.getFrac({getMixedNumber});
 			w = w === '0' ? '' : w + ' ';
-			let fracStr = `${w}${n} / ${d}`;
+			let fracStr = `${w}${n}/${d}`;
 			return sign + fracStr;
-		} else if(precision){
+		} else if(precision || isInt){
 			let numer = [...this.numer];
 			let denom = [...this.denom];
 			let q = ArrayOps.divide(numer,denom, {precision});
 			return q;
+		} else if(getScinot){
+			return this.valueOf() + '';
 		}
 		return this.valueOf() + '';
 	};
@@ -1053,8 +1060,10 @@ const Precision = (function(){
 			let comparison = ArrayOps.compare([...num1], [...num2]);
 			if(comparison === 0){
 				num1 = [];
-			} else {
+			} else if(comparison === 1){
 				num1 = ArrayOps.subtract(num1, num2);
+			} else {
+				num1 = ArrayOps.subtract(num2, num1);
 			}
 			this.positivity *= comparison;
 		}
@@ -1097,15 +1106,20 @@ const Precision = (function(){
 		return this;
 	};
 	_Number.prototype.divBy = function(num){
-		if(is.zero(num)) throw new Error('No number can be divided by 0.');
+		if(is.zero(num+'')) throw new Error('No number can be divided by 0.');
 		if(!is.Number(num)) num = new _Number(num);
-		let temp = num.numer;
-		num.numer = num.denom;
-		num.denom = num.numer;
+		num.reciprocate();
 		this.times(num);
 		return this;
 	};
 	
+	_Number.prototype.isTermDec = function(){
+		if(this.isInt()) return true;
+		
+	};
+	_Number.prototype.isRepDec = function(){
+		return this.isTermDec();
+	};
 	
 	_Number.prototype.getNumerator = function(){
 		return [...this.numer].reverse().join('');
@@ -1133,12 +1147,15 @@ const Precision = (function(){
 		let temp = this.numer;
 		this.numer = this.denom;
 		this.denom = temp;
+		return this;
 	};
 	_Number.prototype.inverse = function(){
 		this.reciprocate();
+		return this;
 	};
 	_Number.prototype.root = function(n){
 		this.powerOf(`1 / ${n}`);
+		return this;
 	};
 	
 	P__.Number = _Number;
