@@ -1009,6 +1009,9 @@ const Precision = (function(){
 		let dComp = ArrayOps.compare([...this.denom], [...num.denom]);
 		return nComp === 0 && dComp === 0;
 	};
+	_Number.prototype.equals = function(num){
+		return this.isEqualTo(num);
+	}
 	_Number.prototype.isGT = function(num){
 		if(!is.Number(num)) num = new _Number(num);
 		if(this.positivity > num.positivity) return true;
@@ -1059,7 +1062,10 @@ const Precision = (function(){
 		} else {
 			let comparison = ArrayOps.compare([...num1], [...num2]);
 			if(comparison === 0){
-				num1 = [];
+				this.numer = [];
+				this.denom = [1];
+				this.positivity = 0;
+				return this;
 			} else if(comparison === 1){
 				num1 = ArrayOps.subtract(num1, num2);
 			} else {

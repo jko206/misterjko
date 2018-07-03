@@ -1,25 +1,27 @@
 # Precision Math: Slow But Accurate
 
-v.0.9
+_v.0.9 BETA_
 
 ## Introduction
 
 This project started when I first encountered that in JavaScript, 
-```0.1 + 0.2 === 0.3 // false```.
+```0.1 + 0.2 === 0.3``` returns ```false```.
 
 That was just the beginning, however. As I used more and more of JavaScript's math,
 I encountered various limitations of native math. For my application, precision mattered
-more than speed, so the project was born. Precision is designed to overcome JavaScript's
+more than speed, so the project was born. PrecisionJS is designed to overcome JavaScript's
 limitation, such as the following:
 
 ```JavaScript
 let k = 123456789012345678901234567890;
-k === parseInt(k+'')				// false
+k === (k / 99999 * 99999)		// false
 
 0.1 + 0.2 === 0.3				// false
 
-1/3 === 0.3333333333333333		// true (Practically true, but mathematically false)
+// No repeating decimal support
+1/3 === 0.3333333333333333		// true (Practically true, mathematically false)
 
+// No fraction support
 1 1/2 + 1/2						// Uncaught SyntaxError: Unexpected number
 
 (2 + (1/27)) * 27 === 55        // false
@@ -28,14 +30,14 @@ k === parseInt(k+'')				// false
 ---
 ## Use
 
-Throughout the documentat, various terms and acronyms will be used. Please refer 
-to the section Glossary & Acronyms section at the end. Variables may be used more 
-than once in different examples. Also, this library will be referenced as PrecisionJS
-to distinguish it from the word precision.
+Throughout the documentation, various terms and acronyms will be used. Please refer 
+to the Glossary & Acronyms section at the end. Variables used in examples are 
+limited in scope to that example alone. Also, this library will be referenced as 
+PrecisionJS to distinguish it from the word precision.
 
 For brevity, ```Precision``` will be shortened to ```P__``` (P followed by double
-underscore). For example, ```let n1 = Precision.gcf(20, 52);``` is the same as 
-```let n1 = P__.gcf(20, 52);```.
+underscore). For example, ```Precision.gcf(20, 52);``` is the same as 
+```P__.gcf(20, 52);```.
 
 ### Math Operations
 PrecisionJS supplies some basic arithmetic methods that users might find useful.
@@ -68,7 +70,8 @@ P__.primeFactorize(810);            // [2, 3, 3, 3, 3, 5]
 
 
 ##### Example
-```
+
+```JavaScript
 P__.getPrimeNumbers();          // [2, 3, 5, 7, ... , INITIAL_MAX_PRIME]
 P__.getPrimeNumbers(20);        // [2, 3, 5, 7, 11, 13, 17, 19]
 P__.getPrimeNumbers(10, 20);    // [11, 13, 17, 19]
@@ -84,7 +87,8 @@ P__.getPrimeNumbers(10, 20);    // [11, 13, 17, 19]
 
 
 ##### Example
-```
+
+```JavaScript
 P__.factors(24); // [1, 2, 3, 4, 6, 8, 12, 24]
 
 ```
@@ -99,7 +103,8 @@ Alias for ```Precision.gcf()```.
 
 
 ##### Example
-```
+
+```JavaScript
 P__.gcf(4, 8); // 4
 
 let arr = [30, 45, 60, 120];
@@ -115,7 +120,8 @@ P__.gcf(...arr); // 15
 
 
 ##### Example
-```
+
+```JavaScript
 P__.lcm(4, 8);                  // 8
 
 let arr = [30, 45, 60, 120];
@@ -132,7 +138,8 @@ ensure that typical input runs within acceptable timeframe.*
 
 
 ##### Example
-```
+
+```JavaScript
 Precision.factorial(200);                       // "7886578673647 ... 0000"
 
 // Speed test for big number
@@ -156,7 +163,8 @@ runs within acceptable timeframe.*
 
 
 ##### Example
-```
+
+```JavaScript
 let combo = Precision.combination(2000, 200);
 combo;                                     // "686394596....86099650"
 combo.length;                              // 281
@@ -173,7 +181,8 @@ runs within acceptable timeframe.*
 
 
 ##### Example
-```
+
+```JavaScript
 let perm = Precision.permutation(2000, 200);
 perm;                                     // "5413304986....000000"
 perm.length;                              // 656
@@ -187,10 +196,13 @@ perm.length;                              // 656
 
 Changes the base of the given number ```n``` from ```b1``` to ```b2```.
 
+_Parsing numbers with prefix for binary, octal, and hexadecimal, (```0b```, 
+```0```, and ```0x```, respectively) will be implemented in the next version._
 
 ##### Example
-```
-P
+
+```JavaScript
+P__.changeBase('2F', 16, 2);        //"101111"
 ```
 
 ---
@@ -211,21 +223,22 @@ The constructor can take in several forms of number:
 * Scientific Notation: ```"Se[+|-]I"```, where ```S``` (for "significand") is either integer or decimal (as described above), and ```I``` is an integer. Sign is optional for positive power.
 
 ##### Examples
-```
+
+```JavaScript
 // integer
 let pn1 = new P__.Number(4);
 '' + pn1;   // "4"
 pn1 * 2;     // 8
 ```
 
-```
+```JavaScript
 // Fraction
 let pn2 = new P__.Number('2 / 4');
 pn2 + '';   // 0.5
 pn2 * 2     // 1
 ```
 
-```
+```JavaScript
 // Decimal
 let pn3 = new P__.Number('3.14');
 pn3 + '';   // "3.14"
@@ -274,13 +287,14 @@ n * 2 === 5     // true
 | Property                   | Value Type                           | Description |
 |---                         |---                                   | ---
 | ```getFrac```              | Boolean: ```true``` or ```false```   | Returns fraction form, instead of decimal, which is the default
-| ```getMixedNumber```       | Boolean: ```true``` or ```false```   | If ```true```, returns the fraction in mixed number form, such as "1 2/3" instead of "5/3". Only works ```getFrac``` property is set true, and the numerator is greater than the denominator.
+| ```getMixedNumber```       | Boolean: ```true``` or ```false```   | If ```true```, returns the fraction in mixed number form, such as "1 2/3" instead of "5/3". Only works ```getFrac``` property is set ```true```, and the numerator is greater than the denominator.
 | ```getRepDec```            | Boolean: ```true``` or ```false```   | If ```true```, and the number is a repeating decimal, return it in ```"NR...R"``` format, where ```NR``` is the non-repeating part, and ```R``` is the repeating part.
 | ```getScinot```            | Boolean: ```true``` or ```false```   | 
 | ```precision```            | splum-n                              | Returns a decimal number with set number of decimal digits. 
 
 ##### Examples
-```
+
+```JavaScript
 let n1 = new P__.Number('3/7');         // Be sure to pass it as string
 n1.toString({getFrac: true});           // "3/7"
 
@@ -315,10 +329,11 @@ Without any options, the method will return an object with three properties:
 * ```positivity``` : Positivity (-1, 0, or 1) of the number.
 
 ##### Examples
-```
-let n1 = new P__.Number('2 4/7');         // Be sure to pass it as string
-n1.getFrac();                             // {n: "18", d: "7", positivity: 1} note that n and d have string values
 
+```JavaScript
+let n1 = new P__.Number('2 4/7');         // Be sure to pass it as string
+n1.getFrac();                             // {n: "18", d: "7", positivity: 1} 
+                                          // note that n and d have string values
 n1.getFrac({
     getMixedNumber: true
 });                                     // {w: "2", n: "4", d: "7", positivity: 1}
@@ -338,7 +353,8 @@ Calling the method will return a Precision Number object with the same ```numer`
 ```denom```, and ```positivity``` as the current object. 
 
 ##### Examples
-```
+
+```JavaScript
 let n1 = new P__.Number('2 4/7');         // Be sure to pass it as string
 let n2 = n1.clone();
 
@@ -359,7 +375,8 @@ value, and ```false``` otherwise.
 
 
 ##### Examples
-```
+
+```JavaScript
 let n1 = new P__.Number('2 1/3');         // Be sure to pass it as string
 n1.isEqualTo(2.3333333333);               // false
 n1.isEqualTo('2...3');                    // true
@@ -370,18 +387,23 @@ n2.divBy(100).isEqualTo('1 / 300');       // true
 
 ```
 
+#### Precision.Number.equals()
+
+Alias for ```Precision.Number.isEqualTo()```.
+
 #### Precision.Number.isGT()
 
 |    Use                       |       Arguments                                |       Returns                      |
 |------------------------------|--------------------------------------          |------------------------------------|
-| ```pn.isEqualTo(num)```      | ```num``` : splum or strum or Precision Number |Boolean ```true``` or ```false```   |
+| ```pn.isGT(num)```           | ```num``` : splum or strum or Precision Number |Boolean ```true``` or ```false```   |
 
 The method accepts any input that can be used for Precision Math constructor 
 (see above). Returns ```true``` if the passed input is greater than current 
 object's value, and ```false``` otherwise.
 
 ##### Examples
-```
+
+```JavaScript
 let n1 = new P__.Number('1/3');
 n1.isGT(0.3333333333333333333);     // true
 n1.isGT('0...3');                   // false
@@ -391,7 +413,7 @@ n1.isGT('0...3');                   // false
 
 |    Use                       |       Arguments                                |       Returns                      |
 |------------------------------|--------------------------------------          |------------------------------------|
-| ```pn.isEqualTo(num)```      | ```num``` : splum or strum or Precision Number |Boolean ```true``` or ```false```   |
+| ```pn.isGTE(num)```          | ```num``` : splum or strum or Precision Number |Boolean ```true``` or ```false```   |
 
 
 The method accepts any input that can be used for Precision Math constructor 
@@ -401,16 +423,17 @@ current object's value, and ```false``` otherwise.
 _(Returns ```this.isEqualTo(num) || this.isGT(num)```)_
 
 ##### Examples
-```
+
+```JavaScript
 let n1 = new P__.Number('1/3');
-n1.isGT(0.3333333333333333333);     // true
-n1.isGT('0...3');                   // true
+n1.isGTE(0.3333333333333333333);     // true
+n1.isGTE('0...3');                   // true
 ```
 
 #### Precision.Number.isLT()
 |    Use                       |       Arguments                                |       Returns                      |
 |------------------------------|--------------------------------------          |------------------------------------|
-| ```pn.isEqualTo(num)```      | ```num``` : splum or strum or Precision Number |Boolean ```true``` or ```false```   |
+| ```pn.isLT(num)```           | ```num``` : splum or strum or Precision Number |Boolean ```true``` or ```false```   |
 
 
 The method accepts any input that can be used for Precision Math constructor 
@@ -421,7 +444,8 @@ _(Returns ```!(this.isEqualTo(num) || this.isGT(num))```)_
 
 
 ##### Examples
-```
+
+```JavaScript
 let n1 = new P__.Number('1/3');
 n1.isLT(0.3333333333333333333);     // false
 n1.isLT('0...3');                   // false
@@ -431,7 +455,7 @@ n1.isLT('0...3');                   // false
 
 |    Use                       |       Arguments                                |       Returns                      |
 |------------------------------|--------------------------------------          |------------------------------------|
-| ```pn.isEqualTo(num)```      | ```num``` : splum or strum or Precision Number |Boolean ```true``` or ```false```   |
+| ```pn.isLTE(num)```          | ```num``` : splum or strum or Precision Number |Boolean ```true``` or ```false```   |
 
 The method accepts any input that can be used for Precision Math constructor 
 (see above). Returns ```true``` if the passed input is greater than or equal to 
@@ -440,7 +464,8 @@ current object's value, and ```false``` otherwise.
 _(Returns ```!this.isGT(num)```)_
 
 ##### Examples
-```
+
+```JavaScript
 let n1 = new P__.Number('1/3');
 n1.isLTE(0.3333333333333333333);     // false
 n1.isLTE('0...3');                   // true
@@ -455,7 +480,8 @@ n1.isLTE('0...3');                   // true
 The method adds the given ```num``` to the current object. 
 
 ##### Examples
-```
+
+```JavaScript
 let n1 = new P__.Number('0.1');
 n1.plus('0.2').isEqualTo('0.3');        // true, amazingly enough
 
@@ -473,7 +499,7 @@ The method subtracts the given ```num``` from the current object.
 
 ##### Examples
 
-```
+```JavaScript
 let n1 = new Precision.Number('2 1/3')
 n1.times(3).equals(7); // true;
 ```
@@ -488,7 +514,7 @@ The method multiplies the current object by the given ```num```.
 
 ##### Examples
 
-```
+```JavaScript
 n1 = new P__.Number('2e+1000');
 n2 = new P__.Number('5e-1000');
 n1.times(n2).toString();        // "10"
@@ -505,7 +531,7 @@ The method divides by the current object by the given ```num```.
 
 ##### Examples
 
-```
+```JavaScript
 // P(n, r) = n! / (n-r)!, where n = 300, r = 200 (300 choose 200)
 let n = P__.factorial(300);         // n!
 n = new P__.Number(n);
@@ -530,7 +556,7 @@ as strum.
 
 ##### Examples
 
-```
+```JavaScript
 let n1 = new P__.Number('3 4/5');   // (3 4/5) = 3 + 4/5 = 15/5 + 4/5 = 19/5
 n1.getNumerator()                   // "19"
 ```
@@ -538,15 +564,15 @@ n1.getNumerator()                   // "19"
 #### Precision.Number.getDenominator()
 |    Use                       |       Arguments                      |       Returns                      |
 |------------------------------|--------------------------------------|------------------------------------|
-| ```pn.getNumerator()```      |  *(none)*                            | Strum of the denominator           |
+| ```pn.getDenominator()```    |  *(none)*                            | Strum of the denominator           |
 
 
-All Precision Numbers are rational numbers, and as such, have numerators. This method returns the numerator 
+All Precision Numbers are rational numbers, and as such, have denominator. This method returns the denominator 
 as strum.
 
 ##### Examples
 
-```
+```JavaScript
 let n1 = new P__.Number('3 4/5');
 n1.getDenominator()                   // "5"
 ```
@@ -561,8 +587,10 @@ If the number is zero, it is not affected.
 
 ##### Examples
 
-```
-
+```JavaScript
+let n = new P__.Number('2 / 3');
+n.negate();
+n.isEqualTo('-2/3');          //  true;
 ```
 
 #### Precision.Number.reciprocate()
@@ -574,9 +602,9 @@ Reciprocates the objects numerator and denominator. In other words, numerator an
 
 ##### Examples
 
-```
+```JavaScript
 let n = new P__.Number('0...3');
-n.reciprocate().isEqualTo(3);
+n.reciprocate().isEqualTo(3);       // true
 ```
 
 #### Precision.Number.inverse()
@@ -589,7 +617,7 @@ Alias for ```Precision.Number.reciprocate()```.
 
 ##### Examples
 
-```
+```JavaScript
 let n = new P__.Number('1/2');
 n.inverse().reciprocate().isEqualTo('0.5');
 ```
@@ -629,7 +657,7 @@ capture certain ideas and concepts that are used repeatedly.
 ### Denotes
 A denote is a letter indicating what kind of strum, splum, or arnum is accepted by a method. 
 
-Format: ```[strum|splum|arnum][(-letter)]```
+Format: ```[strum|splum|arnum][-letter]```
 
 | Letter	| Definition        |
 |-----------|-------------------|
@@ -645,6 +673,7 @@ Format: ```[strum|splum|arnum][(-letter)]```
 
 * Unless specified, all the options passed as arguments are in JSON format.
 * For variable names, the following convention is used:
+
 ```
 numsSet =>  [nums, nums, nums, ...]
 nums =>     [num, num, num, ...]
