@@ -67,8 +67,6 @@ P__.primeFactorize(810);            // [2, 3, 3, 3, 3, 5]
 | ```P__.getPrimeNumbers(to)```        | ```to```: splum-n                            | Array of splum-n  |
 | ```P__.getPrimeNumbers(from, to)```  | ```from```: splum-n, ```to```: splum-n       | Array of splum-n  |
 
-
-
 ##### Example
 
 ```JavaScript
@@ -84,23 +82,22 @@ P__.getPrimeNumbers(10, 20);    // [11, 13, 17, 19]
 |--------------------------------------|-------------------------|-------------------|
 | ```P__.factors(n)```                 | ```n```: splum-n        | Array of splum-n  |
 
-
-
 ##### Example
 
 ```JavaScript
 P__.factors(24); // [1, 2, 3, 4, 6, 8, 12, 24]
 
 ```
+
 #### Precision.gcd()
 Alias for ```Precision.gcf()```.
+
 #### Precision.gcf()
 
 |    Use                            |       Arguments         |       Returns     |
 |-----------------------------------|-------------------------|-------------------|
 | ```P__.gcf(n1, n2, ...)```        | ```n_```: splum-n       |     splum-n       |
 *Requires at least two arguments.*
-
 
 ##### Example
 
@@ -118,7 +115,6 @@ P__.gcf(...arr); // 15
 | ```P__.lcm(n1, n2, ...)```        | ```n_```: splum-n       |     splum-n       |
 *Requires at least two arguments.*
 
-
 ##### Example
 
 ```JavaScript
@@ -128,6 +124,7 @@ let arr = [30, 45, 60, 120];
 P__.lcm(...arr);                // 360
 
 ```
+
 #### Precision.factorial()
 |    Use                            |       Arguments         |       Returns     |
 |-----------------------------------|-------------------------|-------------------|
@@ -135,7 +132,6 @@ P__.lcm(...arr);                // 360
 
 *CAUTION: The running time for this method is O(n!). Before implementing, check to
 ensure that typical input runs within acceptable timeframe.*
-
 
 ##### Example
 
@@ -161,7 +157,6 @@ fact;                                           // "331627509245 ... 00000"
 method is still O(n!). Before implementing, check to ensure that typical input 
 runs within acceptable timeframe.*
 
-
 ##### Example
 
 ```JavaScript
@@ -169,6 +164,7 @@ let combo = Precision.combination(2000, 200);
 combo;                                     // "686394596....86099650"
 combo.length;                              // 281
 ```
+
 #### Precision.permutation()
 
 |    Use                       |       Arguments                      |       Returns     |
@@ -178,7 +174,6 @@ combo.length;                              // 281
 *CAUTION: Although faster than ```P__.factorial()``` The running time for this 
 method is still O(n!). Before implementing, check to ensure that typical input 
 runs within acceptable timeframe.*
-
 
 ##### Example
 
@@ -276,6 +271,7 @@ let n = new Precision.Number('2 1/2');
 n + 0.5 === 3   // true
 n * 2 === 5     // true
 ```
+
 #### Precision.Number.toString()
 |    Use                       |       Arguments                      |       Returns     |
 |------------------------------|--------------------------------------|-------------------|
@@ -362,7 +358,6 @@ n1.isEqualTo(n2);                         // true
 n1.plus(1).isEqualTo(n2);                 // false;
 ```
 
-
 #### Precision.Number.isEqualTo()
 
 |    Use                       |       Arguments                                |       Returns                      |
@@ -372,7 +367,6 @@ n1.plus(1).isEqualTo(n2);                 // false;
 The method accepts any input that can be used for Precision Math constructor 
 (see above). Returns ```true``` if the passed input is equal to current object's 
 value, and ```false``` otherwise.
-
 
 ##### Examples
 
@@ -440,8 +434,7 @@ The method accepts any input that can be used for Precision Math constructor
 (see above). Returns ```true``` if the passed input is less than current object's 
 value, and ```false``` otherwise.
 
-_(Returns ```!(this.isEqualTo(num) || this.isGT(num))```)_
-
+_(Returns ```!this.isGTE(num)```)_
 
 ##### Examples
 
@@ -486,9 +479,8 @@ let n1 = new P__.Number('0.1');
 n1.plus('0.2').isEqualTo('0.3');        // true, amazingly enough
 
 n1.plus('-0.5').isEqualTo('-0.2');      // true
-n1.plus('-0.0...2').isEqualTo('-2/9')   // true;
+n1.plus('-0.0...2').isEqualTo('-2/9'); // true;
 ```
-
 
 #### Precision.Number.minus()
 |    Use                       |       Arguments                                |       Returns                      |
@@ -542,7 +534,6 @@ let p = P__.permutation(300, 200);  // P(n, r)
 p = new P__.Number(p);
 p.isEqualTo(n.divBy(n_r));          // true;
 ```
-
 
 #### Precision.Number.getNumerator()
 
@@ -628,10 +619,16 @@ n.inverse().reciprocate().isEqualTo('0.5');
 
 
 ---
+
 ## Roadmap
 
-
+* Improve performance by reducing the loop counts used in various operations. 
+* Be able to handle powers and roots
+* Be able to parse and evaluate expressions (e.g. 2^1.25 / 2^0.25 => 2).
+* Implement series
+* Calculate sine, cosine, and tangent values to certain precision.
 ---
+
 ## Glossary & Acronyms
 
 The following table contains a list of terms used in the program to concisely 
@@ -653,7 +650,6 @@ capture certain ideas and concepts that are used repeatedly.
 | denom				| Short for denominator.
 | positivity        | Indicates whether the number is negative (value of -1), zero (value of 0), or positive (value of 1). 
 
-
 ### Denotes
 A denote is a letter indicating what kind of strum, splum, or arnum is accepted by a method. 
 
@@ -669,7 +665,7 @@ Format: ```[strum|splum|arnum][-letter]```
 | Z			| Non-zero          |
 | p 		| Prime             |
 
-### Miscellaneous Convention
+## Miscellaneous Convention
 
 * Unless specified, all the options passed as arguments are in JSON format.
 * For variable names, the following convention is used:
@@ -680,4 +676,3 @@ nums =>     [num, num, num, ...]
 num =>      [n, n, n, n, ... n];
 n =>        a numeral from the set [0,1,2,3,4,5,6,7,8,9]
 ```
-

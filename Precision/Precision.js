@@ -10,7 +10,7 @@ let handBrake = function(breakAt = 1000){
     };
 };
 
-let tester;
+let tester, tester2;
 
 const Precision = (function(){
 	// Internal functions and states
@@ -416,6 +416,7 @@ const Precision = (function(){
 				let chunk = [];
 				while(chunk.length < targetLen){
 					let digit = A.pop();
+					digit = digit || 0;
 					chunk.unshift(digit);
 				}
 				return chunk;
@@ -455,8 +456,8 @@ const Precision = (function(){
 				
 					let {multiple, fit} = findFit(chunk, B)
 					Q += multiple;
-					
 					chunk = this.subtract(chunk, fit);
+					
 					precision--;
 				}
 			}
@@ -651,6 +652,9 @@ const Precision = (function(){
 		wholeNum(n){
 			return /^\d+$/.test(n+'');
 		},
+		natural(n){
+			return /^[1-9]\d*$/.test(n);	
+		},
 		zero(n){
 			if(n === '') return true;
 			if(n instanceof Array){
@@ -683,8 +687,12 @@ const Precision = (function(){
 		scinot(n){
 			return /^\d+(\.\d+)?(\.{3}\d+)?(E|e)(\+|\-)?\d+$/.test('' + n);
 		},
+		nonZeroInteger(n){
+			return !this.zero(n) && this.integer(n);	
+		},
 	};
-	tester = is;
+	tester = ArrayOps;
+	tester2 = is;
 	let P__ = {};
 	/*********************** Math ***********************/
 	// Prime Number related
@@ -868,7 +876,7 @@ const Precision = (function(){
 			} else if(is.repeatingDecimal(num)){
 				let [nonRep, repDec] = num.split('...');
 				let n1, d1, n2, d2, decLength;
-				if(is.integer(nonRep)){
+				if(is.nonZeroInteger(nonRep)){
 					decLength = 0;
 					n1 = ArrayOps.wholeToArnum(nonRep);
 					d1 = [1];
@@ -916,11 +924,16 @@ const Precision = (function(){
 			num += '';
 			num.trim();
 			let {numer, denom, positivity} = processInput(num);
-			let {n, d} = ArrayOps.reduce(numer, denom);
-			
-			this.numer = n;
-			this.denom = d;
-			this.positivity = positivity;
+			if(is.zero(numer)){
+				this.numer = numer;
+				this.denom = denom;
+				this.positivity = positivity;
+			} else {
+				let {n, d} = ArrayOps.reduce(numer, denom);
+				this.numer = n;
+				this.denom = d;
+				this.positivity = positivity;
+			}
 		}
 	};
 	/*
@@ -957,6 +970,7 @@ const Precision = (function(){
 		return this.valueOf() + '';
 	};
 	_Number.prototype.valueOf = function(){
+		if(this.positivity === 0) return 0;
 		let precision = 50;
 		let numer = [...this.numer];
 		let denom = [...this.denom];
@@ -1073,11 +1087,19 @@ const Precision = (function(){
 			}
 			this.positivity *= comparison;
 		}
-		let reduced = ArrayOps.reduce(num1, den);
-		this.numer = reduced.n;
-		this.denom = reduced.d;
 		
-		return this;
+		if(is.zero(num1)){
+			this.numer = [0];
+			this.denom = [1];
+			this.positivity = 0; 
+			return this;
+		} else {
+			let reduced = ArrayOps.reduce(num1, den);
+			this.numer = reduced.n;
+			this.denom = reduced.d;
+			
+			return this;
+		}
 	};
 	_Number.prototype.minus = function(num){
 		if(!is.Number(num)) num = new _Number(num);
@@ -1121,7 +1143,25 @@ const Precision = (function(){
 	
 	_Number.prototype.isTermDec = function(){
 		if(this.isInt()) return true;
+		let denom = [...this.denom];
+		let {mod, quotient} = ArrayOps.divide([...denom], [5], {getMod: true});
+		while(mod == 0){
+			denom = ArrayOps.wholeToArnum(quotient);
+			let qm = ArrayOps.divide([...denom], [5], {getMod: true});
+			quotient = qm.quotient;
+			mod = qm.mod;
+		}
 		
+		let qm = ArrayOps.divide([...denom], [2], {getMod: true});
+		mod = qm.mod;
+		quotient = qm.quotient;
+		while(mod == 0){
+			denom = ArrayOps.wholeToArnum(quotient);
+			let qm = ArrayOps.divide([...denom], [2], {getMod: true});
+			quotient = qm.quotient;
+			mod = qm.mod;
+		}
+		return denom.length === 1 && denom[0] === 1;
 	};
 	_Number.prototype.isRepDec = function(){
 		return this.isTermDec();
