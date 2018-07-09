@@ -1,6 +1,6 @@
 # Precision Math: Slow But Accurate
 
-_v.0.9 BETA_
+_v.1_
 
 ## Introduction
 
@@ -42,7 +42,7 @@ underscore). For example, ```Precision.gcf(20, 52);``` is the same as
 ### Math Operations
 PrecisionJS supplies some basic arithmetic methods that users might find useful.
 The list is sure to grow in the future, but for now PrecisionJS has the following.
-As of version 1, math operation only work on non scinot splums. 
+As of version 1, math operation only work on non-scinot splums. 
 
 #### Precision.primeFactorize()
 
