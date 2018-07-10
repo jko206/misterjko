@@ -1,6 +1,6 @@
 # Precision Math: Slow But Accurate
 
-_v.1_
+_v.1.0_
 
 ## Introduction
 
@@ -42,7 +42,7 @@ underscore). For example, ```Precision.gcf(20, 52);``` is the same as
 ### Math Operations
 PrecisionJS supplies some basic arithmetic methods that users might find useful.
 The list is sure to grow in the future, but for now PrecisionJS has the following.
-As of version 1, math operation only work on non-scinot splums. 
+As of version 1.0, math operation only work on non-scinot splums. 
 
 #### Precision.primeFactorize()
 
@@ -203,9 +203,13 @@ P__.changeBase('2F', 16, 2);        //"101111"
 ---
 
 ### Precision Number
-```Precision.Number()``` is an object constructor that takes in an argument and 
-parses it into two arnums representing the numerator and denominator of the 
-number to hold value as a rational number.
+```Precision.Number()``` is an object constructor that takes in an argument, 
+converts it into fraction, of which the numerator and denominator are 
+stored as arnums.
+
+For instance, calling ```new Precision.Number('2.3...7')``` 
+(=2.377777.....), will return an object with numerator 107, 
+and denominator 45 (107 &divide; 45 = 2.377777.....).
 
 #### Precision.Number()
 Constructs new Precision Number objects, whether or not used with ```new``` keyword.
@@ -213,7 +217,7 @@ Constructs new Precision Number objects, whether or not used with ```new``` keyw
 The constructor can take in several forms of number:
 
 * Integer
-* Decimal: ```"NR...R"```, where the non-repeating ```NR``` is either integer or decimal number, and ```R``` is integer.
+* Decimal: ```"NR[...R]"```, where the non-repeating ```NR``` is either integer or decimal number, and the optional repeating part ```R``` is integer.
 * Fraction: ```"N / D"``` or ```"W N/D"``` where ```W```, ```N```, and ```D``` are integers.
 * Scientific Notation: ```"Se[+|-]I"```, where ```S``` (for "significand") is either integer or decimal (as described above), and ```I``` is an integer. Sign is optional for positive power.
 
@@ -240,11 +244,17 @@ pn3 + '';   // "3.14"
 pn3 * 1;    // 3.14
 ```
 
+```JavaScript
+let pn4 = new P__.Number('0...2');
+pn4 + '';   // "0.2222222222222222"
+pn4 * 1;    // 0.2222222222222222
+```
+
 To preserve the precision of the number, pass the argument as string, not number.
 
 ```JavaScript
-let n1 = new Precision.Number("1234567890123456789012345678901234567890");
-let n2 = new Precision.Number(1234567890123456789012345678901234567890);
+let n1 = new P__.Number("1234567890123456789012345678901234567890");
+let n2 = new P__.Number(1234567890123456789012345678901234567890);
 n1.isEqualTo(n2); // false;
 
 let s1 = n1.toString({precision: 40});
@@ -252,10 +262,6 @@ let s1 = n1.toString({precision: 40});
 let s2 = n2.toString({precision: 40});
 // "1234567890123456800000000000000000000000"
 ```
-
-For instance, calling ```new Precision.Number('2.3...7')``` 
-(=2.377777.....), will return an object with numerator 107, 
-and denominator 45 (107 &divide; 45 = 2.377777.....).
 
 #### Precision.Number.valueOf()
 Returns the decimal value of the number. It is the default value used when doing
@@ -267,7 +273,7 @@ native JavaScript math.
 
 ##### Examples
 ``` JavaScript
-let n = new Precision.Number('2 1/2');
+let n = new P__.Number('2 1/2');
 n + 0.5 === 3   // true
 n * 2 === 5     // true
 ```

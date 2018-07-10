@@ -1,16 +1,6 @@
-// v.0.9
+// v.1.0
 
 'use strict';
-
-let handBrake = function(breakAt = 1000){
-    let count = 0;
-    return function(){
-        count++;
-        return count < breakAt;
-    };
-};
-
-let tester, tester2;
 
 const Precision = (function(){
 	// Internal functions and states
@@ -254,12 +244,10 @@ const Precision = (function(){
 			let numer = this.wholeToArnum(n);
 			let denom = [];
 			let ninesCount = numer.length;
-			let brake = handBrake(20);
-			while(ninesCount-- && brake()){
+			while(ninesCount--){
 				denom.unshift(9);
 			}
-			brake = handBrake(200);
-			while(precedingDigits-- && brake()){
+			while(precedingDigits--){
 				denom.unshift(0);
 			}
 			return {numer, denom};
@@ -691,8 +679,6 @@ const Precision = (function(){
 			return !this.zero(n) && this.integer(n);	
 		},
 	};
-	tester = ArrayOps;
-	tester2 = is;
 	let P__ = {};
 	/*********************** Math ***********************/
 	// Prime Number related
@@ -881,7 +867,11 @@ const Precision = (function(){
 					n1 = ArrayOps.wholeToArnum(nonRep);
 					d1 = [1];
 				} else {
-					nonRep = ArrayOps.decToArnum(nonRep);
+					if(nonRep.length === 1 && nonRep[0] == 0){
+						nonRep = {numer: [0], denom: [1]};
+					} else {
+						nonRep = ArrayOps.decToArnum(nonRep);
+					}
 					decLength = nonRep.decLength;
 					n1 = nonRep.numer;
 					d1 = nonRep.denom;
