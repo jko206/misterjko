@@ -245,6 +245,7 @@ pn3 * 1;    // 3.14
 ```
 
 ```JavaScript
+// Repeating decimal
 let pn4 = new P__.Number('0...2');
 pn4 + '';   // "0.2222222222222222"
 pn4 * 1;    // 0.2222222222222222

@@ -1,7 +1,7 @@
 'use strict';
 
 /*
-	global $, KnightHop2, KenKen, KenKenGUI, KnightsTourGUI
+	global $, KnightHop2, KenKen, KenKenGUI, KnightsTourGUI, hljs
 */
 
 KenKenGUI.initGUI($('#kk-gui-cont'));
@@ -31,7 +31,7 @@ $(document).ready(function() {
     }
   });
   
-  $('.close-popup').click(function() {
+  $('.close-popup').click(function(){
     $(this).closest('.popup').addClass('hidden');
     $('#menu-toggle').removeClass('hidden');
     $('body').removeClass('no-scroll');
@@ -56,5 +56,9 @@ $(document).ready(function() {
       resumeUI.removeClass('active');
       clearTimeout(autoClose);
     })
+  });
+  
+  $('pre code').each(function(i, block){
+    hljs.highlightBlock(block);
   });
 });

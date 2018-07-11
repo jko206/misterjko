@@ -1,6 +1,18 @@
 /* NORMALIZE */
 :root {
   font-size: 24px;
+  font-family: 
+  'Didact Gothic', 
+  'Markazi Text', 
+  'Tajawal', 
+  'IBM Plex Serif', 
+   'Barlow', 
+   'Faustina',
+   'Nunito Sans',
+   'Archivo',
+   'David Libre',
+   'Yrsa',
+   'Assistant', sans-serif;
 }
 
 *{
@@ -59,7 +71,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 /********** COLORS ************/
 body {
-  --gray1: #565656; --bg-white: #ffffffe6; --link: maroon; --link-v: #565656; }
+  --gray1: #565656; --bg-white: #ffffffe6; --link: maroon; --link-v: #565656; 
+}
 
 /************ BUTTON ************/
 .section-content > button {
@@ -423,21 +436,21 @@ footer .logo-container{
 }
 
 #github-logo{
-  background: url('images/github-logo-white.png');
+  background: url('../images/github-logo-white.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 #linkedin-logo {
-  background: url('images/linkedin-logo.png');
+  background: url('../images/linkedin-logo.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 #hackerrank-logo {
-  background: url('images/hackerrank.png');
+  background: url('../images/hackerrank.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -468,6 +481,11 @@ footer .logo-container{
 .popup.closed {
   display: none;
 }
+
+.precision-example{
+  margin-bottom: 50px;
+}
+
 
 /**************TEMPORARY: SWITCH LATER **************/
 nav a {

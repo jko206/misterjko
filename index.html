@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
     <title>J. Ko</title>
-    <link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css?family=Arimo|Didact+Gothic|Gothic+A1|Muli|Nanum+Gothic|Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/sassed.css">
+        <link rel="stylesheet" href="css/sassed.css">
   </head>
   <body>
     <div id="menu-toggle" class="toggle">
@@ -26,10 +29,10 @@
         <a href="#kenken-solver">
           <span>KenKen Solver</span>
         </a>
-        <!--
-        <a href="#">
+        <a href="#precision">
           <span>Precision</span>
         </a>
+        <!--
         <a href="#">
           <span>Stable Match Making</span>
         </a>
@@ -96,6 +99,7 @@
               <ul>
                 <li>HTML 5</li>
                 <li>CSS 3</li>
+                <li>SASS</li>
                 <li>JavaScript (ES7)</li>
                 <li>jQuery</li>
                 <li class="unskilled">MySQL</li>
@@ -186,6 +190,120 @@
           </div>
         </div>
       </section>
+      <section id="precision">
+        <h2>PrecisionJS</h2>
+        <div class="section-content">
+          <p>
+            PrecisionJS is the JavaScript library that I developed after realizing that
+          in JavaScript, <code>0.1 + 0.2 === 0.3;</code> returned <code>false</code>.
+          It took me a while to learn the details of why that happend. Whatever 
+          the reason was, as my site needed to calculate math correctly in order 
+          to provide teaching service, I needed something that could handle 
+          arithmetic with precision. 
+          </p>
+          <p>
+            The end result is PrecisionJS. 
+          </p>
+          <p>
+            PrecisionJS's math library can perform some fairly simple math operations,
+            such as finding the greatest common factors of a set of numbers,
+            factorial or combination. 
+          </p>
+          <p>
+            Precision.Number is an object constructor that takes in an input, 
+            parses it, and stores the number in an object as arrays of numerator
+            and denominator. It can perform arbitrary precision math, meaning
+            it can be as long as the user needs it to be.
+          </p>
+          <p>
+            For the complete API with examples, please visit my GitHub 
+            <a href="https://github.com/jaiko86/misterjko/tree/master/Precision" 
+              target="new">
+              Precision page
+            </a>
+          </p>
+          <h3>Select Demo</h3>
+          <p>
+            <em>
+              Link to Wolfram Alpha has been provided after each examples to 
+              show the validity of output.
+            </em>
+          </p>
+          
+          <div class="precision-example" id="prejs-example1">
+            <h4>Greatest Common Factor</h4>
+            <pre><code class="javascript">// Greatest common factor
+P__.gcf(4, 8); // 4
+
+let arr = [30, 45, 60, 120];
+P__.gcf(...arr); // 15</code></pre>
+            <a href="http://www.wolframalpha.com/input/?i=gcf(30,45,60,120)" target="new">Wolfram Alpha</a>
+          </div>
+          <div class="precision-example" id="prejs-example2">
+            <h4>Factorial</h4>
+            <pre><code class="javascript">// factorial
+let f = Precision.factorial(500);
+f.length;       // 1135
+f;               /* => 
+   "1220136825991110068701238785423046926
+    2535743428031928421924135883858453731
+    5388199760549644750220328186301361647
+    7148203584163378722078177200480785205
+    1593292854779075719393306037729608590
+    8627042917454788242491272634430567017
+    3270769461062802310452644218878789465
+    7547771498634943677810376442740338273
+    6539747138647787849543848959553753799
+    0423241061271326984327745715546309977
+    2027810145610811883737095310163563244
+    3298702956389662891165897476957208792
+    6928871281780070265174507768410719624
+    3903943225364226052349458501299185715
+    0124870696156814162535905669342381300
+    8856249246891564126775654481886506593
+    8479517753608940057452389403357984763
+    6394490531306232374906644504882466507
+    5946735862074637925184200459369692981
+    0222639719525971909452178233317569345
+    8150855233282076282002340262690789834
+    2451712006207714640979456116127629145
+    9512372299133401695523638509428855920
+    1872743379517301458635757082835578015
+    8735432768888680120399882384702151467
+    6054454076635359841744304801289383138
+    9688163948746965881750450692636533817
+    5055478128640000000000000000000000000
+    0000000000000000000000000000000000000
+    0000000000000000000000000000000000000
+    0000000000000000000000000"
+*/</code></pre>
+            <a href="http://www.wolframalpha.com/input/?i=500!" target="new">Wolfram Alpha</a>
+          </div>
+          <div class="precision-example" id="prejs-example3">
+            <h4>Base Change</h4>
+            <pre><code class="javascript">// Change 500 from base-10 to base-4
+Precision.changeBase(500, 10, 4);   // "13310"</code></pre>
+            <a href="http://www.wolframalpha.com/input/?i=500_10+to+base+4" target="new">Wolfram Alpha</a>
+          </div>
+          <div class="precision-example" id="prejs-example4">
+            <h4>Rational Number Arithmetic</h4>
+            <pre><code class="javascript">// Precision Number
+let n1 = new Precision.Number('0.1');
+let n2 = nwe Precision.Number('0.2');
+n1.plus(n2).equals('0.3');      // true; simply amazing
+
+let n3 = new Precision.Number('0...3'); // 0.3333333....
+n3.equals('0.33333333333333');  // false
+n3.equals('1/3');               // true
+n3.divBy(10).equals('0.0...3'); // true (0.0...3 => 0.03333....)
+
+let n4 = new Precision.Number('-2 4/5');
+n4.plus('4/5').equals('-2');      // true;
+n4.negate().equals('2');          // true;
+n4.times(0).equals('0');          // true;</code></pre>
+          </div>
+        </div>
+      </section>
     </div>
     <footer>
       <div class="footer-main">
@@ -212,7 +330,6 @@
     <script src="jquery/jquery-3.1.0.js"></script>
     <script src="jquery/jquery-extensions.js"></script>
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-    <!-- JAVASCRIPT -->
     <!-- <script src="utility/util.js"></script> -->
     <!-- <script src="utility/PriorityQueue.js"></script> -->
     <!-- <script src="Algo_ADT/GSAlgo.js"></script> -->
@@ -222,5 +339,10 @@
     <script src="KnightsTour/KnightsTour.js"></script>
      <script src="Precision/Precision.js"></script> 
     <script src="init.js"></script>
+    
+    <!--             Highlight JS                       -->
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   </body>
 </html>

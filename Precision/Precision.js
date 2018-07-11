@@ -1104,8 +1104,23 @@ const Precision = (function(){
 		let n2 = [...num.numer];
 		let d2 = [...num.denom];
 		
-		let reduced1 = ArrayOps.reduce(n1, d2);
-		let reduced2 = ArrayOps.reduce(n2, d1);
+		let reduced1, reduced2;
+		if(is.zero(n1)){
+			reduced1 = {
+				n: [0],
+				d: d2
+			}
+		} else {
+			reduced1 = ArrayOps.reduce(n1, d2);
+		}
+		if(is.zero(n2)){
+			reduced2 = ArrayOps.reduce(n2, d1);
+		} else {
+			reduced2 = {
+				n: [0],
+				d: d1
+			}	
+		}
 		
 		n1 = reduced1.n;
 		d2 = reduced1.d;

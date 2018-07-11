@@ -204,3 +204,13 @@ Number.prototype.clone = function(){
 String.prototype.clone = function(){
 	return this.toString();
 }
+
+let handBrake = function(limit){
+	return (function(){
+		let count = 0;
+		return function(){
+			count++;
+			return count < limit;
+        }
+    }());
+};
