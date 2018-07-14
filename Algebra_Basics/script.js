@@ -1,3 +1,5 @@
+/*global $*/
+
 var INTEGER_PROBLEMS = true;
 
 $(document).ready(function(){
@@ -32,6 +34,7 @@ $(document).ready(function(){
 	$('#close-button').on('click', function(){
 		$('#tarp').hide();
 	});
+	getEquality(true, true);
 });
 
 // This is work in progress. 
@@ -170,7 +173,7 @@ function apply(){
 	controlOperation();
 }
 
-function getEquality(simplify){
+function getEquality(simplify, skipAlert){
 	simplify = (simplify !== undefined);
 	// array = [numerator, denominator]
 	// TOTAL weight 
@@ -243,7 +246,7 @@ function getEquality(simplify){
 			controlOperation();
 		}
 	} else if(simplify){
-		alertUnequal();
+		if(!skipAlert) alertUnequal();
 		loadLog($($('.current-state')[0]));
 	}
 	return isEqual;
