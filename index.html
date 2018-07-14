@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
     <title>J. Ko</title>
-<link href="https://fonts.googleapis.com/css?family=Arimo|Didact+Gothic|Gothic+A1|Muli|Nanum+Gothic|Poppins" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/sassed.css">
-        <link rel="stylesheet" href="css/sassed.css">
   </head>
   <body>
     <div id="menu-toggle" class="toggle">
@@ -150,7 +148,7 @@
           for tie breaking, a solution to a 8x8 board can be found in linear time.</p>
           <h3>GUI Instruction</h3>
           <p>Click anywhere on the board to find the solution starting from that cell. Click `next` or `prev` to make the knight move to next or previous move, respectively.</p>
-          <button class="popup-launcher" data-launch="#knight-gui-cont">LAUNCH GUI
+          <button class="popup-launcher" data-launch="#knight-gui-cont">LAUNCH
 		  </button>
           <div class="popup hidden" id="knight-gui-cont">
             <div class="close close-popup">
@@ -179,7 +177,7 @@
           <p>For puzzle size, input a number from 1 through 9 to set cages. Alternatively, you can simply click one of the sample puzzles to start.</p>
           <p>After you set the size, click a cluster of contiguous cells, and click "SET CAGE". Then input the target number and operation.</p>
           <p>For any of the input areas, user can press ESC button to delete the content. For operation input, you may press up/down arrow keys to select from one of four valid entries. Finally, user can press enter to submit input.</p>
-          <button class="popup-launcher" data-launch="#kenken-gui-cont">LAUNCH GUI</button>
+          <button class="popup-launcher" data-launch="#kenken-gui-cont">LAUNCH</button>
           <div class="popup hidden" id="kenken-gui-cont">
             <div class="close close-popup">
               <div class="stripe"></div>
@@ -304,6 +302,18 @@ n4.times(0).equals('0');          // true;</code></pre>
           </div>
         </div>
       </section>
+      <section id="algebra-basics">
+        <h2>Algebra Basics</h2>
+        <div class="section-content">
+          <!-- Talk about Algebra Basics here -->
+          <p>
+            Solving a single variable algebra problem, at its core can be easily
+            explained with a scale and some blocks. 
+          </p>
+          <!--<button class="popup-launcher" data-launch="#kenken-gui-cont">LAUNCH</button>-->
+          <a class="popup-launcher" href="Algebra_Basics/index.html" target="new">LAUNCH</a>
+        </div>
+      </section>
     </div>
     <footer>
       <div class="footer-main">
@@ -338,6 +348,7 @@ n4.times(0).equals('0');          // true;</code></pre>
     <script src="KenKen/KenKen.js"></script>
     <script src="KnightsTour/KnightsTour.js"></script>
      <script src="Precision/Precision.js"></script> 
+     <script src="test.js"></script> 
     <script src="init.js"></script>
     
     <!--             Highlight JS                       -->

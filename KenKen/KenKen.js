@@ -1117,11 +1117,11 @@ let KenKenGUI = (function(){
 					  font-size: 4vmin;
 					}
 					.kk-cell-val{
-					  font-size: 5vmin;
+					  font-size: 3.5vmin;
 					}
 					
 					#kk-puzzle.big-cells .kk-cell-val{
-					  font-size: 10vmin;
+					  font-size: 5vmin;
 					}
 	
 	

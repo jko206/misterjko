@@ -75,11 +75,12 @@ body {
 }
 
 /************ BUTTON ************/
-.section-content > button {
+.section-content > .popup-launcher {
   text-transform: uppercase;
   display: block;
   margin: 20px auto;
-  min-width: 250px;
+  text-align: center;
+  width: 250px;
   height: 80px;
   font-size: 1.125rem;
   background-color: gray;
@@ -88,13 +89,14 @@ body {
   color: white;
   cursor: pointer;
   box-shadow: 0px 5px dimgrey;
+  line-height: 3;
 }
 
-.section-content > button:focus {
+.section-content > .popup-launcher:focus {
   outline: none;
 }
 
-.section-content > button:active {
+.section-content > .popup-launcher:active {
   position: initial;
   box-shadow: 0px 0px dimgrey;
   position: relative;
