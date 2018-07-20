@@ -1,31 +1,17 @@
-finish: 
-- instruct the user to use the nav buttons on the left
--making the nav button for portfolio
--make the apps load
--finish the links section
-
-go live
-
 make things with vue:
+-refactor/combine the scroll-dependent animations
 -Make the headers switch as page scrolls
 -main nav
 -carousel
 -timeline
 -section nav for portfolio
+    -Make the section nav button clickable area bigger
 
 
-Optimize for smaller screen.
--Mak the section nav button clickable area bigger
-
-
-Make KenKen smaller GUI
+Make KenKen smaller GUI (for smaller screen)
 -> Maybe make a table instead?
 -> Make non-gui that shows all the solution sets that it iterates over?
-Make nav.js with Vue.js
-make the carousel with vue
-make story line with vue
 
-// refactor/combine the scroll-dependent animations
 
 menu toggle:
 -triple bar <--> close <--> "<" (go back)
@@ -44,9 +30,6 @@ put in work preference:
     Remote OK
     US Citizen
     Work eligible in Korea
-
-put a counter
-
 
 Make myself searchable on the web
 
