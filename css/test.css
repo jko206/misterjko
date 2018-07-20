@@ -515,6 +515,10 @@ Portfolio
   background: #26b758;
 }
 
+.hidden {
+  display: none;
+}
+
 .btn-look {
   text-transform: uppercase;
   padding: 0.25rem;
