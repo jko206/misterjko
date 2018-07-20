@@ -1,6 +1,55 @@
-sl	sample loader
+finish: 
+- instruct the user to use the nav buttons on the left
+-making the nav button for portfolio
+-make the apps load
+-finish the links section
 
-TODO:
+go live
 
-Review my contents
-Do something about auto closing menu / resume
+make things with vue:
+-Make the headers switch as page scrolls
+-main nav
+-carousel
+-timeline
+-section nav for portfolio
+
+
+Optimize for smaller screen.
+-Mak the section nav button clickable area bigger
+
+
+Make KenKen smaller GUI
+-> Maybe make a table instead?
+-> Make non-gui that shows all the solution sets that it iterates over?
+Make nav.js with Vue.js
+make the carousel with vue
+make story line with vue
+
+// refactor/combine the scroll-dependent animations
+
+menu toggle:
+-triple bar <--> close <--> "<" (go back)
+
+****
+Because the carousel slides are spaced with flex/space-evenly, 
+when the last or first slide is on, the left and right margin are not even.
+
+****
+
+put in work preference:
+    Part‑time / full‑time / contract
+    Front‑end / back‑end / full‑stack
+    Entry / junior level
+    Greater Seattle area
+    Remote OK
+    US Citizen
+    Work eligible in Korea
+
+put a counter
+
+
+Make myself searchable on the web
+
+Add a chat client
+
+put in more animations

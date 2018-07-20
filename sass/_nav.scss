@@ -1,0 +1,32 @@
+
+nav {
+  background: $palette-gray1;
+  display: none;
+  
+  a {
+    color: white;
+    display: block;
+    padding: 10px;
+    font-size: 1.5rem;
+    
+  }
+  a:hover{
+    color: $palette-red1;
+  }
+  @media (min-width: $tablet-bp){
+    padding-top: 100px; // for the nav buttons
+  }
+  li{
+    list-style-type: none;
+  }
+}
+
+.sub-nav{
+  display: none;
+  padding-left: 20px;
+  font-size: 1.25rem;
+}
+
+.section-nav{
+  display: none;
+}

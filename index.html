@@ -55,7 +55,7 @@
         <h1>About me</h1>
         <div class="section-content">
           <div class="profile-item-wrap" id="profile-pic-wrap">
-            <img src="images/profile.jpg" alt="Profile picture">
+            <img src="images/profile-pic.jpg" alt="Profile picture">
           </div>
           <div id="profile-details">
             <div class="profile-item-wrap" id="profile-name">
@@ -126,7 +126,7 @@
         <h2>About my work</h2>
         <div class="section-content">
           <p>This is a small selection of work that I feel best illustrates my ability and potential as a software developer.</p>
-          <p>I believe my work will portray me as a concise and succinct problem solver and a software devloper. The selection of work here doesn't employ the use of any outside library, framework, or sources, other than to make GUI possible. </p>
+          <p>I believe my work will portray me as a concise and succinct problem solver and a software developer. The selection of work here doesn't employ the use of any outside library, framework, or sources, other than to make GUI possible. </p>
           <p>While GUI is provided to demonstrate my understanding of MVC principle and also to make it easier to use and see end results of my work, they are not meant to be comprehensive nor perfect. The work for which I did not make GUI can be tested out
           on console. </p>
           <p>All the my work listed here can be found on GitHub</p>
@@ -307,10 +307,50 @@ n4.times(0).equals('0');          // true;</code></pre>
         <div class="section-content">
           <!-- Talk about Algebra Basics here -->
           <p>
-            Solving a single variable algebra problem, at its core can be easily
-            explained with a scale and some blocks. 
+            When students first come across single variable equations, such as
+            <pre class="inline">5(x + 2) = 25</pre>, the first instinct is to "work 
+            backwards."
           </p>
-          <!--<button class="popup-launcher" data-launch="#kenken-gui-cont">LAUNCH</button>-->
+          <p>
+            Such approach may work for elementary or introductory equations, but
+            quickly becomes unviable as soon as small complication arises. For
+            example, <pre class="inline">3x + 5 = -2x - 15</pre> is a bit difficult to intuitively
+            "work backwards." Also, the idea of working backwards arises mainly 
+            from the notion that there's an "answer" to a question, which students
+            have become accustomed to at that point. Because of it, it demonstrates
+            and perpetuates poor understanding of the state of equality of two
+            expressions on both sides the equation sign. 
+          </p>
+          <p>
+            In order to remedy this, I have implemented a GUI that is analogous
+            to scale. 
+          </p>
+          <img src="images/scale.png" alt="scale">
+          <p>
+            <em>By applying same operations to both scales -- adding something,
+            removing something, or multiplying or dividing the content of the
+            scales by a certain number -- the two arms of the scale will remain
+            balanced.</em>  
+          </p>
+          <h3>App Interface</h3>
+          <ul>
+            <li>
+              The goal is to achieve a state where there's only
+              <pre class="inline">x</pre> left on one side, and number left in the
+              other side.
+            </li>
+            <li>The tiled numbers or x must be dragged to the scales (lower left
+            and lower right rectangles) equally in order to maintain equality</li>
+            <li>To make number <pre class="inline">n</pre> such that 
+              <pre class="inline">|n| > 10</pre>, drag the number tiles to the top 
+              middle region to combine them.
+            </li>
+            <li>
+              <pre class="inline">x</pre> and <pre class="inline">-x</pre>  must 
+              dragged individually to each scale.
+            </li>
+          </ul>
+          
           <a class="popup-launcher" href="Algebra_Basics/index.html" target="new">LAUNCH</a>
         </div>
       </section>
@@ -347,9 +387,15 @@ n4.times(0).equals('0');          // true;</code></pre>
     <!-- <script src="Algo_ADT/MakeChanges.js"></script> -->
     <script src="KenKen/KenKen.js"></script>
     <script src="KnightsTour/KnightsTour.js"></script>
-     <script src="Precision/Precision.js"></script> 
-     <script src="test.js"></script> 
+    <script src="Precision/Precision.js"></script> 
+    <script src="test.js"></script> 
     <script src="init.js"></script>
+    
+    <!-- Vue.js -->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- production version, optimized for size and speed -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
     
     <!--             Highlight JS                       -->
     <link rel="stylesheet"

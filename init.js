@@ -20,7 +20,7 @@ $(document).ready(function() {
     });
   });
 
-  $('.popup-launcher').click(function() {
+  $('button.popup-launcher').click(function() {
     $('#menu-toggle').addClass('hidden');
     const toLaunch = $(this).data('launch');
     $(toLaunch).removeClass('hidden');

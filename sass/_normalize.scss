@@ -1,0 +1,35 @@
+
+$palette-red1: #5d0e21;  // crimson red;
+$palette-red2: #c3272a;  // regular red;
+$palette-white: #f9f7f6;  // almost white
+$palette-gray1: #b3b9bd;  // light gray;
+$palette-gray2: #464551;  // dark gray;
+
+//color vars are defined in _normalize.scss
+$tablet-bp: 600px;
+$desktop-bp: 1200px;
+
+:root{
+  font-size: 16px;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+body, div, span, ul, ol, li, 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-transform: capitalize;
+}
+
+.pointer:hover{
+  cursor: pointer;
+}

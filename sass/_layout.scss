@@ -1,0 +1,55 @@
+
+
+.nav-btn{
+  position: fixed;
+  bottom: 20px;
+  z-index: 10;
+  @media (min-width: $tablet-bp){
+    top: 20px;
+  }
+}
+#nav-toggle{ 
+  right: 20px; 
+  @media (min-width: $tablet-bp){
+    left: 100px; 
+  }
+}
+#prev-nav-btn{ 
+  right: 100px; 
+  @media (min-width: $tablet-bp){
+    left: 20px; 
+  }
+  
+}
+
+nav{
+  z-index: 5;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  @media (min-width: $tablet-bp){
+    padding-top: 100px;
+    width: 250px;
+  }
+  @media(min-width: $desktop-bp){
+    
+  }
+  .main-nav, .section-nav{
+    height: 100%;
+  }
+}
+
+#contents{
+  z-index: 1;
+}
+
+.section{
+  width: calc(100vw - 25px);
+  margin: auto;
+  min-height: 100vh;
+  padding-bottom: 10vh;
+}
+
+.section:nth-child(even){
+  background: #f9f9f9;
+}
