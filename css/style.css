@@ -94,6 +94,26 @@ nav li {
   display: none;
 }
 
+h1, h2, h3 {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  overflow: hidden;
+}
+@media (min-width: 600px) {
+  h1, h2, h3 {
+    top: 50px;
+    left: 50px;
+  }
+}
+@media (min-width: 900px) {
+  h1, h2, h3 {
+    top: 100px;
+    left: 100px;
+  }
+}
+
 .nav-btn {
   position: fixed;
   bottom: 20px;
@@ -144,14 +164,12 @@ nav .main-nav, nav .section-nav {
 }
 
 .section {
-  width: calc(100vw - 25px);
+  width: 100vw;
+  max-width: 100%;
   margin: auto;
   min-height: 100vh;
   padding-bottom: 10vh;
-}
-
-.section:nth-child(even) {
-  background: #f9f9f9;
+  overflow: auto;
 }
 
 #imjk {
@@ -176,6 +194,11 @@ nav .main-nav, nav .section-nav {
   max-width: 600px;
   line-height: 2;
 }
+@media (max-width: 600px) {
+  #imjk .summary {
+    margin: 5px;
+  }
+}
 #imjk .skill-set {
   margin-top: 50px;
 }
@@ -196,40 +219,12 @@ nav .main-nav, nav .section-nav {
 }
 
 #about-j {
-  height: 300vh;
-  width: 100vw;
-  display: flex;
   top: 0;
   left: 0;
 }
-#about-j .carousel {
-  height: 100vh;
-  width: 300vw;
-  display: flex;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-}
-#about-j .carousel h2 {
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  z-index: 1;
-  height: 28px;
-  overflow: hidden;
-  width: 300px;
-}
-#about-j .carousel h2 .fixed {
-  width: 120px;
-  position: absolute;
-}
-#about-j .carousel h2 .sub-titles {
-  position: absolute;
-  left: 120px;
-}
-#about-j .carousel .sub-section {
-  width: 100vw;
-  height: 100vh;
+#about-j .sub-section {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
@@ -237,7 +232,13 @@ nav .main-nav, nav .section-nav {
   line-height: 2;
   justify-content: space-evenly;
 }
-#about-j .carousel .sub-section .content {
+@media (max-width: 600px) {
+  #about-j .sub-section {
+    height: calc(100vh - 33px);
+    margin-top: 33px;
+  }
+}
+#about-j .sub-section .content {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
@@ -248,22 +249,27 @@ nav .main-nav, nav .section-nav {
   border-radius: 10px;
 }
 @media (min-width: 600px) {
-  #about-j .carousel .sub-section.basics .content {
+  #about-j .sub-section.basics .content {
     flex-direction: row;
     padding: 50px;
   }
 }
-#about-j .basics li {
+#about-j #profile-pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#about-j li {
   list-style-type: none;
 }
-#about-j .basics li:before {
+#about-j li:before {
   content: ">> ";
   font-family: monospace;
   font-size: 0.8rem;
   position: relative;
   top: -1px;
 }
-#about-j .basics ul {
+#about-j ul {
   padding-left: 40px;
 }
 #about-j .resume-files-wrap {
@@ -312,56 +318,53 @@ nav .main-nav, nav .section-nav {
   vertical-align: middle;
 }
 
-#story .timeline-app {
-  margin-top: 50px;
+#story h3 {
+  top: -5px;
+}
+#story .events {
+  max-width: 800px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 50px;
 }
-#story .timeline-app .timeline {
-  margin: 0 20px;
-  width: 2px;
-  background: black;
+@media (min-width: 600px) {
+  #story .events {
+    margin-top: 90px;
+  }
 }
-#story .timeline-app .cover {
-  z-index: 1;
-  left: 15px;
-  background: white;
-  position: absolute;
-  width: 100vw;
-  top: 75vh;
-  height: 25vh;
+@media (min-width: 900px) {
+  #story .events {
+    margin-top: 140px;
+  }
 }
-#story .timeline-app .cover:before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background: black;
+#story .events .events__item {
+  width: 95%;
+  padding-bottom: 33vh;
+  padding-left: 10px;
+  border-left: 1px solid black;
 }
-#story .timeline-app .cover-last {
-  z-index: 1;
-  left: 20px;
-  background: white;
-  position: absolute;
-  width: 2px;
-  bottom: 0;
-  height: calc(25vh - 10px);
+@media (min-width: 600px) {
+  #story .events .events__item {
+    width: 80%;
+  }
 }
-#story .timeline-app .events .events__item {
-  height: 25vh;
+#story .events .events__item div {
+  top: -5px;
 }
-#story .timeline-app .events .events__item.highlight {
-  color: red;
-}
-#story .timeline-app .events .events__item:before {
+#story .events .events__item:before {
   content: "";
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 5px;
   background: black;
-  left: -26px;
+  left: -5px;
+}
+#story .events .events__item:last-child {
+  border-left: 0;
 }
 
 /*
@@ -534,4 +537,4 @@ Portfolio
   display: inline;
 }
 
-/*# sourceMappingURL=test.css.map */
+/*# sourceMappingURL=style.css.map */

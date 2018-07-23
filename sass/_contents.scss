@@ -17,6 +17,9 @@
   }
   
   .summary{
+    @media (max-width: 600px){
+      margin: 5px;
+    }
     margin: 0 50px;
     max-width: 600px;
     line-height: 2;
@@ -44,81 +47,62 @@
 
 //
 #about-j{
-  height: 300vh;
-  width: 100vw;
-  display: flex;
   top: 0;
   left: 0;
-  .carousel{
-    height: 100vh;
-    width: 300vw;
+    
+
+  .sub-section{
+    width: 100%;
+    min-height: 100vh;
+    @media (max-width: 600px){
+      height: calc(100vh - 33px);
+      margin-top: 33px;
+    }
     display: flex;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    h2{
-      position: absolute;
-      top: 100px;
-      left: 100px;
-      z-index: 1;
-      height: 28px;
-      overflow: hidden;
-      width: 300px;
-      .fixed{
-        width: 120px;
-        position: absolute;
-      }
-      .sub-titles{
-        position: absolute;
-        left: 120px;
-      }
-    }
-    .sub-section{
-      width: 100vw;
-      height: 100vh;
+    flex: 0 0 auto;
+    flex-direction: column;
+    
+    align-items: center;
+    line-height: 2;
+    justify-content: space-evenly;
+    
+    .content{
+      padding: 0 20px;
       display: flex;
-      flex: 0 0 auto;
       flex-direction: column;
-      
-      align-items: center;
-      line-height: 2;
-      justify-content: space-evenly;
-      
-      .content{
-        padding: 0 20px;
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        max-width: 600px;
-        background: none;
-        border: 1px solid black;
-        border-radius: 10px;
-      }
+      width: 90%;
+      max-width: 600px;
+      background: none;
+      border: 1px solid black;
+      border-radius: 10px;
     }
-    .sub-section.basics .content{
+  }
+  .sub-section.basics {
+    
+    .content{
       @media (min-width: $tablet-bp){
         flex-direction: row;
         padding: 50px;
       }
     }
-    
-    
   }
-  
-  .basics{
-    li {
-      list-style-type: none;
-    }
-    li:before{
-      content: ">> ";
-      font-family: monospace;
-      font-size: 0.8rem;
-      position: relative;
-      top: -1px;
-    }
-    ul {
-      padding-left: 40px;
-    }
+  #profile-pic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  li {
+    list-style-type: none;
+  }
+  li:before{
+    content: ">> ";
+    font-family: monospace;
+    font-size: 0.8rem;
+    position: relative;
+    top: -1px;
+  }
+  ul {
+    padding-left: 40px;
   }
   
   .resume-files-wrap{
@@ -169,67 +153,46 @@
 }
 
 #story{
-  .timeline-app{
-    margin-top: 50px;
-    $side-margin: 20px;
-    $ball-radius: 5px;
-    $line-width: 2px;
-    $ball-diameter: $ball-radius * 2;
-    
+  h3{
+    top: -5px;
+  }
+  .events{  
+    max-width: 800px;
     display: flex;
-    
-    .timeline{
-      margin: 0 $side-margin;
-      width: $line-width;
-      background: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    @media(min-width: 600px){
+      margin-top: 90px;
     }
-    .cover{
-      z-index: 1;
-      left: $side-margin - $ball-radius + $line-width/2 - 1px; // magic number
-      background: white;
-      position: absolute;
-      width: 100vw;
-      top: 75vh;
-      height: 25vh;
+    @media(min-width: 900px){
+      margin-top: 140px;
     }
-    .cover:before{
+    .events__item {
+      width: 95%;
+      padding-bottom: 33vh;
+      padding-left: 10px;
+      border-left: 1px solid black;
+      @media(min-width: 600px){
+        width: 80%;
+      }
+      div{
+        top: -5px;
+      }
+    }
+    .events__item:before {
       content: '';
       position: absolute;
-      top: -1 * $ball-diameter;
-      width: $ball-diameter;
-      height: $ball-diameter;
-      border-radius: $ball-radius;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
       background: black;
+      left: -5px;
     }
-    
-    .cover-last{
-      z-index: 1;
-      left: $side-margin;
-      background: white;
-      position: absolute;
-      width: $line-width;
-      bottom: 0;
-      height: calc(25vh - 10px); //$ball-diameter
-    }
-    
-    .events{
-      .events__item{
-        height: 25vh;
-        /// experimental
-        // z-index: 2;
-      }
-      .events__item.highlight{
-        color: red;
-      }
-      .events__item:before{
-        content: '';
-        position: absolute;
-        width: $ball-diameter;
-        height: $ball-diameter;
-        border-radius: $ball-radius;
-        background: black;
-        left: ($side-margin + $ball-radius + $line-width/2) * -1;
-      }
+    .events__item:last-child{
+      border-left: 0;
     }
   }
 }

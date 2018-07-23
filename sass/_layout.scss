@@ -1,4 +1,19 @@
+h1, h2, h3{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  overflow: hidden;
 
+  @media(min-width: 600px){
+    top: 50px;
+    left: 50px;
+  }
+  @media(min-width: 900px){
+    top: 100px;
+    left: 100px;
+  }
+}
 
 .nav-btn{
   position: fixed;
@@ -44,12 +59,10 @@ nav{
 }
 
 .section{
-  width: calc(100vw - 25px);
+  width: 100vw;
+  max-width: 100%;
   margin: auto;
   min-height: 100vh;
   padding-bottom: 10vh;
-}
-
-.section:nth-child(even){
-  background: #f9f9f9;
+  overflow: auto;
 }
