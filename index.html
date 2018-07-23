@@ -40,55 +40,6 @@
       <div class="prev-nav-comp" id="prev-nav-comp2"></div>
     </div>
     
-    <nav>
-      <ul class="main-nav">
-        <li><a href="#imjk">I M J K</a></li>
-        <li class="sub-nav-toggle">
-          <a href="#about-j">About J.</a>
-          <div class="sub-nav">
-            <a href="#basics">Basic</a>
-            <a href="#work-stuff">Work</a>
-            <a href="#misc">Misc.</a>
-          </div>
-        </li>
-        <li><a href="#story">My Story</a></li>
-        <li class="sub-nav-toggle">
-          <a href="#portfolio">Portfolio</a>
-          <div class="sub-nav">
-            <a href="#precision">PrecisionJS</a>
-            <a href="#kenken">KenKen</a>
-            <a href="#algebra-basics">Algebra Basics</a>
-            <a href="#knights-tour">Knight's Tour</a>
-          </div>
-        </li>
-        <li><a href="#links">Links & Contacts</a></li>
-      </ul>
-      <ul class="section-nav" id="my-story-nav">
-        <li><a href="#">Early Days</a></li>
-        <li><a href="#">College</a></li>
-        <li><a href="#">Korea</a></li>
-        <li><a href="#">Steps Education</a></li>
-        <li><a href="#">Back to the US</a></li>
-      </ul>
-      <ul class="section-nav" id="kenken-nav">
-        <li><a href="#">Intro</a></li>
-        <li><a href="#">Rules</a></li>
-        <li><a href="#">App</a></li>
-      </ul>
-      <ul class="section-nav" id="precision-nav">
-        <li><a href="#">Intro</a></li>
-      </ul>
-      <ul class="section-nav" id="algebra-basics-nav">
-        <li><a href="#">Intro</a></li>
-        <li><a href="#">Rules</a></li>
-        <li><a href="#">App</a></li>
-      </ul>
-      <ul class="section-nav" id="knights-tour-nav">
-        <li><a href="#">Intro</a></li>
-        <li><a href="#">App</a></li>
-      </ul>
-    </nav>
-    
     <div id="contents">
       <div class="section" id="imjk">
         <div id="imjk-heros">
@@ -134,18 +85,11 @@
           </div>
         </div>
       </div>
-      <div class="section" id="about-j">
-        <!--<h2>
-            <span class="fixed">About J:</span>
-            <span class="sub-titles">
-              <span class="sub-title1">Basics</span><br>
-              <span class="sub-title1">Q&amp;A</span><br>
-              <span class="sub-title1">Miscellaneous</span>
-            </span>
-          </h2>-->
-        <div class="sub-section basics">
+      <!-- -->
+      <div class="section about-j">
+        <div class="sub-section1 basics">
           <h2>About J: Basics</h2>
-          <div class="content">
+          <div class="content round-boxed">
             <div id="profile-pic">
               <img src="images/profile-pic.jpg" alt="Jai Ko">
             </div>
@@ -166,9 +110,9 @@
             </ul>
           </div>
         </div>
-        <div class="sub-section">
+        <div class="sub-section1">
           <h2>About J: Work Pref / Status</h2>
-          <div class="content">
+          <div class="content round-boxed small-box">
             <ul>
               <li>Part‑time / full‑time / contract</li>
               <li>Front‑end / back‑end / full‑stack</li>
@@ -180,9 +124,9 @@
             </ul>
           </div>
         </div>
-        <div class="sub-section">
+        <div class="sub-section1">
           <h2>About J: Q&amp;A</h2>
-          <div class="content">
+          <div class="content round-boxed">
             <p>
               <strong>Ideal job</strong> Job in which I know I am making a positive
               impact on this world. 
@@ -205,9 +149,9 @@
             </p>
           </div>
         </div>
-        <div class="sub-section">
+        <div class="sub-section1">
           <h2>About J: Miscellaneous</h2>
-          <div class="content">
+          <div class="content round-boxed">
             <p>
               <strong>Current project</strong> Rebuilding Steps Education from
               ground up with Vue, and other more modern frameworks and tools;
@@ -226,7 +170,9 @@
           </div>
         </div>
       </div>
-      <div class="section" id="story">
+      
+      <!-- -->
+      <div class="section story">
         <h2>My story</h2>
         <div class="events">
             <div class="events__item">
@@ -308,49 +254,31 @@
             </div>
           </div>
       </div>
+      <!-- -->
       
-      <!--
-        Structure
-        Portfolio
-          item
-            desc, if there is one
-              h3
-              content
-            app-wrap, if there is one
-              h3
-              app
-      -->
-      
-      <div class="section" id="portfolio">
-        <div class="portfolio__item" id="intro">
-          <div class="portfolio__desc">
-            <h2>About my work</h2>
-            <div class="portfolio__content">
-              <p>This is a small selection of work that I feel best illustrates my 
-              ability and potential as a software developer.</p>
-  
-              <p>I believe my work will portray me as a concise and succinct 
-              problem solver and a software devloper. The following work mostly 
-              use jQuery for GUI, but they will be transitioned to Vue. Other 
-              than jQuery, I used Highlight.JS for syntax highlihgting.</p>
-              
-              <p>All the my work listed here can also be found on
-              <a href="http://github.com/jaiko86" target="new">GitHub.</a></p>
-            </div>
+      <div class="section portfolio">
+        <!-- intro -->
+        <div class="sub-section1 has-sub">
+          <h2>Portfolio: About my work</h2>
+          <div class="content round-boxed">
+            <p>This is a small selection of work that I feel best illustrates my 
+            ability and potential as a software developer.</p>
+
+            <p>I believe my work will portray me as a concise and succinct 
+            problem solver and a software devloper. The following work mostly 
+            use jQuery for GUI, but they will be transitioned to Vue. Other 
+            than jQuery, I used Highlight.JS for syntax highlihgting.</p>
+            
+            <p>All the my work listed here can also be found on
+            <a href="http://github.com/jaiko86" target="new">GitHub.</a></p>
           </div>
         </div>
-        <div class="portfolio__item" id="precision">
-          <div class="portfolio__nav five-pages">
-            <div class="portfolio__nav-btn pointer active" data-goto="1"></div>
-            <div class="portfolio__nav-btn pointer" data-goto="2"></div>
-            <div class="portfolio__nav-btn pointer" data-goto="3"></div>
-            <div class="portfolio__nav-btn pointer" data-goto="4"></div>
-            <div class="portfolio__nav-btn pointer" data-goto="5"></div>
-          </div>
-          
-          <div class="portfolio__desc">
-            <h3>Precision intro</h3>
-            <div class="portfolio__content">
+        
+        <!-- Precision -->
+        <div class="sub-section1 has-sub">
+          <div class="sub-section2">
+            <h3>Precision: Intro</h3>
+            <div class="content round-boxed big-box">
               <p>
                 PrecisionJS is the JavaScript library that I developed after realizing that
               in JavaScript, <code>0.1 + 0.2 === 0.3;</code> returned <code>false</code>.
@@ -382,26 +310,21 @@
               </p>
             </div>
           </div>
-          <div class="portfolio__app-wrap hidden">
-            <h3>Precision Demo #1</h3>
-            <div class="portfolio__app">
-              <div class="precision-example" id="prejs-example1">
-            <h4>Greatest Common Factor</h4>
-            <pre><code class="javascript">// Greatest common factor
-P__.gcf(4, 8); // 4
+          <div class="sub-section2">
+            <h3>Demo: Greatest Common Factor</h3>
+            <div class="content round-boxed big-box">
+              <pre><code class="javascript">// Greatest common factor
+Precision.gcf(4, 8); // 4
 
 let arr = [30, 45, 60, 120];
-P__.gcf(...arr); // 15</code></pre>
-            <a href="http://www.wolframalpha.com/input/?i=gcf(30,45,60,120)" target="new" class="check_on_wolfram" title="check if the solution is correct on Wolfram Alpha">Check Answer</a>
-          </div>
+Precision.gcf(...arr); // 15</code></pre>
+              <a href="http://www.wolframalpha.com/input/?i=gcf(30,45,60,120)" target="new" class="check_on_wolfram" title="check if the solution is correct on Wolfram Alpha">Check Answer</a>
             </div>
           </div>
-          <div class="portfolio__app-wrap hidden">
-            <h3>Precision Demo #2</h3>
-            <div class="portfolio__app">
-              <div class="precision-example" id="prejs-example2">
-                <h4>Factorial</h4>
-                <pre><code class="javascript">// factorial
+          <div class="sub-section2">
+            <h3>Demo: Factorial</h3>
+            <div class="content round-boxed big-box">
+              <pre><code class="javascript">// factorial
 let f = Precision.factorial(500);
 f.length;       // 1135
 f;               /* => 
@@ -437,27 +360,21 @@ f;               /* =>
     0000000000000000000000000000000000000
     0000000000000000000000000"
 */</code></pre>
-                <a href="http://www.wolframalpha.com/input/?i=500!" target="new" class="check_on_wolfram" title="check if the solution is correct on Wolfram Alpha">Check Answer</a>
-              </div>
+              <a href="http://www.wolframalpha.com/input/?i=500!" target="new" class="check_on_wolfram" title="check if the solution is correct on Wolfram Alpha">Check Answer</a>
             </div>
           </div>
-          <div class="portfolio__app-wrap hidden">
-            <h3>Precision Demo #3</h3>
-            <div class="portfolio__app">
-              <div class="precision-example" id="prejs-example3">
-                <h4>Base Change</h4>
-                <pre><code class="javascript">// Change 500 from base-10 to base-4
+          <div class="sub-section2">
+            <h3>Demo: Base Change</h3>
+            <div class="content round-boxed big-box">
+              <pre><code class="javascript">// Change 500 from base-10 to base-4
 Precision.changeBase(500, 10, 4);   // "13310"</code></pre>
-                <a href="http://www.wolframalpha.com/input/?i=500_10+to+base+4" target="new" class="check_on_wolfram" title="check if the solution is correct on Wolfram Alpha" title="check if the solution is correct on Wolfram Alpha">Check Answer</a>
-              </div>
+              <a href="http://www.wolframalpha.com/input/?i=500_10+to+base+4" target="new" class="check_on_wolfram" title="check if the solution is correct on Wolfram Alpha" title="check if the solution is correct on Wolfram Alpha">Check Answer</a>
             </div>
           </div>
-          <div class="portfolio__app-wrap hidden">
-            <h3>Precision Demo #4</h3>
-            <div class="portfolio__app">
-              <div class="precision-example" id="prejs-example4">
-                <h4>Rational Number Arithmetic</h4>
-                <pre><code class="javascript">// Precision Number
+          <div class="sub-section2">
+            <h3>Demo: Rational Number Arithmetic</h3>
+            <div class="content round-boxed big-box">
+              <pre><code class="javascript">// Precision Number
 let n1 = new Precision.Number('0.1');
 let n2 = nwe Precision.Number('0.2');
 n1.plus(n2).equals('0.3');      // true; simply amazing
@@ -471,20 +388,15 @@ let n4 = new Precision.Number('-2 4/5');
 n4.plus('4/5').equals('-2');      // true;
 n4.negate().equals('2');          // true;
 n4.times(0).equals('0');          // true;</code></pre>
-              </div>
             </div>
           </div>
         </div>
-        <div class="portfolio__item" id="kenken">
-          <div class="portfolio__nav three-pages">
-            <div class="portfolio__nav-btn pointer active" data-goto="1"></div>
-            <div class="portfolio__nav-btn pointer" data-goto="2"></div>
-            <div class="portfolio__nav-btn pointer" data-goto="3"></div>
-          </div>
-          
-          <div class="portfolio__desc">
+        
+        <!-- KenKen -->
+        <div class="sub-section1 has-sub">
+          <div class="sub-section2">
             <h3>KenKen: Intro</h3>
-            <div class="portfolio__content">
+            <div class="content round-boxed">
               <p>KenKen is akin to sodoku, but with a mathematical twist. For an 
               n &times; n puzzle, the rules are as follows:</p>
               <ul>
@@ -496,9 +408,9 @@ n4.times(0).equals('0');          // true;</code></pre>
               for some puzzles) after a user inputs the constraints.</p>
             </div>
           </div>
-          <div class="portfolio__desc hidden">
+          <div class="sub-section2">
             <h3>KenKen: Rules</h3>
-            <div class="portfolio__content">
+            <div class="content round-boxed">
               <ul>
                 <li>For puzzle size, input a number from 1 through 9 to set cages. 
                 Alternatively, you can simply click one of the sample puzzles to 
@@ -514,23 +426,19 @@ n4.times(0).equals('0');          // true;</code></pre>
               </ul>
             </div>
           </div>
-          <div class="portfolio__app-wrap hidden">
+          <div class="sub-section2">
             <h3>KenKen: App</h3>
-            <div class="portfolio__app">
+            <div class="content app-wrap">
               <div id="kenken-app"></div>
             </div>
           </div>
         </div>
-        <div class="portfolio__item" id="algebra-basics">
-          <div class="portfolio__nav three-pages">
-            <div class="portfolio__nav-btn pointer active" data-goto="1"></div>
-            <div class="portfolio__nav-btn pointer" data-goto="2"></div>
-            <div class="portfolio__nav-btn pointer" data-goto="3"></div>
-          </div>
-          
-          <div class="portfolio__desc">
+        
+        <!-- Algebra Basics -->
+        <div class="sub-section1 has-sub" id="algebra-basics">
+          <div class="sub-section2">
             <h3>Algebra Basics: Intro</h3>
-            <div class="portfolio__content">
+            <div class="content round-boxed">
               <p>When students first come across single variable equations, 
               such as <code class="inline">5(x + 2) = 25</code>, the first instinct 
               is to "work backwards." Such approach may work for elementary or 
@@ -555,9 +463,9 @@ n4.times(0).equals('0');          // true;</code></pre>
               balanced.</p>
             </div>
           </div>
-          <div class="portfolio__desc hidden">
+          <div class="sub-section2">
             <h3>Algebra Basics: Rules</h3>
-            <div class="portfolio__content">
+            <div class="content round-boxed">
               <ul>
                 <li>The goal is to achieve a state where there's only x left on 
                 one side, and number left in the other side.</li>
@@ -570,22 +478,19 @@ n4.times(0).equals('0');          // true;</code></pre>
               </ul>
             </div>
           </div>
-          <div class="portfolio__app-wrap hidden">
+          <div class="sub-section2">
             <h3>Algebra Basics: App</h3>
-            <div class="portfolio__app">
-              <iframe src="Algebra_Basics/index.html" style="border: none; width: 100vw; height: 100vh;"></iframe>
+            <div class="content">
+              <iframe src="Algebra_Basics/index.html"></iframe>
             </div>
           </div>
         </div>
-        <div class="portfolio__item" id="knights-tour">
-          <div class="portfolio__nav two-pages">
-            <div class="portfolio__nav-btn pointer active" data-goto="1"></div>
-            <div class="portfolio__nav-btn pointer" data-goto="2"></div>
-          </div>
-          
-          <div class="portfolio__desc">
+        
+        <!-- Knight's Tour -->
+        <div class="sub-section1 has-sub" id="knights-tour">
+          <div class="sub-section2">
             <h3>Knight's Tour: Intro</h3>
-            <div class="portfolio__content">
+            <div class="content round-boxed">
               <p>The collaborative work of Wikipedians describes 
               this problem best:</p>
 
@@ -605,12 +510,13 @@ n4.times(0).equals('0');          // true;</code></pre>
               or previous move, respectively.</p>
             </div>
           </div>
-          <div class="portfolio__app-wrap hidden">
+          <div class="sub-section2">
             <h3>Knight's Tour: App</h3>
-            <div id="knight-gui-cont"></div>
+            <div class="content app-wrap" id="knight-gui-cont"></div>
           </div>
         </div>
       </div>
+      
       
       <div class="section" id="links">
         <h3>Find Me On</h3>

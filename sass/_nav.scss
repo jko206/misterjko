@@ -13,7 +13,7 @@ nav {
   a:hover{
     color: $palette-red1;
   }
-  @media (min-width: $tablet-bp){
+  @media (min-width: $breakpoint1){
     padding-top: 100px; // for the nav buttons
   }
   li{

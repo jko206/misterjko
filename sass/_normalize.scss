@@ -5,9 +5,25 @@ $palette-white: #f9f7f6;  // almost white
 $palette-gray1: #b3b9bd;  // light gray;
 $palette-gray2: #464551;  // dark gray;
 
+//bw scale
+$bw0: #000; //black
+$bw1: #303030;
+$bw2: #606060;
+$bw3: #909090;
+$bw4: #b0b0b0;
+$bw5: #d0d0d0;
+$bw6: #fff;  // white
+
 //color vars are defined in _normalize.scss
-$tablet-bp: 600px;
-$desktop-bp: 1200px;
+$main-color1: $bw1;
+$main-color2: $bw2; 
+$main-color3: $bw3;
+$main-color4: $bw4;
+$main-color5: $bw5;
+
+$breakpoint1: 600px;
+$breakpoint2: 900px;
+$breakpoint3: 1200px;
 
 :root{
   font-size: 16px;
@@ -18,9 +34,13 @@ $desktop-bp: 1200px;
 a {
   text-decoration: none;
 }
+ul, ol{
+  padding-left: 20px;
+  margin: 0;
+}
 
-body, div, span, ul, ol, li, 
-h1, h2, h3, h4, h5, h6 {
+body, div, span, li, 
+h1, h2, h3, h4, h5, h6{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -32,4 +52,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .pointer:hover{
   cursor: pointer;
+}
+
+blockquote{
+  position: relative;
+}
+
+blockquote:before {
+  content: '“';
+  position: absolute;
+  font-size: 5rem;
+  color: gray;
+  z-index: -1;
+  top: -1.5rem;
+  left: -1.5rem;
+}
+
+blockquote:after {
+  content: '”';
+  position: absolute;
+  font-size: 5rem;
+  color: gray;
+  z-index: -1;
+  bottom: -3.5rem;
+  right: -1.5rem;
 }

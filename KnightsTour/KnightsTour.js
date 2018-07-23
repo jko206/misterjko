@@ -156,7 +156,7 @@ function KnightsTourGUI(cont){
 		board += row;
 	}
 	board += `</div>`;
-	$(`
+	/*$(`
 		<style id="knight-gui-style">
 			#knight-gui{
 				background-color: #f7f7f7;
@@ -281,6 +281,116 @@ function KnightsTourGUI(cont){
 				</div>
 			</div>
 		</div>
+	`).appendTo(cont);*/
+	$(`
+		<style id="knight-gui-style">
+			#knight-gui{
+				background-color: #f7f7f7;
+				position: relative;
+				padding: 40px;
+				border: 1px solid black;
+			}
+			#knight-gui-board{
+		    background-color: #ccc;
+		    width: 100%;
+		    overflow: auto;
+		    position: relative;
+		    margin: auto;
+			}
+			.knight-gui-row{
+				position: relative;
+			}
+			.knight-gui-cell{
+				width: 12.5%;
+  			padding-top: 12.5%;
+				background-color: #bbb;
+				float: left;
+				font-size: 40px;
+				font-family: monospace, sans-serif;
+				text-align: center;
+				line-height: 2;
+				vertical-align: bottom;
+				position: relative;
+			}
+			.knight-gui-row:nth-child(odd) .knight-gui-cell:nth-child(even){
+			    background-color: white;
+			}
+			.knight-gui-row:nth-child(odd) .knight-gui-cell:nth-child(even):hover{
+			    background-color: #ddd;
+			}
+			.knight-gui-row:nth-child(even) .knight-gui-cell:nth-child(odd){
+			    background-color: white;
+			}
+			.knight-gui-row:nth-child(even) .knight-gui-cell:nth-child(odd):hover{
+			    background-color: #ddd;
+			}
+			.knight-gui-cell:hover{
+			    cursor:pointer;
+			    background-color: #ddd;
+			}
+			
+			.knight-gui-cell.knight-gui-cell-curr {
+			  background-image: url(Knight-64.png);
+			  background-size: contain;
+			}
+			.knight-gui-cell span {
+			  position: absolute;
+			  height: 100%;
+			  top: 0;
+			  display: block;
+			  width: 100%;
+			  left: 0;
+			  font-size: 2rem;
+			  line-height: 1.75;
+			}
+			
+			#knight-gui-controls{
+			  width: 100%;
+			  height: 2rem;
+			  margin: 20px auto;
+			  position: relative;
+			  font-size: 1.5rem;
+			  text-align: center;
+			  display: flex;
+			  align-items: center;
+				justify-content: space-evenly;
+			}
+			#knight-gui-prompt{
+			  font-size: 30px;
+			  text-align: center;
+			  background: gray;
+			  border-radius: 5px;
+			  padding: 5px;
+			  color: white;
+			}
+			
+			#knight-gui-btns{
+			    display: none;
+			}
+			
+			#knight-gui-controls .button{
+			  width: 100px;
+			  border: 1px solid black;
+			  padding: 5px;
+			  border-radius: 5px;
+			  display: none;
+			}
+			#knight-gui-btns div:hover{
+			    background-color: #ccc;
+			    cursor: pointer;
+			}
+		</style>
+		<div id="knight-gui">
+			${board}
+			<div id="knight-gui-controls">
+				<div id="knight-gui-prompt">
+					Click initial position
+				</div>
+				<div class="button" id="knight-gui-prev">PREV</div>
+				<div class="button" id="knight-gui-reset">RESET</div>
+				<div class="button" id="knight-gui-next">NEXT</div>
+			</div>
+		</div>
 	`).appendTo(cont);
 	KnightsTour.init();
 	
@@ -294,7 +404,7 @@ function KnightsTourGUI(cont){
 				isInit = true;
 				let index = $(this).data('index');
 				$('#knight-gui-prompt').hide();
-				$('#knight-gui-btns').show();
+				$('#knight-gui-controls .button').show();
 				let {x, y} = indexToCoord(index);
 				solution = KnightsTour.getSolution(x, y); 
 				
@@ -310,7 +420,8 @@ function KnightsTourGUI(cont){
 				//take care of last move
 				let index = solution[currSolIndex];
 				let cell = $('.knight-gui-cell')[index];
-				$(cell).removeClass('knight-gui-cell-curr').text(currSolIndex + 1);
+				$(cell).removeClass('knight-gui-cell-curr')
+					.html(`<span>${currSolIndex + 1}</span>`);
 				
 				//mark the new move
 				index = solution[++currSolIndex];
@@ -339,7 +450,7 @@ function KnightsTourGUI(cont){
 			$('.knight-gui-cell-curr').removeClass('knight-gui-cell-curr');
 			$('.knight-gui-cell').text('');
 			$('#knight-gui-prompt').show();
-			$('#knight-gui-btns').hide();
+			$('#knight-gui-controls .button').hide();
 			KnightsTour.reset();
 			solution = undefined;
 			isInit = false;
