@@ -1,3 +1,8 @@
+Make the page without animation for mobile (for screensize smaller than full desktop: 1000px)
+
+put in the menu first on the site
+improve mobile view of the site
+
 make things with vue:
 -refactor/combine the scroll-dependent animations
 -Make the headers switch as page scrolls
