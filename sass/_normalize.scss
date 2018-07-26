@@ -21,14 +21,15 @@ $main-color3: $bw3;
 $main-color4: $bw4;
 $main-color5: $bw5;
 
-$breakpoint1: 600px;
-$breakpoint2: 900px;
-$breakpoint3: 1200px;
+$breakpoint1: 600px;    // Tablet
+$breakpoint2: 900px;    // Desktop
+$breakpoint3: 1200px;   // Desktop, big resolution
 
 :root{
   font-size: 16px;
   font-family: sans-serif;
   overflow-x: hidden;
+  color: #202020;
 }
 
 a {
@@ -76,4 +77,8 @@ blockquote:after {
   z-index: -1;
   bottom: -3.5rem;
   right: -1.5rem;
+}
+
+p{
+  text-align: justify;
 }

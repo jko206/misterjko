@@ -340,8 +340,9 @@ function KnightsTourGUI(cont){
 			  display: block;
 			  width: 100%;
 			  left: 0;
-			  font-size: 2rem;
-			  line-height: 1.75;
+			  font-size: 1rem;
+			  line-height: 2.25;
+			  text-align: center;
 			}
 			
 			#knight-gui-controls{
@@ -386,9 +387,9 @@ function KnightsTourGUI(cont){
 				<div id="knight-gui-prompt">
 					Click initial position
 				</div>
-				<div class="button" id="knight-gui-prev">PREV</div>
-				<div class="button" id="knight-gui-reset">RESET</div>
-				<div class="button" id="knight-gui-next">NEXT</div>
+				<button class="button" id="knight-gui-prev">PREV</button>
+				<button class="button" id="knight-gui-reset">RESET</button>
+				<button class="button" id="knight-gui-next">NEXT</button>
 			</div>
 		</div>
 	`).appendTo(cont);

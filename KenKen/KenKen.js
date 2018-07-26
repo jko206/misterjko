@@ -1030,12 +1030,12 @@ let KenKenGUI = (function(){
 					  #kk-decr-size,
 					  #kk-incr-size,
 					  #kk-size-display{
-					    width: 70px;
-					    text-align: center;
-					    font-size: 1rem;
-					    line-height: 1.5;
-					    vertical-align: bottom;
-					    border: 0;
+						  width: 70px;
+						  font-size: 1rem;
+						  border: 0;
+						  display: flex;
+						  align-items: center;
+						  justify-content: center;
 					  }
 					  #kk-decr-size{
 					    border-top-left-radius: 30px;

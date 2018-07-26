@@ -23,6 +23,11 @@
     margin: 0 50px;
     max-width: 600px;
     line-height: 2;
+    
+    >div:first-child{
+      text-align: justify;
+    }
+    
   }
   
   .skill-set{
@@ -45,70 +50,6 @@
   }
 }
 
-/*/
-
-.about-j, .portfolio{
-  top: 0;
-  left: 0;
-    
-
-  .sub-section1{
-    width: 100%;
-    min-height: 100vh;
-    @media (max-width: 600px){
-      min-height: calc(100vh - 33px);
-      margin-top: 33px;
-    }
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    
-    align-items: center;
-    line-height: 2;
-    justify-content: space-evenly;
-    
-    .content{
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      width: 90%;
-      max-width: 600px;
-      background: none;
-      border: 1px solid black;
-      border-radius: 10px;
-    }
-  }
-  .sub-section1.basics {
-    
-    .content{
-      @media (min-width: $tablet-bp){
-        flex-direction: row;
-        padding: 50px;
-      }
-    }
-  }
-  #profile-pic{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  li {
-    list-style-type: none;
-  }
-  li:before{
-    content: ">> ";
-    font-family: monospace;
-    font-size: 0.8rem;
-    position: relative;
-    top: -1px;
-  }
-  ul {
-    padding-left: 40px;
-  }
-  
-}
-
-/**/
 .resume-files-wrap{
   display: none;
   background: black;
@@ -164,6 +105,7 @@
 
 .section{
   padding: 5px;
+  padding-top: 40px;
   width: 100vw;
   max-width: 100%;
   min-height: 100vh;
@@ -180,10 +122,12 @@
     
   }
   .sub-section1{
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
+    align-items: center;
     .content{
       align-items: center;
       max-width: 500px;
@@ -195,21 +139,23 @@
       @media (min-width: $breakpoint1){
         width: 100%;
         max-width: 800px;
+        margin: auto;
       }
     }
     .app-wrap{
-      width: 100%;
+      max-width: unset;
     }
     
-    img{
-      display: block;
-      max-width: 80%;
-      margin: auto;
-    }
   }
   
   .sub-section2{
+    padding-top: 120px;
     min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
     iframe{
       width: calc(100vw - 50px);
       margin: auto;
@@ -219,36 +165,40 @@
   }
 }
 
+.portfolio{
+  img{
+    display: block;
+    max-width: 80%;
+    margin: auto;
+  }
+}
+
 .basics .content{
   display: flex;
   flex-direction: column;
   @media (min-width: $breakpoint1){
     flex-direction: row;
   }
-  
+}
+
+.about-j{
   ul {
     list-style-type: none;
-    line-height: 1.5;
+    line-height: 2;
   }
   li:before {
     content: '>> ';
     font-family: monospace;
     font-size: 0.625rem;
-    vertical-align: middle;
+    vertical-align: text-bottom;
   }
   
 }
 
-.sub-section1:nth-child(even){
-  // background: $palette-red1;
-}
-.section:nth-child(even){
-  // background: gray;
-}
-
 .story{
   h3{
-    top: -5px;
+    top: -45px;
+    padding-top: 40px;
   }
   .events{  
     max-width: 800px;
@@ -273,7 +223,7 @@
         width: 80%;
       }
       div{
-        top: -5px;
+        // top: -5px;
       }
     }
     .events__item:before {
@@ -291,121 +241,25 @@
   }
 }
 
-/*
-Portfolio
-  item
-    desc, if there is one
-      h3
-      content
-    app-wrap, if there is one
-      h3
-      app
-*/
-#portfolio{
-  .portfolio__item{
-    width: 100vw;
-    height: 100vh;
-    
-    
-    h3{
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-    
-    .portfolio__nav {
-      z-index: 2;
-      position: absolute;
-      width: 10px;
-      left: 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      
-      .portfolio__nav-btn {
-        width: 10px;
-        height: 10px;
-        border: 1px solid black;
-      }
-      .active{
-        background: black;
-      }
-    }
-    .two-pages{
-      height: 40px;
-      top: calc(50vh - 20px);
-    }
-    .three-pages{
-      height: 60px;
-      top: calc(50vh - 30px);
-    }
-    .five-pages{
-      height: 100px;
-      top: calc(50vh - 50px);
-    }
-    
-    .portfolio__desc, .portfolio__app-wrap{
-      width: 100vw;
-      position: absolute;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-    .portfolio__desc{
-      z-index: 1;
-      .portfolio__content{
-        width: 100%;
-        max-width: 400px;
-        margin: auto;
-        border: 1px solid #212020;
-        padding: 20px;
-        border-radius: 20px;
-        color: #212020;
-        min-height: 400px;
-        box-sizing: border-box;
-        img{
-          width: 80%;
-          margin: auto;
-          display: block;
-        }
-      }
-    }
-    
-    .portfolio__app-wrap{
-      background: white;
-    }
-    .blurred{
-      filter: blur(10px);
-    }
-    .hidden{
-      display: none;
-    }
-  }
-  
-  .portfolio__app-wrap {
-    justify-content: center;
-    
-    .check_on_wolfram {
-      display: flex;
-      margin: auto;
-      text-align: center;
-      width: 200px;
-      height: 80px;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      background: gray;
-      color: white;
-      border-radius: 10px;
-      box-shadow: 0px 6px #b7b7b7;
-    }
-    .check_on_wolfram:active{
-      box-shadow: 0px 0px #b7b7b7;
-      position: relative;
-      top: 6px;
-    }
-  }
+.check_on_wolfram {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  background: gray;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 6px #b7b7b7;
+}
+.check_on_wolfram:active{
+  box-shadow: 0px 0px #b7b7b7;
+  position: relative;
+  top: 6px;
 }
 
 #links{
@@ -427,13 +281,13 @@ Portfolio
     }
   }
   .links__item{
-    width: 340px;
+    width: 300px;
     font-size: 2rem;
-    height: 100px;
+    height: 80px;
     color: white;
     img{
       vertical-align: middle;
-      height: 100px;
+      height: 80px;
     }
     span{
       
@@ -447,4 +301,8 @@ Portfolio
 
 .hidden{
   display: none;
+}
+
+li#tester{
+  display: inline;
 }
