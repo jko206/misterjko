@@ -1,3 +1,4 @@
 *.note
 countlog.txt
+count.txt
 *.log
