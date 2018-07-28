@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+	<title>J+</title>
+	<link rel="stylesheet" href="rsc/assn_creator_style.css" type="text/css">
+	<link rel="stylesheet" href="rsc/jquery-ui.css" type="text/css">  
+	<script type="text/javascript" src="rsc/cookie.js"></script> 
+	<script type="text/javascript" src="rsc/jquery-1.11.0.js"></script> 
+	<script type="text/javascript" src="rsc/jquery-ui-1.10.4.custom.min.js"></script> 
+	<script type="text/javascript" src="rsc/assn_creator.js"></script>
+	
+</head>
+<body>
+
+<div id="header">
+	<!--bunch of stuff about who made it, the source, notes, etc-->
+	<button class="submit">SUBMIT</button>
+	<button class="addQuestion">+Question</button>
+</div>
+<div id="main">
+	<div id="qTiles">
+		
+	</div>
+	<div id="buttonHolder">
+		<button class="submit">SUBMIT</button>
+		<button class="addQuestion">+Question</button>
+	</div>
+	<div id="backstage">
+		<div class="qTile deleteTarget" id="original-qTile">
+			<div class="options">
+				Options: 
+				<div class="option opt1" data-option="shuffle">shuffle</div>
+				<div class="option opt2" data-option="isMultiple">Multiple Choice</div>
+				<div class="option opt3" data-option="isMultiMultiple">1 or 1+ Answers</div>
+				<div class="option opt4" data-option="isWriteIn">Write-in Answer</div>
+			</div>
+			<button class="deleteButton">X</button>
+			<button class="addText">+TEXT</button>
+			<button class="addImage">+Image</button>
+			<div class="obj-container deleteTarget text-obj-container" id="original-text-obj-container" data-type="text">
+				<div contenteditable="true" class="text-obj">Type question here</div>
+				<button class="deleteButton">X</button>
+			</div>
+			<div class="obj-container deleteTarget image-obj-container" id="original-image-obj-container" data-type="image">
+				<input type="text" accept="image/*" class="imagePath image-obj" value="images/profile.jpg">
+				<div class="imageTarget">Image Here<img src="http://localhost/j_plus/images/logo.png"></div>
+				<button class="deleteButton">X</button>
+			</div>
+			<div class="choiceSet-container">
+				<table class="choiceSet" id="original-choiceSet">
+					<thead>
+						<tr>
+							<th>Set</th>
+							<th class="varDivider">&nbsp;</th>
+							<th class="choice choiceCell">Choice1</th>
+							<th class="choice choiceCell">Choice2</th>
+							<th class="choice choiceCell">Choice3</th>
+							<th class="choice choiceCell">Choice4</th>
+							<th class="choice choiceCell">Choice5</th>
+							<th><button class="addChoice">+Choice</button></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="indi-points">
+							<td>Points</td>
+							<td class="varDivider">&nbsp;</td>
+							<td class="choiceCell"><input type="number"></td>
+							<td class="choiceCell"><input type="number"></td>
+							<td class="choiceCell"><input type="number"></td>
+							<td class="choiceCell"><input type="number"></td>
+							<td class="choiceCell"><input type="number"></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr class="deleteTarget">
+							<td>1</td>
+							<td class="varDivider">&nbsp;</td>
+							<td class="choiceCell"><input type="number"></td>
+							<td class="choiceCell"><input type="number"></td>
+							<td class="choiceCell"><input type="number"></td>
+							<td class="choiceCell"><input type="number"></td>
+							<td class="choiceCell"><input type="number"></td>
+							<td><button class="deleteButton">X</button></td>
+						</tr>
+						<tr class="lastRow">
+							<td><button class="addSet">+Set</button></td>
+							<td class="varDivider">&nbsp;</td>
+							<td><button class="deleteColumn">X</button></td>
+							<td><button class="deleteColumn">X</button></td>
+							<td><button class="deleteColumn">X</button></td>
+							<td><button class="deleteColumn">X</button></td>
+							<td><button class="deleteColumn">X</button></td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+</body></html>

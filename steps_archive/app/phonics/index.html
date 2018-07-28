@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Math -- Homework</title>
+<script src="jquery-3.1.0.js"></script>
+<script src="script.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<!--<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>-->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="button" id="panel-toggle">Show</div>
+<div id="options">
+	<div class="phoneme-to-test" id="shorta-toggle">Short A</div>
+	<div class="phoneme-to-test" id="shorte-toggle">Short E</div>
+	<div class="phoneme-to-test" id="shorti-toggle">Short I</div>
+	<div class="phoneme-to-test" id="shorto-toggle">Short O</div>
+	<div class="phoneme-to-test" id="shortu-toggle">Short U</div>
+	<div class="phoneme-to-test" id="longa-toggle">Long A</div>
+	<div class="phoneme-to-test" id="longe-toggle">Long E</div>
+	<div class="phoneme-to-test" id="longi-toggle">Long I</div>
+	<div class="phoneme-to-test" id="longo-toggle">Long O</div>
+	<div class="phoneme-to-test" id="longu-toggle">Long U</div>
+	<div class="phoneme-to-test" id="nk-toggle">-nk</div>
+	<div class="phoneme-to-test" id="ng-toggle">-ng</div>
+	<div class="phoneme-to-test" id="nt-toggle">-nt</div>
+	<div class="phoneme-to-test" id="ck-toggle">-ck</div>
+	<div class="phoneme-to-test" id="ar-toggle">ar</div>
+	<div class="phoneme-to-test" id="sh-toggle">sh</div>
+	<div class="phoneme-to-test" id="ch-toggle">ch</div>
+	<div class="phoneme-to-test" id="ur-toggle">ur</div>
+	<div class="phoneme-to-test" id="ir-toggle">ir</div>
+	<div class="phoneme-to-test" id="shortLongA-toggle">S/L A</div>
+	<div class="phoneme-to-test" id="shortLongI-toggle">S/L I</div>
+	<div class="phoneme-to-test" id="shortLongO-toggle">S/L O</div>
+	<div class="phoneme-to-test" id="bdWords-toggle">B/D</div>
+	
+</div>
+
+<div id="cards">
+</div>
+
+<div id="components">
+	<div id="original-word-card" class="word-card">
+		<div class="word"></div>
+		<div class="phonemes"></div>
+		<div class="magic-e-section">
+			<span class="syllable"></span> =
+			<span class="magic-e"></span> + 
+			<span class="consonant"></span>
+			<!--
+			<span class="syllable">ope</span> =
+			<span class="magic-e">__o__e</span> + 
+			<span class="consonant">p</span>
+			-->
+		</div>
+	</div>
+	
+	<div id="controls">
+		<div id="prev-button" class="button">Previous</div>
+		<div id="toggle-word-phonemes" class="button">Phonemes</div>
+		<div id="next-button" class="button">Next</div>
+	</div>
+</div>
+</body>
+</html>

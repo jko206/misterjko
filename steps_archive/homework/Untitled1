@@ -1,0 +1,8 @@
+Exercise object has to throw an exception or something if the exercise is not found
+
+each exercise should have helpers
+-Timer
+-Notes
+-Hands-on
+-Walk-through
+-Reference (like the multiplication table for doing division intuition 3)

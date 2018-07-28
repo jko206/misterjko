@@ -1,0 +1,68 @@
+
+.main{
+	overflow: auto;
+	margin: auto;
+	width: 650px;
+}
+
+#block-spawns{
+	position: relative;
+	overflow: auto;
+}
+.block-spawn{
+	float: left;
+	position: relative;
+	margin-right: 50px;
+}
+.five-grouper{
+	margin-right: 20px;
+}
+
+.block-image{
+	margin: 20px;
+}
+
+.input-wrapper{
+	margin: auto;
+	display: block;
+	width: 300px;
+  padding: 10px;
+	
+}
+
+.input{
+  width: 200px;
+  height: 50px;
+  font-size: 2em;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  box-sizing: border-box;
+  vertical-align: bottom;
+}
+
+.submit{
+	  width: 100px;
+  height: 50px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+#keypad{
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0px;
+	min-height: 300px;
+	max-height: 30%;
+	min-width: 650px;
+	max-width: 100%;
+	display: none;
+}
+
+.key{
+	width: 33%;
+	font-size: 3em;
+	vertical-align: bottom;
+	height: 75px;
+}

@@ -1,0 +1,77 @@
+#main-area {
+    border: 1px solid black;
+    position: absolute;
+    width: 500px;
+    margin: 0 calc(50% - 250px);
+    top: 90px;
+    height: 200px;
+}
+
+.wrong {
+    font-size: 20px;
+    border: 1px solid red;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: pink;
+	display: inline-block;
+}
+
+.vd-input-wrapper{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+}
+
+
+.loader-content-row {
+    height: 150px;
+}
+
+.vd-frame{
+    box-sizing: border-box;
+}
+
+.vd-frame:hover{
+    border: 1px solid black;
+}
+
+.vd-e0{
+    border: 1px solid black;
+    position: relative;
+    top: 80px;
+    float: left;
+}
+
+.vd-e1{
+    background-color: red;
+    width: 500px;
+    height: 50px;
+    float: left;
+}
+
+.vd-e2{
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.vd-e3{
+    background-color: green;
+    width: 50px;
+    height: 5px;
+    float: left;
+}
+
+
+.vd-e4{
+    background-color: green;
+    width: 5px;
+    height: 5px;
+    float: left;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Steps Math</title>
+	<link rel="stylesheet" type="text/css" href="layout.css" id="style-sheet">
+	<link rel="stylesheet" type="text/css" href="mobile.css" id="style-sheet" media="screen and (max-width: 700px)">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+	
+	<!--<meta name="description" content="slick is a responsive carousel jQuery plugin that supports multiple breakpoints, CSS3 transitions, touch events/swiping &amp; much more!">
+	<meta name="keywords" content="slick, responsive, carousel, slider, jQuery, plugin, CSS3, swipe, touch">-->
+	
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+</head>
+<body>
+	<!-- Menu items / log in-->
+	<div id="header">
+		<div id="menu-toggle">&#8801;</div>
+		<a href="index.html"><img src="images/5.png" alt="Steps Math Logo" id="top-logo"></a><!-- add BLOG -->
+		<ul id="nav"><li><a href="program.html"><span class="english">Program</span><span class="korean">교육과정</span></a></li><li><a href="tuition.html"><span class="english">Tuition</span><span class="korean">교습비</span></a></li><li><a href="analysis.html"><span class="english">Analysis</span><span class="korean">원인 분석</span></a></li><li><a href="about-us.html"><span class="english">About Us</span><span class="korean">Steps에 대해</span></a></li><li><a href="#footer"><span class="english">Contact Us</span><span class="korean">연락처</span></a></li><li><a href="blog.html"><span class="english">Blog</span><span class="korean">블로그</span></a></li></ul>
+		<div id="login">
+			<span id="open-login-input">Sign in</span>
+			<!--<form id="login-input">
+				<label for="id">
+					<span class="korean">이메일</span>
+					<span class="english">Email</span>
+				</label>
+				<input type="text" name="id" id="id-input">
+				<label for="password">
+					<span class="korean">비밀번호</span>
+					<span class="english">Password</span>
+				</label>
+				<input type="password" name="password">
+				<button type="submit">
+					<span class="korean">로그인</span>
+					<span class="english">Sign in</span>
+				</button>
+			</form>-->
+			<!--sign up-->
+		</div>
+		<div id="languages">
+			<span id="set-korean" class="set-language english">한국어</span>
+			<span id="set-english" class="set-language korean">English</span>
+		</div>
+	</div>
+	<div id="main-contents">
+		<h1>스텝스의 교육과정</h1>
+		<div id="details">
+			<div class="detail" id="detail-basics">
+				<img src="images/geometric_graph.png" alt="Node graph" class="big-image" id="image-problem">
+				<div class="words">
+					<h2>문제 파악</h2>
+					<p>Identifying weaknesses
+					Using our in-house proprietary analytical system, we can quickly guage the student's 
+					currently level of understanding.</p>
+					
+					<p>For example, if a student doesn't know that the sum of internal angles of a triangles is 180&deg;,
+					then there's a very high chance that his understanding of trignometry is very shaky. Conversely,
+					if the student is very proficient with logarithm, then it's implicit that she understands
+					how power works and probably also roots.
+					<!--<a href="program.html" class="more">더 자세히&#12299;</a>-->
+					</p>
+					
+				</div>
+			</div>
+			<div class="detail" id="detail-basics">
+				<img src="images/basics.jpg" alt="Teacher and student" class="big-image" id="image-basics">
+				<div class="words">
+					<h2>기본 보충</h2>
+					<p>
+					After we have identified the underlying cause of instability in current understanding,
+					we will supplement the underlying cause as to make it easier for the student to 
+					understand more complex ideas.
+					<!--<a href="program.html" class="more">더 자세히&#12299;</a>-->
+					</p>
+					
+				</div>
+			</div>
+			<div class="detail" id="detail-basics">
+				<img src="images/take_steps.jpg" alt="Teacher and student" class="big-image" id="image-basics">
+				<div class="words">
+					<h2>반복 훈련</h2>
+					<p>
+					At the same time, we will make sure the student gets plenty of practice with the same
+					problem until he knows how to solve the problem completely confidently on his own.
+					<!--<a href="program.html" class="more">더 자세히&#12299;</a>-->
+					</p>
+				</div>
+
+				<!-- DEMO STARTS -->
+				<div class="demo-container" id="demo">
+					<div id="questions-container">
+						<div id="question" class='practice'>Practice: What is 3 + 4?</div>
+						<ul id="answer-choices">
+							<li class="answer-choice answer">7</li>
+							<li class="answer-choice">6</li>
+							<li class="answer-choice">12</li>
+							<li class="answer-choice">9</li>
+						</ul>
+						<button id="check-answer" disabled>Check</button>
+						<div id="start-real-quiz">That was practice!</div>
+					</div>
+					<div id="analysis-container">
+						<button class="show-chart" id="show-timeChart">Time</button>
+						<button class="show-chart" id="show-correctChart">Correct</button>
+						<div class="chart" id="timeChart"></div>
+						<div class="chart" id="correctChart"></div>
+					</div>				
+				</div>
+				
+				<!-- DEMO ENDS -->
+			</div>
+			<div class="detail" id="detail-basics">
+				<img src="images/repetition.jpg" alt="Teacher and student" class="big-image" id="image-basics">
+				<div class="words">
+					<h2>스텝스의 방식이 잘되는 이유</h2>
+					<p>
+					1. there's only a finite number of different problems. Everything is derivitive of another.
+					There's never a novel question as there are in Korean college entrance exams. So as long
+					you practice what's been tested so far, you'll never be really surprised. 
+					2. We'll make sure your understands the basic by making him/her repeatedly practice the basic.
+					In all honestly, SAT math doesn't offer any difficult question. They only offer up to Algebra II,
+					which most Asian students in the US take when they're 10th grade or lower. Because of this,
+					not a lot of the concept in SAT are that difficult once they're explained properly. 
+					<!--<a href="program.html" class="more">더 자세히&#12299;</a>-->
+					</p>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<a href="#header"><div id="to-top">Top</div></a>
+		<div id="footer-center-align">
+			<div class="footer-section">
+				<h2>연락방법</h2>
+				<span class="contact-method">Email</span> <a href="mailto:jko@stepsmath.kr">jko@stepsmath.kr</a><br>
+				<span class="contact-method">Phone</span> <a href="tel:01055996767">010-5599-6767</a><br>
+				<span class="contact-method">Text</span> <a href="tel:01055996767">010-5599-6767</a><br>
+				<span class="contact-method">Kakao</span> <a href="http://goto.kakao.com/@StepsMath">StepsMath</a><br>
+			</div>
+			<!--
+			<div class="footer-section">
+				<h2>블로그 & 소셜미디어</h2>
+				카카오 스토리
+				다음
+				네이버
+				티스토리
+				페북
+				구+
+			</div>
+			<div class="footer-section">
+				<h2>회사 정보</h2>
+				
+			</div>
+			-->
+		</div>
+	</div>
+		
+	<!-- Scripts -->
+	<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="plugin.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="demo-script.js"></script>
+	
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	 <script type="text/javascript" src="chart.js"></script>
+	<!-- /Scripts -->
+</body>
+</html>

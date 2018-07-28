@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<title>Steps Math: Vocab</title>
+	<link rel="stylesheet" type="text/css" href="rsc/layout.css" id="style-sheet">
+	<link rel="stylesheet" type="text/css" href="rsc/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="rsc/jquery-ui.min.css">
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+	<!--  Scripts -->
+	<script type="text/javascript" src="rsc/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="rsc/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="rsc/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="rsc/jquery-ui.min.js"></script>
+	<!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
+	<script type="text/javascript" src="rsc/cookie.js"></script>
+	<script type="text/javascript" src="rsc/script.js"></script>
+</head>
+<body>
+    <input type="text" placeholder="set" id="set_name">
+    <button id="submit">submit</button>
+    MUST HAVE AT LEAST 5 items!
+	<table>
+        <thead>
+            <tr><th>delete</th><th>Word</th><th>Definition</th></tr>
+        </thead>
+        <tbody id="word_rows">
+            <tr id="original_row" class="delete_target">
+                <td><button class="delete_row">x</button></td>
+                <td><input type="text" class="word"></td>
+                <td><textarea class="definition" rows="4" cols="50"></textarea></td>
+            </tr>
+            <tr id="last_row">
+                <td colspan="3"><button id="add_row">+</button></td>
+            </tr>
+        </tbody>
+	</table>
+
+</body></html>

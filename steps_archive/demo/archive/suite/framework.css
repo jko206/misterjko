@@ -1,0 +1,371 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.main{
+	overflow: auto;
+	margin: auto;
+	width: 870px;
+	padding-top: 30px;  
+	height: 100vh;
+	box-sizing: border-box;
+	overflow: visible;
+	/* opacity: 0.4; */
+}
+
+.input-wrappers{
+	width: 220px;
+	display: inline-block;
+	margin: auto;
+	vertical-align: top;
+}
+
+.input-wrapper{
+	margin: auto;
+	width: 200px;
+	display: block;
+	padding: 10px;
+	position: relative;
+}
+
+.input{
+  width: 150px;
+  height: 50px;
+  font-size: 2em;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  box-sizing: border-box;
+  vertical-align: bottom;
+  text-align: right;
+  background-color: white;
+  /* padding-right: 50px; */
+}
+
+.submit{
+	width: 100px;
+	height: 50px;
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+#keypad1{
+	box-sizing: border-box;
+	position: fixed;
+	bottom: 0px;
+	/* min-height: 300px; */
+	height: 500px;
+	max-height: 40%;
+	min-width: 650px;
+	max-width: 100%;
+	display: none;
+}
+
+#keypad1 .key{
+	width: 33%;
+	font-size: 3em;
+	vertical-align: bottom;
+	height: 25%;
+}
+
+
+#keypad2{
+	box-sizing: border-box;
+	position: fixed;
+	bottom: 0px;
+	min-height: 150px;
+	max-height: 30%;
+	min-width: 650px;
+	max-width: 100%;
+	display: none;
+}
+
+#keypad2 .key{
+	width: 16.6666666%;
+	font-size: 3em;
+	vertical-align: bottom;
+	height: 75px;
+}
+
+
+#point-meter-container{
+	position: fixed;
+	box-sizing: border-box;
+	border: 1px solid black;
+	height: 10px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#point-meter{
+	background-color: green;
+	height: 100%; 
+	width: 0%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#delta-meter{
+	background-color: red;
+	height: 100%;
+	width: 0%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#reward_zone{
+	display: none;
+	position: fixed;
+	width: 400px;
+	height: 300px;
+	background: gray;
+	overflow-y: scroll;
+	z-index: 100;
+}
+
+#left-slideout{
+	position: absolute;
+	width: 200px;
+	height: 100%;
+	background: #efefef;
+	display: none;
+	padding-top: 60px;
+	box-sizing: border-box;
+	z-index: 10;
+}
+
+#left-slideout-menu{
+	padding: 0;
+}
+
+#left-slideout-menu li{
+	list-style: none;
+	border: 1px solid rgb(186, 179, 179);
+	padding: 5px;
+	height: 50px;
+	margin: 0;
+	line-height: 1.6;
+	font-size: 1.8em;
+	font-family: sans-serif;
+}
+
+span#reward-count:hover {
+    cursor: pointer;
+}
+
+ul#left-slideout-menu li:hover {
+    cursor: pointer;
+    color: gray;
+}
+
+#panel-opener{
+	font-size: 2.5em;
+	font-weight: bold;
+	position: absolute;
+	z-index: 100;
+	left: 15px;
+	top: 15px;
+	border: 2px solid black;
+	width: 50px;
+	text-align: center;
+	height: 50px;
+	border-radius: 30px;
+	line-height: 1.3;
+}
+
+#panel-opener:hover{
+	cursor: pointer;
+	border-color: gray;
+	color: gray;
+}
+
+#reward-count{
+	display: inline-block;
+	height: 30px;
+	padding: 3px 15px;
+	background: rgb(157, 157, 157);
+	text-align: center;
+	vertical-align: middle;
+	line-height: 1.3;
+	border-radius: 10px;
+	color: white;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+a.reward{
+	font-size: 2em;
+}
+
+input:disabled {
+  background-color: white;
+}
+
+input.input:focus {
+  background-color: rgb(190, 235, 253);
+}
+
+/*********************experimental**************/
+.selectable{
+	display: inline-block;
+	padding: 5px;
+}
+
+.selected{
+	display: inline-block;
+	background: orange;
+}
+
+.block-spawn{
+	border: 2px solid gray;
+	padding: 5px;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+#change-button, #organize-blocks{
+	width: 130px;
+	height: 60px;
+	margin: 10px;
+}
+
+#operation-sign{
+  display: inline-block;
+  position: absolute;
+  font-size: 3em;
+  left: -32px;
+  width: 40px;
+  font-weight: 900;
+}
+
+#bonus-bar-container{
+	position: relative;
+}
+
+#bonus-text{
+	font-family: sans-serif;
+	display: block;
+	text-align: center;
+	position: absolute;
+	z-index: 5;
+	text-align: center;
+	font-size: 2.2em;
+	line-height: 1.4;
+	height: 50px;
+	width: 100%;
+}
+
+#bonus-bar{
+	height: 50px;
+	background: green;
+	width: 100%;
+	border: 1px solid rgb(47, 163, 47);
+	box-sizing: border-box;
+	border-radius: 10px;
+	position: absolute;
+	z-index: 3;
+}
+
+.scoreboard {
+	position: absolute;
+	top: 9px;
+	right: 6px;
+	height: 50px;
+	width: 50px;
+	font-size: 2.5em;
+	text-align: center;
+	line-height: 1.5;
+	font-family: monospace;
+	font-weight: bold;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#reward_zone li {
+    list-style: none;
+}
+
+#reward_zone a::before {
+    content: '';    position: absolute;    border-color: #009933;    border-style: solid;    border-width: 0 0.3em 0.25em 0;    
+    height: 0.5em;    top: 1.3em;    
+    left: 1.5em;    
+    transform: rotate(45deg);    
+    width: 0.25em;
+}
+
+/*      Analysis stuff 
+analysis_window
+
+<div class="close_button">+</div>
+<div id="analysis_tabs">
+	<div class="analysis_tab">Today</div>
+	<div class="analysis_tab">All Time</div>
+	<div id="graphics_board">
+
+	</div>
+</div>
+
+  */
+#analysis_window{
+	position: fixed;
+	top: 10%;
+	left: 5%;
+	width: 90%;
+	height: 80%;
+	border: 1px solid black;
+	z-index: 100;
+	background-color: gray;
+	display: none;
+}
+ 
+.close_button{
+	background-color: rgb(194, 46, 46);
+	color: white;
+	position: absolute;
+	font-size: 3em;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	line-height: 1;
+	border-radius: 25px;
+	font-weight: 900;
+	right: -25px;
+	top: -25px;
+	transform: rotate(45deg);
+}
+
+
+#analysis_tabs div{
+	position: absolute;
+	width: 150px;
+	height: 60px;
+	line-height: 1.9;
+	text-align: center;
+	font-size: 1.8em;
+	font-family: Verdana;
+	background-color: beige;
+}
+
+#analysis_tabs div:hover{
+	cursor: pointer;
+}
+
+#analyse_today{
+	left: 150px;
+}
+#analyse_all_time{
+}
+
+#graphics_board{
+	position: absolute;
+	top: 15%;
+	width: 100%;
+	height: 85%;
+	overflow: hidden;
+}
+/*
+
+*/

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+        <title>J+</title>
+		<link rel="stylesheet" href="layout.css" type="text/css">
+		<link rel="stylesheet" href="../framework.css" type="text/css">
+		<link rel="stylesheet" href="../jquery-ui.css" type="text/css" >  
+
+		<!--favicon-->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" >
+		
+		<!--scripts-->
+		<script type="text/javascript" src="../jquery-1.11.0.js"></script> 
+		<script type="text/javascript" src="../cookie.js"></script> 
+		<script type="text/javascript" src="../jquery-ui.js"></script> 
+		<script type="text/javascript" src="../game_engine2.js"></script>
+		<script type="text/javascript" src="game2.js"></script> 
+		<script type="text/javascript" src="../jquery.ui.touch-punch.min.js"></script>
+
+		<!--for charts-->
+		<script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="http://code.highcharts.com/highcharts-more.js"></script>
+		<script src="http://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+	<body>
+		<div id="point-meter-container">
+			<div id="point-meter"></div><div id="delta-meter"></div>
+		</div>
+		<div id="panel-opener">
+			&equiv;
+		</div>
+		<div id="left-slideout" class="hide-misc">
+			<ul id="left-slideout-menu">
+				<li id="launch_reward_zone">Rewards: <span id="reward-count">0</span></li>
+				<li id="analysis_button">Analysis</li>
+				<!--<li>Options</li>-->
+			</ul>
+		</div>
+		<div class="main">
+			<div class="input-wrappers">
+				<!--
+				/*	part1		part2			part3
+					Minuend - subtrahend 	= difference
+					Augend	+	Addend		= sum
+				*/
+				-->
+				<div class="input-wrapper">
+					<input type="number" class="input" id="part1">
+					<div class="scoreboard"></div>
+				</div>
+				<div class="input-wrapper">
+					<div id="operation-sign">+</div>
+					<input type="number" class="input" id="part2">
+					<div class="scoreboard"></div>
+				</div>
+				<div class="input-wrapper">
+					<input type="number" class="input" id="part3">
+					<div class="scoreboard"></div>
+				</div>
+				<button id="change-button">CHANGE</button>
+				<div id="bonus-bar-container">
+					
+					<span id="bonus-text">Bonus!</span>
+					<div id="bonus-bar"></div>
+					
+				</div>
+				<!--<button id="organize-blocks"></button>-->
+			</div>
+			<div id="block-spawns">
+				<div class="block-spawn" id="spawn0">
+					<div class="pow2">
+						<img src="100.gif" alt="100 block" class="block-image">
+					</div>
+					<div class="pow1">
+						<img src="10.gif" alt="10 block" class="block-image">
+					</div>
+					<div class="pow0">
+						<img src="1.gif" alt="1 block" class="block-image">
+					</div>
+				</div>
+				<div class="block-spawn" id="spawn1">
+					<div class="pow2">
+						<img src="100.gif" alt="100 block" class="block-image">
+					</div>
+					<div class="pow1">
+						<img src="10.gif" alt="10 block" class="block-image">
+					</div>
+					<div class="pow0">
+						<img src="1.gif" alt="1 block" class="block-image">
+					</div>
+				</div>
+				<div class="block-spawn" id="spawn2">
+					<div class="pow2">
+						<img src="100.gif" alt="100 block" class="block-image">
+					</div>
+					<div class="pow1">
+						<img src="10.gif" alt="10 block" class="block-image">
+					</div>
+					<div class="pow0">
+						<img src="1.gif" alt="1 block" class="block-image">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="right-slideout">
+			<!--I don't know what to put here yet-->
+		</div>
+		<div id="backstage">
+			<div id="analysis_window" class="close_target">
+				<div class="close_button">+</div>
+				<div id="analysis_tabs">
+					<div class="analysis_tab" id="analyse_all_time">All Time</div>	
+					<div class="analysis_tab" id="analyse_today">Today</div>
+				</div>
+				<div id="graphics_board">
+					
+				</div>
+			</div>
+			<div id="keypads">
+				<!-- 3x4 keypad -->
+				<div class="keypad" id="keypad1"><button class="key" data-key="1">1</button><button class="key" data-key="2">2</button><button class="key" data-key="3">3</button><button class="key" data-key="4">4</button><button class="key" data-key="5">5</button><button class="key" data-key="6">6</button><button class="key" data-key="7">7</button><button class="key" data-key="8">8</button><button class="key" data-key="9">9</button><button class="key" data-key="a">&larr;</button><button class="key" data-key="0">0</button><button class="key" data-key="b">&crarr;</button></div>
+				
+				<!-- 6x2 keypad -->
+				<div class="keypad" id="keypad2"><button class="key" data-key="1">1</button><button class="key" data-key="2">2</button><button class="key" data-key="3">3</button><button class="key" data-key="4">4</button><button class="key" data-key="5">5</button><button class="key" data-key="a">&larr;</button><button class="key" data-key="6">6</button><button class="key" data-key="7">7</button><button class="key" data-key="8">8</button><button class="key" data-key="9">9</button><button class="key" data-key="0">0</button><button class="key" data-key="b">&crarr;</button></div>
+				
+			</div>
+        <!--where all the popups and stuff live until they have to show up-->  
+			<div id="reward_zone" class="hide-misc">
+				<ul>
+					<li>SpongeBob SquarePants Season 1
+						<ul id='vid-SBSP-S01'>
+
+						</ul>
+					</li>
+				</ul>
+			</div>
+  		</div>
+	</body>
+</html>

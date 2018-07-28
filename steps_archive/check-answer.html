@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>Steps Math</title>
+	<!--<link rel="stylesheet" href="css/index.css">-->
+	<link rel="stylesheet" href="css/sign-up.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+
+</head>
+
+<body>
+	<input type="text" id="input">
+	<button id="check">Check</button>
+</body>
+
+<script>
+	document.getElementById('check').onclick = function(){
+		let input = document.getElementById('input').value;
+		if(input == 2755620){
+			alert('Good job');
+		} else {
+			alert('wrong');
+		}
+	}
+</script>
+</html>

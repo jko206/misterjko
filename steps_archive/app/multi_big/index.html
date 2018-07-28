@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<title>Steps Math</title>
+	<link rel="stylesheet" type="text/css" href="rsc/layout.css" id="style-sheet">
+	<link rel="stylesheet" type="text/css" href="rsc/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="rsc/jquery-ui.min.css">
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+	<!--  Scripts -->
+	<script type="text/javascript" src="rsc/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="rsc/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="rsc/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="rsc/jquery-ui.min.js"></script>
+	<!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
+	<script type="text/javascript" src="rsc/cookie.js"></script>
+	<script type="text/javascript" src="rsc/script.js"></script>
+	<!--
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/highcharts-more.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+	<!--  /Scripts -->
+</head>
+<body>
+	<div id="left_panel">
+		<div class="mini_profile">
+			<span id="username"><!--{NAME}-->Robin</span><br>
+			Level:<span id="level">0</span><br>
+			Points:<span id="current_points">0</span><br>
+			Rewards:<span id="rewards">0</span>
+		</div>
+		<nav>
+			<a href="#" id="pause_game">Pause</a>
+			<a href="#" id="end_session">End Session</a>
+		</nav>
+	</div>
+	<div id="main">
+		<!-- Points bar -->
+		<div id="points_bar"></div>
+		<!-- Timer -->
+		<div id="timer_bar"></div>
+		<!-- Question -->
+		<div id="question_container">
+			<div id="sign">&#215;</div>
+			<div id="numbers">
+				<div class="number">*</div>
+				<div class="number">*</div>
+			</div>
+			<div id="h_rule"></div>
+			<div class="user_input"></div>
+			<input class="user_input">
+		</div>
+
+		<!-- Number Pad-->
+		<div id="number_keys"></div>
+	</div>
+	<div id="summary" style='display:none;'>
+		time: <span id="time"> </span><br>
+		attempts: <span id="attempts"> </span><br>
+		correct: <span id="correct"> </span><br>
+		success rate: <span id="success_rate"> </span>
+	</div>
+
+
+</body></html>

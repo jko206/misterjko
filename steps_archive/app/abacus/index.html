@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Education</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div>
+	<div id="equation-wrapper">
+		<div id="reset-btn" class="eq-part" style="display: none;">Reset</div>
+		<div id="eq-input" contenteditable>Equation</div>
+	</div>
+	<div id="terms">
+		<div id="term1" class="term"></div>
+		<div id="term2" class="term"></div>	
+	</div>
+	
+	<div id="controls">
+		<div class="button disabled" id="split">쪼개기</div>
+		<div class="button disabled" id="combine">합치기</div>
+		<!--<div class="button disabled" id="subtract">빼기</div>
+		<div class="button disabled" id="undo-sub">되돌리기</div>
+
+		<div class="button" id="open-options">옵션</div>-->
+	</div>
+</div>
+
+<!-- MATHJAX -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+/*global MathJax*/
+MathJax.Hub.Config({
+   tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        extensions: ["tex2jax.js","[Contrib]/forminput.js"]
+    }
+});    
+</script>
+
+<!-- JQUERY -->
+<script src="jquery-3.1.0.js"></script>
+<script src="jquery/jquery-ui.js"></script>
+
+<!-- EXERCISE -->
+<script src="lib.js"></script>
+<script src="script.js"></script>
+<script src="newmath.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J+</title>
+		<link rel="stylesheet" href="layout.css" type="text/css">
+
+		<!--favicon-->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" >
+		<!--scripts-->
+		<link rel="stylesheet" href="jquery-ui.css" type="text/css" >  
+		<script type="text/javascript" src="jquery-1.11.0.js"></script> 
+		<script type="text/javascript" src="jquery-ui.js"></script> 
+		<script type="text/javascript" src="script.js"></script>
+    </head>
+	<body>
+		<div class="main">
+			<input class="start" type="button" value="&#9658;Start">
+			<div class="countDown">
+				<div id="cd3">3</div>
+				<div id="cd2">2</div>
+				<div id="cd1">1</div>
+			</div>
+			<div class="pause-btn">Pause</div>
+			<div class="pause-scr">
+				<div>PAUSE</div>
+				<input class="start resume" id="resume" type="button" value="&#9658;Resume">
+			</div>
+			<div class="arithmetics">
+				<div class="operator dummy"><!--place holder--></div>
+				<div class="augend operand"></div>
+				<div class="operator">+</div>
+				<div class="addend operand"></div>
+				<div class="eq"></div>
+				<input class="sum" type="number">
+			</div>
+			<button id="submit">&crarr;</button>
+			<div class="stats">
+				<span id="toggle-stat">+</span>
+				<table>
+					<tr>
+						<td>Correct</td>
+						<td id="num-correct-resp"></td>
+					</tr>
+					<tr>
+						<td>Total</td>
+						<td id="num-total-resp"></td>
+					</tr>
+					<tr>
+						<td>Percent </td>
+						<td id="percent-correct"></td>
+					</tr>
+					<tr>
+						<td>Time</td>
+						<td id="current-time"></td>
+					</tr>
+					<tr>
+						<td>Avg. Time</td>
+						<td id="avg-time"></td>
+					</tr>
+					<tr>
+						<td>Duration</td>
+						<td id="duration"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

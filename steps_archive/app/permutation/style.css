@@ -1,0 +1,36 @@
+.wrap{
+    padding: 5px;
+    font-size: 2em;
+    border: 3px solid black;
+    border-radius: 5px;
+    float: left;
+    margin: 10px 10px;
+    font-family: monospace;
+}
+
+#controls{
+    width: 50%;
+    margin: auto;
+}
+
+#results_container{
+    width: 50%;
+    margin: auto;
+}
+
+#ghost_box{
+    display: block;
+    clear: both;
+    width: 50%;
+    margin: auto
+}
+#ghost_box div{
+    display: inline-block;
+    float: left;
+    width: 100px;
+    margin: 10px 10px 0 0;
+    padding: 15px;
+    font-size: 2em;
+    border-radius: 15px;
+    text-align: center;
+}

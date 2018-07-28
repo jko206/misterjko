@@ -1,0 +1,88 @@
+make the app more general purpose so I can plug in other homework
+
+make it so that a separate file contains all the constants, like the domain name and password and such. 
+
+stat display
+
+point display
+
+$(function() {
+
+	// check if a single input is correct
+	if(CHECK_SINGLE_INPUT){
+		$('.input').keydown(function(e){
+			if(e.which == x){ //where x is the key code for tab
+				//check answer
+			}
+		});
+	}
+	$('.button-that-checks-answer').click(function(){
+		//for each input in the wrapper,
+
+		//check answer
+
+		//if MARK_INDIVIDUAL flag is checked, then
+		//mark each input as right or wrong. 
+		//otherwise, either everything must be correct, or they're wrong.q
+
+		//problemRender.checkAnswer() or something like that will return two
+		// things:
+		// 1. Whether the question was right or wrong
+		// 2. Message to go along, like "you must simplify" or
+		// "correct!" or "wrong!" or something like that
+
+		// something that keeps track of points
+		// videos
+		// include the walking dead and adventure time in the list of videos
+	}
+});
+
+
+-----
+
+//when x divides 50, the remainder is 2; when x divides 89, the remainder is 5.
+// What is the set of values that x can be?
+
+// get all factors of (50-2) and (89-5)
+// find the intersection of the two sets
+// the numbers in the sets must be greater than 5
+
+
+
+
+//be able to manually give or take away points and coins (be able to configure on spot and have the configure saved
+
+// be able to load problem
+
+
+
+$(function() {
+
+// check if a single input is correct
+if(CHECK_SINGLE_INPUT){
+$('.input').keydown(function(e){
+if(e.which == x){ //where x is the key code for tab
+//check answer
+}
+});
+}
+$('.button-that-checks-answer').click(function(){
+//for each input in the wrapper,
+
+//check answer
+
+//if MARK_INDIVIDUAL flag is checked, then
+//mark each input as right or wrong.
+//otherwise, either everything must be correct, or they're wrong.q
+
+//problemRender.checkAnswer() or something like that will return two
+// things:
+// 1. Whether the question was right or wrong
+// 2. Message to go along, like "you must simplify" or
+// "correct!" or "wrong!" or something like that
+
+// something that keeps track of points
+// videos
+// include the walking dead and adventure time in the list of videos
+}
+});

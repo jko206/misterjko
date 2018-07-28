@@ -1,0 +1,16 @@
+.button, #new-q{
+    display: inline-block;
+    border: 1px solid black;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: gainsboro;
+}
+
+.q-wrapper {
+    background-color: #e4e4f1;
+    border: 1px solid #d5d5f3;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}

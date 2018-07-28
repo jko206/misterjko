@@ -1,0 +1,121 @@
+
+{"user":"Jake","attempts":1,"success":0,"statement":"p1: 1,-5\tp2: -2,4\tresp: [1.1111111111111111e+21, 1]\tactual: 3,10\t timeDate: 2017-01-17 16:40"}
+{"user":"Benjamin Kim","attempts":1,"success":0,"statement":"p1: 1,-5\tp2: -2,4\tresp: [-3, -9]\tactual: 3,10\t timeDate: 2017-01-17 18:03"}
+{"user":"Benjamin Kim","attempts":2,"success":0,"statement":"p1: 1,-5\tp2: -2,4\tresp: [1, 6]\tactual: 3,10\t timeDate: 2017-01-17 18:51"}
+{"user":"Benjamin Kim","attempts":3,"success":0,"statement":"p1: 1,-5\tp2: -2,4\tresp: [2, 6]\tactual: 3,10\t timeDate: 2017-01-17 18:51"}
+{"user":"Benjamin Kim","attempts":4,"success":1,"statement":"p1: 1,-5\tp2: -2,4\tresp: [3, 10]\tactual: 3,10\t timeDate: 2017-01-17 18:55"}
+{"user":"Benjamin Kim","attempts":5,"success":2,"statement":"p1: 3,-2\tp2: -4,-4\tresp: [1, 53]\tactual: 1,53\t timeDate: 2017-01-17 19:00"}
+{"user":"Benjamin Kim","attempts":6,"success":3,"statement":"p1: 3,-2\tp2: -4,-4\tresp: [1, 53]\tactual: 1,53\t timeDate: 2017-01-17 19:00"}
+{"user":"Robin Rhim","attempts":1,"success":0,"statement":"p1: 1,-5\tp2: -2,4\tresp: [2, 3]\tactual: 3,10\t timeDate: 2017-01-17 19:04"}
+{"user":"Benjamin Kim","attempts":7,"success":4,"statement":"p1: -5,-2\tp2: 2,5\tresp: [7, 2]\tactual: 7,2\t timeDate: 2017-01-17 19:05"}
+{"user":"Benjamin Kim","attempts":8,"success":4,"statement":"p1: -7,8\tp2: -3,-5\tresp: [5, 5]\tactual: 1,185\t timeDate: 2017-01-17 19:10"}
+{"user":"Benjamin Kim","attempts":9,"success":4,"statement":"p1: -7,8\tp2: -3,-5\tresp: [5, 5]\tactual: 1,185\t timeDate: 2017-01-17 19:11"}
+{"user":"Benjamin Kim","attempts":10,"success":5,"statement":"p1: -7,8\tp2: -3,-5\tresp: [1, 185]\tactual: 1,185\t timeDate: 2017-01-17 19:14"}
+{"user":"Benjamin Kim","attempts":11,"success":6,"statement":"p1: 4,-5\tp2: 1,4\tresp: [3, 10]\tactual: 3,10\t timeDate: 2017-01-17 19:15"}
+{"user":"Robin Rhim","attempts":2,"success":0,"statement":"p1: 1,-5\tp2: -2,4\tresp: [6, 2]\tactual: 3,10\t timeDate: 2017-01-17 19:20"}
+{"user":"Robin Rhim","attempts":3,"success":1,"statement":"p1: 1,-5\tp2: -2,4\tresp: [3, 10]\tactual: 3,10\t timeDate: 2017-01-17 19:30"}
+{"user":"Robin Rhim","attempts":4,"success":1,"statement":"p1: 3,-2\tp2: -4,-4\tresp: [5, 9]\tactual: 1,53\t timeDate: 2017-01-17 19:33"}
+{"user":"Robin Rhim","attempts":5,"success":2,"statement":"p1: 3,-2\tp2: -4,-4\tresp: [1, 53]\tactual: 1,53\t timeDate: 2017-01-17 19:34"}
+{"user":"Robin Rhim","attempts":6,"success":2,"statement":"p1: -5,-2\tp2: 2,5\tresp: [2, 49]\tactual: 7,2\t timeDate: 2017-01-17 19:40"}
+{"user":"Robin Rhim","attempts":7,"success":3,"statement":"p1: -5,-2\tp2: 2,5\tresp: [7, 2]\tactual: 7,2\t timeDate: 2017-01-17 19:42"}
+{"user":"Robin Rhim","attempts":8,"success":3,"statement":"p1: -7,8\tp2: -3,-5\tresp: [3, -17]\tactual: 1,185\t timeDate: 2017-01-17 20:25"}
+{"user":"Robin Rhim","attempts":9,"success":3,"statement":"p1: -7,8\tp2: -3,-5\tresp: [-3, 17]\tactual: 1,185\t timeDate: 2017-01-17 20:25"}
+{"user":"Robin Rhim","attempts":10,"success":3,"statement":"p1: -7,8\tp2: -3,-5\tresp: [-17, 3]\tactual: 1,185\t timeDate: 2017-01-17 20:37"}
+{"user":"Robin Rhim","attempts":11,"success":3,"statement":"p1: -7,8\tp2: -3,-5\tresp: [17, -3]\tactual: 1,185\t timeDate: 2017-01-17 20:37"}
+{"user":"Robin Rhim","attempts":12,"success":3,"statement":"p1: -7,8\tp2: -3,-5\tresp: [3, 17]\tactual: 1,185\t timeDate: 2017-01-17 20:38"}
+{"user":"Robin Rhim","attempts":13,"success":3,"statement":"p1: -7,8\tp2: -3,-5\tresp: [3, -17]\tactual: 1,185\t timeDate: 2017-01-17 20:39"}
+{"user":"Robin Rhim","attempts":14,"success":4,"statement":"p1: -7,-9\tp2: 6,1\tresp: [1, 269]\tactual: 1,269\t timeDate: 2017-01-17 20:41"}
+{"user":"Robin Rhim","attempts":15,"success":4,"statement":"p1: -7,8\tp2: -3,-5\tresp: [5, 37]\tactual: 1,185\t timeDate: 2017-01-17 20:42"}
+{"user":"Robin Rhim","attempts":16,"success":4,"statement":"p1: -7,8\tp2: -3,-5\tresp: [5, -37]\tactual: 1,185\t timeDate: 2017-01-17 20:42"}
+{"user":"Robin Rhim","attempts":17,"success":5,"statement":"p1: -7,8\tp2: -3,-5\tresp: [1, 185]\tactual: 1,185\t timeDate: 2017-01-17 20:43"}
+{"user":"Benjamin Kim","attempts":1,"success":0,"statement":"p1: -7,8\tp2: 9,7\tresp: [1, 557]\tactual: 1,257\t timeDate: 2017-01-18 17:38"}
+{"user":"Benjamin Kim","attempts":2,"success":1,"statement":"p1: -7,8\tp2: 9,7\tresp: [1, 257]\tactual: 1,257\t timeDate: 2017-01-18 17:41"}
+{"user":"Benjamin Kim","attempts":3,"success":2,"statement":"p1: -7,8\tp2: 9,7\tresp: [1, 257]\tactual: 1,257\t timeDate: 2017-01-18 17:47"}
+{"user":"Benjamin Kim","attempts":4,"success":2,"statement":"p1: -7,8\tp2: -3,-5\tresp: [1, 182]\tactual: 1,185\t timeDate: 2017-01-18 17:50"}
+{"user":"Benjamin Kim","attempts":5,"success":3,"statement":"p1: -7,8\tp2: -3,-5\tresp: [1, 185]\tactual: 1,185\t timeDate: 2017-01-18 17:51"}
+{"user":"Benjamin Kim","attempts":6,"success":3,"statement":"p1: -5,-2\tp2: 2,5\tresp: [1, 98]\tactual: 7,2\t timeDate: 2017-01-18 17:52"}
+{"user":"Benjamin Kim","attempts":7,"success":4,"statement":"p1: -5,-2\tp2: 2,5\tresp: [7, 2]\tactual: 7,2\t timeDate: 2017-01-18 17:54"}
+{"user":"Benjamin Kim","attempts":8,"success":5,"statement":"p1: 3,-2\tp2: -4,-4\tresp: [1, 53]\tactual: 1,53\t timeDate: 2017-01-18 17:55"}
+{"user":"Benjamin Kim","attempts":9,"success":5,"statement":"p1: 6,2\tp2: -6,-6\tresp: [1, 185]\tactual: 4,13\t timeDate: 2017-01-18 17:58"}
+{"user":"Benjamin Kim","attempts":10,"success":5,"statement":"p1: 6,2\tp2: -6,-6\tresp: [1, 208]\tactual: 4,13\t timeDate: 2017-01-18 17:59"}
+{"user":"Benjamin Kim","attempts":11,"success":5,"statement":"p1: 6,2\tp2: -6,-6\tresp: [2, 57]\tactual: 4,13\t timeDate: 2017-01-18 17:59"}
+{"user":"Benjamin Kim","attempts":12,"success":5,"statement":"p1: 6,2\tp2: -6,-6\tresp: [2, 57]\tactual: 4,13\t timeDate: 2017-01-18 17:59"}
+{"user":"Benjamin Kim","attempts":13,"success":6,"statement":"p1: 6,2\tp2: -6,-6\tresp: [4, 13]\tactual: 4,13\t timeDate: 2017-01-18 18:01"}
+{"user":"Benjamin Kim","attempts":14,"success":7,"statement":"p1: 5,6\tp2: 1,1\tresp: [1, 41]\tactual: 1,41\t timeDate: 2017-01-18 18:03"}
+{"user":"Benjamin Kim","attempts":15,"success":8,"statement":"p1: 5,6\tp2: 1,1\tresp: [1, 41]\tactual: 1,41\t timeDate: 2017-01-18 18:03"}
+{"user":"Benjamin Kim","attempts":16,"success":8,"statement":"p1: 8,2\tp2: 5,-1\tresp: [3, 10]\tactual: 3,2\t timeDate: 2017-01-18 18:05"}
+{"user":"Benjamin Kim","attempts":17,"success":9,"statement":"p1: 8,2\tp2: 5,-1\tresp: [3, 2]\tactual: 3,2\t timeDate: 2017-01-18 18:05"}
+{"user":"Benjamin Kim","attempts":18,"success":10,"statement":"p1: 4,7\tp2: -3,9\tresp: [1, 53]\tactual: 1,53\t timeDate: 2017-01-18 18:07"}
+{"user":"Benjamin Kim","attempts":19,"success":10,"statement":"p1: 5,9\tp2: 2,9\tresp: [1, 53]\tactual: 3,1\t timeDate: 2017-01-18 18:07"}
+{"user":"Benjamin Kim","attempts":20,"success":11,"statement":"p1: 5,9\tp2: 2,9\tresp: [3, 1]\tactual: 3,1\t timeDate: 2017-01-18 18:08"}
+{"user":"Robin Rhim","attempts":1,"success":1,"statement":"p1: 1,-5\tp2: -2,4\tresp: [3, 10]\tactual: 3,10\t timeDate: 2017-01-18 23:05"}
+{"user":"Robin Rhim","attempts":1,"success":1,"statement":"p1: 3,-2\tp2: -4,-4\tresp: [1, 53]\tactual: 1,53\t timeDate: 2017-01-19 18:39"}
+{"user":"Robin Rhim","attempts":2,"success":2,"statement":"p1: -5,-2\tp2: 2,5\tresp: [7, 2]\tactual: 7,2\t timeDate: 2017-01-19 18:39"}
+{"user":"Robin Rhim","attempts":3,"success":3,"statement":"p1: -7,8\tp2: -3,-5\tresp: [1, 185]\tactual: 1,185\t timeDate: 2017-01-19 18:47"}
+{"user":"Robin Rhim","attempts":4,"success":3,"statement":"p1: 0,-5\tp2: -5,5\tresp: [5, 25]\tactual: 5,5\t timeDate: 2017-01-19 18:48"}
+{"user":"Robin Rhim","attempts":5,"success":4,"statement":"p1: 0,-5\tp2: -5,5\tresp: [5, 5]\tactual: 5,5\t timeDate: 2017-01-19 18:49"}
+{"user":"Robin Rhim","attempts":6,"success":4,"statement":"p1: 8,-5\tp2: 1,9\tresp: [1, 465]\tactual: 7,5\t timeDate: 2017-01-19 18:50"}
+{"user":"Robin Rhim","attempts":7,"success":4,"statement":"p1: 8,-5\tp2: 1,9\tresp: [5, 93]\tactual: 7,5\t timeDate: 2017-01-19 18:50"}
+{"user":"Robin Rhim","attempts":8,"success":4,"statement":"p1: 8,-5\tp2: 1,9\tresp: [5, 31]\tactual: 7,5\t timeDate: 2017-01-19 18:50"}
+{"user":"Robin Rhim","attempts":9,"success":4,"statement":"p1: 8,-5\tp2: 1,9\tresp: [1, 465]\tactual: 7,5\t timeDate: 2017-01-19 18:51"}
+{"user":"Robin Rhim","attempts":10,"success":4,"statement":"p1: 8,-5\tp2: 1,9\tresp: [5, 49]\tactual: 7,5\t timeDate: 2017-01-19 18:54"}
+{"user":"Robin Rhim","attempts":11,"success":4,"statement":"p1: 8,-5\tp2: 1,9\tresp: [5, 7]\tactual: 7,5\t timeDate: 2017-01-19 18:54"}
+{"user":"Robin Rhim","attempts":12,"success":5,"statement":"p1: 8,-5\tp2: 1,9\tresp: [7, 5]\tactual: 7,5\t timeDate: 2017-01-19 18:54"}
+{"user":"Robin Rhim","attempts":13,"success":5,"statement":"p1: 2,-7\tp2: 7,-2\tresp: [5, 10]\tactual: 5,2\t timeDate: 2017-01-19 18:56"}
+{"user":"Robin Rhim","attempts":14,"success":5,"statement":"p1: 2,-7\tp2: 7,-2\tresp: [10, 5]\tactual: 5,2\t timeDate: 2017-01-19 18:56"}
+{"user":"Robin Rhim","attempts":15,"success":5,"statement":"p1: 2,-7\tp2: 7,-2\tresp: [2, 5]\tactual: 5,2\t timeDate: 2017-01-19 18:56"}
+{"user":"Robin Rhim","attempts":16,"success":6,"statement":"p1: 2,-7\tp2: 7,-2\tresp: [5, 2]\tactual: 5,2\t timeDate: 2017-01-19 18:56"}
+{"user":"Robin Rhim","attempts":17,"success":6,"statement":"p1: 1,-5\tp2: -9,-7\tresp: [2, 13]\tactual: 2,26\t timeDate: 2017-01-19 18:57"}
+{"user":"Robin Rhim","attempts":18,"success":6,"statement":"p1: 1,-5\tp2: -9,-7\tresp: [13, 2]\tactual: 2,26\t timeDate: 2017-01-19 18:58"}
+{"user":"Robin Rhim","attempts":19,"success":7,"statement":"p1: 1,-5\tp2: -9,-7\tresp: [2, 26]\tactual: 2,26\t timeDate: 2017-01-19 18:58"}
+{"user":"Robin Rhim","attempts":20,"success":7,"statement":"p1: 8,7\tp2: -9,0\tresp: [5, 9]\tactual: 13,2\t timeDate: 2017-01-19 18:59"}
+{"user":"Robin Rhim","attempts":21,"success":7,"statement":"p1: 8,7\tp2: -9,0\tresp: [9, 5]\tactual: 13,2\t timeDate: 2017-01-19 18:59"}
+{"user":"Robin Rhim","attempts":22,"success":7,"statement":"p1: 8,7\tp2: -9,0\tresp: [5, 3]\tactual: 13,2\t timeDate: 2017-01-19 18:59"}
+{"user":"Robin Rhim","attempts":23,"success":7,"statement":"p1: 8,7\tp2: -9,0\tresp: [3, 5]\tactual: 13,2\t timeDate: 2017-01-19 18:59"}
+{"user":"Robin Rhim","attempts":24,"success":7,"statement":"p1: 8,7\tp2: -9,0\tresp: [3, 5]\tactual: 13,2\t timeDate: 2017-01-19 19:00"}
+{"user":"Robin Rhim","attempts":25,"success":8,"statement":"p1: 8,7\tp2: -9,0\tresp: [13, 2]\tactual: 13,2\t timeDate: 2017-01-19 19:02"}
+{"user":"Robin Rhim","attempts":1,"success":1,"statement":"p1: 6,8\tp2: -9,-5\tresp: [1, 394]\tactual: 1,394\t timeDate: 2017-01-20 12:12"}
+{"user":"Robin Rhim","attempts":2,"success":2,"statement":"p1: 6,-10\tp2: -7,-4\tresp: [1, 205]\tactual: 1,205\t timeDate: 2017-01-20 12:29"}
+{"user":"Robin Rhim","attempts":3,"success":3,"statement":"p1: -10,-8\tp2: -5,9\tresp: [1, 314]\tactual: 1,314\t timeDate: 2017-01-20 12:30"}
+{"user":"test","attempts":1,"success":0,"statement":"p1: 4,2\tp2: -10,8\tresp: [5, 2]\tactual: 2,58\t timeDate: 2017-01-21 12:59"}
+{"user":"test","attempts":2,"success":1,"statement":"p1: 4,2\tp2: -10,8\tresp: [2, 58]\tactual: 2,58\t timeDate: 2017-01-21 13:06"}
+{"attempts":1,"success":1,"statement":"p1: -6,-2\tp2: 7,-4\tresp: [1, 173]\tactual: 1,173\t timeDate: 2017-01-21 13:11"}
+{"user":"Ben","attempts":1,"success":0,"statement":"p1: 1,-5\tp2: -2,4\tresp: [1, 90]\tactual: 3,10\t timeDate: 2017-03-06 18:02"}
+{"user":"Ben","attempts":2,"success":1,"statement":"p1: 1,-5\tp2: -2,4\tresp: [3, 10]\tactual: 3,10\t timeDate: 2017-03-06 18:03"}
+{"user":"Ben","attempts":3,"success":1,"statement":"p1: 3,-8\tp2: 3,5\tresp: [1, 169]\tactual: 13,1\t timeDate: 2017-03-06 18:05"}
+{"user":"Ben","attempts":4,"success":1,"statement":"p1: 3,-8\tp2: 3,5\tresp: [1, 13]\tactual: 13,1\t timeDate: 2017-03-06 18:06"}
+{"user":"Ben","attempts":5,"success":2,"statement":"p1: 3,-8\tp2: 3,5\tresp: [13, 1]\tactual: 13,1\t timeDate: 2017-03-06 18:07"}
+{"user":"Ben","attempts":6,"success":2,"statement":"p1: 3,-2\tp2: -4,-4\tresp: [1, 54]\tactual: 1,53\t timeDate: 2017-03-06 18:09"}
+{"user":"Ben","attempts":7,"success":3,"statement":"p1: 3,-2\tp2: -4,-4\tresp: [1, 53]\tactual: 1,53\t timeDate: 2017-03-06 18:09"}
+{"user":"Ben","attempts":8,"success":3,"statement":"p1: -5,-2\tp2: 2,5\tresp: [2, 1]\tactual: 7,2\t timeDate: 2017-03-06 18:11"}
+{"user":"Ben","attempts":9,"success":3,"statement":"p1: -5,-2\tp2: 2,5\tresp: [4, 1]\tactual: 7,2\t timeDate: 2017-03-06 18:12"}
+{"user":"Ben","attempts":10,"success":4,"statement":"p1: 3,-2\tp2: -4,-4\tresp: [1, 53]\tactual: 1,53\t timeDate: 2017-03-06 18:12"}
+{"user":"Ben","attempts":11,"success":4,"statement":"p1: -5,-2\tp2: 2,5\tresp: [4, 1]\tactual: 7,2\t timeDate: 2017-03-06 18:12"}
+{"user":"Ben","attempts":12,"success":4,"statement":"p1: -5,-2\tp2: 2,5\tresp: [7, 1]\tactual: 7,2\t timeDate: 2017-03-06 18:13"}
+{"user":"Ben","attempts":13,"success":4,"statement":"p1: -5,-2\tp2: 2,5\tresp: [10, 1]\tactual: 7,2\t timeDate: 2017-03-06 18:14"}
+{"user":"Ben","attempts":14,"success":4,"statement":"p1: -5,-2\tp2: 2,5\tresp: [1, 54]\tactual: 7,2\t timeDate: 2017-03-06 18:16"}
+{"user":"Ben","attempts":15,"success":4,"statement":"p1: -5,-2\tp2: 2,5\tresp: [1, 98]\tactual: 7,2\t timeDate: 2017-03-06 18:18"}
+{"user":"Ben","attempts":16,"success":4,"statement":"p1: -5,-2\tp2: 2,5\tresp: [1, 98]\tactual: 7,2\t timeDate: 2017-03-06 18:19"}
+{"user":"Ben","attempts":17,"success":4,"statement":"p1: -5,-2\tp2: 2,5\tresp: [2, 47]\tactual: 7,2\t timeDate: 2017-03-06 18:21"}
+{"user":"Ben","attempts":18,"success":5,"statement":"p1: -5,-2\tp2: 2,5\tresp: [7, 2]\tactual: 7,2\t timeDate: 2017-03-06 18:24"}
+{"user":"Ben","attempts":19,"success":5,"statement":"p1: -7,8\tp2: -3,-5\tresp: [1, 178]\tactual: 1,185\t timeDate: 2017-03-06 18:31"}
+{"user":"Ben","attempts":20,"success":5,"statement":"p1: -7,8\tp2: -3,-5\tresp: [1, 178]\tactual: 1,185\t timeDate: 2017-03-06 18:31"}
+{"user":"Ben","attempts":21,"success":5,"statement":"p1: -7,8\tp2: -3,-5\tresp: [2, 46]\tactual: 1,185\t timeDate: 2017-03-06 18:36"}
+{"user":"Ben","attempts":22,"success":5,"statement":"p1: -7,8\tp2: -3,-5\tresp: [1, 184]\tactual: 1,185\t timeDate: 2017-03-06 18:37"}
+{"user":"Ben","attempts":23,"success":6,"statement":"p1: -7,8\tp2: -3,-5\tresp: [1, 185]\tactual: 1,185\t timeDate: 2017-03-06 18:39"}
+{"user":"Ben","attempts":24,"success":6,"statement":"p1: 9,4\tp2: 3,1\tresp: [1, 153]\tactual: 3,5\t timeDate: 2017-03-06 19:01"}
+{"user":"Ben","attempts":25,"success":6,"statement":"p1: 9,4\tp2: 3,1\tresp: [1, 153]\tactual: 3,5\t timeDate: 2017-03-06 19:07"}
+{"user":"Ben","attempts":26,"success":6,"statement":"p1: 9,4\tp2: 3,1\tresp: [153, 1]\tactual: 3,5\t timeDate: 2017-03-06 19:07"}
+{"user":"Ben","attempts":27,"success":7,"statement":"p1: 9,4\tp2: 3,1\tresp: [3, 5]\tactual: 3,5\t timeDate: 2017-03-06 19:08"}
+{"user":"Ben","attempts":28,"success":8,"statement":"p1: 9,4\tp2: 3,1\tresp: [3, 5]\tactual: 3,5\t timeDate: 2017-03-06 19:08"}
+{"user":"Ben","attempts":29,"success":8,"statement":"p1: 4,10\tp2: 4,-6\tresp: [1, 272]\tactual: 16,1\t timeDate: 2017-03-06 19:13"}
+{"user":"Ben","attempts":30,"success":9,"statement":"p1: 4,10\tp2: 4,-6\tresp: [16, 1]\tactual: 16,1\t timeDate: 2017-03-06 19:14"}
+{"user":"Ben","attempts":31,"success":9,"statement":"p1: 10,5\tp2: 7,3\tresp: [13, 1]\tactual: 1,13\t timeDate: 2017-03-06 19:20"}
+{"user":"Ben","attempts":32,"success":9,"statement":"p1: 10,5\tp2: 7,3\tresp: [16, 1]\tactual: 1,13\t timeDate: 2017-03-06 19:20"}
+{"user":"Ben","attempts":33,"success":10,"statement":"p1: 10,5\tp2: 7,3\tresp: [1, 13]\tactual: 1,13\t timeDate: 2017-03-06 19:20"}
+{"user":"Ben","attempts":34,"success":11,"statement":"p1: -8,-7\tp2: -8,-8\tresp: [1, 1]\tactual: 1,1\t timeDate: 2017-03-06 19:21"}
+{"user":"Ben","attempts":35,"success":11,"statement":"p1: 8,0\tp2: -9,3\tresp: [1, 280]\tactual: 1,298\t timeDate: 2017-03-06 19:23"}
+{"user":"Ben","attempts":36,"success":12,"statement":"p1: 8,0\tp2: -9,3\tresp: [1, 298]\tactual: 1,298\t timeDate: 2017-03-06 19:23"}
+{"user":"Ben","attempts":37,"success":13,"statement":"p1: 8,1\tp2: -6,0\tresp: [1, 197]\tactual: 1,197\t timeDate: 2017-03-06 19:24"}
+{"user":"Ben","attempts":38,"success":14,"statement":"p1: 8,1\tp2: -6,0\tresp: [1, 197]\tactual: 1,197\t timeDate: 2017-03-06 19:24"}
+{"user":"Ben","attempts":39,"success":15,"statement":"p1: -9,-6\tp2: 0,2\tresp: [1, 145]\tactual: 1,145\t timeDate: 2017-03-06 19:24"}

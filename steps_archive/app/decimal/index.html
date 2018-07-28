@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>J+</title>
+		<link rel="stylesheet" href="layout.css" type="text/css">
+
+		<!--favicon-->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" >
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" >
+		<!--scripts-->
+		<link rel='stylesheet' href="jquery-ui.css" type='text/css' >  
+		<script type="text/javascript" src="jquery-1.11.0.js"></script> 
+		<script type="text/javascript" src="jquery-ui.js"></script> 
+		<script type="text/javascript" src="script.js"></script>
+    </head>
+	<body>
+		<div class='main'>
+			<!--input area-->
+			<div class='input-area not-quiz'>
+				0.<input class='input' type='text' maxlength='4' id='decimal'>
+			</div>
+			<div class='input-area quiz'>
+				<div class='wrapper'>
+					0.<input class='input' type='text' maxlength='4' id='quiz-resp'>
+					<input type='button' value='&#8594;' id='submit-resp'>
+				</div>
+				<div class='flash'>
+					GOOD!
+				</div>
+			</div>
+			
+			
+			<div class='one'>
+				<div class='grid-container'>
+
+				</div>
+			</div>
+			<div class='misc-container'>
+				<div class="quiz-check">
+					<input type='checkbox' id='doQuiz'><label for='doQuiz'>Quiz</label>
+				</div>
+				<div class='options'>
+					<fieldset>
+						<legend>Grid</legend>
+						<div>
+							<input type='radio' name='grid' id='grid-op-1'>
+							<label for='grid-op-1'>No grid</label>
+						</div>
+						<div>
+							<input type='radio' name='grid' id='grid-op-2'>
+							<label for='grid-op-2'>Grid</label>
+						</div>
+						<div>
+							<input type='radio' name='grid' id='grid-op-3'>
+							<label for='grid-op-3'>Grid+</label>
+						</div>
+					</fieldset>
+				</div>
+				<div class='increments'>
+					<div class='incr-wrap'>
+						<div class='frac'>
+							1/10:
+						</div>
+						<input type='number' min='0' max='9' value='0' class='incr' id='incr-ten-1' maxlength='1'>
+					</div>
+					<div class='incr-wrap'>
+						<div class='frac'>
+							1/100: 
+						</div>
+						<input type='number' min='0' max='9' value='0' class='incr' id='incr-ten-2' maxlength='1'>
+					</div>
+					<div class='incr-wrap'>
+						<div class='frac'>
+							1/1000:
+						</div>
+						<input type='number' min='0' max='9' value='0' class='incr' id='incr-ten-3' maxlength='1'>
+					</div>
+					<div class='incr-wrap'>
+						<div class='frac'>
+							1/10000:
+						</div>
+						<input type='number' min='0' max='9' value='0' class='incr' id='incr-ten-4' maxlength='1'>
+					</div>
+				</div>
+			</div>
+			<div class='components'>
+				<div id='ten-1' class='ten-1 c'> <!--Blue --> </div>
+				<div id='ten-2' class='ten-2 c'> <!-- Yellow --> </div>
+				<div id='ten-3' class='ten-3 c'> <!-- Red --> </div>
+				<div id='ten-4' class='ten-4 c'> <!-- Green --> </div>
+				<div id='grid-a' class='grid-a'></div>
+				<div id='grid-b' class='grid-b'></div>
+			</div>
+		</div>
+	</body>
+</html>

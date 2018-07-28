@@ -1,0 +1,23 @@
+#check-answer{
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#check-answer:hover {
+    cursor: pointer;
+    background-color: #cacaca;
+}
+
+#factors{
+    display: none;
+    border: 1px solid black;
+    width: 740px;
+}
+
+.factor-input {
+    width: 50px;
+    margin: 10px;
+}

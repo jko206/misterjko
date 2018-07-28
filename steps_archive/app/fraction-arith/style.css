@@ -1,0 +1,185 @@
+#arithmetic{
+    vertical-align: top;
+}
+
+.fraction {
+    width: 86px;
+
+}
+
+.fraction, .operator, #equal-sign {
+    display: inline-block;
+    position: relative; 
+    height: 80px;
+}
+
+.operator, #equal-sign {
+    font-size: 3em;
+    top: -28px;
+    text-align: center;
+}
+
+.integer {
+    display: block;
+    position: absolute;
+    font-size: 2.2em;
+    top: 11px;
+    width: 30px;
+    height: 44px;
+    text-align: center;
+}
+
+.numerator {
+    position: absolute;
+    left: 39px;
+    top: 0;
+    font-size: 1.8em;
+    width: 30px;
+    text-align: center;
+    height: 36px;
+}
+
+.frac-line {
+    border: 1px solid black;
+    position: absolute;
+    left: 38px;
+    width: 30px;
+    top: 37px;
+}
+
+.denominator {
+    position: absolute;
+    left: 39px;
+    top: 41px;
+    font-size: 1.8em;
+    width: 30px;
+    text-align: center;
+    height: 36px;
+}
+
+#solution-integer, #solution-numerator, #solution-denominator{
+    border: 1px solid;
+    background: #dbdbdb;
+}
+
+#solution-integer:focus, #solution-numerator:focus, #solution-denominator:focus {
+    background: #9998ff;
+}
+
+#new-problem {
+    border: 1px solid black;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    background: #eaeaea;
+}
+
+#check {
+    border: 1px solid black;
+    position: absolute;
+    bottom: 10px;
+    left: 150px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+    background: #eaeaea;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+#wrong-responses div{
+    border: 3px solid red;
+    color: red;
+    padding: 5px;
+    line-height: 1.75;
+    border-radius: 10px;
+    background-color: pink;
+    position: relative;
+    display: inline-block;
+}
+
+#wrong-responses .frac-line{
+    top: 44px;
+    border-color: red;
+}
+
+#components{
+    display: none;
+}
+
+/** number pad **/
+
+#num-pad{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 420px;
+    height: 360px;
+    margin: 0;
+    padding: 0;
+}
+
+#num-pad .row{
+    position: relative;
+    height: 90px;
+    margin: 0;
+    padding: 0;
+}
+
+.numpad-button{
+    position: absolute;
+    height: 90px;
+    font-size: 3em;
+    text-align: center;
+    line-height: 2;
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 120px;
+}
+
+#num7, #num4, #num1, #num0{
+    left: 0px;
+}
+
+#num8, #num5, #num2{
+    left: 120px;
+}
+
+#num9, #num6, #num3, #num-del{
+    left: 240px;
+}
+
+#num0{
+    width: 240px;
+}
+
+#num-next, #num-prev{
+    left: 360px;
+    height: 180px;
+    width: 60px;
+    background-image: url('arrow.png');
+    background-size: contain;
+    background-repeat:   no-repeat;
+    background-position: center center; 
+}
+
+#num-prev{
+    top: 180px;
+    transform: rotate(180deg);
+}
+
+#num-next{
+    top: 0px;
+}
+
+.focus{
+    border-color: blue;
+    background: #9998ff;
+}

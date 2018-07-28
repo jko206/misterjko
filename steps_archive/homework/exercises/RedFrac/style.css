@@ -1,0 +1,77 @@
+#main-area {
+    border: 1px solid black;
+    position: absolute;
+    width: 500px;
+    margin: 0 calc(50% - 250px);
+    top: 90px;
+    height: 200px;
+}
+
+#lhs {
+    font-size: 60px;
+    display: inline-block;
+}
+
+#equal-sign {
+    display: inline-block;
+    font-size: 4.3em;
+    vertical-align: bottom;
+}
+#rhs {
+	display: inline-block;
+}
+
+#rf-fraction, .rf-fraction{
+    font-size: 45px;
+    display: inline-block;
+    position: relative;
+    height: 105px;
+    width: 135px;
+    vertical-align: bottom;
+    top: 32px;
+    text-align: center;
+}
+
+#rf-denom, .rf-denom {
+    top: 55px;
+    left: 25px;
+    position: absolute;
+    width: 80px;
+}
+#rf-numer, .rf-numer {
+    top: 0;
+    left: 25px;
+    position: absolute;
+    width: 80px;
+}
+
+#rf-fracLine, .rf-fracLine {
+    position: absolute;
+    width: 94px;
+    height: 3px;
+    background: black;
+    top: 51px;
+    left: 17px;
+}
+
+#rf-intDiv{
+    font-size: 40px;
+}
+
+.wrong {
+    font-size: 20px;
+    border: 1px solid red;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: pink;
+	display: inline-block;
+}
+
+
+.loader-content-row {
+    height: 150px;
+}

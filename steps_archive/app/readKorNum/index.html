@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Education: Read Number</title>
+<link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+</head>
+
+<body>
+<!-------------------- BODY ------------------------->
+
+<div id="main">
+	<div class="problem-cont">
+		<div id="problem"></div>
+		<div id="input" contenteditable></div>
+		<div id="keys">
+			<div class="key" id="key-81">
+				<div class="key-val">십</div>
+				<div class="key-shortcut">Q</div>
+			</div>
+			<div class="key" id="key-87">
+				<div class="key-val">백</div>
+				<div class="key-shortcut">W</div>
+			</div>
+			<div class="key" id="key-69">
+				<div class="key-val">천</div>
+				<div class="key-shortcut">E</div>
+			</div>
+			<br>
+			<div class="key" id="key-65">
+				<div class="key-val">만</div>
+				<div class="key-shortcut">A</div>
+			</div>
+			<div class="key" id="key-83">
+				<div class="key-val">억</div>
+				<div class="key-shortcut">S</div>
+			</div>
+			<div class="key" id="key-68">
+				<div class="key-val">조</div>
+				<div class="key-shortcut">D</div>
+			</div>
+		</div>
+	</div>
+	<div class="button" id="submit">SUBMIT</div>
+	<div class="button" id="new-problem">New Problem</div>
+	<div id="wrong-inputs">
+
+	</div>
+</div>
+
+<div class="wrong-input" id="wrong-input-template">
+	
+</div>
+
+<div id="stats">
+	<div class="stat-wrapper">
+		<span class="stat-label">Level</span>
+		<span class="stat" id="curr-level"> </span>
+	</div>
+	<div class="stat-wrapper">
+		<span class="stat-label">Consecutive Correct</span>
+		<span class="stat" id="cons-corr"> </span>
+	</div>
+	<div class="stat-wrapper">
+		<span class="stat-label">Total Correct</span>
+		<span class="stat" id="total-corr"> </span>
+	</div>
+	<div class="stat-wrapper">
+		<span class="stat-label">Total Questions</span>
+		<span class="stat" id="total-q"> </span>
+	</div>
+	<div class="stat-wrapper">
+		<span class="stat-label">Percentage Correct</span>
+		<span class="stat" id="pct-corr"> </span>
+	</div>
+	<div class="button" id="set-level">Set Level</div>
+</div>
+
+<div class="popup-wrapper">
+	<div class="close-btn">
+		&times;
+	</div>
+	<div class="popup">
+		<div class="input-wrapper">
+			<div class="input-label">Level</div>
+			<input type="number" min="1" max="5" id="new-level">
+		</div>
+		<div class="input-wrapper">
+			<div class="input-label">Password</div>
+			<input type="password" id="password">
+		</div>
+		<div class="button" id="submit-change">Submit</div>
+		<div class="submit-msg" id="submit-success">
+			Changes applied
+		</div>
+		<div class="submit-msg" id="submit-fail">
+			Incorrect password
+		</div>
+	</div>
+</div>
+
+<!-------------------- /BODY ------------------------->
+
+
+
+<!---------------- JAVASCRIPT STUFF ----------------->
+<!-- JQUERY -->
+<script src="script/jquery-3.1.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- JAVASCRIPT -->
+<script src="script/index.js"></script>
+
+
+</body>
+</html>

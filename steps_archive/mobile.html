@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Steps Math</title>
+	<link rel="stylesheet" type="text/css" href="layout_m.css">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+	
+	<!--<meta name="description" content="slick is a responsive carousel jQuery plugin that supports multiple breakpoints, CSS3 transitions, touch events/swiping &amp; much more!">
+	<meta name="keywords" content="slick, responsive, carousel, slider, jQuery, plugin, CSS3, swipe, touch">-->
+	
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+</head>
+<body>
+	<!-- Menu items -->
+	<div class="side-pane">
+		<img id="menu-logo" src="images/5.png" alt="Steps Math Logo">
+		<ul class="menu-ul">
+			<li><a href="#about-us" class="main-menu-item first-menu">About Us</a>
+				<ul class="sub-menu" id="temp">
+				<li><a href="#mission" class="open-subset" data-subset="subset-1">Mission</a></li>
+				<li><a href="#head-coach" class="open-subset" data-subset="subset-1">Head Coach</a></li>
+				</ul>
+			</li>
+			<li><a href="#why-steps" class="main-menu-item">Why Steps?</a>
+				<ul class="sub-menu">
+				<li><a href="#tailor-to-students" class="open-subset" data-subset="subset-2">Tailor to Students</a></li>
+				<li><a href="#complement-school-work" class="open-subset double-height" data-subset="subset-2">Complement<br>&nbsp;&nbsp;&nbsp;&nbsp;School Work</a></li>
+				<li><a href="#we-train" class="open-subset" data-subset="subset-2">We train</a></li>
+				<li><a href="#native-english-speakers" class="open-subset double-height" data-subset="subset-2">Native English<br>&nbsp;&nbsp;&nbsp;&nbsp;Speakers</a></li>
+				</ul>
+			</li>
+			<li><a href="#how-we-teach" class="main-menu-item">How we teach</a>
+				<ul class="sub-menu">
+				<li><a href="#knowledge-vs-skill" class="open-subset" data-subset="subset-3">Knowledge vs. Skill</a></li>
+				<li><a href="#find-weakness" class="open-subset" data-subset="subset-3">Find Weakness</a></li>
+				<li><a href="#the-solution" class="open-subset" data-subset="subset-3">The Solution</a></li>
+				<li><a href="#rebuild" class="open-subset double-height" data-subset="subset-3">Rebuild:<br>&nbsp;&nbsp;&nbsp;&nbsp;Step by Step</a></li>
+				<li><a href="#online-tools" class="open-subset" data-subset="subset-3">Online Tools</a></li>
+				<li><a href="#compensation" class="open-subset" data-subset="subset-3">Compensation</a></li>
+				</ul>
+			</li>
+			<li><a href="#faq" class="main-menu-item">FAQ</a><li>
+			<li><a href="#programs-and-tuition" class="main-menu-item">Programs &amp; Tuition</a></li>
+			<li><a href="#contact-us" class="main-menu-item">Contact Us</a></li>
+		</ul>
+		<div class="options">
+			<div class="languages">
+				<div class="set-english">English</div>
+				<div class="set-korean">한국어</div>
+			</div>
+			<!--
+			<div class="font-sizes">
+				<span id="set-small-font">
+					<span class="english">A</span>
+					<span class="korean">가</span>
+				</span>
+				<span id="set-medium-font">
+					<span class="english">A</span>
+					<span class="korean">가</span>
+				</span>
+				<span id="set-large-font">
+					<span class="english">A</span>
+					<span class="korean">가</span>
+				</span>
+			</div>
+			-->
+		</div>
+	</div>
+	<!-- /Menu items -->
+	
+	<!-- main slides -->
+		<!-- About Us -->
+		<div class="intro-container">
+			<div class="logo-box">
+				<img src="images/logo.png" alt="Steps Logo, big">
+			</div>
+			<div class="phrase">
+				Math at a different <span id="level">level</span>
+			</div>
+			<div id="lang-choice">
+				<div class="set-english">English</div>
+				<div class="set-korean">한국어</div>
+			</div>
+		</div>
+		<div class="slide" id="about-us">
+			<h1>
+				<span class="english">About Us</span>
+				<span class="korean">스텝스에 대해서</span>
+			</h1>
+			<div class="slide-main-content">
+				<div class="english">
+					<p>	Steps is founded on a mission to teach math in a logical, 
+					easily comprehensible step-by-step method. To that end, 
+					we not only teach, but train kids to treat math as a skillset, 
+					not just knowledge, that needs to be worked on every day.</p>
+					<a href="#mission" class="open-subset" data-subset="subset-1">Learn more about us</a>
+				</div>
+				<div class="korean">
+					<p>	저희 스텝스는 수학을 좀더 논리적이고 이해하기 쉽게 가르치고 
+					그렇게 생각하도록 훈련합니다. 아무리 어려운 문제도 기본부터 
+					한걸음 한걸음 나아가면 풀수 있다는 생각을 가지고 있습니다. 
+					또한 수학은 단순한 지식이 아니라 실력이라는 인식을 가지고 
+					가르치는 것 뿐만 아니라 수학을 잘하도록 훈련을 시킵니다.</p>
+					<a href="#mission" class="open-subset" data-subset="subset-1">더 자세히>></a>
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-1" id="mission">
+			<a href="#about-us" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Mission</span>
+				<span class="korean">미션</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>	Our mission is to build mathematical skill and knowledge 
+					from ground-up, step-by-step to allow students to build solid 
+					foundation while also tailoring to the student’s needs 
+					and focusing on the academics.</p>
+				</div>
+				<div class="korean">
+					<p>저희 스텝스의 미션은 수학을 기본부터 하나 하나 가르쳐
+					나감으로서 토대를 완벽하게 구축하고 그 위에 응용 문제를 푸는
+					등 수학 실력을 쌓아 나가는 것입니다. 동시에 학생의 내신에도
+					충신할 수 있도록 커리큘럼을 학생의 학교에 맞추어 쌓은 수학실력이
+					학교 성적에도 반영되도록 하는 것입니다. </p> 
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-1" id="head-coach">
+			<a href="#about-us" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Head Coach</span>
+				<span class="korean">헤드코치 </span>
+			</h1>
+			<!--Head Coach (background img: at ben’s? his place is really nice): -->
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>Our institution was founded by Jai Ko, of University of Washington, 
+					Seattle. He studied math while he attended the university and came 
+					to Korea shortly after in pursuit of advancing math-literacy 
+					of Korean students. Since coming to Korea in 2012, he has been 
+					teaching math to students who attend foreigner schools and 
+					international schools. </p> 
+					
+					<h2>The Three Qualities</h2>
+					<p><img src="images/three_qualities_eng.png" alt="three qualities">
+					Because he was born in the U.S., but has spent his childhood in Korea, 
+					graduating from Korean elementary school, and has frequently spent 
+					his summers in Korea even while attending middle school and high 
+					school in America. His unique life experience allowed him become 
+					fluently bilingual in both Korean and English. </p> 
+					
+					<p>As a math major of one of the most prestigious universities,
+					he can eloquently and easily explain mathematical concepts from 
+					elementary level all the way to calculus. His specialty is in SAT Math. 
+					He is so confident he can raise the student’s SAT Math score by at 
+					least 150 points that <a href="#programs-and-tuition" class="close-button"> he’s willing
+					to refund tuition if he fails to do so</a>. </p>
+				</div>
+				<div class="korean">
+					<p>저희 교육긱관은 제이 고에 의해 설립됐습니다. 제이는 미국 
+					워싱턴주에 있는 워싱턴 주립대 (University of Washington)를 나왔고 
+					수학을 공부하였습니다. 대학을 마친 2012년에 한국에 와서 줄곧 
+					외국인학교와 국제학교 학생들을 상대로 개인지도를 해왔습니다.
+					대학교 시절 부터 개인지도를 시작한 제이는 올해로 8년째 
+					가르치고 있습니다. </p>
+					
+					<h2>3가지 자질</h2>
+					<p><img src="images/three_qualities_kor.png" alt="three qualities">
+					 제이는 미국에서 태어나서 초등학교를 한국에서 
+					졸업하는 것 외에는 줄곧 미국에서 생활했습니다. 하지만 여름에는 
+					한국에 와서 공부를 하는 등 한국어 공부를 소흘히 하지 않아 한국어와 
+					영어를 모두 원어민 처럼 구사할 수 있게 됐습니다. </p>
+					
+					<p>아울어 위에서 언급한바와 같이 대학에서 수학을 전공하였고 
+					8년간 개인지도를 한 결과  지금은 학생들의 문제를 이해하고 해결책을 
+					제시할 수 있는 중요한 노하우를 가지게 됐습니다. </p>
+					
+					<p>이를 바탕으로 기본 산수부터 시작해서 고등수학 (Calculus 등)을 
+					이해하기 쉽게 가르칠 수 있습니다. 그는 특히 SAT Math를 가르치는 
+					것에 자신감을 보이고 3개월간 150점 이상 점수를 올리지 못할 경우 
+					<a href="#programs-and-tuition" class="close-button">
+					수업료를 환불하는 프로그램도 진행하고 있습니다. </a></p>
+
+				</div>
+			</div>
+		</div>
+		<!-- /About Us -->
+		
+		<!--Why Steps -->
+		<div class="slide" id="why-steps">
+			<h1>
+				<span class="english">Why Steps?</span>
+				<span class="korean">스텝스를 선택해야 하는 이유!</span>
+			</h1>
+			<div class="slide-main-content">
+				<div class="english">
+					There are many reasons to join Steps. We not only teach kids, 
+					but train kids to become academically successful, while tailoring 
+					to their individual needs. Our short term goal is to nurture
+					logical thinking that can be applied to both academic setting 
+					and other endeavors in the future. Our ultimate goal is to help 
+					student become mathematically and logically trained enough to not 
+					need our service anymore. <!--[[put this in later: We only select the 
+					finest members of the academia who can natively speak English and 
+					are dedicated to teaching children.  -->
+					<a href="#tailor-to-students" class="open-subset" data-subset="subset-2">Learn more</a>
+				</div>
+				<div class="korean">
+					<p>스텝스를 선택할 이유는 굉장히 많습니다. 저희는 학생들을 
+					단순히 가르치는 것만이 아니라 학생의 필요에 따라 저희 프로그램을 
+					마춰서 훈련을 합니다. 저희의 단기적 목표는 학생의 논리적 사고능력을 
+					양성하여 학교 과제 및 숙제에 적용하여 성적을 끌어 올리는 것입니다. 
+					저희의 궁극적 목표는 이렇게 양성된 학생들이 더 이상 저희나 다른 
+					교육기관의 도움이 없이도 스스로 공부하고 사고할 수 있는 힘을 
+					키워주는 것입니다. <br>
+					<a href="#tailor-to-students" class="open-subset" data-subset="subset-2">더 자세히>></a></p>
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-2" id="tailor-to-students">
+			<a href="#why-steps" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Tailor to Students</span>
+				<span class="korean">진정한 맞춤형 학습</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>While there a few general types of learners, ultimately, everyone 
+					learns at a different pace and via different methods. We analyze each 
+					individual’s needs, characteristics, skill set, and environments to 
+					make necessary recommendations and adjustment in order to optimize 
+					learning. We cater to the needs of our students that cannot be 
+					addressed in mass learning environment, such as schools or hakwons.</p> 
+				</div>
+				<div class="korean">
+					<p>대채적으로 학원이나 타사 개인지도는 한가지 교재를 가지고 
+					모든 학생들을 그에 맞추려 합니다. 하지만 옷도 개인을 위해 
+					특별히 만들어진 것이 더 잘 맞고 편하듯이 학습도 학생의 현재 
+					이해력과 학습태도, 그리고 환경등을 고려해 최적화된 수업이 더 
+					편하고 이해가 잘 되는 법입니다. 저희 학습은 단체로 배우는 학교나 
+					학원등과 달리 개개인의 성향에 저희 프로그램을 맞춥니다. </p>
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-2" id="complement-school-work">
+			<a href="#why-steps" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Complement School Work</span>
+				<span class="korean">학교 진도와 병행</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>Part of our tailoring program is establishing communication channels 
+					with the school teachers of the schools in order to better understand 
+					the curricula and expectations from school. After all, learning is most 
+					and best reflected in official transcript and nowhere else. Because of it, 
+					we incorporate much of school’s curricula to complement our own teaching 
+					and coaching. </p>
+					
+					<p>[[Complementary to Schools: Whereas Korean public schools’ curricula are 
+					standardized, because British, American, Canadian, Australians schools all 
+					have different curricula, it is hard to find a hakwon or private tutors who 
+					specialize in raising the grades of students who attend foreigner and 
+					international schools. That’s why we communicate with each individual’s 
+					school teacher to learn about his or her school environment, curriculum, 
+					and standings. </p>
+					
+					<p>It is no secret that virtually every student goes to afterschool academies 
+					in Korea. Parents know this, and teachers know this -- even the teachers 
+					international and foreigner schools. As it is the case with Korean public 
+					schools, school teachers become complacent about teaching, knowing that 
+					their students will catch up to the curriculum at their hakwons.]]</p>
+				</div>
+				<div class="korean">
+					<p>모든 교제와 진도가 통합돼있는 한국 공립학교와는 다르게 거의 모든 
+					국제학교와 외국인학교는 교과과정이 다릅니다. 저희의 맞춤형 학습이란
+					단순히 저희만의 진도를 추구하는 것이 아니라 학생의 학교에서 원하는 
+					것이 무엇인지 알고 최상의 성적을 유지할 수 있도록 저희의 프로그램을 
+					고려하여 맞추는 것입니다. </p>
+					
+					<p>[[Complementary to Schools: Whereas Korean public schools’ curricula 
+					are standardized, because British, American, Canadian, Australians schools 
+					all have different curricula, it is hard to find a hakwon or private tutors who 
+					specialize in raising the grades of students who attend foreigner and 
+					international schools. That’s why we communicate with each individual’s 
+					school teacher to learn about his or her school environment, curriculum, 
+					and standings. </p>
+					
+					<p>It is no secret that virtually every student goes to afterschool academies 
+					in Korea. Parents know this, and teachers know this -- even the teachers 
+					international and foreigner schools. As it is the case with Korean public 
+					schools, school teachers become complacent about teaching, knowing that 
+					their students will catch up to the curriculum at their hakwons.]]</p>
+
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-2" id="we-train">
+			<a href="#why-steps" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">We Train</span>
+				<span class="korean">교육 + 훈련</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>Most of the academia in Korea like a factory – student gets put in a 
+					hagwon, gets input of irrelevant knowledge, and then student goes home. 
+					At Steps, we refuse to do that. We believe that math as a subject is 
+					unique in that it requires skill, rather than a set of knowledge.  
+					As with all skills, it is necessary to not just learn it, but to train 
+					for it, so that we no longer become necessary for the students’ 
+					success. </p>
+				</div>
+				<div class="korean">
+					<p>대부분의 한국 학교와 학원들은 공장처럼 운영됩니다. 학생이 들어오면 
+					지식을 주입시키고 집으로 보냅니다. 하지만 저희는 그렇지 않습니다. 
+					수학이라는 학문이 단순히 지식을 쌓는 일이 아니라 문제를 해결하는 
+					능력이라고 보기 때문에 단순히 교육을 벗어나 이를 잘 할수 있도록 
+					훈련을 합니다. </p>
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-2" id="native-english-speakers">
+			<a href="#why-steps" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Native English Speakers</span>
+				<span class="korean">원어민 강사진</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>All our staff members are selected from a pool of qualified candidates 
+					who speak English natively and have a background in math or science. 
+					We don’t simply select someone based on what school they attended, but 
+					interview them in practical settings to see how well prepared they are 
+					to teach. We then educate and train them to be more familiar with our 
+					founding mission and our tools for teaching. Only then we set them up 
+					with students for teaching and training.</p> 
+				</div>
+				<div class="korean">
+					<p>저희의 모든 강사진은 원어민 교사들입니다. 유능한 인제들 중 교육을 
+					추구하는 사람들에 한해서 신원조회를 통과한 선생들에게 저희의 방식과 
+					교육철학을 가르친 후에 학생들을 가르치게 됩니다. 저희 면접에서는 단순히 
+					이름과 학교 성적만을 묻지 않고 실제 상황에서 어떻게 대처할 것인지에 대해 
+					묻는 등 실질적 면접을 진행합니다. 이를 모두 거친 선생들만이 스텝스라는 
+					이름을 걸고 가르칠 수 있습니다. </p>
+				</div>
+			</div>
+		</div>
+		<!-- /Why Steps-->
+
+		<!-- How we teach-->
+		<div class="slide" id="how-we-teach">
+			<h1>
+				<span class="english">How We Teach</span>
+				<span class="korean">스텝스의 방식</span>
+			</h1>
+			<div class="slide-main-content">
+				<div class="english">
+					<p>A lot of the after-school academies don't understand the needs of 
+					international and foreigner schools, let alone understand the needs
+					of the students who attend those schools.</p>
+					<p>We do.</p>
+					<p>We have applied what we have learned about international and foreigner
+					school in korea and devised our proprietary methods to maximize students'
+					performance in those environments.</p>
+					<a href="#subset-03" class="open-subset" data-subset="subset-3">Learn more</a>
+				</div>
+				<div class="korean">
+					<p>한국에 있는 많은 학원들은 국제/위국인 학교 학생들이 무엇을 필요로
+					하는지는 커녕 학교가 어떻고 부모들이 원하는 것이 잘 모릅니다. 설사 안다고 해도
+					개개인의 학생의 니즈에 마추려고 노력을 안하거나 못합니다.</p>
+					<p>저희는 다릅니다.</p>
+					<p>저희는 다년의 경험을 짜아서 학생 개개인의 실력을 최대한 향상할 수 있는
+					프로그램을 개발해서 시행하고 있습니다.</p>
+					<a href="#subset-03" class="open-subset" data-subset="subset-3">더 자세히>></a>
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-3" id="knowledge-vs-skill">
+			<a href="#how-we-teach" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Knowledge vs. Skill</span>
+				<span class="korean">지식 對 실력</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>When it comes to achieving success in math class, 
+					students and parents, and sometimes even teachers themselves fail to 
+					realize that teaching knowledge isn’t sufficient for success in math. 
+					As opposed to history classes, where simply memorizing data can result 
+					in acceptably high grade, math requires skills to be successful. 
+					With that in mind, along with the “what,” we teach “why” and “how.” Learn more >></p>
+				</div>
+				<div class="korean">
+					<p>많은 사람들은 수학을 지식의 일부로 여깁니다. 하지만 수학은 
+					실력입니다. 지식은 초가집과 기와집을 구분하는데 도움이 되지만 
+					기와집이던 초가집이던 짓기위해서는 실력이 필요합니다. 그것이 
+					지식과 실력의 차이입니다.</p>
+					
+					<p>스텝스에서는 계산기를 이용하는 대신 문제를 충분히 이해하여 
+					계산기가 없이도 문제를 풀수 있도록 훈련시킵니다.</p>
+					
+					<p>다시 말하면 스텝스에서는 ‘무엇’을 하는지보다 ‘왜’ 그리고 
+					‘어떻게’ 하는지에 중점을 둡니다.</p>
+
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-3" id="find-weakness">
+			<a href="#how-we-teach" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Find Weakness</span>
+				<span class="korean">구멍을 찾는다!</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>Because math is a skill, it requires that the person be 
+					good with the basics before moving onto the next topic. Unfortunately, 
+					many teachers, in school and otherwise, simply move on to the next topic 
+					when enough time has passed. As a result, students often build their 
+					skills on improper understanding of previous unit. At Steps, we analyze 
+					the students, find the misunderstood parts, and re-train them. Learn more >></p>
+				</div>
+				<div class="korean">
+					<p>수학은 실력이기 때문에 한 단계 나가기 이전에 그 전 단계를 
+					충분히 이해하는 것이 중요합니다. 안타깝게도 학교나 학원에서는 
+					학생이 얼마나 이해했는지와는 무관하게 단순히 일정기간이 지나면 
+					스케줄에 따라 진도를 나갑니다.</p>
+					
+					<p>이로 인해 많은 학생들이 전 단계를 충분히 이해 하지 못하고 
+					진도에 끌려 다닙니다.</p>
+					
+					<p>스텝스에서는 이런 학생들을 분석하여 이해에 보충이 필요한 
+					부분들을 찾아서 ‘재활’합니다.</p>
+
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-3" id="the-solution">
+			<a href="#how-we-teach" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">The Solution</span>
+				<span class="korean">해법은 여깄다!</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>We have curated a set of versatile solutions that can fit 
+					and tailor to student’s needs. The solution set includes a wide variety 
+					of apps (for smartphones, PC, and tablets), videos, notes and exercises 
+					hat can help students form a tangible understanding of what they’re seeing 
+					and experimenting with. Learn more >></p>
+				</div>
+				<div class="korean">
+					<p>스텝스에는 다양한 interactive program과 앺들이 있어 학습 이해에 
+					도움을 줍니다. 또 다양한 노트들과 강의 비디오 등을 보유하고 있어 
+					학생의 필요에 따라 수업이 개별화 된 수업이 제공됩니다</p>
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-3" id="rebuild">
+			<a href="#how-we-teach" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Rebuild: Step by Step</span>
+				<span class="korean">스텝스로 재건 </span>
+				</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>Once the weakness has been supplemented, building on top becomes much easier. Riddle-like SAT questions suddenly become crystal clear. Solutions that did not make a bit of sense now do.
+					We will build that insight for your student. Step by Step, we will find the weakness, and retrain them.</p>
+					<p>That is what we do at Steps.</p>
+				</div>
+				
+				<div class="korean">
+					<p>취약한 부분들이 보안된 후에는 그 위에 실력을 쌓는 것이 훨씬 수월해 집니다. 
+					한 때 수수께끼 같았던 SAT 문제들이 맑은 대낮같이 훤히 보입니다. 
+					말도 안되던 해답들이 당연하게 받아들여집니다.</p>
+					
+					<p>학생에게 통찰력을 키워드리겠습니다. Step by Step. 한 걸음 한 걸음 취약한 
+					부분을 보안하겠습니다.</p>
+					
+					<p>그게 Steps의 방식이니까요</p>
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-3" id="online-tools">
+			<a href="#how-we-teach" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Online Tools</span>
+				<span class="korean">스텝스만의 온라인 도구</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>online-tools  to monitor progress (insert graphs and such as bg)</p>
+				</div>
+				<div class="korean">
+					<p>학생들과 학생들의 성적과 성과를 좀더 체계적으로 관리하고 분석하기 위하여 저희만의 온라인 도구들을 개발하였습니다. 이를 통해 학생들이 얼마나 이해를 하나를 조금더 깊이 있게 알 수 있고 이를 학생과 학부모님들과 소통함으로서 개선해 나가는 방법이 도입돼 있습니다.</p>
+<!--LATER: we can track video watching and whatnot; write w.e. is written on the English section-->
+
+				</div>
+			</div>
+		</div>
+		<div class="slide subslide subset-3" id="compensation">
+			<a href="#how-we-teach" class="close-button"><img src="images/close.png" alt="close"></a>
+			<h1>
+				<span class="english">Compensation</span>
+				<span class="korean">보상제도</span>
+			</h1>
+			<div class="slide-sub-content">
+				<div class="english">
+					<p>When asked about why they should study, many students are
+					told it's their way to success -- in the distant future. Because kids
+					are kids, however, and also because they have no experience about life, 
+					they cannot immediately see how their work will lead their prosperity in 
+					some distant future.</p>
+					<p>They want their rewards right now.</p>
+					<p>That's why we have a reward program designed to reward students based
+					on how well they do in school and during lessons with us. We don't merely
+					hand out candies or small knick knacks, but prized items for teens, such
+					as Apple gift card, movie tickets, or even Beats by Dre. 
+				</div>
+				<div class="korean">
+					<p>왜 공부를 해야 하느냐는 학생들의 질문에 그들은 
+					흔히 이런말을 듣습니다: “나중에 성공하려면 공부해야한다.”
+					하지만 인생경험이 아직 부족한 학생들은 공부에 쏟아 붓는 노력이
+					어떻게 성공으로 직접적으로 이어지는지 이해를 못합니다.</p>
+					<p>그들은 노력에 대한 보상을 지금 받기를 원합니다.</p>
+					<p>그래서 저희 스텝스에서는 보상제도를 도입해서 학생들의 노력을 
+					시시각각 보상하려 합니다. 단순히 사탕이나 장난감등이 아닌 어린이들과
+					청소년들이 갖고 싶어하는 것들로 보상을 합니다. 예를 들어 애플 스토어
+					기프트 카드나 영화 티켓, 그리고 심지어는 Beats by Dre 등으로 학생들에게
+					동기를 부여하고 있습니다.
+					<!--성공을 위해서인데도 공부를 안하는 심리는 무엇일까요? 그것은 
+					바로 인간은 먼 미래를 계획할 수 있는 뇌의 일부가 덜 발달되었기 
+					때문입니다. 따라서 공부를 소흘히 하는 학생들을 바로잡기 
+					위해서는 즉각적인 만족감을 충족시켜줄 수 있어야 합니다. 
+					그래서 저희는 포인트와 상품제도를 도입해 숙제를 잘하거나 
+					실력이 향상되었을 때 포인트를 주고 그 포인트로 어플이나 
+					영화 관람권등을 선물합니다.--></p>
+					<p>사실 이 방법이 옳지 않습니까? 노력하는 만큼 댓가를 돌려 받을 수
+					있다는 인식을 일찍히 깨달으면 저희 프로그램을 벗어나고 대학에 가서도
+					"공부는 곧 성공"이라는 인식을 가지고 살게 됩니다.</p>
+				</div>
+			</div>
+		</div>
+		<!-- /How we teach-->
+		
+
+		<!-- FAQ-->
+		<!--
+		<div class="slide" id="faq">
+			<h1>
+				<span class="english">FAQ</span>
+				<span class="korean">자주 묻는 질문</span>
+			</h1>
+			<div id="accordion">
+				<h2>
+					<span class="english">Who are the teachers? </span>
+					<span class="korean">누가 가르치나요?</span>
+				</h2>
+				<div>this is the content</div>
+				
+				<h2>
+					<span class="english">How is Steps different from other educational institutes?</span>
+					<span class="korean">다른 교육기관들과 어떻게 다른가요?</span>
+				</h2>
+				<div>this is yet another content</div>
+				
+				<h2>
+					<span class="english">Which subjects and schools are covered?</span>
+					<span class="korean">어느 학교 학생들과 무슨 과목들을 가르치나요?</span>
+				</h2>
+				<div>
+					<div class="english">
+						<p></p>
+					</div>
+					<div class="korean">
+						<p></p>
+					</div>					
+				</div>
+				
+				<h2>
+					<span class="english">What are the advantages of taking Steps?</span>
+					<span class="korean">스텝스의 장점이 무엇인가요? </span>
+				</h2>
+				<div>
+					<div class="english">
+						<p></p>
+					</div>
+					<div class="korean">
+						<p></p>
+					</div>					
+				</div>
+				
+				<h2>
+					<span class="english">When and where can I take lessons?</span>
+					<span class="korean">언제 어디서 가르치나요?</span>
+				</h2>
+				<div>
+					<div class="english">
+						<p></p>
+					</div>
+					<div class="korean">
+						<p></p>
+					</div>					
+				</div>
+				
+				<h2>
+					<span class="english">Wouldn't the online tools be distractive for learning?</span>
+					<span class="korean">온라인 학습이 오히려 방해가 되지 않을까요?</span>
+				</h2>
+				<div>
+					<div class="english">
+						<p></p>
+					</div>
+					<div class="korean">
+						<p></p>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<!-- /FAQ-->
+		
+		<!--
+		<div class="slide" id="programs-and-tuition">
+			<h1>
+				<span class="english">Programs and Tuition</span>
+				<span class="korean">프로그램과 교습비</span>
+			</h1>
+			<div class="slide-main-content">
+				<div class="english">
+				Event: -#1 4 ½ hours of free lesson!
+				-#2 Bring a friend! (referral)
+				
+				SAT Math: 200 in 3 month or money back guarantee* (conditions apply: 80% of tuition is refunded if the plan doesn’t work; student must have 650 or lower on official SAT; not refunded if the student quits or doesn’t follow our instruction [not doing homework, etc]; we can quit at any time by refunding 100%)
+				*Tutors are prioritized by who signs up first
+				</div>
+				<div class="korean">
+					
+				</div>
+			</div>
+			
+		</div>
+		-->
+		
+		<!-- Contact Us-->
+		<div class="slide" id="contact-us">
+			<h1>
+				<span class="english">Contact Us</span>
+				<span class="korean">연락처 및 주소</span>
+			</h1>
+				<div class="slide-main-content">
+					<span class="english">Phone</span><span class="korean">전화</a>: <a href="tel:01055996767">010-5599-6767</a><br>
+					<span class="english">Text</span><span class="korean">문자</a>: <a href="sms:01055996767">010-5599-6767</a><br>
+					<span class="english">Email</span><span class="korean">이메일</a>: <a href="mailto:jko@stepsmath.kr">jko@stepsmath.kr</a><br>
+					<span class="english">Kakao</span><span class="korean">카카오</a>: StepsMath
+				</div>
+		</div>
+	
+		
+		<!-- /Contact Us-->
+	<!-- /main slide -->
+
+	
+	<!-- Scripts -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="plugin.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script_m.js"></script>
+	<script type="text/javascript">animateLevel()</script>
+	<!-- /Scripts -->
+</body>
+</html>

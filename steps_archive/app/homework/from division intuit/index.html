@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Steps Education</title>
+    <script src="jquery/jquery-3.1.0.js"></script>
+
+    <script src="js/ajaxer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <!--<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="point-boxes">
+
+    </div>
+
+    <div id="equation-section">
+        <div id="equation">
+            <span id="dividend"> </span> &divide; <span id="divisor"> </span> = <span id="solution" class="input" contenteditable> </span>
+        </div>
+        <div id="check-solution" class="button">Check Solution</div>
+    </div>
+
+    <!-- -->
+    <div id="vertical-form">
+        vertical form
+    </div>
+    <!-- -->
+
+    <div id="snippets">
+        <div class="button" id="check-progress">Check Story</div>
+
+    </div>
+    <div id="reference">
+        <span class="multiplicant">--</span> &#215; 1 = <span class="product" id="prod1">--</span> <br>
+        <span class="multiplicant">--</span> &#215; 2 = <span class="product" id="prod2">--</span> <br>
+        <span class="multiplicant">--</span> &#215; 3 = <span class="product" id="prod3">--</span> <br>
+        <span class="multiplicant">--</span> &#215; 4 = <span class="product" id="prod4">--</span> <br>
+        <span class="multiplicant">--</span> &#215; 5 = <span class="product" id="prod5">--</span> <br>
+        <span class="multiplicant">--</span> &#215; 6 = <span class="product" id="prod6">--</span> <br>
+        <span class="multiplicant">--</span> &#215; 7 = <span class="product" id="prod7">--</span> <br>
+        <span class="multiplicant">--</span> &#215; 8 = <span class="product" id="prod8">--</span> <br>
+        <span class="multiplicant">--</span> &#215; 9 = <span class="product" id="prod9">--</span> <br>
+    </div>
+
+    <div id="show-controls" class="button">
+        Controls
+        <!--load problem, give points, set crutch level-->
+    </div>
+    <div id="show-video-list-container" class="button">
+        Videos
+        <div id="coins"> </div>
+    </div>
+    <div id="new-problem" class="button">New Problem</div>
+
+    <div id="controls">
+        <div id="close-controls">&#215;</div>
+        <div id="load-problem-wrapper">
+            <input type="number" id="dividend-to-load"> &divide; <input type="number" id="divisor-to-load">
+            <div class="button" id="load-problem">Load</div>
+        </div>
+        <div class="button" id="show-settings">Settings</div>
+        <div class="button" id="submit-settings">Submit</div>
+        <div id="settings-wrapper">
+            <div id="settings">
+                <div class="input-wrapper">
+                    <div class="input-description">Dividend Range: </div>
+                    <input type="number" id="dividend-min" placeholder="min"> to <input type="number" id="dividend-max" placeholder="max">
+                </div>
+                <div class="input-wrapper">
+                    <div class="input-description">Divisor Range: </div>
+                    <input type="number" id="divisor-min" placeholder="min"> to <input type="number" id="divisor-max" placeholder="max">
+                </div>
+                <div class="input-wrapper">
+                    <div class="input-description">Crutch Level:</div>
+                    <input type="number" id="crutch-level" min="1" max="5"><br>
+                </div>
+                <div class="input-wrapper">
+                    <div class="input-description">Change Points:</div>
+                    <input type="number" id="change-points">
+                </div>
+                <div class="input-wrapper">
+                    <div class="input-description">Change Coins:</div>
+                    <input type="number" id="change-coins">
+                </div>
+                <div class="input-wrapper">
+                    <div class="input-description">Points / Coin:</div>
+                    <input type="number" id="points-per-coin">
+                </div>
+                <div class="input-wrapper">
+                    <div class="input-description">Password: </div>
+                    <input type="password" id="password" data-password="kevinissmart">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="video-list-container">
+        <div id="close-video-list-container">&#215;</div>
+
+    </div>
+
+    <div id="backstage">
+        <div id="original-snippet" class="snippet">
+            구슬 <span class="dividend"> </span>개를
+            <span class="divisor"> </span>명이 나눠 가지려고 한다. 한 사람당 <span class="quotient input" contenteditable> </span>개씩 가지면 총 <span class="product input" contenteditable> </span>개를 가져가고
+            <span class="remainder input" contenteditable> </span>개가 남는다.
+        </div>
+    </div>
+
+    <!--<div id="numpad">numpad</div>-->
+
+</body>
+
+</html>

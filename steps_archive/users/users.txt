@@ -1,0 +1,52 @@
+{
+    "DemoID" : {
+    	"password": "DemoPW",
+    	"userID": 1,
+    	"language" : "eng"
+    },
+    "Maxwell Baek" : {
+    	"password": "37222416",
+    	"userID" : 2,
+    	"language" : "kor"
+    },
+    "me" : {
+    	"password": "me",
+    	"userID" : 3,
+    	"language" : "eng"
+    },
+    "Ben Kim": {
+    	"password": "87228836",
+    	"userID" : 4,
+    	"language" : "eng"
+    },
+    "MGBig": {
+    	"password": "seniorMG",
+    	"userID" : 5,
+    	"language" : "eng"
+    },
+    "MGSmall1": {
+        "password": "juniorMG1",
+    	"userID" : 6,
+    	"language" : "eng"
+    },
+    "MGSmall2": {
+        "password": "juniorMG2",
+    	"userID" : 7,
+    	"language" : "eng"
+    },
+    "RobinR": {
+        "password": "robinrobin",
+        "userID" : 8,
+    	"language" : "eng"
+    },
+    "Demo": {
+        "password": "demopw",
+        "userID" : 9,
+        "language" : "eng"
+    },
+    "demodemo": {
+        "password": "demodemo123",
+        "userID" : 10,
+        "language" : "eng"
+    }
+}

@@ -1,0 +1,31 @@
+user_profile
+-userID
+-Name
+-password
+-birthday
+-userType
+
+user_summary
+-userID
+-addLevel
+-subLevel
+-multiLevel
+-addRecord
+-subRecord
+-multRecord
+-points
+-coins
+-pointsPerCoin
+		
+
+Performance
+-type: add/sub/multi/square/cube/etc	varchar
+-tLength: time it took to evaluate 		int
+-userID									int
+
+user_type:
+-0: me
+-1: admin
+-2: teachers
+-3: students
+-4: parents

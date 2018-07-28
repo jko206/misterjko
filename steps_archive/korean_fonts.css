@@ -1,0 +1,25 @@
+/* fromt http://www.google.com/fonts/earlyaccess */
+
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+
+
+.font-01{font-family: 'Hanna', serif;}
+.font-02{font-family: 'Jeju Gothic', serif;}
+.font-03{font-family: 'Jeju Hallasan', serif;}
+.font-04{font-family: 'Jeju Myeongjo', serif;}
+.font-05{font-family: 'KoPub Batang', serif;}
+.font-06{font-family: 'Nanum Brush Script', serif;}
+.font-07{font-family: 'Nanum Gothic', serif;}
+.font-08{font-family: 'Nanum Gothic Coding', serif;}
+.font-09{font-family: 'Nanum Myeongjo', serif;}
+.font-10{font-family: 'Nanum Pen Script', serif;}

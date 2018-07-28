@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Education</title>
+<script src="jquery/jquery-3.1.0.js"></script>
+
+<script src="js/main.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<!--<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>-->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="arithmetic">
+            <div class="fraction">
+                <span class="integer" id="a1">3</span>
+                <span class="numerator" id="a2">2</span>
+                <span class="frac-line"></span>
+                <span class="denominator" id="a3">3</span>
+            </div>
+            <div class="operator" id="operator1">&minus;</div>
+            <div class="fraction">
+                <span class="integer" id="b1">3</span>
+                <span class="numerator" id="b2">2</span>
+                <span class="frac-line"></span>
+                <span class="denominator" id="b3">3</span>
+            </div>
+            <div class="operator" id="operator2">&plus;</div>
+            <div class="fraction">
+                <span class="integer" id="c1">3</span>
+                <span class="numerator" id="c2">2</span>
+                <span class="frac-line"></span>
+                <span class="denominator" id="c3">3</span>
+            </div>
+            <div id="equal-sign">=</div>
+            <div class="fraction solution">
+                <span class="integer input" id="solution-integer"></span>
+                <span class="numerator input" id="solution-numerator"></span>
+                <span class="frac-line"></span>
+                <span class="denominator input" id="solution-denominator"></span>
+            </div>
+        </div>
+        <div id="wrong-responses">
+        </div>
+        <div class="button" id="new-problem">New Problem</div>
+        <div class="button" id="check">Check</div>
+        <div id="components">
+            <div class="fraction" id="original-fraction">
+                <span class="integer"></span>
+                <span class="numerator"></span>
+                <span class="frac-line"></span>
+                <span class="denominator"></span>
+            </div>
+        </div>
+        <div id="num-pad">
+            <div class="row">
+                <div class="num-input numpad-button" id="num7">7</div>
+                <div class="num-input numpad-button" id="num8">8</div>
+                <div class="num-input numpad-button" id="num9">9</div>
+            </div>
+            <div class="row">
+                <div class="num-input numpad-button" id="num4">4</div>
+                <div class="num-input numpad-button" id="num5">5</div>
+                <div class="num-input numpad-button" id="num6">6</div>
+            </div>
+            <div class="row">
+                <div class="num-input numpad-button" id="num1">1</div>
+                <div class="num-input numpad-button" id="num2">2</div>
+                <div class="num-input numpad-button" id="num3">3</div>
+            </div>
+            <div class="row">
+                <div class="num-input numpad-button" id="num0">0</div>
+                <div class="numpad-button" id="num-del">Del</div>
+            </div>
+            <div class="numpad-button" id="num-next"></div>
+            <div class="numpad-button" id="num-prev"></div>
+        </div>
+    </div>
+</body>
+</html>

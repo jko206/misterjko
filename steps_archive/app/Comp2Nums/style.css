@@ -1,0 +1,55 @@
+#boxes{
+	width: 1000px;
+}
+#controls{
+	font-size: 35px;
+	margin-bottom: 40px;
+}
+
+#resp{
+	border: 1px solid black;
+	height: 40px;
+	display: inline-block;
+	width: 100px;
+}
+
+#button{
+	width: 250px;
+	border: 1px solid black;
+	height: 40px;
+	text-align: center;
+	display: inline-block;
+}
+
+.box{
+	display: inline-block;
+	border: 1px solid black;
+	box-sizing: border-box;
+	width: 100px;
+	height: 75px;
+    vertical-align: top;
+    position: relative;
+    line-height: 2;
+    text-align: center;
+}
+
+.box:hover{
+	cursor: pointer;
+}
+
+.cover, .number{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+
+.cover{
+	z-index: 100;
+    font-size: 40px;
+}
+.number{
+    font-size: 30px;
+	z-index: 1;
+	line-height: 2.5;
+}

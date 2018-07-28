@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Division Intuition 2</title>
+
+<!--
+	this will make it non-zoomable
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1" />
+-->
+
+<script type="text/javascript" src="jquery-3.1.0.js"></script>
+<script type="text/javascript" src="division-intuition.js"></script>
+<link rel="stylesheet" href="division-intuition.css">
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+
+</head>
+
+<body>
+<div id="mainContent">
+	<div id="equation">
+		<input type="number" id="dividend" min="1">
+		<span id="division-sign">&divide;</span>
+		<input type="number" id="divisor" max="10" min="1">
+		<span id="equal-sign">=</span>
+		<input type="number" id="quotient">
+	</div>
+	<div id="story">
+		동전이 <span id="story-dividend">_____</span>개가 있는데  
+		<span id="story-divisor">____</span> 사람이 나눠가지면 한 사람당  
+		<span id="story-quotient">____</span>씩 갖게 된다.
+	</div>
+	<div id="interactive">
+		<div id="container">
+			<div class="cell" id="cell0"><div class="label">1</div></div>
+			<div class="cell" id="cell1"><div class="label">2</div></div>
+			<div class="cell" id="cell2"><div class="label">3</div></div>
+			<div class="cell" id="cell3"><div class="label">4</div></div>
+			<div class="cell" id="cell4"><div class="label">5</div></div>
+			<div class="cell" id="cell5"><div class="label">6</div></div>
+			<div class="cell" id="cell6"><div class="label">7</div></div>
+			<div class="cell" id="cell7"><div class="label">8</div></div>
+			<div class="cell" id="cell8"><div class="label">9</div></div>
+		</div>
+		<div id="coin-area">
+			<div id="coin-depot" class='cell'>#coin-depot</div>
+			<div class='coin-area-button' id="split-button"> 쪼개기</div>
+			<div class='coin-area-button' id="reset-button">다시하기</div>
+			<div class='coin-area-button' id="check-fairness">공평성</div>
+		</div>
+	</div>
+	<div id="message">
+		<!--messages will pop up here, like hints, and what should be done-->
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+**************************
+THINGS THAT I LEARNED
+**************************
+-name class and ID according to both function AND cosmetics reasons, its current state, etc. (clicked, active, etc)
+-apply the cosmetics afterwards
+-plan out all the objects, their interactions, results, etc. before building
+-when a function/method is changed in anyway to accomodate new/different function, 
+   make sure the change doesn't cause havok. 
+-gotta learn how to fucking debug
+-instead of relying on HTML elements to store .data(), 
+   I should learn how to make objects
+
+**********************!!!!!!!!!reduce the weight on the scale
+
+**************************
+fraction multiplication
+
+fraction division
+
+distributive property
+
+fraction addition/subtraction
+
+**************************
+
+-------------
+
+if the last variable is trashed, replace
+
+make the tile-area and scales sortable();
+do something about the overflow..
+make the log
+--For isUseGen, and !isUseGen, use different lines on the log
+undo/redo
+
+
+
+options: 
+-more color options
+-turn the forced balance on/off, as to make checking the solution have purpose
+-dropping tile from scale on custom-tile-area produces additive inverse
+-dropping tile from scale on operation area produces multiplicative inverse
+
+
+Track List:
+#001
+-everything works as needed, except when custom tile is dropped into op-area, it doensn't regen new one. 
+
+#002
+-the buttons hide well and stuff, but still some work to do. 
+
+v3
+--everything works except check solution
+
+** use .droppable('disable') & ('enable') & if(.droppable('option', 'disabled')) to change CSS
+
+make an app that teaches fraction addition and subtraction using GCD and LCM

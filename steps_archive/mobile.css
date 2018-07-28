@@ -1,0 +1,79 @@
+#mobile-warning{
+	display: none;
+	font-size: 1em;
+	box-sizing: border-box;
+	padding: 10px;
+	line-height: 1.5;
+	background: rgb(255, 91, 91);
+	color: white;
+}
+
+h1{
+	font-size: 2.2em;
+}
+
+h2{
+	font-size: 1.5em;
+}
+
+.why-steps-reason{
+margin: 10px auto;
+width: 100%;
+}
+
+#menu-toggle{
+	background: none;
+	border: 2px solid white;
+	display: block;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 32px;
+	height: 32px;
+	border-radius: 16px;
+	color: white;
+	line-height: 28px;
+	font-weight: bold;
+}
+
+#header{
+height: auto;
+}
+
+#nav{
+	height: inherit;
+}
+
+.detail h2 {
+font-size: 1.7em;
+}
+
+#nav li {
+display: inline-block;
+height: 30px;
+line-height: 30px;
+text-align: center;
+width: 30%;
+}
+
+.footer-section{
+	min-width: 100%;
+}
+
+.contact-method{
+	width: 80px;
+}
+
+.words{
+	padding: 10px;
+}
+
+#footer h2{
+	font-size: 1.4em;
+}
+
+
+#questions-container, #analysis-container{
+	width: 100%;
+	height: auto;
+}

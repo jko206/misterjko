@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Steps Math</title>
+	<link rel="stylesheet" type="text/css" href="layout.css" id="style-sheet">
+	<link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width: 700px)">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+	
+	<!--<meta name="description" content="slick is a responsive carousel jQuery plugin that supports multiple breakpoints, CSS3 transitions, touch events/swiping &amp; much more!">
+	<meta name="keywords" content="slick, responsive, carousel, slider, jQuery, plugin, CSS3, swipe, touch">-->
+	
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+</head>
+<body>
+	<!-- Menu items / log in-->
+	<div id="header">
+		<div id="menu-toggle">&#8801;</div>
+		<a href="index.html"><img src="images/5.png" alt="Steps Math Logo" id="top-logo"></a><!-- add BLOG -->
+		<ul id="nav"><li><a href="program.html"><span class="english">Program</span><span class="korean">교육과정</span></a></li><li><a href="tuition.html"><span class="english">Tuition</span><span class="korean">교습비</span></a></li><li><a href="analysis.html"><span class="english">Analysis</span><span class="korean">원인 분석</span></a></li><li><a href="about-us.html"><span class="english">About Us</span><span class="korean">Steps에 대해</span></a></li><li><a href="#footer"><span class="english">Contact Us</span><span class="korean">연락처</span></a></li><li><a href="blog.html"><span class="english">Blog</span><span class="korean">블로그</span></a></li></ul>
+		<div id="login">
+			<span id="open-login-input">Sign in</span>
+			<!--<form id="login-input">
+				<label for="id">
+					<span class="korean">이메일</span>
+					<span class="english">Email</span>
+				</label>
+				<input type="text" name="id" id="id-input">
+				<label for="password">
+					<span class="korean">비밀번호</span>
+					<span class="english">Password</span>
+				</label>
+				<input type="password" name="password">
+				<button type="submit">
+					<span class="korean">로그인</span>
+					<span class="english">Sign in</span>
+				</button>
+			</form>-->
+			<!--sign up-->
+		</div>
+		<div id="languages">
+			<span id="set-korean" class="set-language english">한국어</span>
+			<span id="set-english" class="set-language korean">English</span>
+		</div>
+	</div>
+	<div id="main-contents">
+		<h1>분석 &amp; 보안</h1>
+		<div id="details">
+			<div class="detail" id="detail-weakness">
+				<img src="images/chart.png" alt="Node graph" class="big-image" id="image-problem">
+				<div class="words">
+					<h2>취약한 점을 분석</h2>
+					<p>
+					위에 보이는 차트는 저희가 내준 숙제중 하나에서 학생들이 각 문제를 푸는데
+					걸리는 시간을 기록 한 것입니다. 시간은 학생이 문제를 맞췄을 시에만 
+					기록이 됩니다. 각 문항마다 가운데 굵은 파란선이 있는데 그 점이 상위 
+					50%와 하위 50%를 가르는 선입니다. 
+					</p>
+					<p>
+					이 자료와 함께 가지고 있는 자료는 지금까지의 학생들 중 상위권 학생들이 실제
+					시험에서 몇점을 받았는지가 나온 것입니다. 두 자료를 비교해보면 지금 학생의
+					실력으로는 실제 시험에서 몇점이 나올지 예측할 수 있습니다. 
+					</p>
+				</div>
+			</div>
+			<!-- DEMO STARTS -->
+			<div class="demo-container" id="demo">
+				<div id="questions-container">
+					<div id="question" class='practice'>Practice: What is 3 + 4?</div>
+					<ul id="answer-choices">
+						<li class="answer-choice answer">7</li>
+						<li class="answer-choice">6</li>
+						<li class="answer-choice">12</li>
+						<li class="answer-choice">9</li>
+					</ul>
+					<button id="check-answer" disabled>Check</button>
+					<div id="start-real-quiz">That was practice!</div>
+				</div>
+				<div id="analysis-container">
+					<button class="show-chart" id="show-timeChart">Time</button>
+					<button class="show-chart" id="show-correctChart">Correct</button>
+					<div class="chart" id="timeChart"></div>
+					<div class="chart" id="correctChart"></div>
+				</div>				
+			</div>
+				
+				<!-- DEMO ENDS -->
+			<div class="detail" id="detail-basics">
+				<div class="words">
+					<h2>보안하기</h2>
+					<p>
+					분석 과정에서 나온 취약한 부분은 이해를 시키고 스스로 도움 없이 풀 수 있도록 
+					반복해서 훈련을 시킵니다. <em>SAT 수학은 실질적으로 똑같은 문제들을 계속
+					내기 때문에</em> 수학을 아무리 못하는 학생이라도 반복적으로 문제를 연습하면
+					문제를 풀수 있기 마련입니다. 
+					</p>
+					<p>
+					좀 더 자세한 상담을 위해서는 <a href="#footer">연락 바랍니다</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<div id="footer">
+		<a href="#header"><div id="to-top">Top</div></a>
+		<div id="footer-center-align">
+			<div class="footer-section">
+				<h2>연락방법</h2>
+				<span class="contact-method">Email</span> <a href="mailto:jko@stepsmath.kr">jko@stepsmath.kr</a><br>
+				<span class="contact-method">Phone</span> <a href="tel:01055996767">010-5599-6767</a><br>
+				<span class="contact-method">Text</span> <a href="tel:01055996767">010-5599-6767</a><br>
+				<span class="contact-method">Kakao</span> <a href="http://goto.kakao.com/@StepsMath">StepsMath</a><br>
+			</div>
+			<!--
+			<div class="footer-section">
+				<h2>블로그 & 소셜미디어</h2>
+				카카오 스토리
+				다음
+				네이버
+				티스토리
+				페북
+				구+
+			</div>
+			<div class="footer-section">
+				<h2>회사 정보</h2>
+				
+			</div>
+			-->
+		</div>
+	</div>
+		
+	<!-- Scripts -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="plugin.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="demo-script.js"></script>
+	
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	 <script type="text/javascript" src="chart.js"></script>
+	<!-- /Scripts -->
+</body>
+</html>

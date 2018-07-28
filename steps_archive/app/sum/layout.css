@@ -1,0 +1,174 @@
+body{
+	overflow: hidden;
+}
+
+.main{
+	width: 355px;
+	margin: auto;
+	position: relative;
+	font-size: 3em;
+	overflow: visible;
+	height: 400px;
+}
+
+.start{
+	background-color: #c4c4c4;
+	border: 5px double #777;
+	cursor: pointer;
+	width: 400px;
+	height: 150px;
+	font-size: 2em;
+	line-height: 1.6;
+	font-weight: boldest;
+	font-family: Verdana;
+	text-align: center;
+	position: absolute;
+	top: 200px;
+	border-radius: 0px;
+}
+
+.start:hover{
+	border: 5px solid black;
+}
+
+.operand{
+	text-align: right;
+	width: 300px;
+	height: 100px;
+	float: left;
+}
+
+.operator{
+	width: 55px;
+	height: 100px;
+	font-size: 2em;
+}
+
+.eq{
+	width: 300px;
+	height: 5px;
+	background-color: black;
+	float: left;
+}
+
+.sum{
+	font-size: 1.4em;
+	float: left;
+	width: 300px;
+	margin: 5px 0px;
+	text-align: right;
+	background-repeat: no-repeat;
+}
+
+.digit-wrapper{
+	font-family: arial;
+	font-size: 1.3em;
+	display: inline-block;
+	width: 40px;
+	height: 100px;
+	line-height: 2;
+}
+
+.arithmetics{
+}
+
+.pause-btn{
+	color: #c4c4c4;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	margin: 5px;
+	border: 3px double #c4c4c4;
+	width: 100px;
+	height: 30px;
+	display: none;
+	font-size: 0.6em;
+	text-align: center;
+}
+.pause-btn:hover{
+	cursor: pointer;
+	color: gray;
+	border-color: gray;
+}
+#resume{
+	position: static;
+	display: block;
+	height: 80px;
+	margin: 50px auto;
+	font-size: 0.85em;
+	width: 220px;
+	
+}
+.pause-scr{
+	border: 1px solid black;
+	width: 400px;
+	height: 400px;
+	display: none;
+	margin: 100px 0px;
+}
+.pause-scr div{
+	text-align: center;
+	font-family: Verdana;
+	margin: 20px;
+}
+
+.countDown div{
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	top: 200px;
+	text-align: center;
+	text-shadow: 2px 2px#000;
+	font-size: 200px;
+	line-height: 400px;
+	color: white;
+}
+
+
+#cd3{
+	background-color: #ff2f00;
+	display: none;
+}
+
+#cd2{
+	background-color: #fff000;
+	display: none;
+}
+
+#cd1{
+	background-color: #1f0;
+	display: none;
+}
+
+
+table{
+	font-size: 15px;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+td, tr{
+	border: 1px solid black;
+	width: 80px;
+}
+
+.stats{
+	font-size: 0.4em;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	border: 1px solid black;
+}
+
+.stats div{
+	display: inline-block;
+	height: 10px;
+	width: 150px;
+}
+
+
+#submit{
+  width: 150px;
+  height: 75px;
+  display: none;
+}

@@ -1,0 +1,271 @@
+
+body{
+	position: relative;
+	color: black;
+}
+
+#mainContent{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+#buttons{
+	position: absolute;
+	width: 160px;
+}
+
+.button{
+	background-color: gray;
+	color: white;
+	border: 1px solid black;
+	margin: 5px;
+	text-align: center;
+	line-height: 2;
+	display: inline-block;
+	width: 150px;
+	float: left;
+	box-sizing: border-box;
+}
+
+span#coins {
+    border: 1px solid lightgoldenrodyellow;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    box-sizing: border-box;
+    background: yellow;
+    color: gray;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+#video-list-container, #progress, #video-viewing-window, #controls{
+    background-color: aliceblue;
+    position: absolute;
+    margin: auto;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 10%;
+    height: 500px;
+	display: none;
+    z-index: 100;
+	overflow: auto;
+}
+
+#video{
+    position: absolute;
+    top: 100px;
+}
+
+#video-list-container a:visited{
+	text-decoration: line-through;
+}
+
+.close-button{
+	position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    font-size: 2em;
+    text-align: center;
+}
+
+.close-button:hover, {
+	cursor: pointer;
+}
+
+#arithmetic {
+    position: absolute;
+    width: 200px;
+    margin-left: calc(50% - 100px);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 5em;
+	text-align: right;
+}
+div#row1 {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    height: 100px;
+    left: 0;
+}
+
+div#row2 {
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    top: 100px;
+    left: 0;
+}
+
+div#symbol {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100px;
+}
+
+div#number {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    width: 150px;
+    height: 100px;
+    text-align: right;
+}
+
+div#line {
+    position: absolute;
+    width: 200px;
+    top: 200px;
+    height: 5px;
+    background: black;
+}
+#row3 {
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    top: 210px;
+    left: 0;
+	font-size: 1em;
+    font-family: inherit;
+	text-align: right;
+    padding: 0;
+    margin: 0;
+	box-sizing: border-box;
+	border: 2px solid black;
+}
+
+div#points {
+    position: fixed;
+    bottom: 200px;
+    width: 150px;
+	left: 0;
+    height: 180px;
+}
+
+.point {
+    float: left;
+    width: 30px;
+    height: 30px;
+    background-color: #09f;
+    line-height: 1.7;
+    font-size: 1em;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #12108b;
+	color: white;
+}
+
+div#timer, #timeFreeze{
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 150px;
+    background-color: #f90;
+    font-size: 2em;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 3;
+    padding-right: 30px;
+	text-align: right;
+	box-sizing: border-box;
+}
+
+#record-countdown {
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+    height: 100px;
+	width: 150px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#record , #countdown{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    width: 150px;
+    font-size: 2em;
+    text-align: right;
+    padding-right: 30px;
+    line-height: 3;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#countdown{
+    background-color: green;
+}
+
+
+#ajax{
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	width: 95%;
+	height: 95%;
+	background-color: white;
+	display: none;
+}
+
+#virtualKeyboard {
+    position: absolute;
+    bottom: 0;
+    width: 400px;
+    left: calc(50% - 200px);
+    height: 280px;
+}
+#numerals {
+    width: 300px;
+    position: absolute;
+}
+
+.numkey, .enter-button{
+    margin: 0;
+    float: left;
+    width: 100px;
+    height: 70px;
+    font-size: 3em;
+	border-radius: 0;
+	text-align: center;
+	-webkit-border-radius: 0;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.zeroKey{
+	width: 200px;
+}
+
+button.enter-button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 140px;
+}
+.clear-button{
+    margin: 0;
+    float: left;
+    width: 100px;
+    font-size: 3em;
+	border-radius: 0;
+	text-align: center;
+	-webkit-border-radius: 0;
+    position: absolute;
+    right: 0;
+    height: 140px;
+	bottom: 140px;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.key0 {
+    width: 200px;
+}

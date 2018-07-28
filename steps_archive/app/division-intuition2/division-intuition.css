@@ -1,0 +1,139 @@
+body{
+    margin:0;
+    padding:0;
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    top: 0;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;
+}
+
+#equation{
+    font-size: 2em;
+    position: relative;
+}
+
+#equation > input{
+    width: 100px;
+    height: 40px;
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+#story{
+    padding: 10px;
+    line-height: 1.5em;
+    position: relative;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+#story span{
+    font-weight: 700;
+}
+#interactive{
+    position: relative;
+    width: 980px;
+    margin: auto;
+}
+#container{
+    position: absolute;
+    width: 600px;
+    height: 450px;
+}
+
+.cell{
+    background-color: #aaaaaa;
+    box-sizing: border-box;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    float: left;
+}
+
+.label {
+    font-size: 3em;
+    text-align: center;
+    color: #eeeeee;
+    line-height: 135px;
+    position: absolute;
+    width: 100%;
+
+}
+
+#coin-area{
+    background-color: #ddd;
+    position: absolute;
+    right: 0px;
+    width: 250px;
+    height: 460px;
+}
+
+#coin-depot{
+    width: 250px;
+    height: 360px;
+    position: absolute;
+    overflow: auto;
+    z-index: 100000;
+}
+
+.coin-area-button{
+    position: absolute;
+    height: 40px;
+    font-size: 1.5em;
+    width: 115px;
+    margin: 2px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    z-index: 200;
+    text-align: center;
+    border: 3px solid #aaaaaa;
+    line-height: 2;
+}
+
+#split-button{left: 0;bottom: 50px;}
+#reset-button{left:125px;bottom: 50px;}
+#check-fairness{left:0;bottom:0}
+
+.coin{
+    width: 48px;
+    height: 48px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    float: left;
+    z-index: 10000000;
+    text-align: center;
+    line-height: 48px;
+    margin: 5px;
+    position: relative;
+}
+
+.ten{
+    background-color: #7a7aff;
+    z-index: 10000000;
+}
+
+.one{
+    background-color: white;
+    z-index: 10000000;
+}
+
+#message{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-left: 5%;
+    height: 50px;
+    font-size: 2em;
+    background-color: #ddd;
+    box-sizing:border-box;
+}

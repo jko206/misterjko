@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Steps Math</title>
+	<link rel="stylesheet" type="text/css" href="layout.css" id="style-sheet">
+	<link rel="stylesheet" type="text/css" href="tuition.css" id="style-sheet">
+	<link rel="stylesheet" type="text/css" href="mobile.css" id="style-sheet" media="screen and (max-width: 700px)">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+	
+	<!--<meta name="description" content="slick is a responsive carousel jQuery plugin that supports multiple breakpoints, CSS3 transitions, touch events/swiping &amp; much more!">
+	<meta name="keywords" content="slick, responsive, carousel, slider, jQuery, plugin, CSS3, swipe, touch">-->
+	
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+</head>
+<body>
+	<!-- Menu items / log in-->
+	<div id="header">
+		<div id="menu-toggle">&#8801;</div>
+		<a href="index.html"><img src="images/5.png" alt="Steps Math Logo" id="top-logo"></a><!-- add BLOG -->
+		<ul id="nav"><li><a href="program.html"><span class="english">Program</span><span class="korean">교육과정</span></a></li><li><a href="tuition.html"><span class="english">Tuition</span><span class="korean">교습비</span></a></li><li><a href="analysis.html"><span class="english">Analysis</span><span class="korean">원인 분석</span></a></li><li><a href="about-us.html"><span class="english">About Us</span><span class="korean">Steps에 대해</span></a></li><li><a href="#footer"><span class="english">Contact Us</span><span class="korean">연락처</span></a></li><li><a href="blog.html"><span class="english">Blog</span><span class="korean">블로그</span></a></li></ul>
+		<div id="login">
+			<span id="open-login-input">Sign in</span>
+			<!--<form id="login-input">
+				<label for="id">
+					<span class="korean">이메일</span>
+					<span class="english">Email</span>
+				</label>
+				<input type="text" name="id" id="id-input">
+				<label for="password">
+					<span class="korean">비밀번호</span>
+					<span class="english">Password</span>
+				</label>
+				<input type="password" name="password">
+				<button type="submit">
+					<span class="korean">로그인</span>
+					<span class="english">Sign in</span>
+				</button>
+			</form>-->
+			<!--sign up-->
+		</div>
+		<div id="languages">
+			<span id="set-korean" class="set-language english">한국어</span>
+			<span id="set-english" class="set-language korean">English</span>
+		</div>
+	</div>
+	<div id="main-contents">
+		<h1>교습비 &amp; 환불제도</h1>
+		<div id="details">
+			<div class="detail" id="detail-basics">
+				<img src="images/calculator.jpg" alt="calculator" class="big-image" id="image-problem">
+				<div class="words">
+					<h2>교습비</h2>
+					<p>
+					스텝스는 학생의 수준에 맞춰 적절량의 수업 시간을 권장하고 있습니다. 교습비는
+					1시간의 <em>레슨당 6만원이고</em> 다음과 같은 최소의 레슨을 권장합니다. 더
+					자세한 내용은 교사와의 상담 및 진단 후에 알려드릴 수 있습니다. 
+					</p>
+					<table>
+						<tr><th>현재 점수*</th><th>주당 최소<br>권장 레슨</th></tr>
+						<tr><td>400점 이하</td><td>8시간</td></tr>
+						<tr><td>590점 이하</td><td>4시간</td></tr>
+						<tr><td>600점 이상</td><td>2시간</td></tr>
+					</table>
+					<p>
+					<a href="program.html#demo"><em>저희가 개발한 인터넷 교재인 J+</em></a>를 사용합니다. 혹은 학생이 현재 쓰고 
+					있는 교재를 쓰기도 합니다. J+ 사용료는 레슨비에 포함 되어 있습니다. 
+					</p>
+				</div>
+			</div>
+			<div class="detail" id="detail-basics">
+				<img src="images/handshake.png" alt="handshake" class="big-image" id="image-problem">
+				<div class="words">
+					<h2>환불 제도</h2>
+					<p>
+					스텝스는 레슨을 시작한 후 60일 내에 150점 이상 오르지 않을 경우 
+					인터넷 교제비를 제외한 <em>교습비를 전액 환불</em>하고 있습니다. 
+					단 다음과 같은 조건이 적용됩니다:
+					</p>					
+					<ul>
+						<li>현재 학생의 공식 SAT 수학 점수가 600점 이하</li>
+						<li>교사가 추천하는 양의 레슨을 받기</li>
+						<li>교사가 내주는 숙제를 80% 완성 (학생의 일정을 고려하여 적당한 양의
+						숙제를 내줍니다).</li>
+						<li>마지막 레슨으로부터 30일내에 공식 SAT 시험을 치루기</li>
+					</ul>
+					<p>자세한 사항은 <a href="#footer">문의주세요</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<a href="#header"><div id="to-top">Top</div></a>
+		<div id="footer-center-align">
+			<div class="footer-section">
+				<h2>연락방법</h2>
+				<span class="contact-method">Email</span> <a href="mailto:jko@stepsmath.kr">jko@stepsmath.kr</a><br>
+				<span class="contact-method">Phone</span> <a href="tel:01055996767">010-5599-6767</a><br>
+				<span class="contact-method">Text</span> <a href="tel:01055996767">010-5599-6767</a><br>
+				<span class="contact-method">Kakao</span> <a href="http://goto.kakao.com/@StepsMath">StepsMath</a><br>
+			</div>
+			<!--
+			<div class="footer-section">
+				<h2>블로그 & 소셜미디어</h2>
+				카카오 스토리
+				다음
+				네이버
+				티스토리
+				페북
+				구+
+			</div>
+			<div class="footer-section">
+				<h2>회사 정보</h2>
+				
+			</div>
+			-->
+		</div>
+	</div>
+		
+	<!-- Scripts -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="plugin.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="demo-script.js"></script>
+	
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	 <script type="text/javascript" src="chart.js"></script>
+	<!-- /Scripts -->
+</body>
+</html>

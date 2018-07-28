@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Education</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- BUTTONS-->
+<div id="new-problem" class="button">New Problem</div>
+<div id="show-problem-loader" class="button">Load Problem</div>
+<div id="show-video-list-container" class="button">
+    Videos
+    <div id="coins"> </div>
+</div>
+<div id="show-controls-container" class="button">Controls</div>
+
+<!-- VARIOUS CONTAINERS THE BUTTONS OPEN -->
+<div id="controls">
+    <div id="close-controls">&#215;</div>
+    <div id="load-problem-wrapper">
+        <input type="number" id="dividend-to-load"> &divide; <input type="number" id="divisor-to-load">
+        <div class="button" id="load-problem">Load</div>
+    </div>
+    <div class="button" id="show-settings">Settings</div>
+    <div class="button" id="submit-settings">Submit</div>
+    <div id="settings-wrapper">
+        <div id="settings">
+            <div class="input-wrapper">
+                <div class="input-description">Dividend Range: </div>
+                <input type="number" id="dividend-min" placeholder="min"> to <input type="number" id="dividend-max" placeholder="max">
+            </div>
+            <div class="input-wrapper">
+                <div class="input-description">Divisor Range: </div>
+                <input type="number" id="divisor-min" placeholder="min"> to <input type="number" id="divisor-max" placeholder="max">
+            </div>
+            <div class="input-wrapper">
+                <div class="input-description">Crutch Level:</div>
+                <input type="number" id="crutch-level" min="1" max="5"><br>    
+            </div>
+            <div class="input-wrapper">
+                <div class="input-description">Change Points:</div>
+                <input type="number" id="change-points">
+            </div>
+            <div class="input-wrapper">
+                <div class="input-description">Change Coins:</div>
+                <input type="number" id="change-coins">
+            </div>
+            <div class="input-wrapper">
+                <div class="input-description">Points / Coin:</div>
+                <input type="number" id="points-per-coin">
+            </div>
+            <div class="input-wrapper">
+                <div class="input-description">Password: </div>
+                <input type="password" id="password" data-password="kevinissmart">
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div id="problem-loader-container" class="container">
+	<div class="close-container">&#215;</div>
+</div>
+<div id="video-list-container" class="container">
+    <div class="close-container">&#215;</div>
+</div>
+
+<!-- UI ELEMENTS -->
+<div id="point-boxes"></div>
+<div id="numpad">numpad</div>
+
+<!-- MAIN AREA -->
+<div id="main-area">
+	
+</div>
+
+<div id="backstage">
+ 
+</div>
+
+
+<!-- JQUERY -->
+<script src="jquery/jquery-3.1.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="jquery-ui/jquery-ui.min.js"></script>
+
+<!-- JAVASCRIPT -->
+<script src="js/math.js"></script>
+<script src="js/init.js"></script>
+
+<!-- EXERCISE -->
+<script src="fracAddSub/fracAddSub.js"></script>
+<link rel="stylesheet" href="fracAddSub/fracAddSub.css">
+<script src="js/rockPaperScissors.js"></script>
+
+<!-- MATHJAX -->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+/*global MathJax*/
+MathJax.Hub.Config({
+   tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        extensions: ["tex2jax.js","[Contrib]/forminput.js"]
+    }
+});    
+</script>
+
+<!--
+	ENABLE THIS FOR OPTIMIZED TABLET DRAGGING
+	<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+-->
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Education</title>
+<script src="jquery/jquery-3.1.0.js"></script>
+<script src="js/init.js"></script>
+
+<script src="js/main.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+/*global MathJax*/
+MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});    
+    
+</script>
+<!--<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>-->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="q1-wrapper" class="q-wrapper">
+        1. The distance between (1, -5) and (-2, 4) is $a\sqrt{b}$
+        <br>where a = <input type="number" id="q0a"> and b = <input type="number" id="q0b">.
+        <br><div class="button" id="checkQ0">Check</div>
+    </div>
+    <div id="q2-wrapper" class="q-wrapper">
+        2. The distance between (3, -2) and (-4, -4) is $a\sqrt{b}$
+        <br>where a = <input type="number" id="q1a"> and b = <input type="number" id="q1b">.
+        <br><div class="button" id="checkQ1">Check</div>
+    </div>
+    <div id="q3-wrapper" class="q-wrapper">
+        3. The distance between (-5, -2) and (2, 5) is $a\sqrt{b}$
+        <br>where a = <input type="number" id="q2a"> and b = <input type="number" id="q2b">.
+        <br><div class="button" id="checkQ2">Check</div>
+    </div>
+    <div id="q4-wrapper" class="q-wrapper">
+        4. The distance between (-7, 8) and (-3, -5) is $a\sqrt{b}$
+        <br>where a = <input type="number" id="q3a"> and b = <input type="number" id="q3b">.
+        <br><div class="button" id="checkQ3">Check</div>
+    </div>
+    <div id="q5-wrapper" class="q-wrapper">
+        5. The distance between <span id="p1"></span> and <span id="p2"></span> is $a\sqrt{b}$
+        <br>where a = <input type="number" id="q4a"> and b = <input type="number" id="q4b">.
+        <br><div class="button" id="checkQ4">Check</div>
+        <div id="new-q">New Question</div>
+    </div>
+</body>
+</html>
+

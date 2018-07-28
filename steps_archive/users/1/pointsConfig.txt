@@ -1,0 +1,8 @@
+{
+	"pointsPerCorrect" : 10,
+	"pointsPerCoin" : 600,
+	"wrongLimit" : 2,
+	"penalty" : -20,
+	"timeBonus" : 10,
+	"timeForBonus" : 30
+}

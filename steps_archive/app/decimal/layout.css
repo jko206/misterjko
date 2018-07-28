@@ -1,0 +1,122 @@
+.input-area{
+	margin: auto;
+	height: 100px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 3em;
+}
+
+.input-area input{
+	font-size: 1.3em;
+	width: 150px;
+}
+
+.grid-container{
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	border-left: 1px solid #666;
+	border-top: 1px solid #666;	
+}
+
+.show-border{
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;	
+}
+
+.grid-a{
+	width: 49px;
+	height: 49px;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+	float: left;
+}
+.grid-b{
+	width: 4px;
+	height: 4px;
+	border-right: 1px solid rgba(100,100,100,0.7);
+	border-bottom: 1px solid rgba(100,100,100,0.7);
+	float: left;
+}
+
+.one{
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	line-height: 0px;
+	margin: 5px;
+}
+
+.ten-1{
+	width: 500px;
+	height: 50px;
+	background-color: blue;
+	float: left;
+}
+
+.ten-2{
+	width: 50px;
+	height: 50px;
+	background-color: yellow;
+	float: left;
+}
+
+.ten-3{
+	width: 50px;
+	height: 5px;
+	background-color: red;
+	float: left;
+}
+
+.ten-4{
+	width: 5px;
+	height: 5px;
+	background-color: green;
+	float: left;
+}
+
+.components, .legends{
+	display: none;
+}
+
+.frac{
+	padding: 2px 10px;
+	margin: 3px;
+	width: 100px;
+	display: inline-block;
+}
+
+.options, .increments, .legends{
+	width: 200px;
+}
+
+#incr-ten-1{
+	background-color: #33f;
+}
+#incr-ten-2{
+	background-color: #ff3;
+}
+#incr-ten-3{
+	background-color: #f33;
+}
+#incr-ten-4{
+	background-color: #3f3;
+}
+
+.misc-container{
+	width: 200px;
+	border: 1px solid black;
+	position: absolute; 
+	left: 520px;
+	top: 120px;
+}
+
+.main{
+	margin: auto;
+	width: 730px;
+	position: relative;
+}
+
+.quiz-check{
+	margin: 5px;
+}

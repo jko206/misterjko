@@ -1,0 +1,67 @@
+
+table, tr, td, th {
+    border-collapse: collapse;
+}
+
+#main{
+	margin: 20px auto;
+    width: 600px;
+    border: 1px solid #d2d2d2;
+    padding: 0 20px;
+}
+
+.equation{
+    padding: 20px;
+    text-align: center;
+}
+    #left-side, #eq-sign, #input{
+        display: inline-block;
+        height: 50px;
+        font-size: 50px;
+    }
+    #left-side > *{
+        display: inline
+    }
+    #input{
+        border: 1px solid black;
+        min-width: 100px;
+        text-align: center;
+        vertical-align: top;
+        background-color: gray;
+    }
+
+.button {
+    border: 3px double black;
+    padding: 10px;
+    display: inline-block;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+    border-color: gray;
+}
+
+#wrong-inputs {
+    margin-bottom: 20px;
+}
+
+.wrong-input {
+    display: inline-block;
+    border: 2px solid red;
+    min-width: 70px;
+    height: 30px;
+    font-size: 30px;
+    line-height: 1.9;
+    padding: 5px;
+    line-height: 1;
+    text-align: center;
+    margin: 5px;
+}
+
+#wrong-input-template{
+    display: none;
+}

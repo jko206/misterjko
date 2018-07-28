@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Education</title>
+<script src="jquery/jquery-3.1.0.js"></script>
+<script src="js/prime-factorization.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<!--<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>-->
+<link rel="stylesheet" href="prime-factorization.css">
+</head>
+
+<body>
+    <span id="number">n</span>는 소수 <div contenteditable id="factor-count"></div>개의 곱이다.
+    <div class="button" id="check-answer">정답확인</div>
+    <div id="factors">
+        
+    </div>
+    <div class="button" id="check-answer2">정답확인</div>
+    <div class="button" id="new-problem">새 문제 </div>
+    <table id="stat">
+        <tr>
+            <td>문제수</td>
+            <td id="total-q-count"></td>
+        </tr>
+        <tr>
+            <td>한번에 맞춘 수</td>
+            <td id="score"></td>
+        </tr>
+        <tr>
+            <td>백분율 </td>
+            <td id="percentage"></td>
+        </tr>
+    </table>
+</body>
+</html>

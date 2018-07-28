@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--
+This is web app designed to help kids understand basic algebra 
+problems of applying same operations to both sides of the equation by 
+interacting with digital objects.
+
+Must already know:
+-negative numbers
+-variables and what they do. 
+-fractions
+-distributive property
+
+-->
+
+
+<html>
+    <head>
+        <title>Basic Algebra</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link href="jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+		
+		<!--scripts-->
+		<link rel='stylesheet' href="jquery-ui.css" type='text/css'></script> 
+		<script src="jquery-1.9.1.js"></script> 
+		<script src="jquery-ui.js"></script> 
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+		
+		<!-- scrolling js at the bottom of this page, right before </body>-->
+		
+    </head>
+    <body>
+		<div id='tarp'>
+			<div id='window'>
+				<div id='close-button'>CLOSE</div>
+				<div id='x-equals'>x = 4/3</div>
+				<div id='solutions'>
+					<div id='left-solution'>
+						<!--eqn-bit:
+							op: + / - / *
+							numer: 2
+							denom: 3
+						-->
+						<div class='eqn'>2/3 + 3/2 * (4/3)</div>
+						<div class='eqn'>= 2/3 + 1/2 * 4 </div>
+						<div class='eqn'>= 2/3 + 2</div>
+						<div class='eqn'>= 2/3 + 6/3</div>
+						<div class='eqn'>= 8/3</div>
+						<div class='eqn'>= 2 2/3</div>
+					</div>
+					<div id='right-solution'>
+						<div class='eqn'>2/3 + 3/2 * (4/3)</div>
+						<div class='eqn'>= 2/3 + 1/2 * 4 </div>
+						<div class='eqn'>= 2/3 + 2</div>
+						<div class='eqn'>= 2/3 + 6/3</div>
+						<div class='eqn'>= 8/3</div>
+						<div class='eqn'>= 2 2/3</div>
+					</div>				
+				</div>
+			
+			</div>
+		</div>
+		<div id='main-section'>
+
+			<div id='tile-area'>
+				
+				<div class='indi-tiles' id='pos-tiles'>
+				</div>
+				<div id='custom-tile-area'>
+					<div class='drop-site' id='custom-drop'>
+						<div class='tile drop-mark'>#</div>
+						<span>+</span>
+						<div class='tile drop-mark'>#</div>
+					</div>
+				</div>
+				<div class='indi-tiles' id='neg-tiles'>
+				</div>
+			</div>
+			
+			
+			
+			<div id='instruments'>
+				
+				<div class='instrument-sect' id='left-instruments'>
+					
+					<div class='button' id='new-problem'>
+						NEW PROBLEM
+					</div>
+					<div class='button' id='check-sol'>
+						INT. PROBLEMS<!--CHECK SOLUTION-->
+					</div>
+				</div>
+				<div id='log-container'>
+					<!--  example -->
+					<!--when .current-state, '=' is surrounded by <span>-->
+					<div id='log-items'>
+					</div>
+					<!-- /example -->
+				</div>
+				<div class='instrument-sect' id='right-instruments'>
+					
+					<div class='button' id='undo'>
+						UNDO
+					</div>
+					<div class='button' id='redo'>
+						REDO
+					</div>
+				</div>
+			</div> 
+			
+			
+			
+			<div id='scale-ops'>
+				
+				<div class='scale drop-site' id='left-scale'>
+					
+				</div>
+				<div id='operators'>
+					
+					<div id='op-set'>
+						<div class='drop-site' id='multiply'>
+							
+							<div class='drop-mark'>&#215;</div>
+						</div>
+						<div id='divide-line'></div>
+						<div class='drop-site' id='divide'>
+							<div class='drop-mark'>&#247;</div>				
+						</div>
+						<div id="fn-button">
+							<div class='button' id='apply-button'>
+								APPLY
+							</div>
+							<div class='button' id='simplify-button'>
+								SIMPLIFY
+							</div>
+							<div class='drop-site' id='discard'>
+								DISCARD
+							</div>
+						</div>
+					</div>
+					
+					<div id='unequal-sign'>
+						&#8800;
+					</div>
+				</div>
+				<div class='scale drop-site' id='right-scale'>
+					
+				</div>
+			</div>
+			
+			<!--
+			<div id='footer'>
+				level control; help; about; other apps; 
+			</div>
+			-->
+		</div>
+		
+		<script src="jquery.mCustomScrollbar.concat.min.js"></script>
+    </body>
+</html>

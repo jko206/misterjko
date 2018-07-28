@@ -1,0 +1,82 @@
+body {
+    width: 500px;
+    margin: 60px auto;
+}
+
+.button{
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #cacaca;
+}
+
+div[contenteditable]{
+    display: inline-block;
+    border: 1px solid gray;
+    min-width: 80px;
+    text-align: center;
+}
+
+#check-answer2{
+    display: none;
+}
+
+#factors{
+    display: none;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+#factors input {
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* For Firefox */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#new-problem{
+    display: none;
+}
+
+.factor-input {
+    width: 50px;
+    margin: 10px;
+}
+
+#stat{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+#stat td {
+    border-collapse: collapse;
+    width: 130px;
+    border: 1px solid black;
+    height: 40px;
+    padding-left: 20px;
+}

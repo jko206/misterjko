@@ -1,0 +1,79 @@
+#main-area {
+    border: 1px solid black;
+    position: absolute;
+    width: 500px;
+    margin: 0 calc(50% - 250px);
+    top: 90px;
+    height: 200px;
+}
+
+.wrong {
+    font-size: 20px;
+    border: 1px solid red;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: pink;
+	display: inline-block;
+}
+
+.rr2-ruler{
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+    #rr2-mark-boxes{
+        position: absolute;
+        height: 50px;
+        width: 500px;
+    }
+        .rr2-mark-box{
+            position: relative;
+            bottom: 0;
+            float: left;
+            width: 5px;
+            height:50px;
+        }
+            .rr2-rule-num{
+                width: 25px;
+                position: absolute;
+                left: -10px;
+                top: 0;
+                text-align: center;
+                
+            }
+            .rr2-mark{
+                position: absolute;
+                left: 2px;
+                bottom: 0;
+                width: 1px;
+                background-color: black;
+            }
+                .rr-10{height: 20px;}
+                .rr-5{height: 14px;}
+                .rr-1{height: 10px;}
+    #rr2-input-wrapper{
+        position: absolute;
+        top: 60px;
+        height: 100px;
+        width: 100px;
+    }
+        #rr2-pointer{
+            height: 50px;
+            width: 50px;
+            transform: rotate(45deg);
+            background-color: #dddddd;
+            position: absolute;
+            left: -25px;
+            top: 0;
+        }
+        #rr2-input{
+            position: absolute;
+            left: -50px;
+        }
+        

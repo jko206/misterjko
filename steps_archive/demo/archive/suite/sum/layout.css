@@ -1,0 +1,21 @@
+#block-spawns{
+	position: absolute;
+	overflow: auto;
+	display: inline-block;
+	width: 650px;
+}
+
+.block-spawn{
+	float: left;
+	position: relative;
+	margin-right: 50px;
+	display: none;
+	width: 650px;
+}
+.five-grouper{
+	margin-right: 20px;
+}
+
+.block-image{
+	margin: 20px;
+}

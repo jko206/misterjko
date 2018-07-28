@@ -1,0 +1,73 @@
+v1		: 	All the components components work and keeps log of statistic
+v2		: 	added timing feature and it works.
+v3		:	objectified components and some UX/UI improvement:
+			-check for right, x for wrong
+			-quit button works
+v4		:	UX/UI improvement:
+			-pressing start counts down
+			-made the operators and operand float
+			-arranged placements and general cosmetics
+			-count down
+			-measures time
+			-check/x mark when right/wrong
+			
+			
+-create user object that keeps track of
+	-min. time
+	-min. accuracy
+	-min. speed
+
+gotta collect time.. 
+create options menu on pause
+try it in other browsers
+make stat object sole dealer of timer
+put how to level up:
+-create points threashold for each level
+-pt = speed * accuracy * level;
+-incorrect = level * -2
+speed = question/time
+
+
+
+
+
+
+============
+Notes
+------------
+The goal of this app is to help kids train their calculating speed
+For me, it's a chance to make a simple app that is vertically integrated; 
+it enables log in and tailored page view.
+
+
+
+============
+Milestones
+------------
+-make basic feature: adding, right/wrong, basic stat
+-login and stuff
+
+-make more secure
+-timer/healthbar/score to push sense of urgency
+
+============
+Notes
+------------
+*Gotta make it unhackable by using functions and closures?
+
+
+
+1 		+ 		2		= 		3
+Augend		Addend				Sum
+
+
+9		-		4		=		5
+Minuend		subtrahend		difference
+
+
+3		x		2		=		6
+multiplicand	multiplier		product
+
+
+5		/		3		=		1			R2
+Dividend		Divisor			Quotient	Remainder

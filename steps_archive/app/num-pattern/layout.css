@@ -1,0 +1,35 @@
+body{
+	overflow: hidden;
+}
+
+.main{
+	width: 355px;
+	margin: auto;
+	position: relative;
+	font-size: 3em;
+	overflow: visible;
+}
+
+*{
+	border: 1px solid black;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  font-size: 0.6em;
+  position: relative;
+}
+
+.wrapper{
+	margin: 20px 0px;
+}
+
+input {
+  width: 200px;
+  height: 50px;
+  display: inline;
+  vertical-align: bottom;
+  font-size: 1em;
+  float: left;
+}

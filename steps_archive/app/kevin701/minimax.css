@@ -1,0 +1,125 @@
+body {
+    font-size: 24px;
+}
+
+#main {
+    max-width: 800px;
+    margin: 100px auto;
+    position: relative;
+}
+
+#main table {
+    font-size: 70px;
+    border-collapse: collapse;
+    width: 800px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#main table td {
+    border: 1px solid black;
+    height: 100px;
+    position: relative;
+}
+
+.guide-line {
+    border: 1px solid #c3c3c3;
+    position: absolute;
+    width: 240px;
+    top: 50px;
+    left: -74px;
+}
+
+.guide-line.diag-l2r{
+    transform: rotate(70deg);
+}
+
+
+.guide-line.diag-r2l{
+    transform: rotate(-70deg);
+}
+
+.guide-line.horizontal{
+    width: 80%;
+    left: 10%;
+}
+
+.highlight{
+    border-color: red;
+}
+
+.sign{
+    background-color: white;
+    z-index: 3;
+    position: absolute;
+    margin: 10px;
+    top: 0;
+    width: 70px;
+}
+
+#main td:nth-child(even) {
+    width: 100px;
+    border: 0;
+}
+
+#main td:nth-child(odd) {
+    width: 200px;
+}
+
+.number {
+    border: 1px solid black;
+    width: 180px;
+    height: 80px;
+    font-size: 70px;
+    margin: auto;
+    font-family: monospace;
+}
+
+.input {
+    background-color: #dedede;
+}
+
+.input:hover {
+    cursor: text;
+}
+
+.correct {
+    background-color: #a4f1a4;
+}
+
+.incorrect {
+    background-color: #f1a4a4;
+}
+
+#button {
+    position: absolute;
+    right: 0;
+    width: 180px;
+    height: 60px;
+    border: 1px solid black;
+    margin: 20px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.8;
+    border-radius: 10px;
+}
+
+#button:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+/******************        STAT *************************/
+#stat{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 200px;
+    height: 100px;
+    border-collapse: collapse;
+}
+
+#stat td {
+    border: 1px solid black;
+}

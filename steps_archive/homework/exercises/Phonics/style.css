@@ -1,0 +1,38 @@
+.phx-card{
+    display : inline-block;
+	margin : 20px;
+}
+
+.phx-card:hover{
+    cursor: pointer;
+}
+
+.phx-choice:hover{
+	background-color : #dddddd;
+}
+
+.phx-selected{
+    background-color : #dddddd
+}
+
+.phx-card{
+    width : 100px;
+	height : 75px;
+	border : 1px solid black;
+	text-align : center;
+	line-height : 3;
+}
+
+#phx-spoken-word{
+    margin: 10px auto;
+    display: block;
+    background-image: url(images/speaker.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+}
+
+#Phonics-container, #phx-choices{
+    width : 100%;
+    position : relative;
+}

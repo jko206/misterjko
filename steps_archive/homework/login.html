@@ -1,0 +1,51 @@
+
+    <!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Education</title>
+<style>
+.button {
+    width: 115px;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+	font-size: 20px;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+
+</style>
+</head>
+
+<body>
+<div class="input wrapper">
+	<div class="input-label">Username: </div>
+	<input type="text" id="username">
+</div>
+<div class="input wrapper">
+	<div class="input-label">Password: </div>
+	<input type="password" id="password">
+</div>
+<div class="button" id="submit">Submit</div>
+
+
+<!-- JQUERY -->
+<script src="jquery/jquery-3.1.0.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

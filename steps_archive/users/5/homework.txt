@@ -1,0 +1,1 @@
+[{"exercise":"BasicArithmetic","settings":{"level":43},"requirements":{"totalCorrect":50,"consCorrect":5},"lastProblem":"[176,\"add\",322,498,498]"},{"exercise":"FracAddSub","settings":{"level":2},"requirements":{"totalCorrect":10,"consCorrect":3},"lastProblem":"[\"[71,6]\",\"plus\",\"[7,2]\",\"plus\",\"[5,2]\",\"[107,6]\"]"}]

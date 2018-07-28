@@ -1,0 +1,77 @@
+#main-area {
+    border: 1px solid black;
+    position: absolute;
+    width: 500px;
+    margin: 0 calc(50% - 250px);
+    top: 90px;
+    height: 200px;
+}
+
+#lhs {
+    font-size: 60px;
+    display: inline-block;
+}
+
+#equal-sign {
+    display: inline-block;
+    font-size: 4.3em;
+    vertical-align: bottom;
+}
+#rhs {
+	display: inline-block;
+}
+
+#fraction, .fraction{
+    font-size: 2.3em;
+    display: inline-block;
+    position: relative;
+    height: 105px;
+    width: 100px;
+    vertical-align: bottom;
+    top: 32px;
+}
+
+#denom, .denom {
+    top: 55px;
+    left: 90px;
+    position: absolute;
+    width: 80px;
+}
+#numer, .numer {
+    top: 0;
+    left: 90px;
+    position: absolute;
+    width: 80px;
+}
+#whole, .whole {
+    position: absolute;
+    top: 20px;
+    width: 80px;
+}
+
+#fracLine, .fracLine {
+    position: absolute;
+    width: 94px;
+    height: 3px;
+    background: black;
+    top: 51px;
+    left: 83px;
+}
+
+.wrong {
+    font-size: 20px;
+    border: 1px solid red;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: pink;
+	display: inline-block;
+}
+
+
+.loader-content-row {
+    height: 150px;
+}

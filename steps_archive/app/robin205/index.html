@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Robin's homework (2016-08-09)</title>
+<script src="script.js"></script>
+<script src="jquery-3.1.0.js"></script>
+
+<script> 
+/* global $ */
+$(document).ready(function(){
+	$('#checkQ1').click(function(){
+		if($('#q1').val() == '20'){	//SET ANSWER HERE
+			$('#q1').css('background', '#00FF00');
+		} else {
+			$('#q1').css('background', 'red');
+		}
+	});
+	
+	$('#checkQ2').click(function(){
+		if($('#q2').val() == '30'){	//SET ANSWER HERE
+			$('#q2').css('background', '#00FF00');
+		} else {
+			$('#q2').css('background', 'red');
+		}
+	});
+	
+	$('#checkQ3').click(function(){
+		if($('#q3').val() == '20'){	//SET ANSWER HERE
+			$('#q3').css('background', '#00FF00');
+		} else {
+			$('#q3').css('background', 'red');
+		}
+	});
+	
+	$('#checkQ4').click(function(){
+		if($('#q4').val() == '60'){	//SET ANSWER HERE
+			$('#q4').css('background', '#00FF00');
+		} else {
+			$('#q4').css('background', 'red');
+		}
+	});
+	
+	$('#checkQ5').click(function(){
+		if($('#q5').val() == '70'){	//SET ANSWER HERE
+			$('#q5').css('background', '#00FF00');
+		} else {
+			$('#q5').css('background', 'red');
+		}
+	});
+	
+	$('#checkQ6').click(function(){
+		if($('#q6').val() == '62.5'){	//SET ANSWER HERE
+			$('#q6').css('background', '#00FF00');
+		} else {
+			$('#q6').css('background', 'red');
+		}
+	});
+	
+	$('#checkQ7').click(function(){
+		if($('#q7').val() == '250'){	//SET ANSWER HERE
+			$('#q7').css('background', '#00FF00');
+		} else {
+			$('#q7').css('background', 'red');
+		}
+	});
+	
+});
+</script>
+<style type="text/css">
+#mainContent {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+	font-weight: bold;
+	background-color: #E3F0FB;
+	border-radius: 4px;
+	padding: 10px;
+	text-align: center;
+}
+.buttonStyle {
+	border-radius: 4px;
+	border: thin solid #F0E020;
+	padding: 5px;
+	background-color: #F8F094;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	color: #663300;
+	width: 75px;
+}
+
+.buttonStyle:hover {
+	border: thin solid #FFCC00;
+	background-color: #FCF9D6;
+	color: #996633;
+	cursor: pointer;
+}
+.buttonStyle:active {
+	border: thin solid #99CC00;
+	background-color: #F5FFD2;
+	color: #669900;
+	cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+<div id="mainContent">
+	<form>
+		<label for="q1">Question 1: </label>
+		<input type="text" name="q1" id="q1">
+		<input type="button" id="checkQ1" value="check">
+		<br>
+		<label for="q1">Question 2: </label>
+		<input type="text" name="q2" id="q2">
+		<input type="button" id="checkQ2" value="check">
+		<br>
+		<label for="q1">Question 3: </label>
+		<input type="text" name="q3" id="q3">
+		<input type="button" id="checkQ3" value="check">
+		<br>
+		<label for="q1">Question 4: </label>
+		<input type="text" name="q4" id="q4">
+		<input type="button" id="checkQ4" value="check">
+		<br>
+		<label for="q1">Question 5: </label>
+		<input type="text" name="q5" id="q5">
+		<input type="button" id="checkQ5" value="check">
+		<br>
+		<label for="q1">Question 6: </label>
+		<input type="text" name="q6" id="q6">
+		<input type="button" id="checkQ6" value="check"> hint: The answer has 1 decimal digit. 
+		<br>
+		<label for="q1">Question 7: </label>
+		<input type="text" name="q7" id="q7">
+		<input type="button" id="checkQ7" value="check">
+	</form>
+	
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+#template{
+    display: none;   
+}
+
+.correct{
+    background-color: #99ff66
+}
+
+.incorrect{
+    background-color: #ff8566
+}
+
+.question{
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.button{
+    display: inline-block;
+    margin: 5px;
+    width: 80px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: gray;
+    color: white;
+}
+
+#stat{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 200px;
+    height: 100px;
+    border-collapse: collapse;
+}
+
+#stat td {
+    border: 1px solid black;
+}

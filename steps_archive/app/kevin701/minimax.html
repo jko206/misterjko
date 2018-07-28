@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Min-Max Estimate</title>
+<script src="jquery-3.1.0.js"></script>
+<script src="minimax.js"></script>
+
+<link rel="stylesheet" href="minimax.css">
+</head>
+
+<body>
+<div id="main">
+	<table>
+		<tr>
+			<td><div id="num1-max" class="number input"> </div></td>
+			<td><div class="guide-line horizontal max-plus-line plus-line"></div></td>
+			<td><div id="num2-max" class="number input"> </div></td>
+			<td><div class="guide-line horizontal max-plus-line plus-line"></div></td>
+			<td><div id="num3-max" class="number input"> </div></td>
+		</tr>
+		<tr>
+			<td><div id="num1" class="number"> </div></td>
+			<td>
+				<div id="sign" class="sign"></div>	
+				<div class="guide-line diag-l2r max-minus-line minus-line"></div>
+				<div class="guide-line diag-r2l min-minus-line minus-line"></div>
+			</td>
+			<td><div id="num2" class="number"></div></td>
+			<td>
+				<div class="sign">=</div>	
+				<div class="guide-line diag-l2r min-minus-line minus-line"></div>
+				<div class="guide-line diag-r2l max-minus-line minus-line"></div>
+			
+			</td>
+			<td><div id="num3" class="number"> </div></td>
+		</tr>
+		<tr>
+			<td><div id="num1-min" class="number input"> </div></td>
+			<td><div class="guide-line horizontal min-plus-line plus-line"></div></td>
+			<td><div id="num2-min" class="number input"> </div></td>
+			<td><div class="guide-line horizontal min-plus-line plus-line"></div></td>
+			<td><div id="num3-min" class="number input"> </div></td>
+		</tr>
+	</table>
+	<div id="button">Next</div>
+</div>
+
+<table id="stat">
+    <tr>
+		<td>문제 수:</td>
+		<td id="count-total">0</td>
+	</tr>
+	<tr>
+		<td>맟춘 수:</td>
+		<td id="count-correct">0</td>
+	</tr>
+	<tr>
+		<td>백분율:</td>
+		<td id="count-percent">0%</td>
+	</tr>
+</table>
+
+</div>
+</body>
+</html>

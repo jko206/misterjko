@@ -1,0 +1,202 @@
+
+#main{
+	margin: 20px auto;
+    width: 600px;
+    border: 1px solid #d2d2d2;
+    padding: 0 20px;
+}
+
+#problem, #input {
+    font-size: 40px;
+    text-align: center;
+    border: 1px solid #d2d2d2;
+    margin: 10px;
+    font-family: 'Inconsolidata', monospace;
+    min-height: 60px;
+    line-height: 1.5;
+}
+#input:focus {
+    background: #dedede;
+}
+#keys{
+    text-align: center;
+}
+.key {
+    display: inline-block;
+    width: 70px;
+    border: 1px solid gray;
+    position: relative;
+    height: 70px;
+    text-align: center;
+    line-height: 4.5;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.key:hover {
+    background-color: #b3b3dc;
+    color: white;
+}
+    .key-shortcut {
+        position: absolute;
+        line-height: 1;
+        top: 4px;
+        right: 4px;
+    }
+    
+.button {
+    border: 3px double black;
+    padding: 10px;
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+    border-color: gray;
+}
+
+#wrong-inputs {
+    margin-bottom: 20px;
+}
+
+.wrong-input {
+display: inline-block;
+    border: 2px solid red;
+    min-width: 100px;
+    height: 30px;
+    line-height: 1.9;
+    padding: 15px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 4px;
+}
+
+#wrong-input-template{
+    display: none;
+}
+
+/************* STATS ******************/
+#stats {
+    bottom: 0;
+    right: 0;
+    background-color: beige;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+}
+
+    .stat-wrapper {
+        margin: 10px 5px;
+        height: 30px;
+        color: #292929;
+        line-height: 2;
+    }
+
+    .stat-wrapper:nth-child(2n) {
+        background-color: beige;
+    }
+
+    .stat-wrapper:nth-child(2n+1) {
+        background-color: white;
+    }
+
+
+        .stat-label {
+            width: 180px;
+            display: inline-block;
+        }
+        
+        #stats .button{
+            display: block;
+            width: 100px;
+            margin: auto;
+            text-align: center;
+        }
+
+
+/*********************** POPUP **********************/
+
+.popup-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(25, 25, 25, 0.7);
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+    .popup{
+        background-color: white;
+        width: 400px;
+        height: 300px;
+        padding: 20px;
+        margin: 100px auto;
+    }
+        .close-btn{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 60px;
+            background-color: red;
+            width: 60px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 1;
+            height: 60px;
+            color: white;
+            font-weight: bolder;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        .close-btn:hover{
+            background-color: #fba8b6;
+        }
+        .popup .input-wrapper{
+            padding: 10px;
+            font-size: 30px;
+            border: 1px solid #e4e3e3;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .popup .input-wrapper .input-label{
+            display: inline-block;
+            width: 150px;
+        }
+        .popup .input-wrapper input{
+            width: 180px;
+            height: 30px;
+            vertical-align: middle;
+            font-size: 30px;
+            padding-left: 20px;
+        }
+
+        .popup .button{
+            margin: 30px auto;
+            text-align: center;
+            display: block; 
+            width: 200px;
+        }
+        
+        .submit-msg{
+            display: none;
+            width: 80%;
+            margin: auto;
+            padding: 10px;
+            border-width: 2px;
+            border-style: solid;
+            font-size: 30px;
+            border-radius: 10px;
+        }
+            #submit-success{
+                border-color: green;
+            }
+            #submit-fail{
+                border-color: red;
+            }

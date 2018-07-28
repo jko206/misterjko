@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Steps Education</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="non-main">
+    <div id="top-nav">
+        <div id="logo"></div>
+        <div id="exercise-list">
+            <div id="current-exercise"></div>
+        </div>
+        <div id="show-video-list-container" class="hoverable">
+            Rewards
+            <div id="coins"> </div>
+        </div>
+        <div id="points-display">
+            <div id="penalty-count-track">
+                <div id="penalty-count-meter"></div>
+            </div>
+            <div id="potential-penalty">--</div>
+            <div id="time-bonus-track">
+                <div id="time-bonus-meter"></div>
+            </div>
+            <div id="potential-time-bonus">--</div>
+            <div id="total-points-track">
+                <div id="total-points-meter"></div>
+            </div>
+            <div id="total-points">--</div>
+        </div>
+        <div id="log-out" class="tool-tip hoverable"><div class="tool-tip-text">Logout</div></div>
+    </div>
+    <div id="controls">
+        <!--new problem --> 
+        <!--points setting-->
+        <!--problem setting-->
+        <div id="new-problem" class="tool-tip hoverable"><div class="tool-tip-text">New Problem</div></div>
+        <div id="show-handson-app" class="tool-tip hoverable"><div class="tool-tip-text">Hands-on App</div></div>
+        <div id="show-progress-container" class="tool-tip hoverable"><div class="tool-tip-text">Progress</div></div>
+        <!-- notes -->
+        <!-- guides / step-by-step -->
+        <!-- skillset / performance chart -->
+        <div id="show-level-setter" class="tool-tip hoverable">
+            <div class="tool-tip-text">Level</div>
+        </div>
+    </div>
+    <!-- BUTTONS-->
+    
+    
+    <!-- VARIOUS CONTAINERS THE BUTTONS OPEN -->
+    <div id="video-list-container" class="container">
+        <div class="close-container">&#215;</div>
+    </div>
+    <div id="level-setter">
+        <div id="level-slider-track">
+            <div id="level-slider-handle"></div>
+        </div>
+        <div id="current-level">#</div>
+    </div>
+    
+    <!-- UI ELEMENTS -->
+    <div id="numpad">numpad</div>
+    <div id="veil">
+        <div id="promptPW">
+            <div id="promptPW-message">Please enter password to effect change.</div>
+            <input type="password" id="promptPW-pw">
+            <div id="promptPW-confirm" class="hoverable">
+                <div id="promptPW-confirm-icon"></div>
+                Confirm
+            </div>
+            <div id="promptPW-cancel" class="hoverable">
+                <div id="promptPW-cancel-icon-L2R"></div>
+                <div id="promptPW-cancel-icon-R2L"></div>
+                Cancel
+            </div>
+        </div>    
+    </div>
+    
+    <!-- UX ELEMENTS -->
+    <div id="wrong-resps">
+        
+    </div>
+    
+</div>
+
+<!-- MAIN AREA -->
+<div id="main-area">
+	
+</div>
+
+<div id="backstage">
+ 
+</div>
+
+
+<!-- JQUERY -->
+<script src="jquery/jquery-3.1.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="jquery-ui/jquery-ui.min.js"></script>
+
+<!-- JAVASCRIPT -->
+<script src="js/util.js"></script>
+<script src="js/math.js"></script>
+<!--<script src="js/init.js"></script>-->
+<script src="js/newinit.js"></script>
+
+<!-- MATHJAX -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+/*global MathJax*/
+MathJax.Hub.Config({
+   tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        extensions: ["tex2jax.js","[Contrib]/forminput.js"]
+    }
+});    
+</script>
+
+<!--
+	ENABLE THIS FOR OPTIMIZED TABLET DRAGGING
+	<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+-->
+
+</body>
+</html>

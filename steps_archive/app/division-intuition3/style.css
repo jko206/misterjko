@@ -1,0 +1,202 @@
+
+
+
+#point-boxes {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 200px;
+    padding: 0;
+}
+#coins {
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 40px;
+    text-align: center;
+    height: 24px;
+    box-sizing: border-box;
+}
+
+.point-box {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #b9b9b9;
+}
+
+#reference {
+    position: fixed;
+    right: 0;
+    top: 50px;
+    font-size: 22px;
+    line-height: 1.6;
+    background: gainsboro;
+    width: 140px;
+}
+
+#equation-section {
+    background: gainsboro;
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 200px);
+    width: 400px;
+    font-size: 40px;
+    padding: 10px 25px;
+}
+
+.button {
+    font-size: 20px;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+
+#vertical-form {
+    background: gainsboro;
+    position: fixed;
+    top: 50px;
+    width: 140px;
+    height: 330px;
+}
+
+#snippets {
+    background: gainsboro;
+    position: absolute;
+    top: 175px;
+    left: calc(50% - 200px);
+    width: 450px;
+    font-size: 40px;
+}
+
+#backstage, #vertical-form{
+    display: none;
+}
+
+#dividend, #divisor, .input, .dividend, .divisor {
+    display: inline-block;
+    background: gray;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    top: 10px;
+    vertical-align: bottom;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.snippet {
+    font-size: 13px;
+    line-height: 3;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.snippet .input, .snippet .dividend, .snippet .divisor {
+    width: 50px;
+    height: 25px;
+    position: relative;
+    vertical-align: top;
+    line-height: 1.2;
+}
+
+#reference .input {
+    width: 40px;
+    height: 28px;
+    line-height: 1.2;
+    position: relative;
+    top: -2px;
+}
+
+.checkmark {
+    border: solid white;
+    width: 20px;
+    height: 10px;
+    transform: rotate(-45deg);
+    position: relative;
+    left: 6px;
+    top: 7px;
+    border-left-width: 6px;
+    border-bottom-width: 6px;
+    border-top-width: 0;
+    border-right-width: 0;
+}
+
+.checked{
+    border-color: green;
+}
+
+#controls, #video-list-container {
+    background-color: gainsboro;
+    z-index: 100;
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid black;
+    max-width: 600px;
+    display: none;
+}
+
+#load-problem{
+    border: 1px solid black;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+#submit-settings{
+    display: none;
+}
+
+#settings-wrapper {
+    border: 1px solid black;
+    padding: 10px;
+    display: none;
+}
+
+#settings {
+    margin-top: 20px;
+}
+
+.input-description{
+    display: inline-block;
+    width: 140px;
+}
+
+.input-wrapper {
+    height: 40px;
+}
+
+#close-controls, #close-video-list-container{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: grey;
+    color: white;
+    font-size: 27px;
+    line-height: 0.8;
+    font-weight: bolder;
+    text-align: center;
+}
+
+body>.button {
+    width: 115px;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+}

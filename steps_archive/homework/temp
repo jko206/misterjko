@@ -1,0 +1,22 @@
+[
+	{
+		"exercise" : "FracArithmetic",
+		"settings": {
+			"minDenom":2,
+			"maxDenom":5,
+			"minInt":1,
+			"maxInt":4,
+			"diffDenom": false
+		},
+		"lastProblem": "[\"[9,4]\",\"minus\",\"[3,2]\",\"[3,4]\"]",
+		"requirement" : {
+			"totalCorrect" : 10, 
+			"consCorrect" : 3
+		}
+	},
+	{
+		"exercise":
+		"BasicArithmetic",
+		"settings":[]
+	}
+]

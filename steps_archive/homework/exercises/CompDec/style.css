@@ -1,0 +1,42 @@
+#main-area {
+    border: 1px solid black;
+    position: absolute;
+    width: 500px;
+    margin: 0 calc(50% - 250px);
+    top: 90px;
+    height: 320px;
+}
+
+.wrong {
+    font-size: 20px;
+    border: 1px solid red;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: pink;
+	display: inline-block;
+}
+
+#cd-top-deck, #cd-bottom-deck{
+    box-sizing: border-box;
+    position: relative;
+    width: 450px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 25px;
+    padding: 10px;
+}
+
+.cd-card{
+    display: inline-block;
+    width: 80px;
+    border: 1px solid black;
+    margin: 7px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+}

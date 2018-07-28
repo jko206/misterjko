@@ -1,0 +1,1 @@
+[{"exercise":"BasicArithmetic","settings":{"level":11},"requirements":{"totalCorrect":20,"consCorrect":3},"lastProblem":"[27,\"div\",9,3,3]"}]

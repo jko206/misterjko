@@ -1,0 +1,122 @@
+#equation-wrapper{
+    position: relative;
+    height: 80px;
+    background: beige;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+	.eq-part, #eq-input{
+		background: #e3e3cb;
+	    margin: 10px;
+	    padding: 6px;
+	    height: 50px;
+	    font-size: 44px;
+	    border-radius: 10px;
+	    display: inline-block;
+	    float: left;
+	}
+	#eq-input{
+		float: none;
+    	overflow: auto;
+    	display: block;
+	}
+#terms{
+	position: relative;
+    min-height: 400px;
+    background: gainsboro;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: auto;
+    padding: 20px 0;
+}
+	.term{
+		background: gray;
+	    height: 100%;
+	    float: left;
+	    border-radius: 10px;
+	    margin-left: 20px;
+	    width: calc(50% - 30px);
+	}
+		.digit {
+			border: 1px solid white;
+			margin: 5px;
+			padding: 5px 0 0 5px;
+			border-radius: 10px;
+			min-height: 45px;
+			display: none;
+		}
+	
+			.unit {
+				background: white;
+			    color: dimgray;
+			    height: 40px;
+			    min-width: 40px;
+			    display: inline-block;
+			    padding: 5px;
+			    box-sizing: border-box;
+			    line-height: 1.8;
+			    text-align: center;
+			    border-radius: 10px;
+			    margin: 0 5px 5px 0;
+			    border: 1px solid black;
+			}
+			.unit:hover{
+				cursor: pointer;
+			}
+			.unit.selected{
+				border-color: red;
+			}
+#controls{
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.button{
+	display: inline-block;
+	margin: 5px;
+	padding: 5px;
+	width: 90px;
+	text-align: center;
+	border: 1px solid gray;
+	height: 30px;
+	border-radius: 10px;
+	line-height: 2;
+}
+
+.enabled:hover{
+	background: gainsboro;
+}
+
+.disabled{
+	background: #eee;
+	color: white;
+	border: 0px;
+}
+
+.disabled:hover{
+	cursor: default;
+}
+
+.coin{
+	display: inline-block;
+	margin: 5px;
+	width: 40px;
+	height: 40px;
+	border: 2px solid;
+	text-align: center;
+	line-height: 2;
+	overflow: hidden;
+	box-sizing: border-box;
+}	
+	.c1{border-color: white;}		.c5{border-color: white;}		.c10{border-color: blue;}		
+	.c50{border-color: orange;}		.c100{border-color: black;}		.c500{border-color: purple;}		
+	.c1000{border-color: yellow;}	.c5000{border-color: brown;}	.c10000{border-color: gold;}		
+	.frac, .c01, .c05{border-color: white; background-color: #eee;}
+	.c001, .c005{border-color: white; background-color: #ccc;}
+	.c0001, .c0005{border-color: white; background-color: #aaa;}
+	.c00001, .c00005{border-color: white; background-color: #999;}
+
+.button:hover, .block:hover{
+	cursor: pointer;
+}
