@@ -1114,12 +1114,12 @@ const Precision = (function(){
 			reduced1 = ArrayOps.reduce(n1, d2);
 		}
 		if(is.zero(n2)){
-			reduced2 = ArrayOps.reduce(n2, d1);
-		} else {
 			reduced2 = {
 				n: [0],
 				d: d1
 			}	
+		} else {
+			reduced2 = ArrayOps.reduce(n2, d1);
 		}
 		
 		n1 = reduced1.n;
