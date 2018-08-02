@@ -195,7 +195,7 @@ $(document).ready(function(){
 function linkedInStuff(){
   function detectLinkedIn(){
     let href = window.location.href.toLowerCase();
-    let pattern = /\#sect-algebra-basics/;
+    let pattern = /algebra/;
     return pattern.test(href);
   }
   
@@ -217,7 +217,6 @@ function linkedInStuff(){
   
   
   // Scroll to PrecisionJS
-  let algebraBasics = $('#algebra-basics')[0].getBoundingClientRect().top
-  17051.59375
+  let algebraBasics = $('#algebra-basics')[0].getBoundingClientRect().top;
   $(window).scrollTop(algebraBasics);
 }
