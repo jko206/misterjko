@@ -65,11 +65,15 @@ $(document).ready(function() {
   let isLinkedIn = detectLinkedIn();
   if(isLinkedIn){
     // Go to the Algebra Basics section
-    $('#linked-in-popup').show();
-  }
+    $('#linked-in-popup').removeClass('hidden');
+  } 
 });
 
 
 function detectLinkedIn(){
-  return true;
+  let href = window.location.href.toLowerCase();
+  let pattern = /\#sect-algebra-basics/;
+  let result = pattern.test(href);;
+  console.log(result);
+  return result;
 }

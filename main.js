@@ -185,5 +185,31 @@ $(document).ready(function(){
     });
   })();
   
+  // Linked in stuff
+  let isLinkedIn = detectLinkedIn();
+  if(isLinkedIn){
+    // Go to the Algebra Basics section
+    $('#linked-in-popup').removeClass('hidden');
+  }
+  $('.close-linked-in-popup').click(function(){
+    $('#linked-in-popup').addClass('minimize');
+  });
+  
+  $('#li-popup-opener').click(function(){
+    let isMin = $('#linked-in-popup').hasClass('minimize');
+    if(isMin){
+      $('#linked-in-popup').removeClass('minimize');
+    }
+  });
+  
+  
+  // Scroll to PrecisionJS
 });
 
+
+
+function detectLinkedIn(){
+  let href = window.location.href.toLowerCase();
+  let pattern = /\#sect-algebra-basics/;
+  return pattern.test(href);
+}
