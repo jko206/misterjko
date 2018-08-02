@@ -801,4 +801,45 @@ body>.button{
     .close-container:hover{
         cursor: pointer;
     }
+
     
+    
+/* Warning UI for demo*/
+#demo-warning.concise .long-message{
+    display: none;
+}
+
+#demo-warning.expanded .message{
+    display: none;
+}
+
+#demo-warning{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #ff6363;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.close-warning{
+    position: absolute;
+    top: -6px;
+    right: 0px;
+    color: #e4e4e4;
+    font-size: 2rem;
+}
+.close-warning:hover{
+    color: white;
+    cursor: pointer;
+
+}
+
+.expand-msg{
+    color: #e4e4e4;
+}
+.expand-msg:hover{
+    color: white;
+    cursor: pointer;
+}

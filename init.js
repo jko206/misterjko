@@ -62,18 +62,5 @@ $(document).ready(function() {
     hljs.highlightBlock(block);
   });
 
-  let isLinkedIn = detectLinkedIn();
-  if(isLinkedIn){
-    // Go to the Algebra Basics section
-    $('#linked-in-popup').removeClass('hidden');
-  } 
+  
 });
-
-
-function detectLinkedIn(){
-  let href = window.location.href.toLowerCase();
-  let pattern = /\#sect-algebra-basics/;
-  let result = pattern.test(href);;
-  console.log(result);
-  return result;
-}
