@@ -61,4 +61,15 @@ $(document).ready(function() {
   $('pre code').each(function(i, block){
     hljs.highlightBlock(block);
   });
+
+  let isLinkedIn = detectLinkedIn();
+  if(isLinkedIn){
+    // Go to the Algebra Basics section
+    $('#linked-in-popup').show();
+  }
 });
+
+
+function detectLinkedIn(){
+  return true;
+}
