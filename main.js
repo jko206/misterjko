@@ -186,6 +186,19 @@ $(document).ready(function(){
   })();
   
   // Linked in stuff
+  linkedInStuff();
+});
+
+
+
+
+function linkedInStuff(){
+  function detectLinkedIn(){
+    let href = window.location.href.toLowerCase();
+    let pattern = /\#sect-algebra-basics/;
+    return pattern.test(href);
+  }
+  
   let isLinkedIn = detectLinkedIn();
   if(isLinkedIn){
     // Go to the Algebra Basics section
@@ -204,12 +217,7 @@ $(document).ready(function(){
   
   
   // Scroll to PrecisionJS
-});
-
-
-
-function detectLinkedIn(){
-  let href = window.location.href.toLowerCase();
-  let pattern = /\#sect-algebra-basics/;
-  return pattern.test(href);
+  let algebraBasics = $('#algebra-basics')[0].getBoundingClientRect().top
+  17051.59375
+  $(window).scrollTop(algebraBasics);
 }
