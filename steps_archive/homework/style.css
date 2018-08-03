@@ -817,7 +817,7 @@ body>.button{
     position: fixed;
     bottom: 40px;
     right: 40px;
-    background: #ff6363;
+    background: gray;
     padding: 20px;
     border-radius: 10px;
     max-width: 400px;
