@@ -131,7 +131,7 @@ const GaleShapley = {
 		
 		return makeMatches(g1, g2);
 	},
-	generateInput(size){
+	generateInput(size = 2){
 		function shuffleArr(arr){
 			let {length} = arr;
 			for(let i = 0; i < length; i++){
@@ -164,3 +164,5 @@ const GaleShapley = {
 		// To do;
 	},
 }
+
+export {GaleShapley};
