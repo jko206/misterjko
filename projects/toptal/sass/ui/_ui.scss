@@ -1,0 +1,39 @@
+@import '../global-vars';
+
+button {
+  min-width: 80px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #adadad;
+  background: unset;
+  color: unset;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: $dark-blue;
+}
+
+
+button.blue{
+  background-color: $primary-color;
+  color: white;
+}
+button.blue:hover{
+  background-color: $dark-blue;
+}
+
+button.white{
+  color: black;
+  background-color: white;
+}
+button.white:hover{
+  color: white;
+  background-color: $dark-blue;
+}
+
+//// popup related
+
+body.unscroll{
+  overflow: hidden;
+}

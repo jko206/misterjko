@@ -1,0 +1,18 @@
+deal with font sizes in footer and header later
+
+when the search filter folds, it sometimes displays inner content instead of the title.
+
+when clicking on the profile, load that person's info
+
+Gotta load the profiles over API, not just access local
+    -use init in search.js
+
+if a search changes while the promise is being fulfilled, 
+    -delete that promise
+-----
+
+Gotta make sure browser compatibility
+
+
+transition height: 
+https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css

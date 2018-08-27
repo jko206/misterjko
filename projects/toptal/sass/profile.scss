@@ -1,0 +1,227 @@
+@import 'global-vars';
+@import 'modules/message-box';
+
+// local variables and stuff
+$magic1: 10px;
+$border: 1px solid $border-color;
+%border-bottom{
+  border-bottom: $border;
+}
+%border-left{
+  border-left: $border;
+}
+%border-right{
+  border-right: $border;
+}
+
+// layout
+.main#index-html{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto;
+  > div{
+    background: white;
+    padding: 15px;
+  }
+  .profile-main{
+    .picture{
+      float: left;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .profile-connect{
+    h4{
+      display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @extend %border-bottom;
+  }
+  
+  
+  @media (min-width: $screen1){
+    grid-template-columns: 2fr 1fr;
+    > div{
+      padding: 0 15px;
+      margin-bottom: 15px;
+    }
+    .profile-main{
+      grid-column: span 2;
+      border-bottom: 1px solid $border-color;
+      margin: 15px;
+      padding: 15px 0;
+    }
+    .profile-connect{
+      grid-column: 2/3;
+      grid-row: span 3;
+      border-left: 1px solid $border-color;
+      border-bottom: 0;
+    }
+    .profile-skills{
+      padding-top: 0;
+      grid-row: 2/3;
+      h4{
+        font-size: 1.5em;
+      }
+    }
+  }
+  @media (min-width: $screen2){
+    grid-template-rows: auto 70px auto;
+    .profile-main{
+      grid-column: span 2;
+      border-bottom: 1px solid $border-color;
+    }
+    .profile-connect{
+      grid-column: 2;
+      grid-row: 2;
+      border-left: 0;
+    }
+    .profile-skills{
+      grid-column: 2;
+      grid-row: 3;
+      h4{
+        font-size: unset;
+      }
+    }
+    .profile-history{
+      grid-row: 2/4;
+      border-right: 1px solid $border-color;
+    }
+  }
+  
+  @media (min-width: $screen3){
+    width: 1200px;
+    grid-template-columns: 130px 600px 300px 170px;
+    grid-template-rows: auto auto auto;
+    
+    .profile-main{
+      grid-row: 1/2;
+      grid-column: 2/4;
+    }
+    .profile-connect{
+      h4{
+        display: block;
+      }
+      grid-column: 4/5;
+      grid-row: 1/4;
+      border-left: $border;
+      padding-top: 30px;
+      margin: 0;
+    }
+    .profile-history{
+      grid-column: 2/3;
+      grid-row: 2/4;
+    }
+    .profile-skills{
+      grid-column: 3/4;
+      grid-row: 2/4;
+    }
+  }
+  
+}
+
+// details and aesthetics
+.main#index-html{
+  line-height: 1.5;
+  
+  // bullets
+  ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+    li{
+      position: relative;
+    }
+  }
+  .profile-skills ul{
+    padding-left: 15px;
+    li:before{
+      content: "";
+      border-top: 1px solid #f4895f;;
+      border-right: 1px solid #f4895f;
+      transform: rotate(45deg);
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      left: -15px;
+      top: 9px;
+    }
+  }
+  .profile-history ul{
+  
+    li:before{
+      content: "*";
+      font-size: 1.5rem;
+      line-height: 0.7;
+      vertical-align: bottom;
+      width: 13px;
+      display: inline-block;
+    }
+  }
+  
+  .title_location{
+    color: #999;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    .title{
+      margin-right: 0.5rem;
+    }
+    img{
+      height: 0.9rem;
+      width: 0.9rem;
+    }
+    @media (min-width: $screen1){
+      flex-direction: row;
+    }
+  }
+  
+  .profile-connect button{
+    display: flex;
+    height: unset;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    img{
+      width: 35px;
+      height: 35px;
+      margin: 5px;
+    }
+    &:hover{
+      background: gray;
+    }
+    
+    @media (min-width: $screen3){
+      height: 100px;
+      flex-direction: column;
+      color: $primary-color;
+    }
+  }
+  
+  h1{
+    font-size: 2.5rem;
+  }
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.profile-not-exist, .loading-screen{
+  font-size: 2rem;
+  width: 100%;
+  max-width: 500px;
+  height: 50vh;
+  margin: 50px auto;
+  line-height: 2;
+  text-align: center;
+}
+
+.profile-not-exist img {
+  vertical-align: middle;
+  height: 2.3rem;
+}

@@ -1,0 +1,140 @@
+@import '../global-vars';
+
+.search-bar-wrap{
+  border: 1px solid white;
+  min-height: 40px;
+  border-radius: $border-radius-s;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-size: 1rem;
+  background: white;
+  .drop-down-wrap, .search-bar{
+    display: flex;
+    height: 40px;
+  }
+  .drop-down-wrap{
+    align-items: center;
+  }
+  .drop-down, .search-input, .search-btn{
+    padding: 10px;
+  }
+  .drop-down-wrap{
+    background: $main-blue;
+    border-bottom: 1px solid white;
+    border-top-left-radius: $border-radius-s;
+    border-top-right-radius: $border-radius-s;
+    @media(min-width: $screen1){
+      border-top-right-radius: 0;
+      border-bottom-left-radius: $border-radius-s;
+      
+    }
+  }
+  .drop-down-wrap:hover, .search-btn:hover{
+    background-color: $dark-blue;
+    cursor: pointer;
+  }
+  .search-btn{
+    border-bottom-right-radius: 5px;
+    background: white;
+    @media (min-width: $screen1){
+      border-top-right-radius: 5px;
+    }
+  }
+  .drop-down{
+    flex: 1 0 180px;
+    cursor: pointer;
+  }
+  .drop-down-arrow{
+    cursor: pointer;
+  }
+  .drop-down-menu.hide{
+    display: none;
+  }
+  .drop-down-menu{
+    display: grid;
+    position: absolute;
+    top: -1px;
+    background: $light-gray;
+    border: 1px solid $light-gray;
+    left: 0;
+    width: calc(100% + 38px);
+    z-index: 2;
+    row-gap: 1px;
+    box-shadow: 1px 1px 2px #9c9c9c6b;
+    .item{
+      color: black;
+      background: white;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      &.selected:after{
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 10px;
+        border-left: 2px solid green;
+        right: 15px;
+        border-bottom: 2px solid green;
+        transform: rotate(-45deg);
+      }
+    }
+    .item:hover{
+      background: #e6ebee;
+    }
+  }
+  .drop-down-arrow{
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid white;
+    position: relative;
+    display: inline-block;
+    margin: 0 14px;
+    
+  }
+  
+  .search-input{
+    background: white;
+    flex: 1 0 200px;
+    font-size: 1rem;
+    border: 0;
+    height: 20px;
+    border-bottom-left-radius: 5px;
+    
+    @media(min-width: $screen1){
+      border-bottom-left-radius: 0px;
+    }
+  }
+  .search-btn{
+    background: $main-blue;
+    img{
+      display: inline-block;
+      height: 20px;
+    }
+    .text{
+      display: none;
+    }
+    @media (min-width: $screen2){
+      img{
+        display: none;
+      }
+      .text{
+        display: unset;
+      }
+      
+    }
+  }
+  @media (min-width: $screen1){
+    flex-direction: row;
+    .drop-down-wrap{
+      border: 0;
+      flex: 0 0 250px;
+    }
+    .search-bar{
+      flex: 1 1 auto;
+    }
+  }
+}
