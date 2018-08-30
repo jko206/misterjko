@@ -1,0 +1,16 @@
+.red {
+  color: red;
+}
+
+.chart-title-wrap .chart-types {
+  display: none;
+}
+
+.chart-title-wrap .chart-types {
+  display: none;
+}
+.chart-title-wrap.open .chart-types {
+  display: inherit;
+}
+
+/*# sourceMappingURL=main.css.map */
