@@ -1,0 +1,35 @@
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+<script src="jquery/jquery-3.1.0.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="js/nav.js"></script>
+<link rel="stylesheet" href="css/components/nav.css">
+<div class="nav-wrap" 
+  id="nav-wrap" 
+  :class="{active: isActive}">
+  <nav>
+    <div class="main-btn" @click="toggleActive">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="menu-items">
+      <a class="item" v-for="item in menuItems">
+        <span class="bullet"></span>
+        <span class="text">{{item.title}}</span>
+      </a>
+    </div>
+    <div class="track-wrap" :style="trackWrapStyle">
+      <div class="track" :style="trackStyle"></div>
+      <div class="track-circle" :style="trackCircleStyle" :class="{wide: isWideCircle}"></div>
+    </div>
+  </nav>
+</div>
+<div class="pages">
+  <div class="page">1</div>
+  <div class="page">2</div>
+  <div class="page">3</div>
+  <div class="page">4</div>
+  <div class="page">5</div>
+  <div class="page">6</div>
+  <div class="page">7</div>
+</div>

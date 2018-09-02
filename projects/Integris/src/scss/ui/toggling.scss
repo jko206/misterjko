@@ -1,0 +1,16 @@
+
+.chart-title-wrap .chart-types{
+  display: none;
+}
+
+.chart-title-wrap{
+  .chart-types{
+    display: none;
+  }
+  &.open{
+    .chart-types{
+      display: inherit;
+    }
+  }
+}
+

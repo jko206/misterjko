@@ -1,0 +1,189 @@
+div, nav{
+  position: relative;
+}
+body{
+  margin: 0;
+}
+
+.nav-wrap{
+  // variables
+  $nav-color-main: gray;
+  $track-width: 30px;
+  $arrow-angle: 45deg;
+  $transition: all 0.3s cubic-bezier(0.42, 0, 0.2, 1);
+  $item-height: 70px;
+  $track-circle-wide: 160px;
+  
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  flex: 0 0 auto;
+  color: $nav-color-main;
+  position: fixed;
+  z-index: 1;
+  
+  nav{
+    font-family: 'Ariel', sans-serif;
+    display: flex;
+    flex: 0 0 auto;
+    padding-left: 5px;
+    flex-direction: column;
+    z-index: 1;
+    .main-btn{
+      width: $track-width;
+      height: $track-width;
+      border: 0px solid $nav-color-main;
+      border-radius: $track-width / 2;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+      justify-content: space-evenly;
+      .bar{
+        position: absolute;
+        top: $track-width / 2;
+        left: 5px;
+        width: 20px;
+        height: 1px;
+        background: $nav-color-main;
+        transition: $transition;
+        &:first-child{
+          top: 8px;
+        }
+        &:last-child{
+          top: 22px;
+        }
+      }
+      
+    }
+    .menu-items{
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      .item{
+        transform: rotate(-90deg);
+        transform-origin: $track-width/2 50%;
+        transition: $transition;
+        height: $item-height;
+        color: transparent;
+        display: flex;
+        flex: 1 1 auto;
+        vertical-align: bottom;
+        align-items: center;
+        &:hover{
+          color: black;
+          cursor: pointer;
+        }
+        .bullet{
+          width: $track-width;
+          height: $track-width;
+          margin-right: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:before{
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 10px;
+            background: $nav-color-main;
+          }
+        }
+      }
+    }
+    .track-wrap{
+      position: absolute;
+      width: $track-width;
+      height: $item-height * 5;
+      bottom: 0;
+      // background: green;
+      z-index: -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .track{
+        width: 1px;
+        background: $nav-color-main;
+        height: $item-height * 4;
+      }
+      .track-circle{
+        &.wide{
+          width: 30px;
+        }
+        width: $track-width;
+        height: $track-width;
+        border-radius: $track-width / 2;
+        border: 1px solid $nav-color-main;
+        position: absolute;
+        box-sizing: border-box;
+        left: 0;
+        transition: width 0.3s cubic-bezier(0.42, 0, 0.2, 1);
+      }
+    }
+  }
+  &.active{
+    nav{
+      .main-btn{
+        .bar:first-child{
+          transform: rotate(-$arrow-angle);
+        }
+        .bar:nth-child(2){
+          background: transparent;
+        }
+        .bar:last-child{
+          transform: rotate($arrow-angle);
+        }
+        .bar{
+          &:first-child, &:last-child{
+            top: 15px;
+            transform-origin: center center;
+            width: 20px;
+            transition: $transition;
+          }
+        } 
+      }
+
+      .menu-items{
+        .item{
+          transform: rotate(0deg);
+          color: inherit;
+          transition: $transition;
+        }
+      }
+      .track-circle.wide{
+        width: $track-circle-wide;
+      }
+    }
+  }
+  @media (min-width: 1200px){
+    nav{
+      .main-btn{
+        display: none;
+      }
+      .menu-items{
+        .item{
+          transform: rotate(0deg);
+          color: inherit;
+          transition: $transition;
+        }
+      }
+      .track-wrap .track-circle.wide{
+        width: $track-circle-wide;
+      }
+    }
+  }
+}
+
+.page{
+  width: 100vw;
+  height: 100vh;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:nth-child(even){
+    background: #00ff0045;;
+  }
+}

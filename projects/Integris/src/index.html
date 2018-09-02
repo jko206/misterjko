@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+    <title>Visual Data</title>
+    <!--<link rel="stylesheet" href="css/main.css">-->
+    
+    <!--             JAVASCRIPT STUFF                -->
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script src="data/tiny.js"></script> 
+    <!--<script src="data/small.js"></script> -->
+    <!--<script src="data/medium.js"></script> -->
+    <!--<script src="data/big.js"></script> -->
+    <script src="js/init.js"></script> 
+    <!--<script src="js/main.js"></script> -->
+    <!--<script src="main.js"></script> -->
+    
+  </head>
+  <body>
+    <div id="vue-app">
+      <div class="chart-title-wrap"
+        @click="isChartTypesOpen = !isChartTypesOpen"
+        v-bind:class="{open: isChartTypesOpen}">
+        <div>{{currChartTitle}}</div>
+        <div class="chart-types">
+          <div v-for="type in chartTypes" @click="changeChartType(type.value)">
+            {{type.title}}
+          </div>
+        </div>
+      </div>
+      <div v-for="category in categories">
+        <div class="filter-wrap">
+          <div class="filter-title">
+            {{category.title}}
+          </div>
+          <ul>
+            <li v-for="item in category.items" @click="toggleItem(category.propName, item, $event); updateGraph()">
+              {{item.name || item}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="date-mods">
+        <date-picker
+          v-model="test"
+          type="date"
+          lang="en"
+          range
+          range-separator="-">
+        </date-picker>
+      </div>
+      <div class="chart-controllers">
+        <label for="bars-per-chart">Bars/Chart</label>
+        <input type="number" id="bars-per-chart" v-model="VARS.BARS_PER_CHART" v-on:change="updateRangeLength()">
+        <label for="bars-per-chart">Dates/Bar</label>
+        <input type="number" id="bars-per-chart" v-model="VARS.DATES_PER_BAR" v-on:change="updateRangeLength()">
+        <button @click="prevBarSet()">
+          &lt;&lt;
+        </button>
+        <button @click="prevBar()">
+          &lt;
+        </button>
+        <button @click="nextBar()">
+          &gt;
+        </button>
+        <button @click="nextBarSet()">
+          &gt;&gt;
+        </button>
+      </div>
+      <div class="chart-wrapper">
+        <div id="no-chart" v-if="currChartType === -1">
+          No charts
+        </div>
+        <div id="chart0" v-if="currChartType === 0">0</div>
+        <div id="chart1" v-if="currChartType === 1">1</div>
+        <div id="chart2" v-if="currChartType === 2">2</div>
+      </div>
+      <div>
+        state<br>
+        absMin: {{ time.absMin }}<br>
+        absMin: {{ time.absMax }}<br>
+        buyTimeMin: {{ time.buyTimeMin }}<br>
+        buyTimeMax: {{ time.buyTimeMax }}<br>
+        buyTimeMin: {{ time.buyTimeMin }}<br>
+        buyTimeMax: {{ time.buyTimeMax }}<br>
+        test: {{test}}
+      </div>
+    </div>
+  </body>
+</html>
