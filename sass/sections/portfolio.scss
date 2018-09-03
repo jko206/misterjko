@@ -153,7 +153,8 @@ div{
     height: 100%;
     max-width: 1800px;
     
-    display: flex;
+    // display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     .desc-wrap{
@@ -175,6 +176,7 @@ div{
       .desc{
         flex: 1 1 auto;
         line-height: 1.5;
+        width: 100%;
         text-align: justify;
       }
       .desc-nav{
@@ -182,6 +184,7 @@ div{
         justify-content: space-between;
         width: 115px;
         padding-right: 10px;
+        flex-direction: row-reverse;
         button{
           width: 50px;
           height: 50px;
@@ -250,6 +253,8 @@ div{
         filter: blur(0px) brightness(1);
       }
     }
-    
+    .desc-positioner{
+      display: flex;
+    }
   }
 }
