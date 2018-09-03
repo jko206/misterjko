@@ -67,6 +67,7 @@ body{
         transition: $transition;
         height: $item-height;
         color: transparent;
+        
         display: flex;
         flex: 1 1 auto;
         vertical-align: bottom;
@@ -90,6 +91,9 @@ body{
             background: $nav-color-main;
           }
         }
+        .text{
+          display: none;
+        }
       }
     }
     .track-wrap{
@@ -109,9 +113,10 @@ body{
         height: $item-height * 4;
       }
       .track-circle{
-        &.wide{
-          width: 30px;
-        }
+        // &.wide{
+        //   width: 30px;
+        // }
+        // transform: scale(0.5);
         width: $track-width;
         height: $track-width;
         border-radius: $track-width / 2;
@@ -150,6 +155,9 @@ body{
           transform: rotate(0deg);
           color: inherit;
           transition: $transition;
+          .text{
+            display: initial;
+          }
         }
       }
       .track-circle.wide{
@@ -167,6 +175,9 @@ body{
           transform: rotate(0deg);
           color: inherit;
           transition: $transition;
+          .text{
+            display: initial;
+          }
         }
       }
       .track-wrap .track-circle.wide{

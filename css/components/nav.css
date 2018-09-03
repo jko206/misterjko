@@ -85,6 +85,9 @@ body {
   border-radius: 10px;
   background: gray;
 }
+.nav-wrap nav .menu-items .item .text {
+  display: none;
+}
 .nav-wrap nav .track-wrap {
   position: absolute;
   width: 30px;
@@ -111,9 +114,6 @@ body {
   left: 0;
   transition: width 0.3s cubic-bezier(0.42, 0, 0.2, 1);
 }
-.nav-wrap nav .track-wrap .track-circle.wide {
-  width: 30px;
-}
 .nav-wrap.active nav .main-btn .bar:first-child {
   transform: rotate(-45deg);
 }
@@ -134,6 +134,9 @@ body {
   color: inherit;
   transition: all 0.3s cubic-bezier(0.42, 0, 0.2, 1);
 }
+.nav-wrap.active nav .menu-items .item .text {
+  display: initial;
+}
 .nav-wrap.active nav .track-circle.wide {
   width: 160px;
 }
@@ -145,6 +148,9 @@ body {
     transform: rotate(0deg);
     color: inherit;
     transition: all 0.3s cubic-bezier(0.42, 0, 0.2, 1);
+  }
+  .nav-wrap nav .menu-items .item .text {
+    display: initial;
   }
   .nav-wrap nav .track-wrap .track-circle.wide {
     width: 160px;

@@ -116,6 +116,7 @@ window.onload = function(){
         },
         trackStyle: {
           height: trackHeight,
+          transform: 'scale(1)',
         },
         trackCircleStyle: {
           top: trackCircleTop,
