@@ -466,10 +466,10 @@ body {
   z-index: 20;
 }
 #landing .color1 {
-  color: #691d1d;
+  color: #b33838;
 }
 #landing .color2 {
-  color: #17174c;
+  color: #691d1d;
 }
 #landing .block-letters {
   display: grid;

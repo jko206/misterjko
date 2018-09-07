@@ -55,11 +55,12 @@ function scrollBasedAnimation(){
     let result = 20 + navTrackHeight * progress;
     trackCircle.style.top = result +'px';
     // nav.trackCircleStyle.top = result;
-    let epsilon = 0.01;
+    let epsilon = 0.03;
     let pageBreakInterval = page.breakInterval;
     let progressDistanceToPageBreak = progress%pageBreakInterval;
     progressDistanceToPageBreak = progressDistanceToPageBreak > pageBreakInterval / 2 
       ? pageBreakInterval - progressDistanceToPageBreak : progressDistanceToPageBreak;
+    // console.log(progressDistanceToPageBreak);
     if(progressDistanceToPageBreak < epsilon){
       nav.isWideCircle = true;
     } else {
