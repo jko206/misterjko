@@ -82,3 +82,12 @@ blockquote:after {
 p{
   text-align: justify;
 }
+
+button{
+  border: 0;
+  border-radius: 0;
+  background: gray;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}

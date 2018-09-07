@@ -1,5 +1,13 @@
 @import 'normalize';
-@import 'nav';
 @import 'layout';
 @import 'contents';
 @import 'common';
+
+// components
+@import 'components/nav';
+@import 'ui/tool-tip';
+// sections
+@import 'sections/landing';
+@import 'sections/profile';
+@import 'sections/portfolio';
+@import 'sections/my-story';

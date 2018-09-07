@@ -1,3 +1,48 @@
+button.round-button {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button.round-button::before, button.round-button::after {
+  content: "";
+  position: absolute;
+  background: white;
+}
+button.round-button.close::before, button.round-button.close::after {
+  width: 40px;
+  height: 3px;
+}
+button.round-button.close::before {
+  transform: rotate(-45deg);
+}
+button.round-button.close::after {
+  transform: rotate(45deg);
+}
+button.round-button.right-arrow::before {
+  width: 30px;
+  height: 3px;
+  background: white;
+}
+button.round-button.right-arrow::after {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border-right: 3px solid white;
+  border-top: 3px solid white;
+  transform: rotate(45deg) translate(3px, -3px);
+  background: initial;
+}
+button.round-button.border {
+  border: 2px solid white;
+}
+
 :root {
   font-size: 16px;
   font-family: sans-serif;
@@ -170,47 +215,6 @@ div {
   width: 115px;
   padding-right: 10px;
   flex-direction: row-reverse;
-}
-#section-portfolio .desc-positioner .desc-wrap .desc-nav button {
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#section-portfolio .desc-positioner .desc-wrap .desc-nav button::before, #section-portfolio .desc-positioner .desc-wrap .desc-nav button::after {
-  content: "";
-  position: absolute;
-  background: white;
-}
-#section-portfolio .desc-positioner .desc-wrap .desc-nav button.close-desc::before, #section-portfolio .desc-positioner .desc-wrap .desc-nav button.close-desc::after {
-  width: 40px;
-  height: 3px;
-}
-#section-portfolio .desc-positioner .desc-wrap .desc-nav button.close-desc::before {
-  transform: rotate(-45deg);
-}
-#section-portfolio .desc-positioner .desc-wrap .desc-nav button.close-desc::after {
-  transform: rotate(45deg);
-}
-#section-portfolio .desc-positioner .desc-wrap .desc-nav button.open-project::before {
-  width: 30px;
-  height: 3px;
-  background: white;
-}
-#section-portfolio .desc-positioner .desc-wrap .desc-nav button.open-project::after {
-  width: 20px;
-  height: 20px;
-  box-sizing: border-box;
-  border-right: 3px solid white;
-  border-top: 3px solid white;
-  transform: rotate(45deg) translate(3px, -3px);
-  background: initial;
 }
 @media (min-width: 600px) {
   #section-portfolio .desc-positioner .desc-wrap {

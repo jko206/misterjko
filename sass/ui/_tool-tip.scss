@@ -1,0 +1,32 @@
+.tool-tip-trigger:hover{
+  cursor: pointer;
+}
+.tool-tip{
+  display: none;
+  &.active{
+    display: flex;
+    box-shadow: 3px 3px 7px 0px #888888;
+  }
+  flex-direction: column;
+  position: absolute;
+  left: 100px;
+  background: #1d1d1d;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 1;
+}
+.tool-tip::before{
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 40px;
+  left: -10px;
+  transform: rotate(45deg);
+  top: calc(50% - 20px);
+  background: #1d1d1d;
+  z-index:-1;
+}
+.tool-tip a{
+  color: white;
+}

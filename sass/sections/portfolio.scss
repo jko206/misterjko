@@ -1,17 +1,6 @@
-:root{
-  font-size: 16px;
-  font-family: sans-serif;
-}
+@import '../ui/round-button';
 
-body, div{
-  margin: 0;
-}
-div{
-  position: relative;
-}
-
-
-#section-portfolio{
+#portfolio{
   $main-gray: #1d1d1d;
   display: flex;
   width: 100vw;
@@ -19,6 +8,7 @@ div{
   justify-content: center;
   align-items: center;
   background: $main-gray;
+  
   
   .portfolio-category{
     $hex-side-length: 50px;
@@ -185,48 +175,6 @@ div{
         width: 115px;
         padding-right: 10px;
         flex-direction: row-reverse;
-        button{
-          width: 50px;
-          height: 50px;
-          background: transparent;
-          border: 0;
-          margin: 0;
-          padding: 0;
-          border-radius: 25px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          &::before, &::after{
-            content: '';
-            position: absolute;
-            background: white;
-          }
-          &.close-desc::before, &.close-desc::after{
-            width: 40px;
-            height: 3px;
-          }
-          &.close-desc::before{
-            transform: rotate(-45deg);
-          }
-          &.close-desc::after{
-            transform: rotate(45deg);
-          }
-          
-          &.open-project::before{
-            width: 30px;
-            height: 3px;
-            background: white;
-          }
-          &.open-project::after{
-            width: 20px;
-            height: 20px;
-            box-sizing: border-box;
-            border-right: 3px solid white;
-            border-top: 3px solid white;
-            transform: rotate(45deg) translate(3px, -3px);
-            background: initial;
-          }
-        }
       }
       @media(min-width: 600px){
         width: 600px;

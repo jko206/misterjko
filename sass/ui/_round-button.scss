@@ -1,0 +1,50 @@
+button.round-button{
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before, &::after{
+    content: '';
+    position: absolute;
+    background: white;
+  }
+  &.close::before, &.close::after{
+    width: 40px;
+    height: 3px;
+  }
+  &.close::before{
+    transform: rotate(-45deg);
+  }
+  &.close::after{
+    transform: rotate(45deg);
+  }
+  &.right-arrow::before, &.left-arrow::before{
+    width: 30px;
+    height: 3px;
+    background: white;
+  }
+  &.right-arrow::after, &.left-arrow::after{
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+    background: initial;
+  }
+  &.right-arrow::after{
+    transform: rotate(45deg) translate(3px, -3px);
+  }
+  &.left-arrow::after{
+    transform: rotate(-135deg) translate(3px, -3px);
+  }
+  
+  &.border{
+    border: 2px solid white;
+  }
+}

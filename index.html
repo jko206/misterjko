@@ -1,253 +1,134 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
-    <title>J. Ko</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/linkedin.css">
-    <!--             JAVASCRIPT STUFF                -->
-    <!-- JQUERY -->
-    <script src="jquery/jquery-3.1.0.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    
-    <script src="main.js"></script> 
-    
-    <script src="KenKen/KenKen.js"></script>
-    <script src="KnightsTour/KnightsTour.js"></script>
-    <script src="Precision/Precision.js"></script> 
-    <!-- Vue.js -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
-    
-    <!--             Highlight JS                       -->
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  </head>
-  <body>
-    <div class="hidden">
-      <!-- testing -->
-       <iframe src="counter.php"></iframe> 
-    </div>
-    
-    <nav class="up-top">
-      <div class="tri-bar">
-        <div class="tri-bar__stripe"></div>
-        <div class="tri-bar__stripe"></div>
-        <div class="tri-bar__stripe"></div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>J. Ko</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!--             JAVASCRIPT STUFF                -->
+  <!-- JQUERY -->
+  <script src="jquery/jquery-3.1.0.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  
+  <script src="js/components/nav.js"></script>
+  <script src="js/ui/tool-tip.js"></script>
+  <script src="js/sections/landing.js"></script>
+  <script src="js/sections/profile.js"></script>
+  <script src="js/sections/my-story.js"></script>
+  <script src="js/sections/portfolio.js"></script>
+
+
+  <!-- Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+
+  <!--             Highlight JS                       -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+</head>
+
+<body>
+  <div class="hidden"><iframe src="counter.php"></iframe></div>
+  <div class="nav-wrap hide-nav"
+    id="nav-wrap" 
+    :class="{active: isActive}">
+    <nav>
+      <div class="main-btn" @click="toggleActive">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </div>
-      <div class="nav__display">
-        <div class="nav__display0">
-          <ul>
-            <li class="no-bullet"></li>
-            <li class="no-bullet" scoot-id="1">About J</li>
-            <li class="no-bullet" scoot-id="2">My Story</li>
-            <li class="no-bullet" scoot-id="3">Portfolio</li>
-            <li>Links</li>
-          </ul>
-        </div>
-        <div class="nav__display1">
-          <ul>
-            <!--About J-->
-            <li scoot-to="1" class="no-bullet"></li>
-            <li scoot-to="1">Basics</li>
-            <li scoot-to="1">Work Pref / Status</li>
-            <li scoot-to="1">Q&amp;A</li>
-            <li scoot-to="1">Miscellaneous</li>
-            
-            <!--My Story-->
-            <li class="no-bullet"></li>
-            <li scoot-to="2">Early Years</li>
-            <li scoot-to="2">College</li>
-            <li scoot-to="2">Move to Korea</li>
-            <li scoot-to="2">Steps Education</li>
-            <li scoot-to="2">Back to the States</li>
-            
-            <!--Portfolio-->
-            <li class="no-bullet"></li>
-            <li scoot-to="3" scoot-id="4">PrecisionJS</li>
-            <li scoot-to="3" scoot-id="5">KenKen</li>
-            <li scoot-to="3" scoot-id="6">Algebra Basics</li>
-            <li scoot-to="3" scoot-id="7">Knight's Tour</li>
-            
-            <li class="no-bullet"></li>
-          </ul>
-        </div>
-        <div class="nav__display2">
-          <ul>
-            <!-- PrecisionJS -->
-            <li class="no-bullet"></li>
-            <li scoot-to="4">Intro</li>
-            <li scoot-to="4">Greatest Common Factor</li>
-            <li scoot-to="4">Factorial</li>
-            <li scoot-to="4">Base Change</li>
-            <li scoot-to="4">Rational Number Arithmetic</li>
-            
-            <!-- KenKen -->
-            <!--<li class="no-bullet"></li>-->
-            <li scoot-to="5">Intro</li>
-            <li scoot-to="5">Rules</li>
-            <li scoot-to="5">App</li>
-            
-            <!-- Algebra Basics -->
-            <!--<li class="no-bullet"></li>-->
-            <li scoot-to="6">Intro</li>
-            <li scoot-to="6">Rules</li>
-            <li scoot-to="6">App</li>
-            
-            <!-- Knight's Tour -->
-            <!--<li class="no-bullet"></li>-->
-            <li scoot-to="7">Intro</li>
-            <li scoot-to="7">App</li>
-            <li class="no-bullet"></li>
-          </ul>
-        </div>
+      <div class="menu-items">
+        <a v-for="item in menuItems" class="item" :href='item.section'>
+          <span class="bullet"></span>
+          <span class="text">{{item.title}}</span>
+        </a>
       </div>
-      <div class="nav__menu">
-        <ul>
-            <li><a href="#imjk">IMJK</a></li>
-            <li>
-              About J
-              <ul>
-                <li><a href="#sect-basics">Basics</a></li>
-                <li><a href="#sect-work-pref">Work Pref / Status</a></li>
-                <li><a href="#sect-qa">Q&amp;A</a></li>
-                <li><a href="#sect-misc">Miscellaneous</a></li>
-              </ul>
-            </li>
-            <li>
-              My Story
-              <ul>
-                <li><a href="#sect-early-years">Early Years</a></li>
-                <li><a href="#sect-college">College</a></li>
-                <li><a href="#sect-move-to-korea">Move to Korea</a></li>
-                <li><a href="#sect-steps-education">Steps Education</a></li>
-                <li><a href="#sect-back-to-the-states">Back to the States</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="sect-portfolio">Portfolio</a>
-              <ul>
-                <li>
-                  PrecisionJS
-                  <ul>
-                    <li><a href="#sect-prejs-intro">Intro</a></li>
-                    <li><a href="#sect-prejs-gcf">Greatest Common Factor</a></li>
-                    <li><a href="#sect-prejs-factorial">Factorial</a></li>
-                    <li><a href="#sect-prejs-base-change">Base Change</a></li>
-                    <li><a href="#sect-prejs-ratnum">Rational Number Arithmetic</a></li>
-                  </ul>
-                </li>
-                <li>
-                  KenKen
-                  <ul>
-                    <li><a href="#sect-kenken-intro">Intro</a></li>
-                    <li><a href="#sect-kenken-rules">Rules</a></li>
-                    <li><a href="#sect-kenken-app">App</a></li>
-                  </ul>
-                </li>
-                <li>
-                  Algebra Basics
-                  <ul>
-                    <li><a href="#algebra-basics">Intro</a></li>
-                    <li><a href="#sect-algebra-rules">Rules</a></li>
-                    <li><a href="#sect-algebra-app">App</a></li>
-                  </ul>
-                </li>
-                <li>
-                  Knight's Tour
-                  <ul>
-                    <li><a href="#knight-tour">Intro</a></li>
-                    <li><a href="#sect-knight-app">App</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#links">Links</a></li>
-        </ul>
+      <div class="track-wrap" :style="trackWrapStyle">
+        <div class="track" :style="trackStyle"></div>
+        <div class="track-circle" :style="trackCircleStyle" :class="{wide: isWideCircle}"></div>
       </div>
     </nav>
-    
-    <div id="contents">
-      <div class="section" id="imjk">
-        <div id="imjk-heros">
-          <div>
-            <span class="imjk-hero">&nbsp;</span><span class="imjk-hero">&nbsp;</span><span class="imjk-hero">I</span>
-          </div>
-          <div>
-            <span class="imjk-hero">&nbsp;</span><span class="imjk-hero hidden">A</span><span class="imjk-hero">M</span>
-          </div>
-          <div>
-            <span class="imjk-hero">&nbsp;</span><span class="imjk-hero">&nbsp;</span><span class="imjk-hero">J</span><span class="imjk-hero hidden">A</span><span class="imjk-hero hidden">I</span>
-          </div>
-          <div>
-            <span class="imjk-hero">&nbsp;</span><span class="imjk-hero">&nbsp;</span><span class="imjk-hero">K</span><span class="imjk-hero hidden">O</span>
-          </div>
-        </div>
-        <div class="summary">
-          <div>
-            A self-taught, highly motivated programmer seeking to launch a career as a 
-            junior level front-end or JavaScript developer. A quick learner and an astute problem solver 
-            enthused to implement technology in businesses to improve efficiency, customer 
-            satisfaction, and insight. Excellent communication and interpersonal skills. 
-            Background in math, programming, and teaching.
-          </div>
-          <div class="skill-set">
-            <div class="proficient">
-              <span>HTML 5</span>
-              <span>CSS 3</span>
-              <span>JavaScript (ES 8)</span>
-              <span>jQuery</span>
-              <span>jQuery UI</span>
-              <span>Responsive Web</span>
-              <span>Object Oriented Programming</span>
-              <span>Functional Programming</span>
-            </div>
-            <div class="inexperienced">
-              <span>Java</span>
-              <span>PHP</span>
-              <span>MySQL</span>
-              <span>Node</span>
-              <span>Vue.JS</span>
-            </div>
-          </div>
+  </div>
+  
+  <div id="contents" class="pages">
+    <div class="section" id="landing">
+      <div class="block-letters">
+        <div>I</div>
+        <div class="gray">A</div>
+        <div class="gray">M</div>
+        <div class="color1">J</div>
+        <div class="color1">A</div>
+        <div class="color1">I</div>
+        <div class="color2">K</div>
+        <div class="color2">O</div>
+        <div>
+          <div id="pseudo-period"></div>
         </div>
       </div>
-      <!-- -->
-      <div class="section sub-sect1-mark about-j" id="sect-basics">
-        <div class="sub-section1 basics">
-          <!--<h2>About J: Basics</h2>-->
-          <div class="content round-boxed">
-            <div id="profile-pic">
-              <img src="images/profile-pic.jpg" alt="Jai Ko">
-            </div>
-            <ul>
-              <li>Jai Ko</li>
-              <li>English || Korean</li>
-              <li id="resume-toggle" class="pointer">
-                Resume
-                <img src="images/link.png" alt="link icon">
-                <span class="resume-files-wrap">
-                  <a href="resume.pdf" download>PDF</a>
-                  <a href="resume.pdf" download>Word</a>
-                  <a href="resume.md" download>MarkDown</a>
-                </span>
-              </li>
-              <li>just.jai.ko@gmail.com</li>
-              <li>+1.425.220.5899</li>
-            </ul>
-          </div>
+      <div class="objective">
+        <button class="close-btn"></button>
+        A self-taught, highly motivated programmer seeking to launch a career as a junior level front-end or JavaScript developer. A quick learner and an astute problem solver enthused to implement technology in businesses to improve efficiency, customer satisfaction,
+        and insight. Excellent communication and interpersonal skills. Background in math, programming, and teaching.
+      </div>
+      <div class="skill-set">
+        <button class="close-btn"></button>
+        <div class="proficient">
+          <span>HTML 5</span>
+          <span>CSS 3</span>
+          <span>JavaScript (ES 8)</span>
+          <span>jQuery</span>
+          <span>jQuery UI</span>
+          <span>Responsive Web</span>
+          <span>Object Oriented Programming</span>
+          <span>Functional Programming</span>
         </div>
-        <div class="sub-section1 sub-sect1-mark" id="sect-work-pref">
-          <!--<h2>About J: Work Pref / Status</h2>-->
-          <div class="content round-boxed small-box">
+        <div class="inexperienced">
+          <span>Java</span>
+          <span>PHP</span>
+          <span>MySQL</span>
+          <span>Node</span>
+          <span>Vue.JS</span>
+        </div>
+      </div>
+      <div class="landing-nav">
+        <button id="show-objective"># objective</button>
+        <button id="show-skills"># skills</button>
+      </div>
+    </div>
+    
+    <div class="section" id="profile">
+      <div class="profile-positioner">
+        <div class="lid">
+          <div class="profile-pic-wrap">
+            <img src="images/profile-pic.jpg" alt="Handsome guy">
+          </div>
+          <ul>
+            <li>Jai Ko</li>
+            <li>English || Korean</li>
+            <li class="tool-tip-trigger">
+              Resume
+              <img src="images/link.png" alt="link icon">
+              <span class="tool-tip">
+                <span><a href="resume.pdf">PDF</a></span>
+                <span><a href="resume.docx">Word</a></span>
+                <span><a href="resume.md">MarkDown</a></span>
+              </span>
+            </li>
+            <li>just.jai.ko@gmail.com</li>
+            <li>+1.425.220.5899</li>
+          </ul>
+        </div>
+        <div class="innard">
+          <div class="item" id="profile-item1">
             <ul>
               <li>Junior / entry level</li>
               <li>Web Development</li>
-              <li>Part‑time / full‑time / contract</li>
-              <li>Front‑end / back‑end / full‑stack</li>
+              <li>Part-time / full-time / contract</li>
+              <li>Front-end / back-end / full-stack</li>
               <li>Entry / junior level</li>
               <li>Greater Seattle area</li>
               <li>Remote OK</li>
@@ -255,466 +136,179 @@
               <li>Work eligible in Korea</li>
             </ul>
           </div>
-        </div>
-        <div class="sub-section1 sub-sect1-mark" id="sect-qa">
-          <!--<h2>About J: Q&amp;A</h2>-->
-          <div class="content round-boxed">
+          <div class="item" id="profile-item2">
             <p>
-              <strong>Ideal job</strong> Job in which I know I am making a positive
-              impact on this world. 
+              <strong>Ideal job</strong> Job in which I know I am making a positive impact on this world.
             </p>
             <p>
-              <strong>Reason for coding</strong> It's like solving a puzzle or playing
-              a strategy game. In situations where the solution set can seem
-              infinitely big, one can arrive at the correct one (or at least
-              the optimal one) by breaking down the problem, logically 
-              reconnecting the pieces. I like that.
-            </p>
-            <p>
-              <strong>Strengths & weaknesses & remedy</strong>
-                During the course of weeks or months, I had periods in which I 
-                was super productive. Of course the downside of this is it 
-                sometimes led to a period of low productivity. I found that 
-                coming up with a strict schedule to abide by and maximizing my 
-                break and relaxation was the key to maintaining productivity 
-                homeostasis.
+              <strong>Reason for coding</strong> It's like solving a puzzle or playing a strategy game. In situations where the solution set can seem infinitely big, one can arrive at the correct one (or at least the optimal one) by breaking down the
+              problem, logically reconnecting the pieces. I like that.
             </p>
           </div>
-        </div>
-        <div class="sub-section1 sub-sect1-mark" id="sect-misc">
-          <!--<h2>About J: Miscellaneous</h2>-->
-          <div class="content round-boxed">
+          <div class="item" id="profile-item3">
             <p>
-              <strong>Current project</strong> Rebuilding Steps Education from
-              ground up with Vue, and other more modern frameworks and tools;
+              <strong>Strengths & weaknesses & remedy</strong> During the course of weeks or months, I had periods in which I was super productive. Of course the downside of this is it sometimes led to a period of low productivity. I found that coming
+              up with a strict schedule to abide by and maximizing my break and relaxation was the key to maintaining productivity homeostasis.
             </p>
+          </div>
+          <div class="item" id="profile-item4">
+            <p>
+              <strong>Current project</strong> Rebuilding Steps Education from ground up with Vue, and other more modern frameworks and tools;
+            </p>
+
             <p>
               <strong>Interests</strong> Technology, business, politics, education, environments
             </p>
+
             <p>
-              <strong>Hobbies</strong> Solving puzzles, Vainglory, keeping up with
-              current events (especially about my interests), walking dog, 
-              running, and spending time with friends and family
-            </p>
-            <p>
-              <strong>Based in greater Seattle region.</strong>
+              <strong>Hobbies</strong> Solving puzzles, Vainglory, keeping up with current events (especially about my interests), walking dog, running, and spending time with friends and family
             </p>
           </div>
         </div>
+        <div class="right-curtain"></div>
       </div>
-      
-      <!-- -->
-      <div class="section story sub-sect1-mark">
-        <!--<h2>My story</h2>-->
-        <div class="events">
-            <div class="events__item">
-              <h3 class="sub-sect1-mark" id="sect-early-years">Early years</h3>
-              <div class="events__detail">
-                <div>
-                  <p>
-                    I was good at both Western and Chinese chess.
-                    I loved writing, debates, folding origami, and math.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="events__item">
-              <h3 class="sub-sect1-mark" id="sect-college">College</h3>
-              <div class="events__detail">
-                <div>
-                  <p>Initially I was attracted to physics (one of my favorite subjects
-                  from high school), but I eventually chose math as my focus. There was
-                  something more fundamental about math than physics. </p>
-                  
-                  <p>While studying math, I took all the computer science for
-                  non-major students. This includes basic programming course in which 
-                  we learned Java, Object Oriented Programming paradigm, basic data
-                  structures and algorithm. At a more advanced level, we learned 
-                  algorithm run times, and more sophisticated algorithms.</p>
-                  
-                  <p>It around my later years in college that I started to teach
-                  math as a side job to supplement my income.</p>
-                  
-                  <p>I was an officer for Korean Student Association for four years,
-                  in which I spent two years as webmaster.</p>
-                </div>
-              </div>
-            </div>
-            <div class="events__item">
-              <h3 class="sub-sect1-mark" id="sect-move-to-korea">Move to Korea</h3>
-              <div class="events__detail">
-                <div>
-                  <p>Due to personal reason I quit school to move to Korea.</p>
-                  
-                  <p>I started teaching as a private tutor while looking for a 
-                  more permanent position, but found that there was a lot of 
-                  market potential as a tutor, and became a full time tutor.</p>
-                </div>
-              </div>
-            </div>
-            <div class="events__item">
-              <h3 class="sub-sect1-mark" id="sect-steps-education">Steps Education</h3>
-              <div class="events__detail">
-                <div>
-                  <p>After teaching math for a while, it became obvious to me that
-                  a lot of what I did could be automated: generating problems,
-                  grading them, analyzing them, and telling parents about their
-                  students' performance. 
-                  </p>
-                  
-                  <p>I used my programming skills to make independent apps and 
-                  tools that met its objectives.</p>
-                  
-                  <p>When my apps started accumulate, I realize the need to 
-                  centralize and integrate the apps. Hence Steps Education was 
-                  born.</p>
-                </div>
-              </div>
-            </div>
-            <div class="events__item">
-              <h3 class="sub-sect1-mark" id="sect-back-to-the-states">Back to the States</h3>
-              <div class="events__detail">
-                <div>
-                  <p>While in Korea, I met my wife, and had my son. I realized
-                  I didn't want to raise my son in Korea, so I quit everything
-                  and moved back to the states.</p>
-                  
-                  <p>I'm currently in search of a new opportunity in which I can
-                  be an asset to a company that presents unique and exciting 
-                  challenges. </p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="profile-nav">
+        <button class="prev round-button left-arrow"></button>
+        <button class="next round-button right-arrow"></button>
       </div>
-      <!-- -->
-      
-      <div class="section sub-sect1-mark portfolio" id="sect-portfolio">
-        <!-- intro -->
-        <div class="sub-section1">
-          <!--<h2>Portfolio: About my work</h2>-->
-          <div class="content round-boxed">
-            <p>This is a small selection of work that I feel best illustrates my 
-            ability and potential as a software developer.</p>
+    </div>
 
-            <p>I believe my work will portray me as a concise and succinct 
-            problem solver and a software devloper. The following work mostly 
-            uses jQuery for GUI, but they will be transitioned to Vue. Other 
-            than jQuery, I used Highlight.JS for syntax highlighting.</p>
-            
-            <p>All the my work listed here can also be found on
-            <a href="http://github.com/jaiko86" target="new">GitHub.</a></p>
+    <div class="section" id="my-story">
+      <!--<h2>My story</h2>-->
+      <div class="events">
+        <div class="event blank"></div>
+        <div class="event cover">
+          <h2>My Story</h2>
+          <div class="author">J. Ko</div>
+        </div>
+        <div class="event">
+          <h3>Early years</h3>
+          <div class="events__detail">
+            <p>
+              I was good at both Western and Chinese chess. I loved writing, debates, folding origami, and math.
+            </p>
           </div>
         </div>
-        
-        <!-- Precision -->
-        <div class="sub-section1 sub-sect1-mark">
-          <div class="sub-section2 sub-sect2-mark" id="sect-prejs-intro">
-            <!--<h3>PrecisionJS: Intro</h3>-->
-            <div class="content round-boxed big-box">
-              <p>
-              PrecisionJS is a JavaScript library that I developed after realizing that
-              in JavaScript, <code>0.1 + 0.2 === 0.3;</code> returned <code>false</code>.
-              It took me a while to learn the details of why that happend. Whatever 
-              the reason was, as a platform that provided teaching service, I 
-              needed something that could handle arithmetic with precision. 
-              </p>
-              <p>
-                I originally named the library PreMath (short for Precision Math),
-                but eventually decided to just go with PrecisionJS. 
-              </p>
-              <p>
-                PrecisionJS's math library can perform some fairly simple math operations,
-                such as finding the greatest common factors of a set of numbers,
-                factorial or combination. 
-              </p>
-              <p>
-                Precision.Number is an object constructor that takes in an input, 
-                parses it, and stores the number in an object as arrays of numerator
-                and denominator. It can perform arbitrary precision math, meaning
-                it can be as long as the user needs it to be.
-              </p>
-              <p>
-                For the complete API with examples, please visit my GitHub 
-                <a href="https://github.com/jaiko86/misterjko/tree/master/Precision" 
-                  target="new">
-                  Precision page. 
-                </a>
-                Alternatively, you can simply open the console on your browser to 
-                test it out on this page.
-              </p>
-            </div>
-          </div>
-          <div class="sub-section2 sub-sect2-mark" id="sect-prejs-gcf">
-            <!--<h3>Demo: Greatest Common Factor</h3>-->
-            <div class="content round-boxed big-box">
-              <pre><code class="javascript">// Greatest common factor
-Precision.gcf(4, 8); // 4
+        <div class="event">
+          <h3>College</h3>
+          <div class="events__detail">
+            <p>Initially I was attracted to physics (one of my favorite subjects from high school), but I eventually chose math as my focus. There was something more fundamental about math than physics. </p>
 
-let arr = [30, 45, 60, 120];
-Precision.gcf(...arr); // 15</code></pre>
-              <a href="http://www.wolframalpha.com/input/?i=gcf(30,45,60,120)" 
-                target="new" 
-                class="check_on_wolfram" 
-                title="check if the solution is correct on Wolfram Alpha">
-                Verify
-              </a>
-            </div>
-          </div>
-          <div class="sub-section2 sub-sect2-mark" id="sect-prejs-factorial">
-            <!--<h3>Demo: Factorial</h3>-->
-            <div class="content round-boxed big-box">
-              <pre><code class="javascript">// factorial
-let f = Precision.factorial(500);
-f.length;       // 1135
-f;               /* => 
-   "1220136825991110068701238785423046926
-    2535743428031928421924135883858453731
-    5388199760549644750220328186301361647
-    7148203584163378722078177200480785205
-    1593292854779075719393306037729608590
-    8627042917454788242491272634430567017
-    3270769461062802310452644218878789465
-    7547771498634943677810376442740338273
-    6539747138647787849543848959553753799
-    0423241061271326984327745715546309977
-    2027810145610811883737095310163563244
-    3298702956389662891165897476957208792
-    6928871281780070265174507768410719624
-    3903943225364226052349458501299185715
-    0124870696156814162535905669342381300
-    8856249246891564126775654481886506593
-    8479517753608940057452389403357984763
-    6394490531306232374906644504882466507
-    5946735862074637925184200459369692981
-    0222639719525971909452178233317569345
-    8150855233282076282002340262690789834
-    2451712006207714640979456116127629145
-    9512372299133401695523638509428855920
-    1872743379517301458635757082835578015
-    8735432768888680120399882384702151467
-    6054454076635359841744304801289383138
-    9688163948746965881750450692636533817
-    5055478128640000000000000000000000000
-    0000000000000000000000000000000000000
-    0000000000000000000000000000000000000
-    0000000000000000000000000"
-*/</code></pre>
-              <a href="http://www.wolframalpha.com/input/?i=500!" 
-                target="new" 
-                class="check_on_wolfram" 
-                title="check if the solution is correct on Wolfram Alpha">
-                Verify
-              </a>
-            </div>
-          </div>
-          <div class="sub-section2 sub-sect2-mark" id="sect-prejs-base-change">
-            <!--<h3>Demo: Base Change</h3>-->
-            <div class="content round-boxed big-box">
-              <pre><code class="javascript">// Change 500 from base-10 to base-4
-Precision.changeBase(500, 10, 4);   // "13310"</code></pre>
-              <a href="http://www.wolframalpha.com/input/?i=500_10+to+base+4" 
-                target="new" 
-                class="check_on_wolfram" 
-                title="check if the solution is correct on Wolfram Alpha">
-                Verify
-              </a>
-            </div>
-          </div>
-          <div class="sub-section2 sub-sect2-mark" id="sect-prejs-ratnum">
-            <!--<h3>Demo: Rational Number Arithmetic</h3>-->
-            <div class="content round-boxed big-box">
-              <pre><code class="javascript">// Precision Number
-let n1 = new Precision.Number('0.1');
-let n2 = nwe Precision.Number('0.2');
-n1.plus(n2).equals('0.3');      // true; simply amazing
+            <p>While studying math, I took all the computer science for non-major students. This includes basic programming course in which we learned Java, Object Oriented Programming paradigm, basic data structures and algorithm. At a more advanced level,
+              we learned algorithm run times, and more sophisticated algorithms.</p>
 
-let n3 = new Precision.Number('0...3'); // 0.3333333....
-n3.equals('0.33333333333333');  // false
-n3.equals('1/3');               // true
-n3.divBy(10).equals('0.0...3'); // true (0.0...3 => 0.03333....)
+            <p>It around my later years in college that I started to teach math as a side job to supplement my income.</p>
 
-let n4 = new Precision.Number('-2 4/5');
-n4.plus('4/5').equals('-2');      // true;
-n4.negate().equals('2');          // true;
-n4.times(0).equals('0');          // true;</code></pre>
-            </div>
+            <p>I was an officer for Korean Student Association for four years, in which I spent two years as webmaster.</p>
           </div>
         </div>
-        
-        <!-- KenKen -->
-        <div class="sub-section1 sub-sect1-mark sub-sect2-mark" id="sect-kenken-intro">
-          <div class="sub-section2">
-            <!--<h3>KenKen: Intro</h3>-->
-            <div class="content round-boxed">
-              <p>KenKen is akin to sodoku, but with a mathematical twist. For an 
-              n &times; n puzzle, the rules are as follows:</p>
-              <ul>
-                <li>For any given column or row, numbers 1 through n, inclusive, must be used exactly once.</li>
-                <li>The numbers inside a set of cells bounded by thick outline, called cages, must evaluate to a given number, called target, when a given operation is performed.</li>
-              </ul>
+        <div class="event">
+          <h3>Move to Korea</h3>
+          <div class="events__detail">
+            <p>Due to personal reason I quit school to move to Korea.</p>
 
-              <p>My puzzle solver finds a solution (there may be more than one 
-              for some puzzles) after a user inputs the constraints.</p>
-            </div>
-          </div>
-          <div class="sub-section2 sub-sect2-mark" id="sect-kenken-rules">
-            <!--<h3>KenKen: Rules</h3>-->
-            <div class="content round-boxed">
-              <ul>
-                <li>For puzzle size, input a number from 1 through 9 to set cages. 
-                Alternatively, you can simply click one of the sample puzzles to 
-                start.</li>
-                
-                <li>After you set the size, click a cluster of contiguous cells, 
-                and click "SET CAGE". Then input the target number and operation.</li>
-                
-                <li>For any of the input areas, user can press ESC button to 
-                delete the content. For operation input, you may press up/down 
-                arrow keys to select from one of four valid entries. Finally, 
-                user can press enter to submit input.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="sub-section2 sub-sect2-mark" id="sect-kenken-app">
-            <!--<h3>KenKen: App</h3>-->
-            <div class="content app-wrap">
-              <div id="kenken-app"></div>
-            </div>
+            <p>I started teaching as a private tutor while looking for a more permanent position, but found that there was a lot of market potential as a tutor, and became a full time tutor.</p>
           </div>
         </div>
-        
-        <!-- Algebra Basics -->
-        <div class="sub-section1 sub-sect1-mark sub-sect2-mark" id="algebra-basics">
-          <div class="sub-section2">
-            <!--<h3>Algebra Basics: Intro</h3>-->
-            <div class="content round-boxed">
-              <p>When students first come across single variable equations, 
-              such as <code class="inline">5(x + 2) = 25</code>, the first instinct 
-              is to "work backwards." Such approach may work for elementary or 
-              introductory equations, but quickly becomes unviable as soon as 
-              small complication arises. For example, 
-              <code class="inline">3x + 5 = -2x - 15</code> is a bit difficult to 
-              intuitively "work backwards." Also, the idea of working backwards 
-              arises mainly from the notion that there's an "answer" to a 
-              question, which students have become accustomed to at that point. 
-              Because of it, it demonstrates and perpetuates poor understanding 
-              of the state of equality of two expressions on both sides the equal
-              sign. </p>
-              
-              <p>In order to remedy this, I have implemented a GUI that is analogous 
-              to a double pan balance scale.</p>
-              
-              <img src="images/scale.jpg" alt="scale">
-              
-              <p>By applying same operations to both scales -- adding something, 
-              removing something, or multiplying or dividing the content of the 
-              scales by a certain number -- the two arms of the scale will remain 
-              balanced.</p>
-            </div>
-          </div>
-          <div class="sub-section2 sub-sect2-mark" id="sect-algebra-rules">
-            <!--<h3>Algebra Basics: Rules</h3>-->
-            <div class="content round-boxed">
-              <ul>
-                <li>The goal is to achieve a state where there's only x left on 
-                one side, and number left in the other side.</li>
-                <li>The tiled numbers or x must be dragged to the scales (lower 
-                left and lower right rectangles) equally in order to maintain 
-                equality</li>
-                <li>To make number n such that  |n| > 10, drag the number tiles 
-                to the top middle region to combine them.</li>
-                <li>x and -x must dragged individually to each scale.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="sub-section2 sub-sect2-mark" id="sect-algebra-app">
-            <!--<h3>Algebra Basics: App</h3>-->
-            <div class="content app-wrap">
-              <iframe src="Algebra_Basics/index.html"></iframe>
-            </div>
+        <div class="event">
+          <h3>Steps Education</h3>
+          <div class="events__detail">
+            <p>After teaching math for a while, it became obvious to me that a lot of what I did could be automated: generating problems, grading them, analyzing them, and telling parents about their students' performance.
+            </p>
+
+            <p>I used my programming skills to make independent apps and tools that met its objectives.</p>
+
+            <p>When my apps started accumulate, I realize the need to centralize and integrate the apps. Hence Steps Education was born.
+            </p>
           </div>
         </div>
-        
-        <!-- Knight's Tour -->
-        <div class="sub-section1 sub-sect1-mark sub-sect2-mark title2" id="knights-tour">
-          <div class="sub-section2">
-            <!--<h3>Knight's Tour: Intro</h3>-->
-            <div class="content round-boxed">
-              <p>The collaborative work of Wikipedians describes 
-              this problem best:</p>
+        <div class="event">
+          <h3>Back to the States</h3>
+          <div class="events__detail">
+            <p>While in Korea, I met my wife, and had my son. I realized I didn't want to raise my son in Korea, so I quit everything and moved back to the states.</p>
 
-              <blockquote>A knight's tour is a sequence of moves of a knight on 
-              a chessboard such that the knight visits every square only once.
-              </blockquote>
-              
-              <p>The algorithm for finding the knight's path technically uses 
-              recursion to exhaustively search for the solution. The "brute force" 
-              method has a search space of roughly 26.5 trillion moves, by 
-              employing Warnsdorff's rule and Arnd Roth's proposition for tie 
-              breaking, a solution to a 8x8 board can be found in linear time.</p>
-              
-              <p>Click anywhere on the board to find the solution starting from 
-              that cell. Click <span class="btn-look">next</span> or 
-              <span class="btn-look">prev</span> to make the knight move to next 
-              or previous move, respectively.</p>
-            </div>
-          </div>
-          <div class="sub-section2 sub-sect2-mark">
-            <!--<h3>Knight's Tour: App</h3>-->
-            <div class="content app-wrap" id="knight-gui-cont"></div>
+            <p>I'm currently in search of a new opportunity in which I can be an asset to a company that presents unique and exciting challenges. </p>
           </div>
         </div>
       </div>
-      
-      
-      <div class="section sub-sect1-mark sub-sect2-mark" id="links">
-        <div class="links__wrap">
-          <a href="http://linkedin.com/in/jai-ko" target="new" class="links__item">
+      <div class="story-nav">
+        <button class="prev round-button left-arrow"></button>
+        <button class="next round-button right-arrow"></button>
+      </div>
+    </div>
+
+    <div class="section" id="portfolio">
+      <div class="portfolio-category">
+        <div class="category" id="port-cat-0">
+          <div class="rotate-left wall"></div>
+          <div class="rotate-right wall"></div>
+          <div class="content">About</div>
+        </div>
+        <div class="category" id="port-cat-1">
+          <div class="rotate-left wall"></div>
+          <div class="rotate-right wall"></div>
+          <div class="content">Algorithm<br>&amp;<br>ADT</div>
+        </div>
+        <div class="category" id="port-cat-2">
+          <div class="rotate-left wall"></div>
+          <div class="rotate-right wall"></div>
+          <div class="content">Profile<br>Search</div>
+        </div>
+        <div class="category" id="port-cat-3">
+          <div class="rotate-left wall"></div>
+          <div class="rotate-right wall"></div>
+          <div class="content">Steps<br>Education</div>
+        </div>
+        <div class="category" id="port-cat-4">
+          <div class="rotate-left wall"></div>
+          <div class="rotate-right wall"></div>
+          <div class="content">Knight's<br>Tour</div>
+        </div>
+        <div class="category" id="port-cat-5">
+          <div class="rotate-left wall"></div>
+          <div class="rotate-right wall"></div>
+          <div class="content">KenKen<br>Solver</div>
+        </div>
+        <div class="category" id="port-cat-6">
+          <div class="rotate-left wall"></div>
+          <div class="rotate-right wall"></div>
+          <div class="content">Game<br>of<br>Life</div>
+        </div>
+      </div>
+      <div class="desc-positioner">
+      	<div class="desc-wrap">
+          <div class="desc-title"></div>
+    		  <div class="desc"></div>
+    		  <div class="desc-nav">
+    		    <button class="round-button right-arrow"></button>
+    		    <button class="round-button close"></button>
+    		  </div>
+        </div>
+  		</div>
+    </div>
+
+    <div class="section" id="links">
+      <div class="links__wrap">
+        <a href="http://linkedin.com/in/jai-ko" target="new" class="links__item">
             <img src="images/linkedin-logo.png" alt="LinkedIn Logo">
             <span class="links__text">LinkedIn</span>
-          </a> 
-          <a href="http://github.com/jaiko86" target="new" class="links__item">
+          </a>
+        <a href="http://github.com/jaiko86" target="new" class="links__item">
             <img src="images/github-logo-white.png" alt="GitHub Logo">
             <span class="links__text">GitHub</span>
-          </a> 
-          <a href="https://app.codesignal.com/profile/jaiko86" target="new" class="links__item">
+          </a>
+        <a href="https://app.codesignal.com/profile/jaiko86" target="new" class="links__item">
             <img src="images/codesignal.png" alt="Code Signal Logo">
             <span class="links__text">Code Signal</span>
-          </a> 
-          <a href="https://www.hackerrank.com/MisterJK?hr_r=1" target="new" class="links__item">
+          </a>
+        <a href="https://www.hackerrank.com/MisterJK?hr_r=1" target="new" class="links__item">
             <img src="images/hackerrank.png" alt="Hacker Rank Logo">
             <span class="links__text">Hacker Rank</span>
-          </a> 
-        </div>
+          </a>
       </div>
     </div>
+  </div>
 
-    <div id="linked-in-popup" class="hidden">
-      <div class="close-linked-in-popup">&times;</div>
-      <img class="logo" src="images/linkedin-logo.png" id="li-popup-opener">
-      <div class="ramble">
-        <p>
-          Hi! You must be from the LinkedIn REACH Program!
-        </p>
-        <p>
-          In my haste to apply, I didn't include some important links:
-        </p>
-      </div>
-      <div class="links">
-        <a class="open-new" href="http://github.com/jaiko86/" target="new">
-          <img class="logo" src="images/github-logo-black.png" alt="GitHub logo">
-          GitHub
-        </a>
-        <a class="open-new" href="steps_archive/homework/index.html" target="new">
-          <img class="logo" src="steps_archive/homework/images/logo.png" alt="Steps Education logo">
-          Steps Education (Demo)
-        </a>
-        <a href="#sect-prejs-intro">
-          <img class="logo" src="images/precisionjs-logo.png" alg="PrecisionJS logo">
-          PrecisionJS
-        </a>
-      </div>
-    </div>
-  </body>
+</body>
+
 </html>

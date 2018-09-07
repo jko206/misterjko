@@ -21,7 +21,7 @@ body{
   flex: 0 0 auto;
   color: $nav-color-main;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   
   nav{
     font-family: 'Ariel', sans-serif;
@@ -128,6 +128,9 @@ body{
       }
     }
   }
+  &.hide-nav{
+    display: none;
+  }
   &.active{
     nav{
       .main-btn{
@@ -165,6 +168,11 @@ body{
       }
     }
   }
+  @media (min-width: 600px){
+    &.hide-nav{
+      display: flex;
+    }
+  }
   @media (min-width: 1200px){
     nav{
       .main-btn{
@@ -186,15 +194,11 @@ body{
     }
   }
 }
-
-.page{
-  width: 100vw;
-  height: 100vh;
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &:nth-child(even){
-    background: #00ff0045;;
+@media(max-width: 600px){
+  .nav-wrap.active{
+    width: 100%;
+  }
+  .nav-wrap.active + div{
+    filter: blur(4px);
   }
 }

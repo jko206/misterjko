@@ -1,0 +1,310 @@
+.hide {
+  display: none !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+#shadow-bg {
+  position: fixed;
+  z-index: 1;
+  background: #0000007a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.message-box {
+  background: white;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: stretch;
+}
+@media (min-width: 600px) {
+  .message-box {
+    max-width: 600px;
+    max-height: 400px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #151515;
+  }
+}
+.message-box > div {
+  padding: 20px;
+}
+.message-box .close-button {
+  position: absolute;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.message-box .header {
+  border-bottom: 1px solid #e6ebee;
+  flex: 0 0 auto;
+}
+.message-box .header .contact-text {
+  color: darkgray;
+}
+.message-box .header .contact-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.message-box .body-wrapper {
+  height: calc(100% - 162px - 40px);
+}
+.message-box .body {
+  flex: 1 1 auto;
+  display: grid;
+  grid-gap: 20px;
+}
+.message-box .body input, .message-box .body textarea {
+  padding: 5px;
+  border: 1px solid #e6ebee;
+  box-shadow: inset 1px 1px 1px #cbcbcb;
+}
+.message-box .body input {
+  height: 1rem;
+}
+.message-box .body textarea {
+  height: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: vertical;
+}
+@media (min-width: 600px) {
+  .message-box .body {
+    grid-template-columns: 1fr 1fr;
+  }
+  .message-box .body .email {
+    grid-column: span 2;
+  }
+}
+.message-box .buttons {
+  flex: 0 0 auto;
+  border-top: 1px solid #e6ebee;
+  border-bottom: 0;
+  text-align: right;
+}
+.message-box .buttons button {
+  margin-left: 5px;
+}
+
+.main#index-html .profile-connect {
+  border-bottom: 1px solid #e6ebee;
+}
+
+.main#index-html {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto;
+}
+.main#index-html > div {
+  background: white;
+  padding: 15px;
+}
+.main#index-html .profile-main .picture {
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.main#index-html .profile-connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main#index-html .profile-connect h4 {
+  display: none;
+}
+@media (min-width: 600px) {
+  .main#index-html {
+    grid-template-columns: 2fr 1fr;
+  }
+  .main#index-html > div {
+    padding: 0 15px;
+    margin-bottom: 15px;
+  }
+  .main#index-html .profile-main {
+    grid-column: span 2;
+    border-bottom: 1px solid #e6ebee;
+    margin: 15px;
+    padding: 15px 0;
+  }
+  .main#index-html .profile-connect {
+    grid-column: 2/3;
+    grid-row: span 3;
+    border-left: 1px solid #e6ebee;
+    border-bottom: 0;
+  }
+  .main#index-html .profile-skills {
+    padding-top: 0;
+    grid-row: 2/3;
+  }
+  .main#index-html .profile-skills h4 {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 900px) {
+  .main#index-html {
+    grid-template-rows: auto 70px auto;
+  }
+  .main#index-html .profile-main {
+    grid-column: span 2;
+    border-bottom: 1px solid #e6ebee;
+  }
+  .main#index-html .profile-connect {
+    grid-column: 2;
+    grid-row: 2;
+    border-left: 0;
+  }
+  .main#index-html .profile-skills {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .main#index-html .profile-skills h4 {
+    font-size: unset;
+  }
+  .main#index-html .profile-history {
+    grid-row: 2/4;
+    border-right: 1px solid #e6ebee;
+  }
+}
+@media (min-width: 1200px) {
+  .main#index-html {
+    width: 1200px;
+    grid-template-columns: 130px 600px 300px 170px;
+    grid-template-rows: auto auto auto;
+  }
+  .main#index-html .profile-main {
+    grid-row: 1/2;
+    grid-column: 2/4;
+  }
+  .main#index-html .profile-connect {
+    grid-column: 4/5;
+    grid-row: 1/4;
+    border-left: 1px solid #e6ebee;
+    padding-top: 30px;
+    margin: 0;
+  }
+  .main#index-html .profile-connect h4 {
+    display: block;
+  }
+  .main#index-html .profile-history {
+    grid-column: 2/3;
+    grid-row: 2/4;
+  }
+  .main#index-html .profile-skills {
+    grid-column: 3/4;
+    grid-row: 2/4;
+  }
+}
+
+.main#index-html {
+  line-height: 1.5;
+}
+.main#index-html ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+.main#index-html ul li {
+  position: relative;
+}
+.main#index-html .profile-skills ul {
+  padding-left: 15px;
+}
+.main#index-html .profile-skills ul li:before {
+  content: "";
+  border-top: 1px solid #f4895f;
+  border-right: 1px solid #f4895f;
+  transform: rotate(45deg);
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  left: -15px;
+  top: 9px;
+}
+.main#index-html .profile-history ul li:before {
+  content: "*";
+  font-size: 1.5rem;
+  line-height: 0.7;
+  vertical-align: bottom;
+  width: 13px;
+  display: inline-block;
+}
+.main#index-html .title_location {
+  color: #999;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.main#index-html .title_location .title {
+  margin-right: 0.5rem;
+}
+.main#index-html .title_location img {
+  height: 0.9rem;
+  width: 0.9rem;
+}
+@media (min-width: 600px) {
+  .main#index-html .title_location {
+    flex-direction: row;
+  }
+}
+.main#index-html .profile-connect button {
+  display: flex;
+  height: unset;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.main#index-html .profile-connect button img {
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+}
+.main#index-html .profile-connect button:hover {
+  background: gray;
+}
+@media (min-width: 1200px) {
+  .main#index-html .profile-connect button {
+    height: 100px;
+    flex-direction: column;
+    color: #385d16;
+  }
+}
+.main#index-html h1 {
+  font-size: 2.5rem;
+}
+.main#index-html h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.profile-not-exist, .loading-screen {
+  font-size: 2rem;
+  width: 100%;
+  max-width: 500px;
+  height: 50vh;
+  margin: 50px auto;
+  line-height: 2;
+  text-align: center;
+}
+
+.profile-not-exist img {
+  vertical-align: middle;
+  height: 2.3rem;
+}
+
+/*# sourceMappingURL=profile.css.map */
