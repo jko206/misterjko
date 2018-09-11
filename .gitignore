@@ -5,4 +5,5 @@ count.txt
 hits.csv
 test.*
 notes/*.*
-notes
+notes/
+.c9/
