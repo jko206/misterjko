@@ -1,0 +1,118 @@
+1. different view / background / what I can bring
+--> My experience in Korea as an successful entrepreneur in a hyper-competitive market without a degree
+(NEED TO SHOW NOT TELL. MAYBE MAKE BOTH SHOW VERSION AND TELL VERSION?? SHOW VERSION == LONG VERSION, TELL == SHORT???)
+----> Some programmers just want to program, but I will program with understanding of the BIG picture; I will understand managment decision, and what they do, and why they do. 
+  
+  - Experience in Korea (just as an intro / hoook)
+    - I can talk about the different hiring culture in Korea
+      - People get plastic surgery for interviews and photoshop their resume pics
+    - In a country where a well paid developer is paid around 2.5x an average office worker
+  - An entrepreneur
+    - I started as a way to generate problems, and to make interactive apps, because
+      doing them on paper, or WITH paper was too cumbersome and boring and didn't work.
+        - I started to make a few apps, 
+        - They piled up
+        - Decided to make a centralized platform for it. 
+        - Gauged students performance / when they did it, how long they did it, etc.
+    - Customer relations:
+      - They ramble, and I have to filter, decipher, and address their needs, and translate
+        that to business objective. 
+    - I understand how all the components come together to make a business run. 
+      It's not like making a smoothie. It's more like cooking. 
+      - Different components have to be prepared at different times with different
+        methods and executed at different time and pace. 
+      - The difference between actual cooking and business is that it's ongoing. 
+        (and you can't eat it)
+      - I wasn't successful because I was the best at math, teaching, or programming
+        - I was successsful because I could do, and willing to do all three. 
+        - It's like chessboxing. You can't be just good at chess or boxing. 
+          You have to be good at chess and boxing.
+      - I had to advertise, provide customer service, design, program, test, host, 
+        and finally teach with what I built. The work was not hard because it was 
+        a lot, but because I had to do so many different parts of a business myself.
+    - Leadership: leader to students, not other employees.
+      - I realized it's a leadership position, just like in KSA as officer
+      - All of world's problem can be solved with education. Not that it will get 
+        rid of bad stuff. Rather it will enable the good be empowered. 
+    - Doing good: I was a tutor because I believe quality personalized education at scale
+      can solve at least half the problem in this world. 
+    - Tapping the money: I knew where the money was. Doing good is good, but business
+      is business.
+  -Back to the States
+    - Immigrant wife & baby
+    - Looking for a job
+    - Building demo of the grand vision of Steps Education to get funding
+  
+--------------------
+2. Why I program, how I grew my skill, what sparked my interest, what pushed me to 
+  become a programmer, how I plan to grow.
+  - Beginning days:
+    - Early days:
+      - Turtle program from when I was in 패밀리 아파트 as a kid. 
+      - Xanga / Asian Avenue customization
+    - Learned programming in college
+      - Saw my friends do homework of it
+      - Java
+      - OOP 
+      - Algorithms and data structure
+      - Web stack
+    
+  - Really started to hone it as I worked on Steps Education
+    - I learned how to program, not just code. 
+    - jQuery and JavaScript in general
+    - Learned modular design: (plugging in apps)
+    - Lazy loading
+    - Learned not to future proof
+    - Data parsing
+    - Precision JS
+      - Functional programming
+    - UI/UX/Aesthetics/design
+    - Product management 
+      - Coming up with program requirement, objective, deadline
+      - Testing
+    - MVC / MVVC design pattern
+    
+  - Going forward:
+    - I have identified my learning pattern and have structured my schedule 
+      around it. Which is project based. 
+    - Learn by doing small scale projects. 
+    - I am currently learning Node and Vue so I can build full stack seemlessly,
+      and re-make Steps Education from ground up to be modular, and to serve
+      different purposes for different educational institutions.
+    - In particular, I want to grow my JavaScript skill. 
+      - I already know more of it than any other language
+      - It is very versatile these days and gives me more options, professionally. 
+  
+    
+--------------------
+
+3. My best work, and why I am proud of it. 
+  - PrecisionJS
+    - Making things to use for myself wasn't hard. 
+    - Packaging it making it easy to use for others was hard
+    - I took notes from jQuery and its ease of use. 
+    - So far, it can only do the basic arithmetics of rational number.
+      However, the foundation can now be used to do geometric functions, such as
+      sin/cos/tan, calculate pi, etc. 
+    - I want to open source it. 
+    - I built it as part of Steps Education
+    
+  - KenKen
+    - It's not a common. Even on google you will only find a handful.
+    - First, I had to learn how to solve the puzzle myself. 
+    - Then I had to code the knowledge / logic
+    - Then build the UI for it. 
+    - The logic for solving the puzzle isn't coded. It's brute force. 
+    - I learned that brute forcing is not good, but in this case, 
+      the problem was clearly defined to not exceed a certain size. 
+    - i learned that in order to program, it takes different logical thinking
+      than when we do in real life. 
+    - Built the solver engine first, then built the UI on top of it. 
+    - Which buttons are enabled/disabled depends on the state. 
+    - MVC principle.
+    - It's being modified at the moment to solve KenKen
+      
+      
+---
+TODO:
+-Make the sections work on my portfolio site. 

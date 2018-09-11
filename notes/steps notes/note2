@@ -1,0 +1,113 @@
+========
+
+Teachers
+
+--------
+
+************
+
+For user created contents:
+
+
+
+Bar chart 1:
+
+# of students vs score (bar chart)
+
+Y-axis has the numbers. X-axis has the scores in 5 point increments
+
+clicking on the score shows the students who got that score.
+
+
+
+structure
+
+
+
+
+
+Bar chart 2:
+
+Questions vs # of students who got it.
+
+Y-axis will be the number of students. All bars will be the same height, 
+
+only different in composition of those who got it right and those who got it wrong
+
+Clicking on the question shows who got it right and wrong. 
+
+Questions can be sorted by order or by number of people who got it right or wrong.
+
+************
+
+Steps generated
+
+
+
+Y-axis: number of attempts
+
+
+
+X-axis: time
+
+
+
+colors:
+
+-white: super star
+
+-blue: very good
+
+-green: proficient
+
+-yellow: inadequate
+
+-red: bad
+
+-black: failing
+
+
+
+
+
+
+
+
+
+************
+
+=======
+
+Parents
+
+-------
+
+Grade on all the kids' assignments. 
+
+Details of what they got right and wrong. 
+
+
+
+**just make it out of div and table, maybe. implement chart later. 
+---
+Number of attempts
+
+Incomplete: didn't do the assignment
+
+Incomplete people don't count towards the time
+
+---
+Teachers can set the percentage for the assignment types in curriculum when they first make it. When they make curriculum, they can set weight for each category 
+
+Ditch everything and just focus on making it for SAT???
+
+=======
+Students
+-------
+Log in
+Menu:
+-view assignment and their due dates. 
+--see performance of past assignments
+--for steps material, it will suggest that student do the foundational skill first
+-performance
+--scores and proficiency level

@@ -1,0 +1,11 @@
+- Everything is modular, so it can be updated and fixed independently, including CSS'
+- More color
+- Make things with vue where I can
+- clicking on a link will take to a the portion of the page, even if the page doesn't change. 
+- Animate the landing
+- make the menu bar work as I envision
+- think of small screens
+- Scroll position based animation
+- UI for using my algorithms and other work, like PrecisionJS
+- download input set for the algorithm that person might want to use via XHR
+- List the algorithm with tags and brief description. Tags could include #amazon or something

@@ -1,0 +1,106 @@
+
+-----
+function unpack(s){
+  function repeatStr(str, rep){
+    let s = '';
+    while(rep--) s += str;
+    return s;
+  }
+  
+  function recourse(s){
+    let matchArray = s.match(pattern);
+    if(matchArray){
+      let match = matchArray[0]
+      let rep = parseInt(match); //get the rep number
+      let [front, temp] = s.split(match);
+      let [middle, back] = recourse(temp) // returned an array
+      middle = repeatStr(middle, rep);
+	  front = front || '';
+	  middle = middle || '';
+	  back = back || '';
+      let result = front + middle + back;
+      return recourse(result);
+    } else {
+      let arr = s.split(']');
+      return arr;
+    }
+  }
+  
+  let pattern = /\d+\[/;
+  let matchArray = s.match(pattern);
+  if(matchArray){
+    let [front, back] = recourse(s);
+    return front + (back || '');
+  } else {
+	return s;
+  }
+}
+
+---
+
+// hits infinite loop
+function unpack(s){
+  function repeatStr(str, rep){
+    let s = '';
+    while(rep--) s += str;
+    return s;
+  }
+  
+  function recourse(s){
+    let matchArray = s.match(pattern);
+	  let wasMatched = false;
+	  let result;
+    while(matchArray){
+	    let wasMatched = true;
+      let match = matchArray[0]
+      let rep = parseInt(match); //get the rep number
+      let [front, temp] = s.split(match);
+      let [middle, back] = recourse(temp) // returned an array
+      middle = repeatStr(middle, rep);
+      front = front || '';
+      middle = middle || '';
+      back = back || '';
+      result = front + middle + back;
+      matchArray = result.match(pattern);
+    } 
+	  if(wasMatched){
+      return result;
+    } else {
+  		let arr = s.split(']');
+    	return arr;
+    }
+  	
+  }
+  
+  let pattern = /\d+\[/;
+  let matchArray = s.match(pattern);
+  if(matchArray){
+    let [front, back] = recourse(s);
+    return front + (back || '');
+  } else {
+	  return s; 
+  }
+}
+---
+
+a12[bc]d23[ef]
+
+For s = "4[ab]", the output should be
+decodeString(s) = "abababab";
+
+For s = "2[b3[a]]", the output should be
+decodeString(s) = "baaabaaa";
+
+For s = "2[b3[a]]--2[b3[a]]", the output should be
+decodeString(s) = "baaabaaa--baaabaaa";
+
+For s = "z1[y]zzz2[abc]", the output should be
+decodeString(s) = "zyzzzabcabc".
+
+
+    "2[b3[a]]"                        z1[y]zzz2[abc]
+    => 2 * "b3[a]]"                   => "z" + 1 * "y]zzz2[abc]"
+    => 2 * ("b" + 3 * "a]]")
+    => 2 * ("b" + 3 * ["a", "]"])
+    => 2 * ("b" + ["aaa", "]"])
+    => 2 * "baaa]"

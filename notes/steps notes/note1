@@ -1,0 +1,92 @@
+ make a timeline
+
+select how many children to display for g-node
+
+Options for teachers on the assignment:
+-# of submissions (change each time?)
+-due date
+-unique questions for each person? 
+-shuffle questions?
+-# of nodes to display is important, so i can sell it to 학원s
+
+--------------
+parent
+children
+content
+
+
+options
+	a: isAnswer
+	
+	q: 	isShuffled
+		isTF
+	g: 	isMM
+	o:	position (top bottom)
+		<input type='file' name=[[file-id*****]]> where id***** is the ID of the object
+	root: 	
+	
+
+
+math should be an option for q nodes that can also affect the children a-nodes. 
+
+
+make the creation and viewing a similar experience, so that WYSIWYG.
+	editClick
+
+
+
+
+later on: make fake isAnswer properties in an a-node to make it difficult for hackers to guess.
+
+
+--------------
+next version
+what the MyNode should look like on window is in the object itself:
+
+all the nodes have no depth; meaning they are not nested. they are all 1-dimensional, and child-parent relationship is only maintained through ID reference. all objects are in an array: nodes[id] = node; like that.
+This way, there's no circular structure, and i think it'll make appending much easier. 
+
+something to this effect, and a function draws with this information. this way, the node is reflected on window immediately. 
+
+think of how to implement the math node below as well. 
+MyNode will be very versatile and any property that is not common is going to be relegated to 'options'
+
+ Add options object to mynode last parameter. When extracting option object properties, user, toString. 
+
+worry about " and ' in the text
+
+a separate root-type node: has name of the assignment and whatnot
+
+'children' property only holds id number of children (consider how this might affect the processing at the end)
+
+include other options listed in one of the excel sheets, such as points, etc.
+--------------
+
+initial version:
+Math node has math objects. These objects are specific for math nodes. They have set of numbers that correspond to parts of the m node. For example, if m node content is "Amy had [[x]] apples. Bob had [[y]] apples. How many apples do they have?" Then the math obj will be: [
+{x: '4', y: '8', ans: '12'},
+{x: '2', y: '5', ans: '7'},
+{x: '1', y: '7' ans: '8', wrong-ans: }
+]
+
+they can be strings because they're not calculated or anything.
+don't need math nodes; just need math objects. 
+
+___________
+
+improved version:
+a function will take in some arguments and spit out the math object described above. must consider cases such as pi, i, and other weird entities coming out as solutions.
+
+it takes any number of following objects as its arguments:
+{
+  variable: 'x',
+  min: 0,
+  max: 100,
+  isRational: true,
+  //limits: even, odd, don't matter, irrational, decimal, fraction, etc
+}
+
+// may spit out 'no solution'; if infinite number of solutions, the cap is 200 or so (arbitrarily defined).
+var solutionGenerator = function(f, args){
+
+}

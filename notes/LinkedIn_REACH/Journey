@@ -1,0 +1,63 @@
+The very first programming I did was in kindergarten. My mom sent me and my brother
+to a computer academy during one summer, where we had to make a turtle on a green
+CRV monitor make certain shapes. I didn't know what it was at the time, or why I
+was there. I just thought it was a game. That lasted about three weeks. 
+
+From there, I had various encounters with programming. In middle and high school,
+I tinkered with "look & feel" of various proto-social media, such as Xanga, Asian
+Avenue, and MySpace. When I went to college, I saw my friends doing homework for
+a computer science course. One of them said "it was hard." It sounded like a challenge.
+
+So the next quarter, I enrolled into CSE 142 at the University of Washington, an
+introductory course open to everyone that focuses on OOP, data structure, and 
+basic algorithms with Java. As a math major, I took all the open 
+CS courses, learning more advanced algorithms and data structure, and the web
+stack along the way. 
+
+The courses were sufficient to stoke my spark of interest, but the real programming
+journey (i.e. neverending) started after college, as I worked on my online 
+education platform, Steps Education. 
+
+Whereas in college I only had to write programs that met certain narroly defined
+crieteria, I had to design and make everything from ground up for my platform. 
+Before the coding part even begings, I had to sketch out what my code was supposed 
+to do, what business objective it had to meet, establish the boundary of its 
+capabilities, design test cases, then begin to code. I had to envision how 
+an individual module would fit into the larger program, and plan accordingly. I
+had to do front and back end, database, hosting, database visualization, design, 
+and UI/UX. I had to consider browser compatibility, as a third of Koreans
+still use IE, and the fact that some of my users were elementary school kids. 
+
+Building my platform helped me realize why MVC paradigms were used; why I shouldn't
+future-proof my code; the importance of documentation, both for myself from others. 
+I learned how to use Git, found my ideal IDE, Cloud9, and SASS. The biggest lesson
+I learned, however, is that programming process starts before the first line of code. 
+
+My JavaScript/jQuery knowledge and skill is good enough to pass initial tests in sites 
+like TripleByte or TopTal, but I do realize the room for improvement. 
+Currently, I am refining and learning SASS, the new ES7 standards, and Node and Vue.
+
+It may sound like I stole some library's slogan, but I do believe that life is a 
+learning journey. Accordingly, I have structured my schedule to include time just for learning, 
+even if it's not programming. This way, when new standards, framework, or language
+comes along, I don't have to try to make time for it. 
+
+--
+gotta include: 
+-I know how to use jQuery
+-I started to program because it was fun. Now I program with the aim of making 
+this world better. There's so much work to be done, and I believe software can
+eventually do them, or at least do the trivial tasks so humans can do grander
+tasks. 
+- How I made my own math library for this task. 
+
+----
+
+The very first programming I did was in kindergarten. My mom sent me and my brother to a computer academy during one summer, where we had to make a turtle on a green CRV monitor make certain shapes. I didn't know what it was at the time, or why I was there. I just thought it was a game. That lasted about three weeks. 
+From there, I had various encounters with programming. In middle and high school, I tinkered with "look & feel" of various proto-social media, such as Xanga, Asian Avenue, and MySpace. When I went to college, I saw my friends doing homework for a computer science course. One of them said "it was hard." It sounded like a challenge.
+So the next quarter, I enrolled into CSE 142 at the University of Washington, an introductory course open to everyone that focuses on OOP, data structure, and basic algorithms with Java. As a math major, I took all the open CS courses, learning more advanced algorithms and data structure, and the web stack along the way. 
+The courses were sufficient to stoke my spark of interest, but the real programming journey (i.e. never ending) started after college, as I worked on my online education platform, Steps Education. 
+Whereas in college I only had to write programs that met certain narrowly defined criteria, I had to design and make everything from ground up for my platform. Before the coding part even begins, I had to sketch out what my code was supposed to do, what business objective it had to meet, establish the boundary of its capabilities, design test cases, then begin to code. I had to envision how an individual module would fit into the larger program, and plan accordingly. I had to do front and back end, database, hosting, database visualization, design, and UI/UX. I had to consider browser compatibility, as a third of Koreans still use IE, and the fact that some of my users were elementary school kids. 
+Building my platform helped me realize why MVC paradigms were used; why I shouldn't future-proof my code; the importance of documentation, both for myself from others. I learned how to use Git, found my ideal IDE, Cloud9, and SASS. The biggest lesson I learned, however, is that programming process starts before the first line of code. 
+My JavaScript/jQuery knowledge and skill is good enough to pass initial tests in sites like TripleByte or TopTal, but I do realize the room for improvement. Currently, I am refining and learning SASS, the new ES7 standards, and Node and Vue. I am also supplementing, improving, and debugging Steps Education source code as I learn new things. 
+It may sound like I stole some library's slogan, but I do believe that life is a learning journey. Accordingly, I have structured my schedule to include time just for learning, even if it's not programming. This way, when new standards, framework, or language comes along, I don't have to try to make time for it. 

@@ -4,3 +4,4 @@ count.txt
 *.log
 hits.csv
 test.*
+notes/*.*

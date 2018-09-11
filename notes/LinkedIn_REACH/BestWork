@@ -1,0 +1,60 @@
+Although I put in a lot of work into Steps Education, the end result is admittedly
+not the best. However, the math library I built for it, which I'm currently working on 
+to open source, is something I can showcase. 
+
+---
+# Intro
+Two of my work, PrecisionJS and KenKen solver standout as my best independent
+work. 
+
+# Main 1
+0.1 + 0.2 === 0.3 // false in JS
+
+is what got me started. In math-teaching platform, such flaw shouldn't exist. The
+easy solution was to simply round off errors, but this, too,
+wasn't ideal, as I needed a way to distinguish student's response of, say, 0.3333 
+(terminating decimal), from 0.3... (repeating decimal). 
+
+I needed a library that produced the correct answer, not a good enough one; a 
+reliable way to generate big integers, small decimals, mixed numbers, 
+proper fraction, repeating and terminating decimal; and most importantly, work with them.
+I needed the library to add, subtract, multiply, divide, and find the greatest 
+common divisor, all of which was for elementary math. I needed something that could handle higher level math. Nothing
+like it existed. So I began to develop my own. 
+
+I had two inital goals: to calculate with and to as many digits as I needed; 
+and to be able to do any basic arithmetic function with rational numbers. 
+
+The idea for the first goal was simple: make computer do math the way humans do. For example, to add
+50 digit and 40 digit numbers, it would turn those numbers into string, 
+and take one digit from the back of each numbers and add them up to the front. 
+Then I optimized by turning the numbers into array of digits. 
+
+The key to the second task was making all valid inputs, including repeating decimals,
+into fraction, since, by definition, rational numbers are fractions. 
+
+I met my goals. My library could calculate something like 2000! in browser. It 
+understands that 0.3... = 1/3. 
+
+While making the individual math functions wasn't too difficult, I wanted to design
+the library like jQuery to make it easy to use for now and in the future. 
+From the surface, the library may seem like OOP, but inside it's actually written as a functional program. It makes
+sense, since we're dealing with math. Math is already a language. It just had 
+to be translated to computer programming language. 
+
+The solid arithmetic will serve as the foundation for higher level math functions. Surprising
+number of seemingly complex math operations can be accurately estimated with 
+something called series, which can be done with loops or recursive functions on 
+computer. By doing some simple arithmetic arbitrary number of times, we can 
+calculate something like sin(12.3 deg). 
+
+So far, I have not found a math library dedicated to, math beyond arithmetic.
+Comparable ones that I found have certain features missing that makes 
+it unsuitable for using for higher level math. That's why I am working to open 
+sourcing it, so the bright minds smarter than me can help improve it. 
+
+
+
+-----------------------
+-I later learned that these libraries are built in-house, and used for their
+own purpose, and not open-sourced. They have no reason to. 

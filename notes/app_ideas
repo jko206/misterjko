@@ -1,0 +1,44 @@
+To Do app
+
+Vue project. Running time keeper
+-node.js to communicate with backend
+-be able to graph
+
+Imgur / twitter formatter extension
+-breaks up a body of words into 140/280 character chunks to be able to post on imgur or twitter
+
+Change certain words to certain other words extension
+-President Donald Trump -> Orangutan
+
+Make Sudoku solver
+
+Precision GUI?
+
+Mini excel:
+-It basically saves things as tab-delimited txt file
+
+Make the skeleton of Soyons app
+
+Maze building app
+
+RNA folding algo
+
+Library book checkout status:
+  - notify when to return books
+  - Be able to search checked out books
+  - Be able to simply copy and paste the checkout list from the email, and it
+    will automatically add to the list 
+  - Be able to sort alphabetically and by due date. 
+  
+Vue accordion list;
+
+-------
+AI 
+
+create something that can recognize meme templates, for instance, the socially
+  awkward / awesome penguin.
+  - separate it from the text
+  - If it's a still image, and what's overlaid on image is text, and not some other
+    image, 
+    then separate the text and the image
+  - create the meme with SVG
