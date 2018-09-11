@@ -1,0 +1,129 @@
+// the button's main shape is made with borders of its ::after and ::before elems
+
+$main-color: #1d1d1d;       // Charcoal gray
+$secondary-color: #961d1d;  // maroon red
+$disabled-color: #d6d6d6;   // light gray;
+$size: 50px;
+$stroke-width: 3px;
+
+
+button.simple-button{
+  width: $size;
+  height: $size;
+  background: transparent;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  border-radius: $size;
+  
+  &.left-arrow{
+    &::before{
+      border-left: $stroke-width solid $main-color;
+      border-bottom: $stroke-width solid $main-color;
+      width: $size / 3;
+      height: $size / 3;
+      left: $size * 0.4;
+      top: $size / 3;
+      transform: rotate(45deg);
+    }
+  }
+  &.left-dbl-arrow{
+    &::before, &::after{
+      border-left: $stroke-width solid $main-color;
+      border-bottom: $stroke-width solid $main-color;
+      width: $size / 3;
+      height: $size / 3;
+      transform: rotate(45deg);
+    }
+    &::before{
+      left: $size / 4;
+      top: $size / 3;
+    }
+    &::after{
+      left: $size / 2;
+      top: $size / 3;
+    }
+  }
+  &.right-arrow{
+    &::before{
+      border-left: $stroke-width solid $main-color;
+      border-bottom: $stroke-width solid $main-color;
+      width: $size / 3;
+      height: $size / 3;
+      right: $size * 0.4;
+      top: $size / 3;
+      transform: rotate(-135deg);
+    }
+  }
+  &.right-dbl-arrow{
+    &::before, &::after{
+      border-left: $stroke-width solid $main-color;
+      border-bottom: $stroke-width solid $main-color;
+      width: $size / 3;
+      height: $size / 3;
+      transform: rotate(-135deg);
+    }
+    &::before{
+      right: $size / 2;
+      top: $size / 3;
+    }
+    &::after{
+      right: $size / 4;
+      top: $size / 3;
+    }
+  }
+  &.cancel{
+    &::before, &::after{
+      width: $size / 2;
+      border-top: $stroke-width / 2 solid $main-color;
+      border-bottom: $stroke-width / 2 solid $main-color;
+      // background: $main-color;
+      left: $size / 4;
+      top: ($size - $stroke-width) / 2;
+    }
+    &::before{
+      transform: rotate(45deg);
+    }
+    &::after{
+      transform: rotate(-45deg);
+    }
+  }
+  
+  &.white-bg{
+    background: white;
+  }
+  
+  // All 
+  &::after, &::before{
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+  }
+  &:active{
+    transform: scale(0.97);
+    transition: transform 0.05s linear;
+  }
+  &:hover{
+    cursor: pointer;
+    &::before,
+    &::after{
+      border-color: $secondary-color;
+      
+    }
+  }
+  &:disabled{
+    &.white-bg{
+      background: lightgray;
+    }
+    &::after, &::before{
+      border-color: white;
+    }
+    &:hover{
+      cursor: default;
+      &::after, &::before{
+        border-color: white;
+      }
+    }
+  }
+}

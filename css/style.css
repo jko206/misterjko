@@ -458,6 +458,108 @@ body {
   color: white;
 }
 
+button.simple-button {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  border-radius: 50px;
+}
+button.simple-button.left-arrow::before {
+  border-left: 3px solid #1d1d1d;
+  border-bottom: 3px solid #1d1d1d;
+  width: 16.6666666667px;
+  height: 16.6666666667px;
+  left: 20px;
+  top: 16.6666666667px;
+  transform: rotate(45deg);
+}
+button.simple-button.left-dbl-arrow::before, button.simple-button.left-dbl-arrow::after {
+  border-left: 3px solid #1d1d1d;
+  border-bottom: 3px solid #1d1d1d;
+  width: 16.6666666667px;
+  height: 16.6666666667px;
+  transform: rotate(45deg);
+}
+button.simple-button.left-dbl-arrow::before {
+  left: 12.5px;
+  top: 16.6666666667px;
+}
+button.simple-button.left-dbl-arrow::after {
+  left: 25px;
+  top: 16.6666666667px;
+}
+button.simple-button.right-arrow::before {
+  border-left: 3px solid #1d1d1d;
+  border-bottom: 3px solid #1d1d1d;
+  width: 16.6666666667px;
+  height: 16.6666666667px;
+  right: 20px;
+  top: 16.6666666667px;
+  transform: rotate(-135deg);
+}
+button.simple-button.right-dbl-arrow::before, button.simple-button.right-dbl-arrow::after {
+  border-left: 3px solid #1d1d1d;
+  border-bottom: 3px solid #1d1d1d;
+  width: 16.6666666667px;
+  height: 16.6666666667px;
+  transform: rotate(-135deg);
+}
+button.simple-button.right-dbl-arrow::before {
+  right: 25px;
+  top: 16.6666666667px;
+}
+button.simple-button.right-dbl-arrow::after {
+  right: 12.5px;
+  top: 16.6666666667px;
+}
+button.simple-button.cancel::before, button.simple-button.cancel::after {
+  width: 25px;
+  border-top: 1.5px solid #1d1d1d;
+  border-bottom: 1.5px solid #1d1d1d;
+  left: 12.5px;
+  top: 23.5px;
+}
+button.simple-button.cancel::before {
+  transform: rotate(45deg);
+}
+button.simple-button.cancel::after {
+  transform: rotate(-45deg);
+}
+button.simple-button.white-bg {
+  background: white;
+}
+button.simple-button::after, button.simple-button::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+}
+button.simple-button:active {
+  transform: scale(0.97);
+  transition: transform 0.05s linear;
+}
+button.simple-button:hover {
+  cursor: pointer;
+}
+button.simple-button:hover::before, button.simple-button:hover::after {
+  border-color: #961d1d;
+}
+button.simple-button:disabled.white-bg {
+  background: lightgray;
+}
+button.simple-button:disabled::after, button.simple-button:disabled::before {
+  border-color: white;
+}
+button.simple-button:disabled:hover {
+  cursor: default;
+}
+button.simple-button:disabled:hover::after, button.simple-button:disabled:hover::before {
+  border-color: white;
+}
+
 #landing {
   display: flex;
   flex-direction: column;
