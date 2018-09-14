@@ -1,21 +1,18 @@
+apply to triplebyte again, and gun.io
+try vue/webpack work flow with a deadsimple app
+try making trello app with vue. 
+try making dependency tech tree type of to-do list, kinda like in Civ's tech tree. 
+
+apply to some fucking places, even if the pay is shit. 
+
 -learn a bit of canvas
+
+-Make a filter with Vue that does autocomplete from a list of things
 
 -use vue to make the honeycomb 
 
--move everything to the root folder
---commit/push things as they are
---delete current folder
---init (or clone??) again from the root
-
-init:
--git
--npm
--webpack
-
 -bundle things with webpack
 
-
-  
 Redo website:
 -Make GUI for some of the stuff
 -use web pack to bundle things

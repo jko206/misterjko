@@ -7,3 +7,5 @@ test.*
 notes/*.*
 notes/
 .c9/
+test/
+test/*.*
