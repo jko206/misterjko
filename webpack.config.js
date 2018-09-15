@@ -41,7 +41,7 @@ module.exports = {
         use: ['html-loader']
       },
       {
-        test: /\.php?/,
+        test: /\.php$/,
         use: [
           {
             loader: 'file-loader',
@@ -53,7 +53,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|png)$/,
+        test: /\.(jpg|png|gif|jpeg)$/,
         use: [
           {
             loader: 'file-loader',
