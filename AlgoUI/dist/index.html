@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>Algor UI</title>
+<link href="style.css" rel="stylesheet"></head>
+
+<body>
+  
+  <h1 class="title">
+    Algo UI
+  </h1>
+  <div id="app">
+    <div class="dropdowns">
+      <div class="algo-list-wrap">
+        <div 
+          @click="showAlgoList = !showAlgoList" 
+          class="label">
+          {{algoName}}
+        </div>
+        <div class="algo-list" 
+          v-for="algo in algorithms"
+          :class="{active : showAlgoList}">
+          <div 
+            class="item"
+            :class="isSelectedAlgo(algo.name)"
+            @click="setCurrAlgorithm(algo); showAlgoList = false">
+            {{algo.name}}
+          </div>
+        </div>
+      </div>
+      <div class="sample-inputs-wrap">
+        <div class="label" @click="showSampleList = !showSampleList">
+          {{sampleString}}
+        </div>
+        <div 
+          class="sample-inputs"
+          :class="{active : showSampleList}">
+          <div class="sample-input item"
+            v-for="(item, idx) in selected.algorithm.sampleInputs"
+            :class="isSelectedSample(idx)"
+            @click="setSample(idx); showSampleList = false">
+            Sample #{{idx + 1}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="tabs">
+        <div class="tab" 
+          @click="currTab = 'desc'"
+          :class="{active : currTab == 'desc'}">
+          Description
+        </div>
+        <div class="tab" 
+          @click="currTab = 'soln'"
+          :class="{active : currTab == 'soln'}">Solution</div>
+        <div class="tab" 
+          @click="currTab = 'code'"
+          :class="{active : currTab == 'code'}">
+          Code
+        </div>
+        <div class="tab" 
+          @click="currTab = 'io'"
+          :class="{active : currTab == 'io'}">
+          I/O
+        </div>
+      </div> 
+      <div class="content">
+        <div 
+          class="desc"
+          :class="{active : currTab == 'desc'}">
+          {{selected.algorithm.desc}}
+        </div>
+        <div 
+          class="solution"
+          :class="{active : currTab == 'soln'}">
+          {{selected.algorithm.solution}}
+        </div>
+        <div 
+          class="code"
+          :class="{active : currTab == 'code'}">
+          <pre><code>{{selected.algorithm.code}}</code></pre>
+        </div>
+        <div 
+          class="io"
+          :class="{active : currTab == 'io'}">
+          <h2>Input</h2>
+          <div class="input-wrapper">
+            <div class="input">
+              {{selected.algorithm.methodName}}(<span 
+                  v-for="(arg, idx) in selected.algorithm.args"
+                  class="arg-span"
+                  @click="focusArgInput(idx)">{{argSpanContent(arg, idx)}}</span>)
+            </div>
+            <div 
+              class="run-algo"
+              @click="runAlgo">
+              &#9654;
+            </div>
+          </div>
+          <div class="arguments">
+            <div 
+              class="arg-wrap"
+              v-for="(arg, idx) in argInputs">
+              
+              <label 
+                :for="'arg' + idx"
+                :title="getArgTitle(arg.isRequired)"
+                :class="{requiredArg : arg.isRequired}">
+                {{arg.name}} 
+              </label>
+              <span class="colon">:</span>
+              <textarea
+                :id="'arg' + idx"
+                :ref="'arg' + idx"
+                :placeholder="argPlaceholder(arg)"
+                @keydown="processInput($event, idx)"
+                v-model="argInputs[idx].val">
+                
+              </textarea>
+            </div>
+          </div>
+          <h2>Output</h2>
+            <pre class="output-wrap"><code>{{output}}</code></pre>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
