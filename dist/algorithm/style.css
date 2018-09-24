@@ -1,0 +1,149 @@
+:root {
+  font-size: 16px;
+  margin: 0;
+  font-family: sans-serif; }
+
+body, pre {
+  margin: 0; }
+
+div {
+  position: relative;
+  box-sizing: border-box; }
+
+h1 {
+  margin: auto;
+  text-align: center; }
+
+#app {
+  border: 1px solid gray;
+  width: 800px;
+  margin: auto;
+  min-height: 600px; }
+  #app .dropdowns {
+    display: flex;
+    z-index: 10;
+    padding: 10px; }
+    #app .dropdowns .algo-list-wrap, #app .dropdowns .sample-inputs-wrap {
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      border-radius: 5px;
+      width: 150px;
+      height: 40px; }
+      #app .dropdowns .algo-list-wrap .label, #app .dropdowns .sample-inputs-wrap .label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+      #app .dropdowns .algo-list-wrap .algo-list, #app .dropdowns .algo-list-wrap .sample-inputs, #app .dropdowns .sample-inputs-wrap .algo-list, #app .dropdowns .sample-inputs-wrap .sample-inputs {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 45px;
+        left: -1px;
+        width: 150px;
+        background: white;
+        border: 1px solid black;
+        border-radius: 5px; }
+        #app .dropdowns .algo-list-wrap .algo-list.active, #app .dropdowns .algo-list-wrap .sample-inputs.active, #app .dropdowns .sample-inputs-wrap .algo-list.active, #app .dropdowns .sample-inputs-wrap .sample-inputs.active {
+          display: flex; }
+        #app .dropdowns .algo-list-wrap .algo-list .item, #app .dropdowns .algo-list-wrap .sample-inputs .item, #app .dropdowns .sample-inputs-wrap .algo-list .item, #app .dropdowns .sample-inputs-wrap .sample-inputs .item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 40px; }
+  #app .tabs {
+    display: flex;
+    z-index: 1; }
+    #app .tabs .tab {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      min-width: 150px;
+      height: 40px;
+      background: gray; }
+      #app .tabs .tab.active {
+        background: white;
+        border: 1px solid black;
+        border-bottom-width: 0; }
+        #app .tabs .tab.active::after {
+          position: absolute;
+          content: '';
+          width: 100%;
+          border-bottom: 1px solid white;
+          bottom: -1px; }
+  #app .content {
+    border-top: 1px solid gray;
+    padding: 20px; }
+    #app .content > div {
+      display: none; }
+      #app .content > div.active {
+        display: block; }
+    #app .content pre {
+      background: #1d1d1d;
+      color: lightgray;
+      padding: 10px;
+      border-radius: 5px; }
+    #app .content .input-wrapper {
+      display: flex;
+      justify-content: space-between; }
+      #app .content .input-wrapper .input {
+        font-family: monospace; }
+        #app .content .input-wrapper .input span.arg-span {
+          background: gray;
+          padding: 2px;
+          border-radius: 5px;
+          margin-right: 6px; }
+          #app .content .input-wrapper .input span.arg-span:hover {
+            background: #bfbfbf;
+            cursor: pointer; }
+      #app .content .input-wrapper .run-algo {
+        background: green;
+        width: 1.5rem;
+        height: 1.5rem;
+        flex: 0 0 auto;
+        border-radius: 4px;
+        display: flex;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        line-height: 0;
+        font-size: 0.8rem; }
+    #app .content .arg-wrap {
+      display: flex;
+      font-family: monospace;
+      margin-bottom: 10px; }
+      #app .content .arg-wrap label {
+        padding: 10px 0;
+        width: 120px; }
+        #app .content .arg-wrap label.requiredArg::after {
+          content: '*';
+          color: gray; }
+      #app .content .arg-wrap .colon {
+        padding: 10px;
+        width: 5px; }
+      #app .content .arg-wrap textarea {
+        padding: 10px;
+        background: #1d1d1d;
+        border-radius: 5px;
+        color: lightgray;
+        resize: none;
+        width: calc(100% - 145px);
+        height: 1rem;
+        max-height: 20rem; }
+    #app .content .output-wrap {
+      padding: 10px;
+      background: #1d1d1d;
+      border-radius: 5px;
+      color: lightgray;
+      resize: none;
+      min-height: 20rem; }
